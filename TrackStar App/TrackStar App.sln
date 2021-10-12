@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackStar", "WpfApp1\TrackStar.csproj", "{17F2A04A-8DEA-4459-B465-7710D746861B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17F2A04A-8DEA-4459-B465-7710D746861B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F2A04A-8DEA-4459-B465-7710D746861B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F2A04A-8DEA-4459-B465-7710D746861B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F2A04A-8DEA-4459-B465-7710D746861B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF300BDD-6673-4AF0-9EAF-A9B692030F7E}
+	EndGlobalSection
+EndGlobal
