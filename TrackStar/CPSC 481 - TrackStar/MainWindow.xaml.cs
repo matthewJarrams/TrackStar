@@ -42,6 +42,13 @@ namespace CPSC_481___TrackStar
             objMainWindow.Show();
         }
 
+        private void Cat_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Catalogue catWindow = new Catalogue();
+            this.Visibility = Visibility.Hidden;
+            catWindow.Show();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
