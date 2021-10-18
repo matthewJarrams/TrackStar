@@ -27,16 +27,25 @@ namespace CPSC_481___TrackStar
             completionBar.Value = Window1.completedWorkouts;
         }
 
-    private void Button_Click_1(object sender, RoutedEventArgs e)
-    {
-        Window1 objWindow1 = new Window1();
-        this.Visibility = Visibility.Hidden;
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window1 objWindow1 = new Window1();
+            this.Visibility = Visibility.Hidden;
             objWindow1.Show();
-    }
+        }
 
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
+
+        private void Home_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow objMainWindow = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            objMainWindow.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
     }
-}
 }

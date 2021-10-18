@@ -28,6 +28,7 @@ namespace CPSC_481___TrackStar
 			buildProgram();
 			Workout test = cardio.workouts[currentDay];
 			lbTodoList.ItemsSource = test.ExerciseList;
+			programDay.Content = "Day: " + test.Day;
 		}
 
 		private void lbTodoList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -81,7 +82,12 @@ namespace CPSC_481___TrackStar
 		private void btnNextDay_click(object sender, RoutedEventArgs e)
 		{
 			lbTodoList.ItemsSource = null;
-			lbTodoList.ItemsSource = getTomorrowWorkout();
+			//lbTodoList.ItemsSource = getTomorrowWorkout();
+			currentDay++;
+			lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
+			programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+
+
 		}
 
 		private List<Exercise> getTomorrowWorkout()
@@ -96,7 +102,9 @@ namespace CPSC_481___TrackStar
 		private void btnToday_click(object sender, RoutedEventArgs e)
 		{
 			lbTodoList.ItemsSource = null;
+			currentDay--;
 			lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
+			programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
 
 		}
 
@@ -124,11 +132,18 @@ namespace CPSC_481___TrackStar
 			cardio = new Program("Cardio", workoutPlan);
 
 		}
-	}
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+			MainWindow objMainWindow = new MainWindow();
+			this.Visibility = Visibility.Hidden;
+			objMainWindow.Show();
+		}
+    }
 
 
 
-	public class Exercise
+    public class Exercise
 	{
 		public string Title { get; set; }
 		public string Amounts { get; set; }

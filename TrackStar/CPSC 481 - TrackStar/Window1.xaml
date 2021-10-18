@@ -6,32 +6,37 @@
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
         Title="Today's Workout" Height="670" Width="570">
-    <DockPanel  Background="#FF00FAFF">
-        <StackPanel DockPanel.Dock="Right" Margin="10,0" Background="#FF0FFF00">
-            <StackPanel.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="Margin" Value="0,0,0,5" />
-                </Style>
-            </StackPanel.Resources>
-            <TextBlock FontWeight="Bold" Margin="0,0,0,10">Options</TextBlock>
-            <Button Name="btnComplete" Click="btnComplete_Click">Complete</Button>
-            <Button Name="btnNotComplete" Click="btnNotComplete_Click">Not Complete</Button>
-            <Button Name="btnNextDay" Click ="btnNextDay_click">View Tomorrow's workout</Button>
-            <Button Name="btnToday" Click ="btnToday_click">View Today's workout</Button>
-        </StackPanel>
-        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FFFC0000">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="100" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Title}" />
-                        <TextBlock Text="{Binding Amounts}" Grid.Row="0" Grid.Column="5"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </DockPanel>
+    <Grid>
+        <DockPanel  Background="#FF00FAFF">
+            <StackPanel DockPanel.Dock="Right" Margin="10,0" Background="#FF0FFF00" Height="558">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="0,0,0,5" />
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock FontWeight="Bold" Margin="0,0,0,10">Options</TextBlock>
+                <Button Name="btnComplete" Click="btnComplete_Click">Complete</Button>
+                <Button Name="btnNotComplete" Click="btnNotComplete_Click">Not Complete</Button>
+                <Button Name="btnNextDay" Click ="btnNextDay_click">View Tomorrow's workout</Button>
+                <Button Name="btnToday" Click ="btnToday_click">View Today's workout</Button>
+                <Button Name="btnBack" Click="btnBack_Click">Back to Home Screen</Button>
+            </StackPanel>
+            <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FFFC0000" Height="562">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Title}" />
+                            <TextBlock Text="{Binding Amounts}" Grid.Row="0" Grid.Column="5"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+        <Label x:Name="programDay" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="43" FontSize="18" FontWeight="Bold"/>
+    </Grid>
+
 </Window>
