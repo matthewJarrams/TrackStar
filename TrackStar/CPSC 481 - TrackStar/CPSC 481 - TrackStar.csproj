@@ -7,4 +7,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Catalogue_icon.png" />
+    <None Remove="diet-icon-24.jpg" />
+    <None Remove="Home_Icon.svg.png" />
+    <None Remove="personal_info_icon.png" />
+    <None Remove="Screenshot 2021-10-08 185710.png" />
+    <None Remove="target_icon.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Catalogue_icon.png" />
+    <Resource Include="diet-icon-24.jpg" />
+    <Resource Include="Home_Icon.svg.png" />
+    <Resource Include="personal_info_icon.png" />
+    <Resource Include="Screenshot 2021-10-08 185710.png" />
+    <Resource Include="target_icon.jpg" />
+  </ItemGroup>
+
 </Project>

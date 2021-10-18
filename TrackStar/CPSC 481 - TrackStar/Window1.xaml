@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
-        Title="Today's Workout" Height="450" Width="800">
-    <DockPanel Margin="10">
-        <StackPanel DockPanel.Dock="Right" Margin="10,0">
+        Title="Today's Workout" Height="670" Width="570">
+    <DockPanel  Background="#FF00FAFF">
+        <StackPanel DockPanel.Dock="Right" Margin="10,0" Background="#FF0FFF00">
             <StackPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Margin" Value="0,0,0,5" />
@@ -17,9 +17,9 @@
             <Button Name="btnComplete" Click="btnComplete_Click">Complete</Button>
             <Button Name="btnNotComplete" Click="btnNotComplete_Click">Not Complete</Button>
             <Button Name="btnNextDay" Click ="btnNextDay_click">View Tomorrow's workout</Button>
-            <Button Name="btnToday" Click ="btnToday_click">View Todays's workout</Button>
+            <Button Name="btnToday" Click ="btnToday_click">View Today's workout</Button>
         </StackPanel>
-        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged">
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FFFC0000">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
