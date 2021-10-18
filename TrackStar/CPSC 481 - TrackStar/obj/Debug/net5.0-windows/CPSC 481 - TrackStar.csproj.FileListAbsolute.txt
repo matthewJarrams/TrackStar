@@ -24,3 +24,5 @@ C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windo
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Catalogue.g.cs
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Catalogue.baml
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\LogNutrition.g.cs
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\LogNutrition.baml

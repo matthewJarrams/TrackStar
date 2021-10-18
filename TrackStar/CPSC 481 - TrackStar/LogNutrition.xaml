@@ -1,0 +1,41 @@
+﻿<Window x:Class="CPSC_481___TrackStar.LogNutrition"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481___TrackStar"
+        mc:Ignorable="d"
+        Title="LogNutrition" Height="670" Width="570">
+    <Grid Background="#FFF4FF00">
+        <Rectangle HorizontalAlignment="Center" Height="180" VerticalAlignment="Top" Width="570" Fill="White"/>
+        <Grid Margin="0,180,148,0" Background="#FF00FFF1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="142*"/>
+                <ColumnDefinition Width="69*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Number of Calories Consumed Today: " HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="calsConsumed" HorizontalAlignment="Left" Margin="251,18,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <Label Content="Number of Calories Burned Today: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="calsBurned" HorizontalAlignment="Left" Margin="251,53,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <Label Content="Grams of Carbs Consumed Today: " HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="251,88,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <Label Content="Grams of Fat Consumed Today: " HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="251,123,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <Label Content="Grams of Protein Consumed Today: " HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Margin="251,155,0,0" Text= "0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <Button Content="Enter" HorizontalAlignment="Left" Margin="251,195,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click" Grid.ColumnSpan="2"/>
+            <Label Content="Target: 2500" HorizontalAlignment="Left" Margin="27,14,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1"/>
+            <Label Content="Target: 75" HorizontalAlignment="Left" Margin="27,152,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1"/>
+            <Label Content="Target: 50" HorizontalAlignment="Left" Margin="27,120,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1"/>
+            <Label Content="Target: 125" HorizontalAlignment="Left" Margin="27,85,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1"/>
+            <Label Content="Target: 500" HorizontalAlignment="Left" Margin="27,49,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1"/>
+        </Grid>
+        <Ellipse x:Name="calorieChecker" HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="calTarget" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.661,-0.523" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Calorie Balance" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="34" RenderTransformOrigin="0.504,0.577"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="447,245,0,0" VerticalAlignment="Top" Background="White" CalendarClosed="DatePicker_CalendarClosed" />
+        <Label Content="Choose a day to &#xD;&#xA;enter information" HorizontalAlignment="Left" Margin="447,200,0,0" VerticalAlignment="Top" Height="40" Width="102"/>
+        <Label x:Name="targetLbl" Content="Target: 2000" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+
+    </Grid>
+</Window>

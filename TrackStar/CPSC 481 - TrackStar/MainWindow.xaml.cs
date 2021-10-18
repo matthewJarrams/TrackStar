@@ -25,6 +25,7 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
             completionBar.Maximum = 30;
             completionBar.Value = Window1.completedWorkouts;
+            programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -49,10 +50,11 @@ namespace CPSC_481___TrackStar
             catWindow.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Nutrition_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            LogNutrition nutWindow = new LogNutrition();
+            this.Visibility = Visibility.Hidden;
+            nutWindow.Show();
         }
-
     }
 }

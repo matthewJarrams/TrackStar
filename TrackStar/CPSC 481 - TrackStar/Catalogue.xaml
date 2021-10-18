@@ -6,7 +6,5 @@
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
         Title="Catalogue" Height="670" Width="570">
-    <Grid>
-        
-    </Grid>
+    <Grid/>
 </Window>

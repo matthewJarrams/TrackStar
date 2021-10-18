@@ -90,14 +90,6 @@ namespace CPSC_481___TrackStar
 
 		}
 
-		private List<Exercise> getTomorrowWorkout()
-		{
-			List<Exercise> nextDayWorkout = new List<Exercise>();
-			nextDayWorkout.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });
-			nextDayWorkout.Add(new Exercise() { Title = "Bike", Amounts = "30 mins" });
-			nextDayWorkout.Add(new Exercise() { Title = "Run", Amounts = "20 mins" });
-			return nextDayWorkout;
-		}
 
 		private void btnToday_click(object sender, RoutedEventArgs e)
 		{
