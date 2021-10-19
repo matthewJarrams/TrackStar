@@ -20,6 +20,13 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Catalogue catWindow = new Catalogue();
+        public LogNutrition nutWindow = new LogNutrition();
+        public InfoWindow infoWindow = new InfoWindow();
+        public Goals goalsWindow = new Goals();
+        public Meals mealsWindow = new Meals();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,16 +52,39 @@ namespace CPSC_481___TrackStar
 
         private void Cat_Button_Click(object sender, RoutedEventArgs e)
         {
-            Catalogue catWindow = new Catalogue();
+            
             this.Visibility = Visibility.Hidden;
             catWindow.Show();
         }
 
+        private void Info_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Visibility = Visibility.Hidden;
+            infoWindow.Show();
+        }
+
+        private void Goals_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Visibility = Visibility.Hidden;
+            goalsWindow.Show();
+        }
+
+        private void Meals_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Visibility = Visibility.Hidden;
+            mealsWindow.Show();
+        }
+
         private void Nutrition_Button_Click(object sender, RoutedEventArgs e)
         {
-            LogNutrition nutWindow = new LogNutrition();
+            
             this.Visibility = Visibility.Hidden;
             nutWindow.Show();
         }
+
+
     }
 }

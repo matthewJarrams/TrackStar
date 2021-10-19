@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
+        WindowStartupLocation="Manual" 
+        Top="0"
+        Left="600"
         Title="Today's Workout" Height="670" Width="570">
     <Grid>
         <DockPanel  Background="#FF00FAFF">

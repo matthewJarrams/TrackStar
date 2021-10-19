@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace CPSC_481___TrackStar
 {
     /// <summary>
-    /// Interaction logic for Catalogue.xaml
+    /// Interaction logic for Meals.xaml
     /// </summary>
-    public partial class Catalogue : Window
+    public partial class Meals : Window
     {
-        public Catalogue()
+        public Meals()
         {
             InitializeComponent();
         }
@@ -31,6 +31,14 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
         }
 
+        private void Cate_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            mainWindow.catWindow.Show();
+            this.Visibility = Visibility.Hidden;
+
+        }
+
         private void Info_Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
@@ -38,6 +46,7 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
 
         }
+
         private void Goals_Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
@@ -45,12 +54,6 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
 
         }
-        private void Meals_Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.mealsWindow.Show();
-            this.Visibility = Visibility.Hidden;
-
-        }
     }
 }
+

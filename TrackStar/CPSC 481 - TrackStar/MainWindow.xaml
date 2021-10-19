@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="670" Width="570">
+        WindowStartupLocation="Manual" 
+        Top="0"
+        Left="600"
+        Title="Home" Height="670" Width="570">
     <Grid Background="#FF00FAFF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -21,11 +24,11 @@
         <ProgressBar x:Name="completionBar" HorizontalAlignment="Center" Height="36" Margin="0,176,0,0" VerticalAlignment="Top" Width="198" Grid.Column="1" />
         <Image Margin="175,23,175,556" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png" Grid.Column="1"/>
 
-        <Button  HorizontalAlignment="Left" Margin="0,593,0,0" VerticalAlignment="Top" Height="61" Width="115" Grid.Column="1">
+        <Button  HorizontalAlignment="Left" Margin="0,593,0,0" VerticalAlignment="Top" Height="61" Width="115" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="115,593,0,0" VerticalAlignment="Top" Height="61" Width="114" Grid.Column="1">
+        <Button HorizontalAlignment="Left" Margin="115,593,0,0" VerticalAlignment="Top" Height="61" Width="114" Grid.Column="1" Click="Goals_Button_Click">
             <Image x:Name="goalsBtn" Source="target_icon.jpg" Width="126"></Image>
         </Button>
 
@@ -37,7 +40,7 @@
             <Image x:Name="catBtn" Source="Catalogue_icon.png" Width="99"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="456,593,0,0" VerticalAlignment="Top" Height="61" Width="114" Grid.Column="1">
+        <Button HorizontalAlignment="Left" Margin="456,593,0,0" VerticalAlignment="Top" Height="61" Width="114" Grid.Column="1" Click="Info_Button_Click">
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
         <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="47,504,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="138" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>

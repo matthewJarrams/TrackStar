@@ -1,4 +1,4 @@
-﻿<Window x:Class="CPSC_481___TrackStar.Catalogue"
+﻿<Window x:Class="CPSC_481___TrackStar.Goals"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,13 +8,13 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Catalogue" Height="670" Width="570">
+        Title="Goals" Height="670" Width="570">
     <Grid Background="#FF00FAFF">
-        <Button  HorizontalAlignment="Left" Margin="0,593,0,0" VerticalAlignment="Top" Height="61" Width="115" Grid.Column="1" Click="Meals_Button_Click">
+        <Button  HorizontalAlignment="Left" Margin="0,593,0,0" VerticalAlignment="Top" Height="61" Width="115" Grid.Column="1"  Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="115,593,0,0" VerticalAlignment="Top"  Height="61" Width="114" Grid.Column="1" Click="Goals_Button_Click">
+        <Button HorizontalAlignment="Left" Margin="115,593,0,0" VerticalAlignment="Top"  Height="61" Width="114" BorderBrush="Red" BorderThickness="4" Grid.Column="1" >
             <Image x:Name="goalsBtn" Source="target_icon.jpg" Width="126"></Image>
         </Button>
 
@@ -22,7 +22,7 @@
             <Image x:Name="homeBtn" Source="Home_Icon.svg.png" Width="105" RenderTransformOrigin="0.514,0.601"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="342,593,0,0" VerticalAlignment="Top" Height="61" Width="115" BorderBrush="Red" BorderThickness="4" Grid.Column="1" >
+        <Button HorizontalAlignment="Left" Margin="342,593,0,0" VerticalAlignment="Top" Height="61" Width="115"  Grid.Column="1" Click="Cate_Button_Click">
             <Image x:Name="catBtn" Source="Catalogue_icon.png" Width="99"></Image>
         </Button>
 
