@@ -44,7 +44,7 @@
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
         <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="47,504,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="138" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>
-        <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="175,217,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="90,217,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>

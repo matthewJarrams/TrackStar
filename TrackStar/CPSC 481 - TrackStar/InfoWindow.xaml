@@ -18,8 +18,8 @@
             <Image x:Name="goalsBtn" Source="target_icon.jpg" Width="126"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="160,623,0,0" VerticalAlignment="Top" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" >
-            <Image x:Name="homeBtn" Source="Home_Icon.svg.png" Width="105" RenderTransformOrigin="0.514,0.601"></Image>
+        <Button HorizontalAlignment="Left" Margin="160,623,0,0" VerticalAlignment="Top" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" Click="Home_Button_Click" >
+            <Image x:Name="homeBtn" Source="Home_Icon.svg.png" Width="105" RenderTransformOrigin="0.59,0.5"></Image>
         </Button>
 
         <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click">
