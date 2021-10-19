@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="LogNutrition" Height="670" Width="570">
+        Title="LogNutrition" Height="700" Width="400">
     <Grid Background="#FFF4FF00">
         <Rectangle HorizontalAlignment="Center" Height="180" VerticalAlignment="Top" Width="570" Fill="White"/>
         <Grid Margin="0,180,148,0" Background="#FF00FFF1">
