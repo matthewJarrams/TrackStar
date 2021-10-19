@@ -32,6 +32,8 @@ namespace CPSC_481___TrackStar
             int caloriesBurned = int.Parse(calsBurned.Text);
             int calDifference = calorieIntake - caloriesBurned;
             calTarget.Content = calDifference;
+         
+            
 
             if (calDifference > 2000)
             {
@@ -42,6 +44,40 @@ namespace CPSC_481___TrackStar
             {
                 calorieChecker.Fill = new SolidColorBrush(Colors.Green);
             }
+
+            int targetsMet = 0;
+
+            if (int.Parse(carbBox.Text) == 125)
+            {
+                targetsMet++;
+            }
+            if (int.Parse(fatBox.Text) == 50)
+            {
+                targetsMet++;
+            }
+            if (int.Parse(proBox.Text) == 75)
+            {
+                targetsMet++;
+            }
+            if(caloriesBurned == 500)
+            {
+                targetsMet++;
+            }
+            if(calorieIntake == 2500)
+            {
+                targetsMet++;
+            }
+
+            if(targetsMet == 5)
+            {
+                macroTargets.Fill = new SolidColorBrush(Colors.Green);
+            }
+            else
+            {
+                macroTargets.Fill = new SolidColorBrush(Colors.Red);
+            }
+
+            targetsMetLbl.Content = targetsMet + " / 5";
         }
 
         private void DatePicker_CalendarClosed(object sender, RoutedEventArgs e)
