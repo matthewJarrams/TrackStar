@@ -22,6 +22,8 @@ namespace CPSC_481___TrackStar
         public static Program cardio;
         public int currentDay = 0;
         public static int completedWorkouts = 4;
+		public static int uncompletedWorkouts = 14;
+		public static int daysLeft = 12;
         public Window1()
         {
 			InitializeComponent();
@@ -29,6 +31,7 @@ namespace CPSC_481___TrackStar
 			Workout test = cardio.workouts[currentDay];
 			lbTodoList.ItemsSource = test.ExerciseList;
 			programDay.Content = "Day: " + test.Day;
+			programName.Content = cardio.name;
 		}
 
 		private void lbTodoList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -72,10 +75,13 @@ namespace CPSC_481___TrackStar
 		private void btnComplete_Click(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("Awesome Job. " + ++completedWorkouts + " Completed!");
+			daysLeft--;
 		}
 
 		private void btnNotComplete_Click(object sender, RoutedEventArgs e)
 		{
+			uncompletedWorkouts++;
+			daysLeft--;
 			MessageBox.Show("That's ok. Next Time!");
 		}
 
@@ -121,7 +127,7 @@ namespace CPSC_481___TrackStar
 			workoutPlan.Add(Day1);
 			workoutPlan.Add(Day2);
 
-			cardio = new Program("Cardio", workoutPlan);
+			cardio = new Program("Cardio Training Program", workoutPlan);
 
 		}
 

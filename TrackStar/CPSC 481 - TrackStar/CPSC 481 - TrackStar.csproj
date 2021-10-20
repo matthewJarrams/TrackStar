@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Catalogue_icon.png" />
+    <None Remove="checkMarkIcon.png" />
     <None Remove="diet-icon-24.jpg" />
     <None Remove="Home_Icon.svg.png" />
     <None Remove="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
@@ -16,10 +17,12 @@
     <None Remove="Screenshot 2021-10-08 185710.png" />
     <None Remove="target_icon.jpg" />
     <None Remove="weightGraph.png" />
+    <None Remove="xIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Catalogue_icon.png" />
+    <Resource Include="checkMarkIcon.png" />
     <Resource Include="diet-icon-24.jpg" />
     <Resource Include="Home_Icon.svg.png" />
     <Resource Include="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
@@ -27,6 +30,7 @@
     <Resource Include="Screenshot 2021-10-08 185710.png" />
     <Resource Include="target_icon.jpg" />
     <Resource Include="weightGraph.png" />
+    <Resource Include="xIcon.png" />
   </ItemGroup>
 
 </Project>
