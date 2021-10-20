@@ -30,7 +30,7 @@ namespace CPSC_481___TrackStar
         public MainWindow()
         {
             InitializeComponent();
-            programCompletionBlock.Text = "Program Completion (" + Window1.daysLeft + " Days Left)"; 
+            programCompletionBlock.Text = "Program Completion (" + Window1.daysLeft + " Days Left)";
             completionBar.Maximum = 30;
             completionBar.Value = Window1.completedWorkouts;
             programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;

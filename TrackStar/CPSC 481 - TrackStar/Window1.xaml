@@ -10,7 +10,7 @@
         Left="600"
         Title="Today's Workout" Height="700" Width="400">
     <Grid>
-        <StackPanel Margin="205,92,0,88" Background="#FF0FFF00" Height="504">
+        <StackPanel Margin="205,92,0,88" Background="#008080" Height="504">
             <StackPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Margin" Value="0,0,0,5" />
@@ -21,7 +21,7 @@
             <Button Name="btnToday" Click ="btnToday_click" Width="185">View Today's workout</Button>
             <Button Name="btnBack" Click="btnBack_Click" Width="188">Back to Home Screen</Button>
         </StackPanel>
-        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FFFC0000" Height="504" Margin="0,90,200,90">
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FF7F50" Height="504" Margin="0,90,200,90">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
