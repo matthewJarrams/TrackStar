@@ -15,14 +15,12 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Sleep Tracker" Grid.Column="1" HorizontalAlignment="Left" Margin="47,402,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="64" Width="138" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>
-        <Button Content="View Today's Workout" Grid.Column="1" HorizontalAlignment="Left" Margin="47,310,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="64" Width="138" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>
-        <Rectangle Grid.Column="1" Margin="225,301,26,0" Stroke="Black" Fill="White" Height="285" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="234,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.563,0.687" Height="31" Width="130" FontSize="20"><Run Language="en-ca" Text="  "/><Run Text="Main Target"/></TextBlock>
-        <Rectangle Grid.Column="1" HorizontalAlignment="Center" Height="143" Margin="0,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="400" Fill="White"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="116,133,0,0" Text="Program Completion" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="27" Width="180" RenderTransformOrigin="0.503,0.581"/>
-        <ProgressBar x:Name="completionBar" HorizontalAlignment="Center" Height="36" Margin="0,176,0,0" VerticalAlignment="Top" Width="198" Grid.Column="1" />
-        <Image Margin="112,10,100,580" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png" Grid.Column="1"/>
+        <Button Content="View Today's Workout" Grid.Column="1" HorizontalAlignment="Left" Margin="34,252,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="64" Width="120" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.563,0.687" Height="31" Width="130" FontSize="20"><Run Language="en-ca" Text="  "/><Run Text="Main Target"/></TextBlock>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Center" Height="143" Margin="0,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="400" Fill="White"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="116,106,0,0" Text="Program Completion" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="27" Width="180" RenderTransformOrigin="0.503,0.581"/>
+        <ProgressBar x:Name="completionBar" HorizontalAlignment="Left" Height="36" Margin="95,142,0,0" VerticalAlignment="Top" Width="198" Grid.Column="1" />
+        <Image Margin="112,10,100,600" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png" Grid.Column="1"/>
 
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
@@ -43,8 +41,9 @@
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click">
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
-        <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="47,504,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="138" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>
-        <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="90,217,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="234,252,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="120" RenderTransformOrigin="0.5,0.523" Background="Red" Foreground="White"/>
+        <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="90,190,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
+        <Image Margin="34,372,46,68" Stretch="Fill" Source="weightGraph.png" Grid.Column="1"/>
 
     </Grid>
 </Window>
