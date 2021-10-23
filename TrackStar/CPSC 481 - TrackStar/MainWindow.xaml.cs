@@ -25,6 +25,7 @@ namespace CPSC_481___TrackStar
         public InfoWindow infoWindow = new InfoWindow();
         public Goals goalsWindow = new Goals();
         public Meals mealsWindow = new Meals();
+       //public ProgramScreen programScreen = new ProgramScreen();
 
 
         public MainWindow()

@@ -107,12 +107,12 @@ namespace CPSC_481___TrackStar
 		}
 
 
-		public void buildProgram()
+		public static void buildProgram()
 		{
 			List<Exercise> day1 = new List<Exercise>();
 			day1.Add(new Exercise() { Title = "Bench Press", Amounts = "4 x 10" });
 			day1.Add(new Exercise() { Title = "Squats", Amounts = "2 X 20" });
-			day1.Add(new Exercise() { Title = "Shoulder Presses", Amounts = "4 x 5" });
+			day1.Add(new Exercise() { Title = "Shoulder Press", Amounts = "4 x 5" });
 
 			List<Exercise> day2 = new List<Exercise>();
 			day2.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });

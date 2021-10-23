@@ -52,5 +52,49 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
 
         }
+
+        private void removeProgramBtn_Click(object sender, RoutedEventArgs e)
+        {
+            currentProgram.Content = "No Program Currently Selected";
+        }
+
+        private void viewProgramBtn_Click(object sender, RoutedEventArgs e)
+        {
+            /*MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            mainWindow.programScreen.Show();
+            this.Visibility = Visibility.Hidden;*/
+            ProgramScreen progScreen = new ProgramScreen(1);
+            this.Visibility = Visibility.Hidden;
+            progScreen.Show();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("The" + catalogueStack.Children.Count);
+            catalogueStack.Children.Remove(cardioGrid);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            /*MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            mainWindow.programScreen.Show();
+            this.Visibility = Visibility.Hidden;*/
+            ProgramScreen progScreen = new ProgramScreen(2);
+            this.Visibility = Visibility.Hidden;
+            progScreen.Show();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (filter.SelectedItem == red)
+            {
+                catalogueStack.Children.Remove(cardioGrid);
+            }
+            if(filter.SelectedItem == green)
+            {
+                catalogueStack.Children.Insert(0, cardioGrid);
+            }
+        }
     }
 }
