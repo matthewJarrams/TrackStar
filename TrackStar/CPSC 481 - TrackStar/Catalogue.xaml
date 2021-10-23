@@ -35,7 +35,7 @@
         <Button x:Name="removeProgramBtn" Content="Remove" HorizontalAlignment="Left" Margin="320,45,0,0" VerticalAlignment="Top" Height="29" Width="57" Click="removeProgramBtn_Click"/>
 
 
-        <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="470" Margin="10,120,0,0" VerticalAlignment="Top" Width="360" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="470" Margin="10,150,0,0" VerticalAlignment="Top" Width="360" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="catalogueStack"  Background="White">
                 <Grid x:Name="cardioGrid" Height="180" Background="Red">
                     <Label Content ="Cardio Burner Program" Height="30" Margin="10,7,166,143" Background="White"/>
@@ -61,38 +61,29 @@
                     <TextBox HorizontalAlignment="Center" Margin="0,90,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to maintain current muscle mass and to help increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                     <Label Content ="Intensity: Medium" Height="30" Margin="9,140,166,10" FontSize="14"/>
                 </Grid>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
-                <Label Height="30" Width="100" Margin="5">label1</Label>
+                
 
             </StackPanel>
         </ScrollViewer>
-        <ComboBox x:Name="filter" Margin="240,80,23,569" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem x:Name="red">
+        <ComboBox x:Name="filter" Margin="240,99,23,534" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem x:Name="high">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Red">Red</TextBlock>
+                    <TextBlock Foreground="Red">High</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
-            <ComboBoxItem x:Name="green">
+            <ComboBoxItem x:Name="medium">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green">Green</TextBlock>
+                    <TextBlock Foreground="Green">Medium</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem x:Name="low">
                 <StackPanel Orientation="Horizontal">
-                   
-                    <TextBlock Foreground="Blue">Blue</TextBlock>
+
+                    <TextBlock Foreground="Blue">Low</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
+        <Label Content="Intensity: " HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" Height="44" FontSize="18"/>
 
     </Grid>
 </Window>

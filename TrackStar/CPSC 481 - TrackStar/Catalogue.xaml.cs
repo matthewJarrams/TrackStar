@@ -87,13 +87,29 @@ namespace CPSC_481___TrackStar
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (filter.SelectedItem == red)
+            if (filter.SelectedItem == high)
             {
+                if (catalogueStack.Children.Contains(strengthGrid) == false)
+                {
+                    catalogueStack.Children.Add(strengthGrid);
+                }
+                
+
                 catalogueStack.Children.Remove(cardioGrid);
+                catalogueStack.Children.Remove(fullBodyGrid);
             }
-            if(filter.SelectedItem == green)
+            if(filter.SelectedItem == medium)
             {
-                catalogueStack.Children.Insert(0, cardioGrid);
+                if (catalogueStack.Children.Contains(cardioGrid) == false)
+                {
+                    catalogueStack.Children.Insert(0, cardioGrid);
+                    catalogueStack.Children.Insert(1, fullBodyGrid);
+                }
+                catalogueStack.Children.Remove(strengthGrid);
+            }
+            if(filter.SelectedItem == low)
+            {
+                catalogueStack.Children.RemoveRange(0, 3);
             }
         }
     }

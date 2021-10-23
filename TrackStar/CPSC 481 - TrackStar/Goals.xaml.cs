@@ -17,11 +17,21 @@ namespace CPSC_481___TrackStar
     /// <summary>
     /// Interaction logic for Goals.xaml
     /// </summary>
+    /// 
+
     public partial class Goals : Window
     {
+        public static List<Target> targetList = new List<Target>();
+
         public Goals()
         {
             InitializeComponent();
+            Target loseWeight = new Target("Lose 2lbs a week");
+            Target run = new Target("Run 10km");
+            targetList.Add(loseWeight);
+            targetList.Add(run);
+
+            lbTodoList.ItemsSource = targetList;
         }
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
@@ -54,5 +64,46 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
 
         }
+        
+           
+   
+        private void CompBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            Target p = (Target)b.Tag;
+            MessageBox.Show(p.target);
+            p.SetComplete(true);
+           
+            lbTodoList.ItemsSource = null;
+            lbTodoList.ItemsSource = targetList;
+         
+        }
+
+
+    }
+    public class Target
+    {
+        public string target { get; set; }
+        public bool complete = false;
+        public string message { get; set; }
+
+
+        public Target(string target)
+        {
+            this.target = target;
+            this.message = "Not Complete";
+        }
+
+
+        public void SetComplete(bool isComplete)
+        {
+            complete = isComplete;
+            this.message = "Awesome! Goal Completed!";
+        }
+        
+
+
     }
 }
+
+

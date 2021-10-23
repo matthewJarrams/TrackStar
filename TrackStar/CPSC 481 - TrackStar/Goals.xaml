@@ -22,12 +22,31 @@
             <Image x:Name="homeBtn" Source="Home_Icon.svg.png" Width="105" RenderTransformOrigin="0.514,0.601"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1"  >
-            <Image x:Name="catBtn" Source="Catalogue_icon.png" Width="99"></Image>
+        <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click" >
+            <Image x:Name="catBtn" Source="Catalogue_icon.png" Width="99" RenderTransformOrigin="0.596,0.5"></Image>
         </Button>
 
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click">
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
+        <ListBox x:Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,58,10,451">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding target}" />
+                        <TextBlock Text="{Binding message}" Grid.Row="0" Grid.Column="1"/>
+                        <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" Grid.Row="0" Grid.Column="2"/>
+                       
+                        
+                    </Grid>
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

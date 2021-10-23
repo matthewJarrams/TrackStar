@@ -41,5 +41,12 @@ namespace CPSC_481___TrackStar
 
             lbTodoList.ItemsSource = Window1.cardio.workouts[0].ExerciseList;
         }
+
+        private void back_Btn(object sender, RoutedEventArgs e)
+        {
+            Catalogue catWindow = new Catalogue();
+            this.Visibility = Visibility.Hidden;
+            catWindow.Show();
+        }
     }
 }
