@@ -23,7 +23,7 @@ namespace CPSC_481___TrackStar
         public Catalogue catWindow = new Catalogue();
         public LogNutrition nutWindow = new LogNutrition();
         public InfoWindow infoWindow = new InfoWindow();
-        public Goals goalsWindow = new Goals();
+        public static Goals goalsWindow = new Goals();
         public Meals mealsWindow = new Meals();
        //public ProgramScreen programScreen = new ProgramScreen();
 

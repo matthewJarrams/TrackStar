@@ -29,6 +29,7 @@ namespace CPSC_481___TrackStar
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             recordType = txtAnswer.Text;
             value = int.Parse(txtValue.Text);
             personalRecord newRecord = new personalRecord(recordType, value);

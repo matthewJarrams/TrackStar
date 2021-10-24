@@ -84,7 +84,7 @@ namespace CPSC_481___TrackStar
             private void Goals_Button_Click(object sender, RoutedEventArgs e)
             {
                 MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-                mainWindow.goalsWindow.Show();
+                MainWindow.goalsWindow.Show();
                 this.Visibility = Visibility.Hidden;
 
             }

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
-        Title="Input" Width="500" Height="250">
+        Title="Input" Width="400" Height="300">
 
-    <Grid Margin="15,15,15,-6">
+    <Grid Margin="10,15,15,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="0" />
+            <ColumnDefinition Width="400" />
 
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -20,16 +20,14 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Image Source="977451.png" Width="32" Grid.RowSpan="3" Margin="20,6,20,19" />
+        <Label Name="lblQuestion" Grid.ColumnSpan="2" Margin="10,5,62,13" Grid.RowSpan="2">Please enter your new record type:</Label>
+        <TextBox Name="txtAnswer" MinWidth="250" Grid.ColumnSpan="2" Margin="10,13,96,80" Grid.Row="1" Grid.RowSpan="2">Record:</TextBox>
 
-        <Label Name="lblQuestion" Grid.Column="1">Please enter your new record type:</Label>
-        <TextBox Name="txtAnswer" Grid.Column="1" Grid.Row="1" MinWidth="250">Record:</TextBox>
-
-        <Label Name="lblValue" Grid.Column="1" Grid.Row="2" Margin="0,7,0,-7">Value (As a numerical value, e.g 20 mins = 20, 150lbs = 150)</Label>
-        <TextBox Name="txtValue" Grid.Column="1" Grid.Row="2" MinWidth="40" Margin="0,33,0,-13">Value:</TextBox>
+        <Label Name="lblValue" Grid.Row="2" Margin="10,33,62,34" Grid.ColumnSpan="2">Value (As a numerical value, e.g 20 mins = 20, 150lbs = 150)</Label>
+        <TextBox Name="txtValue" Grid.Row="2" MinWidth="40" Margin="10,69,171,-1" Grid.ColumnSpan="2">Value:</TextBox>
 
         <WrapPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0"/>
-        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Grid.ColumnSpan="2" Grid.Column="1" Margin="275,71,33,-53" Grid.Row="2"/>
-        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="210,71,56,-53" Content="_Ok" Grid.Column="1" Grid.Row="2"/>
+        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Grid.Column="1" Margin="277,140,48,-64" Grid.Row="2"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="174,140,148,-64" Content="_Ok" Grid.Column="1" Grid.Row="2"/>
     </Grid>
 </Window>

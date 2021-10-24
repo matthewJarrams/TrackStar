@@ -91,6 +91,12 @@
                 <Label Content="Status" HorizontalAlignment="Left" Margin="141,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
                 <Label Content="Record Type" HorizontalAlignment="Left" Margin="14,259,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.581" FontWeight="Bold"/>
                 <Label Content="Value" HorizontalAlignment="Left" Margin="141,259,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
+                <Label Content="Progress Analysis" HorizontalAlignment="Left" Margin="14,450,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
+                <Rectangle Width="350" Margin="14,480,9,0" Grid.ColumnSpan="2"/>
+                <Image x:Name="progressVisuals" Source="977451.png" Grid.ColumnSpan="2" Margin="99,490,118,3" />
+                <Button Content="Next" Grid.Column="1" HorizontalAlignment="Left" Margin="128,545,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+                <Button Content="Previous" HorizontalAlignment="Left" Margin="14,545,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+               
             </Grid>
         </ScrollViewer>
     </Grid>

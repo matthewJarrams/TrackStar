@@ -30,10 +30,11 @@ namespace CPSC_481___TrackStar
         {
             response = txtAnswer.Text;
             Target newGoal = new Target(response);
+            MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             Goals.targetList.Add(newGoal);
-            Goals goalScreen = new Goals();
+            Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
-            goalScreen.Show();
+            goalScreenNew.Show();
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)

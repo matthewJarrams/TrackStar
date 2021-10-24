@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace CPSC_481___TrackStar
 {
     /// <summary>
@@ -33,6 +35,9 @@ namespace CPSC_481___TrackStar
         public Goals()
         {
             InitializeComponent();
+
+           
+
             if (targetList.Count == 0)
             {   
                 targetList.Add(loseWeight);
@@ -96,15 +101,28 @@ namespace CPSC_481___TrackStar
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NewGoalDialog addGoalScreen = new NewGoalDialog();
-            this.Visibility = Visibility.Hidden;
             addGoalScreen.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NewRecordTypeScreen addRecordScreen = new NewRecordTypeScreen();
-            this.Visibility = Visibility.Hidden;
             addRecordScreen.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //progressVisuals.Source = new BitmapImage(new Uri(@"C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\xIcon.png"));
+            GraphStuff graphs = new GraphStuff();
+            this.Visibility = Visibility.Hidden;
+            graphs.Show();
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            progressVisuals.Source = new BitmapImage(new Uri(@"C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\977451.png"));
+
         }
     }
     public class Target
@@ -153,6 +171,10 @@ namespace CPSC_481___TrackStar
 
 
     }
+
+  
+
+
 }
 
 
