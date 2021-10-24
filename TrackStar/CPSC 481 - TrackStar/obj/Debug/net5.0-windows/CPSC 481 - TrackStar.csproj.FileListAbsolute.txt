@@ -102,3 +102,7 @@ C:\Users\richa\Source\Repos\TrackStar4\TrackStar\CPSC 481 - TrackStar\obj\Debug\
 C:\Users\richa\Source\Repos\TrackStar4\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.genruntimeconfig.cache
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\ProgramScreen.g.cs
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\ProgramScreen.baml
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewGoalDialog.g.cs
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewGoalDialog.baml
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewRecordTypeScreen.g.cs
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewRecordTypeScreen.baml

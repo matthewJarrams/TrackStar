@@ -1,0 +1,35 @@
+﻿<Window x:Class="CPSC_481___TrackStar.NewRecordTypeScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481___TrackStar"
+        mc:Ignorable="d"
+        Title="Input" Width="500" Height="250">
+
+    <Grid Margin="15,15,15,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image Source="977451.png" Width="32" Grid.RowSpan="3" Margin="20,6,20,19" />
+
+        <Label Name="lblQuestion" Grid.Column="1">Please enter your new record type:</Label>
+        <TextBox Name="txtAnswer" Grid.Column="1" Grid.Row="1" MinWidth="250">Record:</TextBox>
+
+        <Label Name="lblValue" Grid.Column="1" Grid.Row="2" Margin="0,7,0,-7">Value (As a numerical value, e.g 20 mins = 20, 150lbs = 150)</Label>
+        <TextBox Name="txtValue" Grid.Column="1" Grid.Row="2" MinWidth="40" Margin="0,33,0,-13">Value:</TextBox>
+
+        <WrapPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0"/>
+        <Button IsCancel="True" MinWidth="60" Content="_Cancel" Grid.ColumnSpan="2" Grid.Column="1" Margin="275,71,33,-53" Grid.Row="2"/>
+        <Button IsDefault="True" x:Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="210,71,56,-53" Content="_Ok" Grid.Column="1" Grid.Row="2"/>
+    </Grid>
+</Window>

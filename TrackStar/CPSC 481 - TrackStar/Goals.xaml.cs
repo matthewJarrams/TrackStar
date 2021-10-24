@@ -22,16 +22,30 @@ namespace CPSC_481___TrackStar
     public partial class Goals : Window
     {
         public static List<Target> targetList = new List<Target>();
+        Target loseWeight = new Target("Lose 2lbs a week");
+        Target run = new Target("Run 10km");
+
+        public static List<personalRecord> recordList = new List<personalRecord>();
+        personalRecord bench = new personalRecord("Bench Press (lbs)", 150);
+        personalRecord fiveK = new personalRecord("5km record (mins)", 22);
+
 
         public Goals()
         {
             InitializeComponent();
-            Target loseWeight = new Target("Lose 2lbs a week");
-            Target run = new Target("Run 10km");
-            targetList.Add(loseWeight);
-            targetList.Add(run);
+            if (targetList.Count == 0)
+            {   
+                targetList.Add(loseWeight);
+                targetList.Add(run);
+            }
+            if (recordList.Count == 0)
+            {           
+                recordList.Add(bench);
+                recordList.Add(fiveK);
+            }
 
-            lbTodoList.ItemsSource = targetList;
+            goalListBox.ItemsSource = targetList;
+            recordsListBox.ItemsSource = recordList;
         }
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
@@ -71,15 +85,27 @@ namespace CPSC_481___TrackStar
         {
             Button b = (Button)sender;
             Target p = (Target)b.Tag;
-            MessageBox.Show(p.target);
+            MessageBox.Show("You rock!!");
             p.SetComplete(true);
            
-            lbTodoList.ItemsSource = null;
-            lbTodoList.ItemsSource = targetList;
+            goalListBox.ItemsSource = null;
+            goalListBox.ItemsSource = targetList;
          
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewGoalDialog addGoalScreen = new NewGoalDialog();
+            this.Visibility = Visibility.Hidden;
+            addGoalScreen.Show();
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NewRecordTypeScreen addRecordScreen = new NewRecordTypeScreen();
+            this.Visibility = Visibility.Hidden;
+            addRecordScreen.Show();
+        }
     }
     public class Target
     {
@@ -101,6 +127,29 @@ namespace CPSC_481___TrackStar
             this.message = "Awesome! Goal Completed!";
         }
         
+
+
+    }
+
+    public class personalRecord
+    {
+        public string type { get; set; }
+        public int value { get; set; }
+
+
+        public personalRecord(string type, int value)
+        {
+            this.type = type;
+            this.value = value; 
+        }
+
+
+        public void SetNewValue(int newValue)
+        {
+            value = newValue;
+            
+        }
+
 
 
     }

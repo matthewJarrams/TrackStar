@@ -9,6 +9,8 @@
         Top="0"
         Left="600"
         Title="Goals" Height="700" Width="400">
+
+
     <Grid Background="#FF00FAFF">
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
@@ -29,24 +31,67 @@
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click">
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
-        <ListBox x:Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,58,10,451">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="160" />
-                            <ColumnDefinition Width="100" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding target}" />
-                        <TextBlock Text="{Binding message}" Grid.Row="0" Grid.Column="1"/>
-                        <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" Grid.Row="0" Grid.Column="2"/>
-                       
-                        
-                    </Grid>
-                    
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ScrollViewer HorizontalAlignment="Center" Height="618" Margin="0,5,0,0" VerticalAlignment="Top" Width="400" VerticalScrollBarVisibility="Visible">
+            <Grid Width="373">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="199*"/>
+                    <ColumnDefinition Width="185*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox x:Name="goalListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,104,10,409" Grid.ColumnSpan="2">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="160" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding target}" />
+                                <TextBlock Text="{Binding message}" Grid.Row="0" Grid.Column="1"/>
+                                <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" Grid.Row="0" Grid.Column="2"/>
+
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Label Content="My Goals" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold"/>
+                <Label Content="Goals and Targets" HorizontalAlignment="Left" Margin="103,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                <Button Content="Add new Goal" HorizontalAlignment="Left" Margin="84,81,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
+
+                <ListBox x:Name="recordsListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="7,287,12,0" Height="110" VerticalAlignment="Top" Grid.ColumnSpan="2">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="100" />
+
+
+                                </Grid.ColumnDefinitions>
+
+
+                                <TextBlock Text="{Binding type}" />
+                                <TextBlock Text="{Binding value}" Grid.Row="0" Grid.Column="1"/>
+                                <Button Content="Update" Tag="{Binding .}" Grid.Row="0" Grid.Column="2"/>
+
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Label Content="Personal Bests/Records" HorizontalAlignment="Left" Margin="7,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold"/>
+                <Button Content="Add new type" HorizontalAlignment="Left" Margin="84,262,0,0" VerticalAlignment="Top"  Grid.Column="1" Click="Button_Click_1"/>
+                <Label Content="Goal" HorizontalAlignment="Left" Margin="31,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.608,0.695" FontWeight="Bold"/>
+                <Label Content="Status" HorizontalAlignment="Left" Margin="141,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
+                <Label Content="Record Type" HorizontalAlignment="Left" Margin="14,259,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.581" FontWeight="Bold"/>
+                <Label Content="Value" HorizontalAlignment="Left" Margin="141,259,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

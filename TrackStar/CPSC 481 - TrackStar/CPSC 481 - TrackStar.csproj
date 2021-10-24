@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="977451.png" />
     <None Remove="Catalogue_icon.png" />
     <None Remove="checkMarkIcon.png" />
     <None Remove="diet-icon-24.jpg" />
@@ -21,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="977451.png" />
     <Resource Include="Catalogue_icon.png" />
     <Resource Include="checkMarkIcon.png" />
     <Resource Include="diet-icon-24.jpg" />
