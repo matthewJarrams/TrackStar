@@ -29,10 +29,11 @@ namespace CPSC_481___TrackStar
             public MealPlans[] mps { get; } =
             new MealPlans[]
 
-
             {
-            ("Keto", "","",
-            "This is a keto diet great for feeling like you're losing weight." ),
+            ("Ketogenic Diet", 
+                "-Reduce Carb Intake \n -Burn Fat \n -Lose Weight",
+                "BREAKFAST \n -Chocolate Keto Protein Shake \n -Avacado Toast \n  -Keto Cereal \n LUNCH \n -Keto Broccoli Salad \n -Keto Mac & Cheese \n -Cobb Egg Salad \n DINNER \n -Broiled Salmon \n -Cheesy Bacon Ranch Chicken \n -Garlic Rosemary Pork Chops \n",
+            "The ketogenic diet is a very low carb, high fat diet. It involves drastically reducing carbohydrate intake and replacing it with fat. This reduction in carbs puts your body into a metabolic state called ketosis. When this happens, your body becomes incredibly efficient at burning fat for energy." ),
             ("Weight gain", "","",
             "This is the best way to get SWOLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" ),
             ("veggie", "","",
@@ -49,12 +50,12 @@ namespace CPSC_481___TrackStar
             {
                 public string Description { get; set; }
                 public string Name { get; set; }
-                public string Title { get; set; }
-                public string Length { get; set; }
+                public string Goals { get; set; }
+                public string Meals { get; set; }
 
-                public static implicit operator MealPlans((string Name, string Title, string Length, string Description) info)
+                public static implicit operator MealPlans((string Name, string Goals, string Meals, string Description) info)
                 {
-                    return new MealPlans { Name = info.Name, Title = info.Title, Length = info.Length, Description = info.Description };
+                    return new MealPlans { Name = info.Name, Goals = info.Goals, Meals = info.Meals, Description = info.Description };
                 }
             }
 
@@ -88,7 +89,16 @@ namespace CPSC_481___TrackStar
                 this.Visibility = Visibility.Hidden;
 
             }
-        }
+
+            private void Spec_Meal_Cick(object sender, RoutedEventArgs e)
+            {
+                Button button = sender as Button;
+                MealPlans spec = button.DataContext as MealPlans;
+                SpecMeal specWindow = new SpecMeal(spec);
+                this.Visibility = Visibility.Hidden;
+                specWindow.Show();
+            }
     }
+}
 
 

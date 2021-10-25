@@ -31,6 +31,9 @@
     <Compile Update="NewRecordTypeScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SpecMeal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Window1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NewRecordTypeScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SpecMeal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Window1.xaml">

@@ -43,9 +43,9 @@
                     <WrapPanel>
                         <Grid x:Name="fullBodyGrid" Height="180" Width ="333" Background="#FF7F50">
                             <Label Content ="{Binding Name}" Height="30" Margin="10,7,144,143" Background="White"/>
-                            <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top"></Button>
+                            <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top" Click="Spec_Meal_Cick"></Button>
                             <Label Content ="Description: " Height="30" Margin="10,63,165,87" FontSize="14"/>
-                            <TextBox HorizontalAlignment="Center" Margin="0,90,0,0" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="0,90,0,0" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                         </Grid>
                     </WrapPanel>
                 </DataTemplate>
