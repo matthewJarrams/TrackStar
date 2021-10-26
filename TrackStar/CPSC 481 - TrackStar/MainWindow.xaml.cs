@@ -13,6 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+using LiveCharts;
+using LiveCharts.Wpf;
+
+
 namespace CPSC_481___TrackStar
 {
     /// <summary>
@@ -35,7 +40,34 @@ namespace CPSC_481___TrackStar
             completionBar.Maximum = 30;
             completionBar.Value = Window1.completedWorkouts;
             programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
+
+          
+
+            SeriesCollection = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Weight",
+                    Values = new ChartValues<double> { 160, 165, 170, 150 ,140 }
+                }
+
+            };
+
+            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
+
+
+            //modifying the series collection will animate and update the chart
+
+
+            //modifying any series values will also animate and update the chart
+
+
+            DataContext = this;
         }
+
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

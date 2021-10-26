@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "CPSC 481 - TrackStar/1.0.0": {
         "dependencies": {
+          "LiveCharts": "0.9.7",
           "LiveCharts.Wpf": "0.9.7"
         },
         "runtime": {

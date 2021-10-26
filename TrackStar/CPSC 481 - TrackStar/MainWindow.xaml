@@ -1,6 +1,7 @@
 ﻿<Window x:Class="CPSC_481___TrackStar.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
@@ -41,9 +42,18 @@
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click">
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
+
+        
         <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="234,252,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="120" RenderTransformOrigin="0.5,0.523" Background="#008080" Foreground="White"/>
         <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="90,190,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
-        <Image Margin="34,372,46,68" Stretch="Fill" Source="weightGraph.png" Grid.Column="1"/>
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="50,450,34,10" Grid.ColumnSpan="2" >
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                 <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
 
     </Grid>
 </Window>

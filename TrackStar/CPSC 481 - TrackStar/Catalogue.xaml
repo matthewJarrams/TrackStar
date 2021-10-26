@@ -42,7 +42,7 @@
                     <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top" Click="Button_Click_1"></Button>
                     <Label Content ="Length: 6 weeks" Height="30" Margin="10,37,166,113" FontSize="14"/>
                     <Label Content ="Description:" Height="30" Margin="10,63,165,87" FontSize="14"/>
-                    <TextBox HorizontalAlignment="Center" Margin="0,90,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. Program has 5 workouts a week with 2 rest days" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,90,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. Program has 5 workouts a week with 2 rest days" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                     <Label Content ="Intensity: Medium" Height="30" Margin="9,140,166,10" FontSize="14"/>
                 </Grid>
                 <Grid x:Name="strengthGrid" Height="180" Background="Green">
@@ -50,7 +50,7 @@
                     <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top"></Button>
                     <Label Content ="Length: 8 weeks" Height="30" Margin="10,37,166,113" FontSize="14"/>
                     <Label Content ="Description:" Height="30" Margin="10,63,165,87" FontSize="14"/>
-                    <TextBox HorizontalAlignment="Center" Margin="0,90,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. Workouts involve high wieght low rep sets, 6 days a week, one rest day. " TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,90,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. Workouts involve high wieght low rep sets, 6 days a week, one rest day. " TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                     <Label Content ="Intensity: High" Height="30" Margin="9,140,166,10" FontSize="14"/>
                 </Grid>
                 <Grid x:Name="fullBodyGrid" Height="180" Background="Blue">
@@ -58,7 +58,7 @@
                     <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top"></Button>
                     <Label Content ="Length: 4 weeks (30 days)" Height="30" Margin="10,37,144,113" FontSize="14"/>
                     <Label Content ="Description:" Height="30" Margin="10,63,165,87" FontSize="14"/>
-                    <TextBox HorizontalAlignment="Center" Margin="0,90,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to maintain current muscle mass and to help increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,90,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to maintain current muscle mass and to help increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                     <Label Content ="Intensity: Medium" Height="30" Margin="9,140,166,10" FontSize="14"/>
                 </Grid>
 

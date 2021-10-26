@@ -32,6 +32,11 @@
             <Label x:Name="fatTarg" Content="Target: 50" HorizontalAlignment="Left" Margin="20,154,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
             <Label x:Name="carbTarg" Content="Target: 125" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
             <Label x:Name="calBTarg" Content="Target: 500" HorizontalAlignment="Left" Margin="18,83,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
+            <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="170" Margin="29,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+            <CheckBox Content="Chicken" HorizontalAlignment="Left" Margin="50,360,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="Pork" HorizontalAlignment="Left" Margin="50,314,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+            <CheckBox Content="Cauliflower" HorizontalAlignment="Left" Margin="50,340,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="50,380,0,0" VerticalAlignment="Top"/>
         </Grid>
         <Ellipse x:Name="calorieChecker" HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="calTarget" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.661,-0.523" FontWeight="Bold" FontSize="16"/>
@@ -44,7 +49,7 @@
         <Label x:Name="targetsMetLbl" HorizontalAlignment="Left" Margin="35,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.661,-0.523" FontWeight="Bold" FontSize="16"/>
         <Label Content="Macro Breakdown" HorizontalAlignment="Left" Margin="270,137,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Height="34" RenderTransformOrigin="0.51,0.478"/>
         <Image HorizontalAlignment="Left" Height="76" Margin="278,61,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.409,0.522" Source="/issa-bodytypes-macrobreakdown-ectomorph.jpg"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="Home_Button_Click"/>
 
     </Grid>
 </Window>

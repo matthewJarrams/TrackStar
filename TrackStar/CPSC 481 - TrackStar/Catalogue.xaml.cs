@@ -97,6 +97,7 @@ namespace CPSC_481___TrackStar
                 if (catalogueStack.Children.Contains(strengthGrid) == false)
                 {
                     catalogueStack.Children.Add(strengthGrid);
+                    
                 }
                 
 

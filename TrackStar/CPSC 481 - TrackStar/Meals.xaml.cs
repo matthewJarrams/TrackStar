@@ -28,7 +28,22 @@ namespace CPSC_481___TrackStar
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if (filter.SelectedItem == lowCalorie)
+            {
+                MealPlans[] auxArray = new MealPlans[6];
+                for (int i = 0; i < mps.Length; i++)
+                {
+                    if (i == 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        auxArray[i] = mps[i];
+                    }
+                }
+                lvDataBinding.ItemsSource = auxArray;
+            }
         }
     
 

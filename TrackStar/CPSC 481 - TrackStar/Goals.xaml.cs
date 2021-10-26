@@ -54,7 +54,33 @@ namespace CPSC_481___TrackStar
 
             goalListBox.ItemsSource = targetList;
             recordsListBox.ItemsSource = recordList;
+
+            SeriesCollection = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Weight",
+                    Values = new ChartValues<double> { 160, 165, 170, 150 ,140 }
+                }
+
+            };
+
+            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
+           
+
+            //modifying the series collection will animate and update the chart
+
+
+            //modifying any series values will also animate and update the chart
+
+
+            DataContext = this;
         }
+
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        
+
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -124,7 +150,7 @@ namespace CPSC_481___TrackStar
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            progressVisuals.Source = new BitmapImage(new Uri(@"C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\977451.png"));
+            //progressVisuals.Source = new BitmapImage(new Uri(@"C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\977451.png"));
 
         }
     }

@@ -22,6 +22,7 @@ namespace CPSC_481___TrackStar
         public InfoWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)

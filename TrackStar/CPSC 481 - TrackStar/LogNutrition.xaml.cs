@@ -85,5 +85,18 @@ namespace CPSC_481___TrackStar
             calsConsumed.Text = "0";
             calsBurned.Text = "0";
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            fatBox.Text = "30";
+
+        }
+
+        private void Home_Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            mainWindow.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
+        }
     }
 }
