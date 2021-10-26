@@ -23,20 +23,7 @@
                                 Width="20" BorderBrush="{Binding Color}"  
                                 BorderThickness="3" 
                                 Height="{Binding Data}">
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="Border.Loaded">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation From="0"  
-                                                             Storyboard.TargetName="br" 
-                                 Storyboard.TargetProperty="(FrameworkElement.Height)" 
-                                                              Duration="0:0:02.0">
-
-                                            </DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Border.Triggers>
+                            
                         </Border>
                         <TextBlock HorizontalAlignment="Center" FontWeight="Bold" 
                                    FontFamily="Latha" Text="{Binding Data}">

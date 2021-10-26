@@ -16,9 +16,14 @@
     <None Remove="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
     <None Remove="personal_info_icon.png" />
     <None Remove="Screenshot 2021-10-08 185710.png" />
+    <None Remove="settings-button-icon-15.jpg" />
     <None Remove="target_icon.jpg" />
     <None Remove="weightGraph.png" />
     <None Remove="xIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +35,7 @@
     <Resource Include="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
     <Resource Include="personal_info_icon.png" />
     <Resource Include="Screenshot 2021-10-08 185710.png" />
+    <Resource Include="settings-button-icon-15.jpg" />
     <Resource Include="target_icon.jpg" />
     <Resource Include="weightGraph.png" />
     <Resource Include="xIcon.png" />

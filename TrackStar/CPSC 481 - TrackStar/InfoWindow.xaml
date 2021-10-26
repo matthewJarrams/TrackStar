@@ -29,5 +29,37 @@
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" BorderBrush="Red" BorderThickness="4">
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
+        <Label Content="Micheal Truman" HorizontalAlignment="Left" Margin="21,23,0,0" VerticalAlignment="Top" Height="61" Width="299" FontSize="20" FontWeight="Bold"/>
+        <Button HorizontalAlignment="Left" Margin="320,23,0,0" VerticalAlignment="Top" Height="61" Width="80">
+            <Image x:Name="setImg" Source="settings-button-icon-15.jpg"></Image>
+        </Button>
+        <ListView Name="lbTodoList" HorizontalContentAlignment="Stretch"   Background="#FFF3FD00" Margin="21,115,120,426" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding attribute}" />
+                        <TextBlock Text="{Binding value}" Grid.Row="0" Grid.Column="5"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="280,115,0,0" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.568,0.585"/>
+        <Rectangle HorizontalAlignment="Left" Height="253" Margin="21,324,0,0" Stroke="Black" VerticalAlignment="Top" Width="339" RenderTransformOrigin="0.505,0.473" Fill="#FFF400FF"/>
+        <Label Content="Your TrackStar Stats" HorizontalAlignment="Left" Margin="21,285,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Goal Completed" HorizontalAlignment="Left" Margin="20,340,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Programs Completed" HorizontalAlignment="Left" Margin="20,370,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Workouts Completed" HorizontalAlignment="Left" Margin="21,400,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Meal Plans Chosen" HorizontalAlignment="Left" Margin="20,430,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Days Nutritional Targets Met" HorizontalAlignment="Left" Margin="21,460,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="9" HorizontalAlignment="Left" Margin="312,340,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="2" HorizontalAlignment="Left" Margin="312,370,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="70" HorizontalAlignment="Left" Margin="315,400,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="315,430,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="25" HorizontalAlignment="Left" Margin="315,460,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+
     </Grid>
 </Window>

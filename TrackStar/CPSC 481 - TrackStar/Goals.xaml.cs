@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using LiveCharts;
+using LiveCharts.Wpf;
+
 
 
 namespace CPSC_481___TrackStar
@@ -142,7 +145,7 @@ namespace CPSC_481___TrackStar
         public void SetComplete(bool isComplete)
         {
             complete = isComplete;
-            this.message = "Awesome! Goal Completed!";
+            this.message = "Goal Completed!";
         }
         
 

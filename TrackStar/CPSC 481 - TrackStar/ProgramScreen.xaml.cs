@@ -19,6 +19,8 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class ProgramScreen : Window
     {
+        public static String newProgram;
+       
         public ProgramScreen(int source)
         {
             InitializeComponent();
@@ -48,5 +50,13 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
             catWindow.Show();
         }
+
+        private void setProgramBtn(object sender, RoutedEventArgs e)
+        {
+            newProgram = programTitle.ContentStringFormat;
+             
+        }
+
+       
     }
 }

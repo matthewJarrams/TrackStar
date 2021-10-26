@@ -17,13 +17,18 @@ namespace CPSC_481___TrackStar
     /// <summary>
     /// Interaction logic for Catalogue.xaml
     /// </summary>
+   
+    
     public partial class Catalogue : Window
     {
+        public static String currentProgram = "No Program Currently Selected";
+        
         public Catalogue()
         {
-            InitializeComponent();
+            InitializeComponent();     
         }
 
+      
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
@@ -55,7 +60,7 @@ namespace CPSC_481___TrackStar
 
         private void removeProgramBtn_Click(object sender, RoutedEventArgs e)
         {
-            currentProgram.Content = "No Program Currently Selected";
+            currentProgramLbl.Content = "No Program Currently Selected";
         }
 
         private void viewProgramBtn_Click(object sender, RoutedEventArgs e)

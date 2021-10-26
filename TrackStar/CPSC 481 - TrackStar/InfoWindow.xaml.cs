@@ -19,9 +19,23 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class InfoWindow : Window
     {
+        public static  List<PersonalInfo> userInfoList = new List<PersonalInfo>();
         public InfoWindow()
         {
             InitializeComponent();
+            PersonalInfo weight = new PersonalInfo("Weight (lbs)", "170");
+            PersonalInfo height = new PersonalInfo("Height (meters)", "1.84");
+            PersonalInfo age = new PersonalInfo("age", "24");
+            PersonalInfo gender = new PersonalInfo("Gender", "Male");
+
+            userInfoList.Add(weight);
+            userInfoList.Add(height);
+            userInfoList.Add(age);
+            userInfoList.Add(gender);
+
+            lbTodoList.ItemsSource = userInfoList;
+                
+
         }
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
@@ -54,5 +68,19 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;
 
         }
+
+        public class PersonalInfo
+        {
+            public string attribute { get; set; }
+            public string value { get; set; }
+
+            public PersonalInfo(String attribute, String value)
+            {
+                this.attribute = attribute;
+                this.value = value;
+            }
+
+        }
+
     }
 }
