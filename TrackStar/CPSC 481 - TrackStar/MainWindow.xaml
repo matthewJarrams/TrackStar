@@ -46,7 +46,7 @@
         
         <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="234,252,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="120" RenderTransformOrigin="0.5,0.523" Background="#008080" Foreground="White"/>
         <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="90,190,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
-        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="50,450,34,10" Grid.ColumnSpan="2" >
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="62,374,22,86" Grid.ColumnSpan="2" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisY>

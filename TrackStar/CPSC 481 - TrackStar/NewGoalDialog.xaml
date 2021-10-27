@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
-        Title="Input" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="Manual" 
+        Top="300"
+        Left="610"
+        Title="Input" SizeToContent="WidthAndHeight" 
         ContentRendered="Window_ContentRendered">
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
@@ -21,11 +24,11 @@
         <Image Source="977451.png" Width="32" Height="32" Grid.RowSpan="2" Margin="20,0" />
 
         <Label Name="lblQuestion" Grid.Column="1">Please enter your new goal:</Label>
-        <TextBox Name="txtAnswer" Grid.Column="1" Grid.Row="1" MinWidth="250">Goal:</TextBox>
+        <TextBox Name="txtAnswer" Grid.Column="1" BorderBrush="teal" BorderThickness="2" Background="white" Grid.Row="1" MinWidth="250">Goal:</TextBox>
 
         <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button IsDefault="True" Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60" Margin="0,0,10,0">_Ok</Button>
-            <Button IsCancel="True" MinWidth="60">_Cancel</Button>
+            <Button IsDefault="True" Name="btnDialogOk" BorderBrush="teal" BorderThickness="3" Background="white" Click="btnDialogOk_Click" MinWidth="60" Margin="0,0,10,0">_Ok</Button>
+            <Button IsCancel="True" BorderBrush="teal" BorderThickness="3" Background="white" MinWidth="60">_Cancel</Button>
         </WrapPanel>
     </Grid>
 </Window>

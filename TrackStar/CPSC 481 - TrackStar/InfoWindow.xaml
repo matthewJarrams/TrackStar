@@ -9,7 +9,7 @@
         Top="0"
         Left="600"
         Title="Info" Height="700" Width="400">
-    <Grid Background="#FF00FAFF">
+    <Grid Background="Teal">
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
         </Button>
@@ -30,10 +30,10 @@
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
         <Label Content="Micheal Truman" HorizontalAlignment="Left" Margin="21,23,0,0" VerticalAlignment="Top" Height="61" Width="299" FontSize="20" FontWeight="Bold"/>
-        <Button HorizontalAlignment="Left" Margin="320,23,0,0" VerticalAlignment="Top" Height="61" Width="80">
+        <Button HorizontalAlignment="Left" Margin="300,15,0,0" VerticalAlignment="Top" BorderBrush="Coral" BorderThickness="3" Background="White"  Height="61" Width="80">
             <Image x:Name="setImg" Source="settings-button-icon-15.jpg"></Image>
         </Button>
-        <ListView Name="lbTodoList" HorizontalContentAlignment="Stretch"   Background="#FFF3FD00" Margin="21,115,120,426" >
+        <ListView Name="lbTodoList" HorizontalContentAlignment="Stretch"  BorderBrush="White" BorderThickness="3" Background="Coral" Margin="21,115,120,426" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -47,8 +47,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="280,115,0,0" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.568,0.585"/>
-        <Rectangle HorizontalAlignment="Left" Height="253" Margin="21,324,0,0" Stroke="Black" VerticalAlignment="Top" Width="339" RenderTransformOrigin="0.505,0.473" Fill="#FFF400FF"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="280,115,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.568,0.585"/>
+        <Rectangle HorizontalAlignment="Left" Height="267" Margin="15,317,0,0"  VerticalAlignment="Top" Width="353" RenderTransformOrigin="0.505,0.473"  Fill ="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="253" Margin="21,324,0,0"  VerticalAlignment="Top" Width="339" RenderTransformOrigin="0.505,0.473"  Fill ="Coral"/>
         <Label Content="Your TrackStar Stats" HorizontalAlignment="Left" Margin="21,285,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Label Content="Goal Completed" HorizontalAlignment="Left" Margin="20,340,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Programs Completed" HorizontalAlignment="Left" Margin="20,370,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

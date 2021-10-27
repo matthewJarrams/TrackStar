@@ -12,7 +12,7 @@
         Title="Goals" Height="700" Width="400">
 
 
-    <Grid Background="#FF00FAFF">
+    <Grid Background="Teal">
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
         </Button>
@@ -39,7 +39,7 @@
                     <ColumnDefinition Width="185*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="goalListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,104,10,409" Grid.ColumnSpan="2">
+                <ListBox x:Name="goalListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="10,104,10,409" Grid.ColumnSpan="2">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,2">
@@ -48,9 +48,14 @@
                                     <ColumnDefinition Width="130" />
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+
+
+                                </Grid.RowDefinitions>
                                 <TextBlock Text="{Binding target}" />
                                 <TextBlock Text="{Binding message}" Grid.Row="0" Grid.Column="1"/>
-                                <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" Grid.Row="0" Grid.Column="2"/>
+                                <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2"/>
 
 
                             </Grid>
@@ -60,9 +65,9 @@
                 </ListBox>
                 <Label Content="My Goals" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold"/>
                 <Label Content="Goals and Targets" HorizontalAlignment="Left" Margin="103,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"/>
-                <Button Content="Add new Goal" HorizontalAlignment="Left" Margin="84,81,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
+                <Button Content="Add new Goal" HorizontalAlignment="Left" Margin="84,66,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click" Grid.Column="1" Height="35"/>
 
-                <ListBox x:Name="recordsListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="7,324,12,0" Height="110" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <ListBox x:Name="recordsListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="9,324,5,0" Height="110" VerticalAlignment="Top" Grid.ColumnSpan="2">
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -74,11 +79,16 @@
 
 
                                 </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30" />
+
+
+                                </Grid.RowDefinitions>
 
 
                                 <TextBlock Text="{Binding type}" />
                                 <TextBlock Text="{Binding value}" Grid.Row="0" Grid.Column="1"/>
-                                <Button Content="Update" Tag="{Binding .}" Grid.Row="0" Grid.Column="2"/>
+                                <Button Content="Update" Tag="{Binding .}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2"/>
 
 
                             </Grid>
@@ -87,7 +97,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <Label Content="Personal Bests/Records" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2"/>
-                <Button Content="Add new type" HorizontalAlignment="Left" Margin="84,296,0,0" VerticalAlignment="Top"  Grid.Column="1" Click="Button_Click_1"/>
+                <Button Content="Add new type" HorizontalAlignment="Left" Margin="84,278,0,0" VerticalAlignment="Top"  Grid.Column="1" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_1" Height="38"/>
                 <Label Content="Goal" HorizontalAlignment="Left" Margin="31,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.608,0.695" FontWeight="Bold"/>
                 <Label Content="Status" HorizontalAlignment="Left" Margin="141,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
                 <Label Content="Record Type" HorizontalAlignment="Left" Margin="14,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.581" FontWeight="Bold"/>
@@ -95,7 +105,7 @@
                 <Label Content="Progress Analysis" HorizontalAlignment="Left" Margin="0,434,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
                 <Rectangle Width="350" Margin="14,480,9,0" Grid.ColumnSpan="2"/>
                 <!--<Image x:Name="progressVisuals" Source="weightGraph.png" Grid.ColumnSpan="2" Margin="68,490,57,3" />-->
-                <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="50,450,34,10" Grid.ColumnSpan="2" >
+                <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="50,450,56,10" Grid.ColumnSpan="2" >
                     <lvc:CartesianChart.AxisY>
                         <lvc:Axis Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
@@ -103,8 +113,8 @@
                         <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                 </lvc:CartesianChart>
-                <Button Content="Next" Grid.Column="1" HorizontalAlignment="Left" Margin="151,509,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
-                <Button Content="Previous" HorizontalAlignment="Left" Margin="-4,514,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+                <Button Content="Next" Grid.Column="1" HorizontalAlignment="Left" Margin="123,494,0,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="Button_Click_2" Height="40" Width="52"/>
+                <Button Content="Previous" HorizontalAlignment="Left" Margin="10,494,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_3" Height="40" Width="58"/>
 
             </Grid>
         </ScrollViewer>

@@ -11,21 +11,34 @@
         Title="SpecMeal" Height="700" Width="400">
     <Grid Background="#FF7F50">
         <Label Content="Meal Plan Overview" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,-0.461" FontWeight="Bold" FontSize="18"/>
-        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" Background="#008080" FontWeight="Bold" Click="Back_Button_Click"/>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" BorderBrush ="Teal" BorderThickness="5" Background="white" FontWeight="Bold" Click="Back_Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
-        <ListView Margin="25,116,25,72" Name="lvDataBinding" Background="Black" Width="350">
+        <ListView Margin="25,116,25,45" Name="lvDataBinding" Background="White" Width="350" Height="600">
             <ListView.ItemTemplate>
                 <DataTemplate>
 
                     <WrapPanel>
                         <StackPanel x:Name="catalogueStack"  Background="White">
-                            <Grid x:Name="cardioGrid" Height="490" Width="335" Background="#008080" >
-                                <Label Content ="{Binding Name}" Height="30" Margin="12,10,50,450" FontSize="15" Background="White"/>
-                                <Label Content ="Description:" Height="30" Width="200" Margin="10,10,250,350" FontSize="13" RenderTransformOrigin="0.49,0.707"/>
-                                <TextBox x:Name="descripBox" IsReadOnly ="True"  HorizontalAlignment="Left" Text="{Binding Description}" TextWrapping="Wrap" Width="312" Height="126" Margin="12,60,0,250"/>
-                                <Label Content ="Goals:" Height="30" Margin="12,10,250,20" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
+                            <Grid x:Name="cardioGrid" Height="490" Width="320" Background="#008080" >
+                                <Button Content="Set Meal Plan" HorizontalAlignment="Center" Margin="0,10,-175,0" VerticalAlignment="Top" Width="100" BorderBrush ="Coral" BorderThickness="5" Background="white" Height="40">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="7"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                                <Label Content ="{Binding Name}" Height="35" Margin="12,10,50,450" FontSize="17" FontWeight="Bold" />
+                                <Label Content ="Description:" Height="30" Width="100" Margin="10,10,230,350" FontSize="13" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
+                                <TextBox x:Name="descripBox" IsReadOnly ="True"  HorizontalAlignment="Left" Text="{Binding Description}" TextWrapping="Wrap" Width="300" Height="126" Margin="12,60,-100,250"/>
+                                <Label Content ="Goals:" Height="30" FontWeight="Bold" Margin="12,10,250,20" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
                                 <TextBox x:Name="goals_box" IsReadOnly ="True"  HorizontalAlignment="Left" Text="{Binding Goals}" TextWrapping="Wrap"  Width="176" Height="67" Margin="12,80,0,0"/>
-                                <Label Content ="Suggested Meals:" Height="30" Margin="12,5,50,-200" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
+                                <Label Content ="Suggested Meals:" Height="30" FontWeight="Bold" Margin="12,5,50,-200" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
                                 <ScrollViewer HorizontalAlignment="Left" Background="White" Height="125"  Margin="12,80,0,-280"  Width="200" VerticalScrollBarVisibility="Visible">
                                     <TextBox x:Name="meals_box" IsReadOnly ="True"  HorizontalAlignment="Left" Text="{Binding Meals}"  Width="200" Height="125" Margin="0,0,0,0"/>
                                 </ScrollViewer>
@@ -37,6 +50,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Set Meal Plan" HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top" Width="96"/>
     </Grid>
 </Window>

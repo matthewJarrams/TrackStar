@@ -48,6 +48,9 @@ namespace CPSC_481___TrackStar
                 new LineSeries
                 {
                     Title = "Weight",
+                    Fill = Brushes.Transparent,
+                    Stroke = Brushes.Coral,
+                    Opacity = 0.2,
                     Values = new ChartValues<double> { 160, 165, 170, 150 ,140 }
                 }
 

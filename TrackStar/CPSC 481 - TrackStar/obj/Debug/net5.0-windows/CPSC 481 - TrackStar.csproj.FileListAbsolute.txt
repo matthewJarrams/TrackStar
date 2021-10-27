@@ -122,3 +122,5 @@ C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windo
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SpecMeal.baml
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.dll
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.Wpf.dll
+C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.dll
+C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.Wpf.dll

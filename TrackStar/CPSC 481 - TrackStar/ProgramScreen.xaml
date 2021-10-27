@@ -5,20 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
+        WindowStartupLocation="Manual" 
+        Top="0"
+        Left="600"
         Title="Program Screen" Height="700" Width="400">
     <Grid>
         <Label Content="Program Overview" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,-0.461" FontWeight="Bold" FontSize="18"/>
-        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="back_Btn"/>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="back_Btn" FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="604" Margin="10,60,0,0" VerticalAlignment="Top" Width="370" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="catalogueStack"  Background="White">
-                <Grid x:Name="cardioGrid" Height="640" Background="Red" RenderTransformOrigin="0.266,0.544">
-                    <Label x:Name="programTitle" Content ="Cardio Burner Program" Height="30" Margin="88,10,88,600" Background="White" FontSize="16"/>
+                <Grid x:Name="cardioGrid" Height="640" Background="teal" RenderTransformOrigin="0.266,0.544">
+                    <Label x:Name="programTitle" Content ="Cardio Burner Program" Margin="25,7,131,591"  FontSize="16" FontWeight="Bold"/>
                     <Label Content ="Length:" Height="30" Margin="12,40,164,570" FontSize="14"/>
                     <Label Content ="Description:" Height="30" Margin="10,125,165,485" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
-                    <TextBox x:Name="descripBox" HorizontalAlignment="Left" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. Whilst also helping you get fitter!&#10;&#10; Program for intermediate gym goers." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="126" Margin="12,155,0,0"/>
-                    <TextBox x:Name="lengthDescrip" HorizontalAlignment="Left" Text="6 week program with 5 workouts to complete per week, allowing you to take 2 rest days." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="50" Margin="12,70,0,0"/>
+                    <TextBox x:Name="descripBox" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. Whilst also helping you get fitter!&#10;&#10; Program for intermediate gym goers." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="126" Margin="12,155,0,0"/>
+                    <TextBox x:Name="lengthDescrip" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" Text="6 week program with 5 workouts to complete per week, allowing you to take 2 rest days." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="50" Margin="12,70,0,0"/>
                     <Label Content ="Goals" Height="30" Margin="10,286,165,324" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
-                    <TextBox x:Name="goals_box" HorizontalAlignment="Left" Text="-Increase fitness levels &#10;-Become a better runner/cycler&#10;-Burn calories! " TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="67" Margin="11,313,0,0">
+                    <TextBox x:Name="goals_box" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" Text="-Increase fitness levels &#10;-Become a better runner/cycler&#10;-Burn calories! " TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="67" Margin="11,313,0,0">
                         <TextBox.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -28,7 +37,7 @@
                             </TransformGroup>
                         </TextBox.RenderTransform>
                     </TextBox>
-                    <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,418,166,47">
+                    <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,418,166,47" BorderBrush="#FFF5F6F9">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="0,2">
@@ -43,9 +52,27 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Label Content ="Workouts" Height="30" Margin="10,388,165,222" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
-                    <Button Content="Next Day" HorizontalAlignment="Left" Margin="226,434,0,0" VerticalAlignment="Top" Width="77" Click="Button_Click"/>
-                    <Button Content="Prevous Day" HorizontalAlignment="Left" Margin="226,459,0,0" VerticalAlignment="Top" Width="77" Click="Button_Click_1"/>
-                    <Button Content="Set Program" Margin="270,17,8,0" VerticalAlignment="Top" Click="setProgramBtn"/>
+                    <Button Content="Next Day" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="226,434,0,0" VerticalAlignment="Top" Width="77" Click="Button_Click" Height="45" FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="Prevous Day" HorizontalAlignment="Left" Margin="226,496,0,0" BorderBrush ="Coral" BorderThickness="5" Background="white" VerticalAlignment="Top" Width="77" Click="Button_Click_1" Height="45" FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Content="Set Program" Margin="235,7,29,0" VerticalAlignment="Top" BorderBrush ="Coral" BorderThickness="5" Background="white" Click="setProgramBtn" Height="42" FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
