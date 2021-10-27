@@ -112,8 +112,6 @@ C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\ne
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewGoalDialog.baml
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewRecordTypeScreen.baml
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\ProgramScreen.baml
-C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.g.cs
-C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.baml
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.g.cs
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.baml
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SpecMeal.g.cs
@@ -124,3 +122,5 @@ C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windo
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.Wpf.dll
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.dll
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.Wpf.dll
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.g.cs
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.baml

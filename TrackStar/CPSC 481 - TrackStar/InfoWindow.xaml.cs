@@ -82,5 +82,13 @@ namespace CPSC_481___TrackStar
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow setWindow = new SettingsWindow();
+            this.Visibility = Visibility.Hidden;
+            setWindow.Show();
+        }
+
+
     }
 }

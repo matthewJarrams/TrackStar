@@ -30,7 +30,7 @@
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
         <Label Content="Micheal Truman" HorizontalAlignment="Left" Margin="21,23,0,0" VerticalAlignment="Top" Height="61" Width="299" FontSize="20" FontWeight="Bold"/>
-        <Button HorizontalAlignment="Left" Margin="300,15,0,0" VerticalAlignment="Top" BorderBrush="Coral" BorderThickness="3" Background="White"  Height="61" Width="80">
+        <Button HorizontalAlignment="Left" Margin="300,15,0,0" VerticalAlignment="Top" BorderBrush="Coral" BorderThickness="3" Background="White"  Height="61" Width="80" Click="Button_Click">
             <Image x:Name="setImg" Source="settings-button-icon-15.jpg"></Image>
         </Button>
         <ListView Name="lbTodoList" HorizontalContentAlignment="Stretch"  BorderBrush="White" BorderThickness="3" Background="Coral" Margin="21,115,120,426" >

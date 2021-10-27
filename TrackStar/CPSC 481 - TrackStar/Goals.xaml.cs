@@ -144,10 +144,7 @@ namespace CPSC_481___TrackStar
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //progressVisuals.Source = new BitmapImage(new Uri(@"C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\xIcon.png"));
-            GraphStuff graphs = new GraphStuff();
-            this.Visibility = Visibility.Hidden;
-            graphs.Show();
+            
 
         }
 

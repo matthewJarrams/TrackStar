@@ -10,7 +10,7 @@
         Left="600"
         Title="Meals" Height="700" Width="400">
     <Grid Background="#008080">
-        <ComboBox x:Name="filter" Margin="240,99,23,541" SelectionChanged="ComboBox_SelectionChanged">
+        <ComboBox x:Name="filter" Margin="10,105,240,535" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem x:Name="lowCarb">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="Red">Low Carb</TextBlock>
@@ -28,11 +28,11 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Filter: " HorizontalAlignment="Left" Margin="179,99,0,0" VerticalAlignment="Top" Height="44" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Filter by health goals " HorizontalAlignment="Left" Margin="8,77,0,0" VerticalAlignment="Top" Height="44" FontSize="14" FontWeight="Bold" Width="192" Foreground="White"/>
         <Label Content="Current Meal Plan" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="18"/>
         <Label x:Name="currentProgram" Content="None" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="230" FontSize="14" Background="White"/>
-        <Button x:Name="viewProgramBtn" Content="View" HorizontalAlignment="Left" Margin="256,45,0,0" VerticalAlignment="Top" Height="29" Width="48" />
-        <Button x:Name="removeProgramBtn" Content="Remove" HorizontalAlignment="Left" Margin="320,45,0,0" VerticalAlignment="Top" Height="29" Width="57" />
+        <Button x:Name="viewProgramBtn" Content="View" HorizontalAlignment="Left" Margin="256,45,0,0" VerticalAlignment="Top" BorderBrush ="LightGreen"  BorderThickness="5" Height="32" Width="134" />
+        <Button x:Name="removeProgramBtn" Content="Remove" HorizontalAlignment="Left" Margin="256,117,0,0" BorderBrush ="Red"  BorderThickness="5" VerticalAlignment="Top" Height="32" Width="134" />
 
 
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" BorderBrush="Red" BorderThickness="4">
