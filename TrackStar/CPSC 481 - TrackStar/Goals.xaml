@@ -39,13 +39,13 @@
                     <ColumnDefinition Width="185*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="goalListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="10,104,10,409" Grid.ColumnSpan="2">
+                <ListBox x:Name="goalListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="10,104,10,0" VerticalAlignment ="Top" Grid.ColumnSpan="2" Height="122">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,2">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
-                                    <ColumnDefinition Width="130" />
+                                    <ColumnDefinition Width="100" />
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
@@ -74,7 +74,7 @@
                             <Grid Margin="0,2">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="140" />
-                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="80" />
                                     <ColumnDefinition Width="100" />
 
 

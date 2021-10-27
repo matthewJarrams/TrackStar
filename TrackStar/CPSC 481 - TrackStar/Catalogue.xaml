@@ -31,41 +31,44 @@
         </Button>
         <Label Content="Current Program" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="160" FontWeight="Bold" FontSize="18"/>
         <Label x:Name="currentProgramLbl" Content="Balanced Full Body Workout" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="230" FontSize="14" Background="White" Height="29"/>
-        <Button x:Name="viewProgramBtn" Content="View" HorizontalAlignment="Left" Margin="256,45,0,0" VerticalAlignment="Top" Height="29" Width="48" Click="viewProgramBtn_Click"/>
-        <Button x:Name="removeProgramBtn" Content="Remove" HorizontalAlignment="Left" Margin="320,45,0,0" VerticalAlignment="Top" Height="29" Width="57" Click="removeProgramBtn_Click"/>
+        <Button x:Name="viewProgramBtn" Content="View" HorizontalAlignment="Left" Margin="256,45,0,0" VerticalAlignment="Top" Height="29" Width="114" Click="viewProgramBtn_Click"/>
+        <Button x:Name="removeProgramBtn" Content="Remove" HorizontalAlignment="Left" Margin="256,101,0,0" VerticalAlignment="Top" Height="31" Width="114" Click="removeProgramBtn_Click"/>
 
 
         <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="470" Margin="10,150,0,0" VerticalAlignment="Top" Width="360" VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="catalogueStack"  Background="White">
-                <Grid x:Name="cardioGrid" Height="180" Background="Red">
-                    <Label Content ="Cardio Burner Program" Height="30" Margin="10,7,166,143" Background="White"/>
+            <StackPanel x:Name="catalogueStack" Background="Black">
+                <Grid x:Name="cardioGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="312">
+                    <Label Content ="Cardio Burner Program" Height="30" Margin="0,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="185" FontWeight="Bold" FontFamily="Cambria"/>
                     <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top" Click="Button_Click_1"></Button>
-                    <Label Content ="Length: 6 weeks" Height="30" Margin="10,37,166,113" FontSize="14"/>
-                    <Label Content ="Description:" Height="30" Margin="10,63,165,87" FontSize="14"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,90,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. Program has 5 workouts a week with 2 rest days" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
-                    <Label Content ="Intensity: Medium" Height="30" Margin="9,140,166,10" FontSize="14"/>
+                    <Label Content ="Length: 6 weeks" Height="30" Margin="8,42,168,115" FontSize="14" FontWeight="Bold"/>
+                    <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,98,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="34"/>
+                    <Label Content ="Intensity: Medium" Height="30" Margin="0,150,176,0" FontSize="14" FontWeight="Bold"/>
                 </Grid>
-                <Grid x:Name="strengthGrid" Height="180" Background="Green">
-                    <Label Content ="Build! Build! Build!" Height="30" Margin="10,7,166,143" Background="White"/>
+                <Grid Width="330" Height="10"/>
+                <Grid x:Name="strengthGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="317">
+                    <Label Content ="Build! Build! Build!" Margin="0,1,0,143" FontFamily="Cambria" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Width="194"/>
                     <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top"></Button>
-                    <Label Content ="Length: 8 weeks" Height="30" Margin="10,37,166,113" FontSize="14"/>
-                    <Label Content ="Description:" Height="30" Margin="10,63,165,87" FontSize="14"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,90,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. Workouts involve high wieght low rep sets, 6 days a week, one rest day. " TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
-                    <Label Content ="Intensity: High" Height="30" Margin="9,140,166,10" FontSize="14"/>
+                    <Label Content ="Length: 8 weeks" Height="30" Margin="8,42,168,108" FontSize="14" FontWeight="Bold"/>
+                    <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Stretch" Margin="0,100,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. " TextWrapping="Wrap" VerticalAlignment="Top" Width="327" Height="33"/>
+                    <Label Content ="Intensity: High" Height="30" Margin="0,150,168,0" FontSize="14" FontWeight="Bold"/>
                 </Grid>
-                <Grid x:Name="fullBodyGrid" Height="180" Background="Blue">
-                    <Label Content ="Balanced Full Body Workout" Height="30" Margin="10,7,144,143" Background="White"/>
+                <Grid Width="330" Height="10"/>
+                <Grid x:Name="fullBodyGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="313">
+                    <Label Content ="Balanced Full Body Workout" Height="30" Margin="0,7,144,143" FontSize="16" FontFamily="Cambria" FontWeight="Bold" HorizontalAlignment="Left"/>
                     <Button Content="View" Margin="254,0,0,0" Height="37" VerticalAlignment="Top"></Button>
-                    <Label Content ="Length: 4 weeks (30 days)" Height="30" Margin="10,37,144,113" FontSize="14"/>
-                    <Label Content ="Description:" Height="30" Margin="10,63,165,87" FontSize="14"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,90,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to maintain current muscle mass and to help increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
-                    <Label Content ="Intensity: Medium" Height="30" Margin="9,140,166,10" FontSize="14"/>
+                    <Label Content ="Length: 4 weeks (30 days)" Margin="8,42,112,110" FontSize="14" FontWeight="Bold"/>
+                    <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,100,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                    <Label Content ="Intensity: Medium" Height="30" Margin="0,150,168,0" FontSize="14" FontWeight="Bold"/>
                 </Grid>
+                <Grid Width="330" Height="10"/>
 
 
             </StackPanel>
         </ScrollViewer>
-        <ComboBox x:Name="filter" Margin="240,99,23,534" SelectionChanged="ComboBox_SelectionChanged">
+        <ComboBox x:Name="filter" Margin="10,107,253,526" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem x:Name="high">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="Red">High</TextBlock>
@@ -83,7 +86,7 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Intensity: " HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" Height="44" FontSize="18"/>
+        <Label Content="Choose Intensity Level: " HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Height="44" FontSize="14"/>
 
     </Grid>
 </Window>

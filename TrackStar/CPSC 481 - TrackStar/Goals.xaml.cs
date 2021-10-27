@@ -37,6 +37,7 @@ namespace CPSC_481___TrackStar
 
         public Goals()
         {
+           
             InitializeComponent();
 
            
