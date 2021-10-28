@@ -9,10 +9,10 @@
     <Grid Background ="Teal">
         <Label  Content="Settings" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="41"/>
         <Rectangle HorizontalAlignment="Center" Height="476" Margin="0,70,0,0" Stroke="Black" VerticalAlignment="Top" Width="336" Fill="#FF7F50"/>
-        <Label Content="All Notifications" HorizontalAlignment="Left" Margin="72,112,0,0" VerticalAlignment="Top" Height="44" Width="108"/>
+        <Label Content="All Notifications" HorizontalAlignment="Left" Margin="63,112,0,0" VerticalAlignment="Top" Height="44" Width="137" FontWeight="Bold" FontSize="14"/>
         <RadioButton x:Name="on" Content="On" HorizontalAlignment="Left" Margin="216,118,0,0" VerticalAlignment="Top" Checked="on_Checked" />
         <RadioButton x:Name="off" Content="Off" HorizontalAlignment="Left" Margin="295,118,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-        <Label Content="Workout Reminders" HorizontalAlignment="Left" Margin="72,161,0,0" VerticalAlignment="Top" Height="43" Width="128"/>
+        <Label Content="Workout Reminders" HorizontalAlignment="Left" Margin="63,161,0,0" VerticalAlignment="Top" Height="43" Width="137" FontWeight="Bold" FontSize="14"/>
         <ComboBox x:Name="workoutReminders" HorizontalAlignment="Left" Margin="216,167,0,0" VerticalAlignment="Top" Width="115" Height="21">
             <ComboBoxItem x:Name="off1">
                 <StackPanel Orientation="Horizontal">
@@ -37,7 +37,7 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Meal Reminders" HorizontalAlignment="Left" Margin="72,228,0,0" VerticalAlignment="Top" Height="44" Width="128"/>
+        <Label Content="Meal Reminders" HorizontalAlignment="Left" Margin="63,228,0,0" VerticalAlignment="Top" Height="44" Width="137" FontSize="14" FontWeight="Bold"/>
         <ComboBox x:Name="mealReminders" HorizontalAlignment="Left" Margin="216,234,0,0" VerticalAlignment="Top" Width="115" Height="21">
             <ComboBoxItem x:Name="off2">
                 <StackPanel Orientation="Horizontal">
@@ -62,7 +62,7 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Notify of New &#10;Programs and Plans" HorizontalAlignment="Left" Margin="72,286,0,0" VerticalAlignment="Top" Height="44" Width="128"/>
+        <Label Content="Notify of New &#10;Programs and Plans" HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Height="44" Width="137" FontSize="14" FontWeight="Bold"/>
         <ComboBox x:Name="newPrograms" HorizontalAlignment="Left" Margin="216,298,0,0" VerticalAlignment="Top" Width="115" Height="20">
             <ComboBoxItem x:Name="off3">
                 <StackPanel Orientation="Horizontal">
@@ -87,7 +87,7 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Goal/Personal &#10;Best Movtivation &#10;Notifications " HorizontalAlignment="Left" Margin="72,342,0,0" VerticalAlignment="Top" Height="60" Width="128"/>
+        <Label Content="Goal/Personal &#10;Best Movtivation &#10;Notifications " HorizontalAlignment="Left" Margin="63,342,0,0" VerticalAlignment="Top" Height="72" Width="137" FontWeight="Bold" FontSize="14"/>
         <Image Margin="119,478,119,138" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png"/>
         <ComboBox x:Name="motivationalMessages" HorizontalAlignment="Left" Margin="216,354,0,0" VerticalAlignment="Top" Width="115" Height="20">
             <ComboBoxItem x:Name="off4">
@@ -113,7 +113,7 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Click"/>
+        <Button BorderBrush ="Red"  BorderThickness= "5" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Click"/>
 
 
 

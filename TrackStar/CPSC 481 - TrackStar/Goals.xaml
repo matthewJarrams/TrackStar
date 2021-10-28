@@ -105,7 +105,7 @@
                 <Label Content="Progress Analysis" HorizontalAlignment="Left" Margin="9,449,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
                 <Rectangle Width="350" Margin="14,480,9,0" Grid.ColumnSpan="2"/>
                 <!--<Image x:Name="progressVisuals" Source="weightGraph.png" Grid.ColumnSpan="2" Margin="68,490,57,3" />-->
-                <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="75,468,31,-8" Grid.ColumnSpan="2" >
+                <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="68,480,38,0" Grid.ColumnSpan="2" >
                     <lvc:CartesianChart.AxisY>
                         <lvc:Axis Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
                     </lvc:CartesianChart.AxisY>

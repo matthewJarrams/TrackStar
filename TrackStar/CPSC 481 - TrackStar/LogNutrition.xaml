@@ -26,17 +26,42 @@
             <TextBox x:Name="fatBox" HorizontalAlignment="Left" Margin="200,156,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
             <Label Content="Protein (grams): " HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
             <TextBox x:Name="proBox" HorizontalAlignment="Left" Margin="200,189,0,0" Text= "0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
-            <Button Content="Enter" HorizontalAlignment="Left" Margin="227,230,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click" Grid.ColumnSpan="2"/>
+            <Button BorderBrush ="#FF7F50"  BorderThickness="5" Content="Enter" HorizontalAlignment="Left" Margin="268,232,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click" Grid.ColumnSpan="2"/>
             <Label x:Name="calConTarg" Content="Target: 2500" HorizontalAlignment="Left" Margin="18,48,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
             <Label x:Name="proTarg" Content="Target: 75" HorizontalAlignment="Left" Margin="20,187,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
             <Label x:Name="fatTarg" Content="Target: 50" HorizontalAlignment="Left" Margin="20,154,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
             <Label x:Name="carbTarg" Content="Target: 125" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
             <Label x:Name="calBTarg" Content="Target: 500" HorizontalAlignment="Left" Margin="18,83,0,0" VerticalAlignment="Top" Width="101" Grid.Column="1" FontWeight="Bold"/>
-            <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="170" Margin="29,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
-            <CheckBox Content="Chicken" HorizontalAlignment="Left" Margin="50,360,0,0" VerticalAlignment="Top"/>
-            <CheckBox Content="Pork" HorizontalAlignment="Left" Margin="50,314,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
-            <CheckBox Content="Cauliflower" HorizontalAlignment="Left" Margin="50,340,0,0" VerticalAlignment="Top"/>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="50,380,0,0" VerticalAlignment="Top"/>
+
+            <ListBox x:Name="mealListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="10,311,10,0" VerticalAlignment ="Top" Grid.ColumnSpan="2" Height="183">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250" />
+                                <ColumnDefinition Width="50" />
+
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+
+
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding meal}" />
+
+                            <CheckBox Tag = "{Binding Path=.}" Click="CheckBox_Click" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="1">
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>  
+
+
+                        </Grid>
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBox HorizontalAlignment="Left" Margin="10,242,0,0" Text="Check off any meals/foods you have eaten today. Tap any input box to edit the amounts &#10; for extra foods not listed. Press enter when completed. " TextWrapping="Wrap" VerticalAlignment="Top" Width="245" Height="64" Foreground="White" FontSize="11" Background="#008080"/>
         </Grid>
         <Ellipse x:Name="calorieChecker" HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="calTarget" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.661,-0.523" FontWeight="Bold" FontSize="16"/>
@@ -49,7 +74,7 @@
         <Label x:Name="targetsMetLbl" HorizontalAlignment="Left" Margin="35,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.661,-0.523" FontWeight="Bold" FontSize="16"/>
         <Label Content="Macro Breakdown" HorizontalAlignment="Left" Margin="270,137,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Height="34" RenderTransformOrigin="0.51,0.478"/>
         <Image HorizontalAlignment="Left" Height="76" Margin="278,61,0,0" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.409,0.522" Source="/issa-bodytypes-macrobreakdown-ectomorph.jpg"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="Home_Button_Click"/>
+        <Button Content="Back" BorderBrush ="Red"  BorderThickness="5" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="Home_Button_Click"/>
 
     </Grid>
 </Window>
