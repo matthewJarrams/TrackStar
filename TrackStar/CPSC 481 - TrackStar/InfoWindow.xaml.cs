@@ -25,7 +25,7 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
             PersonalInfo weight = new PersonalInfo("Weight (lbs)", "170");
             PersonalInfo height = new PersonalInfo("Height (meters)", "1.84");
-            PersonalInfo age = new PersonalInfo("age", "24");
+            PersonalInfo age = new PersonalInfo("Age", "24");
             PersonalInfo gender = new PersonalInfo("Gender", "Male");
 
             userInfoList.Add(weight);

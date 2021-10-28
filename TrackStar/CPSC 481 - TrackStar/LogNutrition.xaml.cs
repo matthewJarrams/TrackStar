@@ -19,10 +19,34 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class LogNutrition : Window
     {
+        public static List<Food> foodList = new List<Food>();
+        Food chickenStew = new Food("Chicken Stew", 1000, 30, 30,20);
+        Food steakVeggies = new Food("Steak with Cauliflower and Brocolli", 1200, 3, 35, 40);
+        Food porkChops = new Food("Prok Chop with Rice", 1300, 40, 35, 20);
+        Food tofuPasta = new Food("Tofu Cheese Pasta", 500, 20, 30, 10);
+        Food ceaserSalad = new Food("Ceaser Salad with low fat dressing", 200, 5, 10, 0);
+        Food fishRice = new Food("White fish and rice", 700, 30, 15, 25);
+
+        public static int cumCals = 0;
+        public static int cumCarbs = 0;
+        public static int cumFat = 0;
+        public static int cumProtien = 0;
+
+
         public LogNutrition()
         {
             InitializeComponent();
+
             datePicker.SelectedDate = DateTime.Today;
+            foodList.Add(chickenStew);
+            foodList.Add(steakVeggies);
+            foodList.Add(porkChops);
+            foodList.Add(tofuPasta);
+            foodList.Add(ceaserSalad);
+            foodList.Add(fishRice);
+
+            mealListBox.ItemsSource = foodList;
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -84,13 +108,18 @@ namespace CPSC_481___TrackStar
         {
             calsConsumed.Text = "0";
             calsBurned.Text = "0";
+            proBox.Text = "0";
+            carbBox.Text = "0";
+            fatBox.Text = "0";
+
+
+            cumCals = 0;
+            cumCarbs = 0;
+            cumFat = 0;
+            cumProtien = 0;
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            fatBox.Text = "30";
-
-        }
+       
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -98,5 +127,51 @@ namespace CPSC_481___TrackStar
             mainWindow.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
         }
+
+        
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox b = (CheckBox)sender;
+            Food p = (Food)b.Tag;
+
+            cumCals += p.calories;
+            cumCarbs += p.carbs;
+            cumFat += p.fat;
+            cumProtien += p.protien;
+
+            calsConsumed.Text = cumCals.ToString();
+            carbBox.Text = cumCarbs.ToString();
+            fatBox.Text = cumFat.ToString();
+            proBox.Text = cumProtien.ToString();
+
+
+
+        }
+    }
+    public class Food
+    {
+        public string meal { get; set; }
+        public bool eaten = false;
+        public int calories = 0;
+        public int carbs = 0;
+        public int fat = 0;
+        public int protien = 0;
+      
+
+
+        public Food(string meal, int calories, int carbs, int fat, int protein)
+        {
+            this.meal = meal;
+            this.calories = calories;
+            this.carbs = carbs;
+            this.fat = fat;
+            this.protien = protein;
+        }
+
+
+        
+
+
+
     }
 }
