@@ -124,3 +124,5 @@ C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\ne
 C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.Wpf.dll
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.g.cs
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.baml
+C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.g.cs
+C:\Users\Owen\source\repos\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.baml

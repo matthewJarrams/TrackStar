@@ -55,7 +55,14 @@
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="{Binding target}" />
                                 <TextBlock Text="{Binding message}" Grid.Row="0" Grid.Column="1"/>
-                                <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2"/>
+                                <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="7"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+
 
 
                             </Grid>
@@ -65,7 +72,13 @@
                 </ListBox>
                 <Label Content="My Goals" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold"/>
                 <Label Content="Goals and Targets" HorizontalAlignment="Left" Margin="103,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2"/>
-                <Button Content="Add new Goal" HorizontalAlignment="Left" Margin="84,66,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click" Grid.Column="1" Height="35"/>
+                <Button Content="Add new Goal" HorizontalAlignment="Left" Margin="84,66,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click" Grid.Column="1" Height="35">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
 
                 <ListBox x:Name="recordsListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="9,324,5,0" Height="110" VerticalAlignment="Top" Grid.ColumnSpan="2">
 
@@ -88,7 +101,14 @@
 
                                 <TextBlock Text="{Binding type}" />
                                 <TextBlock Text="{Binding value}" Grid.Row="0" Grid.Column="1"/>
-                                <Button Content="Update" Tag="{Binding .}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2"/>
+                                <Button Content="Update" Tag="{Binding .}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="7"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+
 
 
                             </Grid>
@@ -97,7 +117,14 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <Label Content="Personal Bests/Records" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2"/>
-                <Button Content="Add new type" HorizontalAlignment="Left" Margin="84,278,0,0" VerticalAlignment="Top"  Grid.Column="1" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_1" Height="38"/>
+                <Button Content="Add new type" HorizontalAlignment="Left" Margin="84,278,0,0" VerticalAlignment="Top"  Grid.Column="1" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_1" Height="38">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
                 <Label Content="Goal" HorizontalAlignment="Left" Margin="31,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.608,0.695" FontWeight="Bold"/>
                 <Label Content="Status" HorizontalAlignment="Left" Margin="141,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold"/>
                 <Label Content="Record Type" HorizontalAlignment="Left" Margin="14,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.581" FontWeight="Bold"/>
@@ -107,14 +134,28 @@
                 <!--<Image x:Name="progressVisuals" Source="weightGraph.png" Grid.ColumnSpan="2" Margin="68,490,57,3" />-->
                 <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="68,480,38,0" Grid.ColumnSpan="2" >
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
+                        <lvc:Axis Title="Weight (LBS)" Foreground="Coral"></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
+                        <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Coral"></lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                 </lvc:CartesianChart>
-                <Button Content="Next" Grid.Column="1" HorizontalAlignment="Left" Margin="123,494,0,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="Button_Click_2" Height="40" Width="52"/>
-                <Button Content="Previous" HorizontalAlignment="Left" Margin="10,494,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_3" Height="40" Width="58"/>
+                <Button Content="Next" Grid.Column="1" HorizontalAlignment="Left" Margin="123,494,0,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="Button_Click_2" Height="40" Width="52">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <Button Content="Previous" HorizontalAlignment="Left" Margin="10,494,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_3" Height="40" Width="58">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
 
             </Grid>
         </ScrollViewer>

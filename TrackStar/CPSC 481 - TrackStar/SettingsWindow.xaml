@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
+        WindowStartupLocation="Manual" 
+        Top="0"
+        Left="600"
         Title="SettingsWindow" Height="700" Width="400">
     <Grid Background ="Teal">
         <Label  Content="Settings" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="41"/>
@@ -88,7 +91,7 @@
             </ComboBoxItem>
         </ComboBox>
         <Label Content="Goal/Personal &#10;Best Movtivation &#10;Notifications " HorizontalAlignment="Left" Margin="63,342,0,0" VerticalAlignment="Top" Height="72" Width="137" FontWeight="Bold" FontSize="14"/>
-        <Image Margin="119,478,119,138" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png"/>
+        <Image Margin="119,446,119,170" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png"/>
         <ComboBox x:Name="motivationalMessages" HorizontalAlignment="Left" Margin="216,354,0,0" VerticalAlignment="Top" Width="115" Height="20">
             <ComboBoxItem x:Name="off4">
                 <StackPanel Orientation="Horizontal">
@@ -113,7 +116,13 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Button BorderBrush ="Red"  BorderThickness= "5" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Click"/>
+        <Button BorderBrush ="Red"  BorderThickness= "5" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
 
 

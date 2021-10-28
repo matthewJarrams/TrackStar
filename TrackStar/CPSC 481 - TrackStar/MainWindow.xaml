@@ -16,7 +16,14 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="View Today's Workout" Grid.Column="1" HorizontalAlignment="Left" Margin="34,252,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="64" Width="120" RenderTransformOrigin="0.5,0.523" Background="#008080" Foreground="White"/>
+        <Button Content="View Today's Workout" Grid.Column="1" HorizontalAlignment="Left" Margin="34,252,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="64" Width="126" RenderTransformOrigin="0.5,0.523" Background="#008080" Foreground="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.563,0.687" Height="31" Width="130" FontSize="20"><Run Language="en-ca" Text="  "/><Run Text="Main Target"/></TextBlock>
         <Rectangle Grid.Column="1" HorizontalAlignment="Center" Height="143" Margin="0,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="400" Fill="#008080"/>
         <TextBlock x:Name="programCompletionBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="80,106,0,0" Text="Program Completion (12 Days Left)" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Height="27" Width="280" RenderTransformOrigin="0.503,0.581"/>
@@ -43,15 +50,22 @@
             <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
         </Button>
 
-        
-        <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="234,252,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="120" RenderTransformOrigin="0.5,0.523" Background="#008080" Foreground="White"/>
+
+        <Button x:Name="NutBtn" Content="Log Nutrition" Grid.Column="1" HorizontalAlignment="Left" Margin="234,252,0,0" VerticalAlignment="Top" Click="Nutrition_Button_Click" Height="64" Width="126" RenderTransformOrigin="0.5,0.523" Background="#008080" Foreground="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
         <Label x:Name="programCompletionLbl" Grid.Column="1" HorizontalAlignment="Left" Margin="90,190,0,0" VerticalAlignment="Top" Width="231" Height="30" FontSize="16" FontWeight="Bold"/>
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="62,374,22,86" Grid.ColumnSpan="2" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
-                 <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
+                <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
 
