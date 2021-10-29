@@ -113,19 +113,37 @@ namespace CPSC_481___TrackStar
 			day1.Add(new Exercise() { Title = "Bench Press", Amounts = "4 x 10" });
 			day1.Add(new Exercise() { Title = "Squats", Amounts = "2 X 20" });
 			day1.Add(new Exercise() { Title = "Shoulder Press", Amounts = "4 x 5" });
+			day1.Add(new Exercise() { Title = "Inclined Walk", Amounts = "30 mins" });
+			day1.Add(new Exercise() { Title = "Squats", Amounts = "4 x 20" });
+			day1.Add(new Exercise() { Title = "Tricep Extension", Amounts = "3 x 10" });
+			day1.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
 
 			List<Exercise> day2 = new List<Exercise>();
 			day2.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });
 			day2.Add(new Exercise() { Title = "Bike", Amounts = "30 mins" });
 			day2.Add(new Exercise() { Title = "Run", Amounts = "20 mins" });
+			day2.Add(new Exercise() { Title = "Rowing Machine", Amounts = "30 mins" });
+			day2.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
+
+
+
+			List<Exercise> day3 = new List<Exercise>();
+			day3.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });
+			day3.Add(new Exercise() { Title = "Bike", Amounts = "30 mins" });
+			day3.Add(new Exercise() { Title = "Bench Press", Amounts = "5 x 15" });
+			day3.Add(new Exercise() { Title = "Pullups", Amounts = "30" });
+			day3.Add(new Exercise() { Title = "Chest Flys", Amounts = "4 x 15" });
+			day3.Add(new Exercise() { Title = "Tricep Extension", Amounts = "3 x 10" });
 
 
 			Workout Day1 = new Workout(1, day1);
 			Workout Day2 = new Workout(2, day2);
+			Workout Day3 = new Workout(3, day3);
 
 			List<Workout> workoutPlan = new List<Workout>();
 			workoutPlan.Add(Day1);
 			workoutPlan.Add(Day2);
+			workoutPlan.Add(Day3);
 
 			cardio = new Program("Cardio Training Program", workoutPlan);
 

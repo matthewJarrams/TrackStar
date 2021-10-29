@@ -27,11 +27,13 @@ namespace CPSC_481___TrackStar
             PersonalInfo height = new PersonalInfo("Height (meters)", "1.84");
             PersonalInfo age = new PersonalInfo("Age", "24");
             PersonalInfo gender = new PersonalInfo("Gender", "Male");
-
-            userInfoList.Add(weight);
-            userInfoList.Add(height);
-            userInfoList.Add(age);
-            userInfoList.Add(gender);
+            if (userInfoList.Count == 0)
+            {
+                userInfoList.Add(weight);
+                userInfoList.Add(height);
+                userInfoList.Add(age);
+                userInfoList.Add(gender);
+            }
 
             lbTodoList.ItemsSource = userInfoList;
                 

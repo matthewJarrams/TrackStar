@@ -60,7 +60,14 @@ namespace CPSC_481___TrackStar
 
         private void removeProgramBtn_Click(object sender, RoutedEventArgs e)
         {
-            currentProgramLbl.Content = "No Program Currently Selected";
+            MessageBoxResult cancel = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            
+            if(cancel == MessageBoxResult.Yes)
+            {
+                currentProgramLbl.Content = "No Program Currently Selected";
+            }
+            
+            
         }
 
         private void viewProgramBtn_Click(object sender, RoutedEventArgs e)

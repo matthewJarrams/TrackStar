@@ -13,8 +13,16 @@
         <Label  Content="Settings" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="41"/>
         <Rectangle HorizontalAlignment="Center" Height="476" Margin="0,70,0,0" Stroke="Black" VerticalAlignment="Top" Width="336" Fill="#FF7F50"/>
         <Label Content="All Notifications" HorizontalAlignment="Left" Margin="63,112,0,0" VerticalAlignment="Top" Height="44" Width="137" FontWeight="Bold" FontSize="14"/>
-        <RadioButton x:Name="on" Content="On" HorizontalAlignment="Left" Margin="216,118,0,0" VerticalAlignment="Top" Checked="on_Checked" />
-        <RadioButton x:Name="off" Content="Off" HorizontalAlignment="Left" Margin="295,118,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="on" Content="On" HorizontalAlignment="Left" Margin="216,118,0,0" VerticalAlignment="Top" Checked="on_Checked">
+            <RadioButton.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+            </RadioButton.LayoutTransform>
+        </RadioButton>
+        <RadioButton x:Name="off" Content="Off" HorizontalAlignment="Left" Margin="295,118,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked">
+            <RadioButton.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+            </RadioButton.LayoutTransform>
+        </RadioButton>
         <Label Content="Workout Reminders" HorizontalAlignment="Left" Margin="63,161,0,0" VerticalAlignment="Top" Height="43" Width="137" FontWeight="Bold" FontSize="14"/>
         <ComboBox x:Name="workoutReminders" HorizontalAlignment="Left" Margin="216,167,0,0" VerticalAlignment="Top" Width="115" Height="21">
             <ComboBoxItem x:Name="off1">

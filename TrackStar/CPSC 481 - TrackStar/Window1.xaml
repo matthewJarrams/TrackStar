@@ -10,25 +10,23 @@
         Left="600"
         Title="Today's Workout" Height="700" Width="400">
     <Grid Background="#008080">
-        <Grid Margin="2,76,-2,453" Background="#FF7F50">
 
-            <Label FontWeight="Bold" Margin="0,0,0,97" HorizontalAlignment="Left" Width="99" FontSize="16">Options</Label>
-            <Button BorderBrush ="#008080"  BorderThickness= "5" Background="white"  Name="btnNextDay" Click ="btnNextDay_click" Width="185" Margin="106,78,109,26">View Tomorrow's workout
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="7"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button BorderBrush ="#008080"  BorderThickness= "5" Background="white" Name="btnToday" Click ="btnToday_click" Width="188" Margin="104,10,108,97">View Today's workout
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="7"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </Grid>
-        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FF7F50" Margin="0,317,0,168">
+        <Button BorderBrush ="#FF7F50"  BorderThickness= "5" Background="white"  Name="btnNextDay" Click ="btnNextDay_click" Margin="0,150,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="137" Height="55">View Next Day
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button BorderBrush ="#FF7F50"  BorderThickness= "5" Background="white" Name="btnToday" Click ="btnToday_click" Margin="0,150,262,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="55" Width="137">View Previous Day
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FF7F50" Margin="0,222,0,182">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -36,20 +34,30 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="100" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Title}" />
-                        <TextBlock Text="{Binding Amounts}" Grid.Row="0" Grid.Column="5"/>
+                        <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Amounts}" FontWeight="Bold" Grid.Row="0" Grid.Column="5"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Label x:Name="programDay" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="43" FontSize="18" FontWeight="Bold" Margin="-4,231,0,0"/>
+        <Label x:Name="programDay" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="43" FontSize="18" FontWeight="Bold" Margin="170,95,0,0"/>
         <Button  HorizontalAlignment="Left" Margin="10,599,0,0" VerticalAlignment="Top" Height="77" Width="112" Click="btnNotComplete_Click">
             <Image x:Name="notCompleteBtn" Source="xIcon.png" Width="126"></Image>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
         </Button>
         <Button HorizontalAlignment="Left" Margin="280,599,0,0" VerticalAlignment="Top" Height="77" Width="112" Click="btnComplete_Click">
             <Image x:Name="completeBtn" Source="checkMarkIcon.png" Width="126"></Image>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
         </Button>
-        <Label x:Name="programName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="35" FontSize="16" FontWeight="Bold" Margin="-4,275,0,0">
+        <Label x:Name="programName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="35" FontSize="20" FontWeight="Bold" Margin="80,60,0,0">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -59,7 +67,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button BorderBrush ="Red"  BorderThickness= "5" Background="white" x:Name="btnBack" Click="btnBack_Click" Content="Back to Home Screen" Height="40" Margin="0,10,198,0" VerticalAlignment="Top">
+        <Button BorderBrush ="Red"  BorderThickness= "5" Background="white" x:Name="btnBack" Click="btnBack_Click" Content="Back" Height="40" Width ="60" Margin="0,10,330,0" VerticalAlignment="Top">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7"/>

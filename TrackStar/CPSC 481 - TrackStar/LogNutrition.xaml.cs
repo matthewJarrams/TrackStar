@@ -133,16 +133,30 @@ namespace CPSC_481___TrackStar
         {
             CheckBox b = (CheckBox)sender;
             Food p = (Food)b.Tag;
+            if (b.IsChecked == true)
+            {
+                cumCals += p.calories;
+                cumCarbs += p.carbs;
+                cumFat += p.fat;
+                cumProtien += p.protien;
 
-            cumCals += p.calories;
-            cumCarbs += p.carbs;
-            cumFat += p.fat;
-            cumProtien += p.protien;
+                calsConsumed.Text = cumCals.ToString();
+                carbBox.Text = cumCarbs.ToString();
+                fatBox.Text = cumFat.ToString();
+                proBox.Text = cumProtien.ToString();
+            }
+            if(b.IsChecked == false)
+            {
+                cumCals -= p.calories;
+                cumCarbs -= p.carbs;
+                cumFat -= p.fat;
+                cumProtien -= p.protien;
 
-            calsConsumed.Text = cumCals.ToString();
-            carbBox.Text = cumCarbs.ToString();
-            fatBox.Text = cumFat.ToString();
-            proBox.Text = cumProtien.ToString();
+                calsConsumed.Text = cumCals.ToString();
+                carbBox.Text = cumCarbs.ToString();
+                fatBox.Text = cumFat.ToString();
+                proBox.Text = cumProtien.ToString();
+            }
 
 
 

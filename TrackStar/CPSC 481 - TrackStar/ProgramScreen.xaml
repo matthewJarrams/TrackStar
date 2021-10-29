@@ -21,16 +21,16 @@
         <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="604" Margin="10,60,0,0" VerticalAlignment="Top" Width="370" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="catalogueStack"  Background="White">
                 <Grid x:Name="cardioGrid" Height="640" Background="teal" RenderTransformOrigin="0.266,0.544">
-                    <Label x:Name="programTitle" Content ="Cardio Burner Program" Margin="25,7,131,591"  FontSize="16" FontWeight="Bold"/>
-                    <Label Content ="Length:" Height="30" Margin="12,40,164,570" FontSize="14"/>
-                    <Label Content ="Description:" Height="30" Margin="10,125,165,485" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
+                    <Label x:Name="programTitle" Content ="Cardio Burner Program" Margin="12,6,144,592"  FontSize="16" FontWeight="Bold"/>
+                    <Label Content ="Length:" Height="30" Margin="12,40,164,570" FontSize="14" FontWeight="Bold"/>
+                    <Label Content ="Description:" Height="30" Margin="10,125,165,485" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
                     <TextBox x:Name="descripBox" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. Whilst also helping you get fitter!&#10;&#10; Program for intermediate gym goers." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="126" Margin="12,155,0,0">
                         <TextBox.Background>
                             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
                         </TextBox.Background>
                     </TextBox>
                     <TextBox x:Name="lengthDescrip" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" Text="6 week program with 5 workouts to complete per week, allowing you to take 2 rest days." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="50" Margin="12,70,0,0"/>
-                    <Label Content ="Goals" Height="30" Margin="10,286,165,324" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
+                    <Label Content ="Goals" Height="30" Margin="10,286,165,324" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
                     <TextBox x:Name="goals_box" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" Text="-Increase fitness levels &#10;-Become a better runner/cycler&#10;-Burn calories! " TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="67" Margin="11,313,0,0">
                         <TextBox.RenderTransform>
                             <TransformGroup>
@@ -55,7 +55,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Label Content ="Workouts" Height="30" Margin="10,388,165,222" FontSize="14" RenderTransformOrigin="0.49,0.707"/>
+                    <Label Content ="Workouts" Height="30" Margin="10,388,165,222" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
                     <Button Content="Next Day" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="226,434,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click" Height="37" FontWeight="Bold">
                         <Button.Resources>
                             <Style TargetType="Border">
