@@ -31,9 +31,9 @@
                     <TextBlock Foreground="Red"><Run Text="Off"/></TextBlock>
                 </StackPanel>
             </ComboBoxItem>
-            <ComboBoxItem x:Name="hourBefore">
+            <ComboBoxItem x:Name="moraft">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Purple">Hour Before</TextBlock>
+                    <TextBlock Foreground="Purple">Morning and Afternoon</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem x:Name="Daily">

@@ -14,23 +14,23 @@
 
     <Grid Background="Teal">
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
-            <Image x:Name="mealBtn" Source="diet-icon-24.jpg"></Image>
+            <Image x:Name="mealBtn" Source="Tab_-_Meals.png"/>
         </Button>
 
         <Button HorizontalAlignment="Left" Margin="80,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" BorderBrush="Red" BorderThickness="4">
-            <Image x:Name="goalsBtn" Source="target_icon.jpg" Width="126"></Image>
+            <Image x:Name="goalsBtn" Source="Target.png" />
         </Button>
 
         <Button HorizontalAlignment="Left" Margin="160,623,0,0" VerticalAlignment="Top" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" Click="Home_Button_Click">
-            <Image x:Name="homeBtn" Source="Home_Icon.svg.png" Width="105" RenderTransformOrigin="0.514,0.601"></Image>
+            <Image x:Name="homeBtn" Source="/Tab_-_Home.png" />
         </Button>
 
         <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click" >
-            <Image x:Name="catBtn" Source="Catalogue_icon.png" Width="99" RenderTransformOrigin="0.596,0.5"></Image>
+            <Image x:Name="catBtn" Source="/Tab_-_Catalogue.png" Width="99"></Image>
         </Button>
 
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click">
-            <Image x:Name="infoBtn" Source="personal_info_icon.png"></Image>
+            <Image x:Name="infoBtn" Source="Profile.png"></Image>
         </Button>
         <ScrollViewer HorizontalAlignment="Center" Height="618" Margin="0,5,0,0" VerticalAlignment="Top" Width="400" VerticalScrollBarVisibility="Visible">
             <Grid Width="373">

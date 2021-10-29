@@ -20,12 +20,18 @@ namespace CPSC_481___TrackStar
     public partial class LogNutrition : Window
     {
         public static List<Food> foodList = new List<Food>();
-        Food chickenStew = new Food("Chicken Stew", 1000, 30, 30,20);
+        Food chocProShake = new Food("Chocolate Keto Protein Shake", 1000, 30, 30,20);
         Food steakVeggies = new Food("Steak with Cauliflower and Brocolli", 1200, 3, 35, 40);
-        Food porkChops = new Food("Prok Chop with Rice", 1300, 40, 35, 20);
-        Food tofuPasta = new Food("Tofu Cheese Pasta", 500, 20, 30, 10);
-        Food ceaserSalad = new Food("Ceaser Salad with low fat dressing", 200, 5, 10, 0);
-        Food fishRice = new Food("White fish and rice", 700, 30, 15, 25);
+        Food ketoCereal = new Food("Keto Cereal", 1300, 40, 35, 20);
+        Food brocSalad = new Food("Keto Broccoli Salad ", 500, 20, 30, 10);
+        Food macCheese = new Food("Keto Mac & Cheese", 200, 5, 10, 0);
+        Food avoToast = new Food("Avacado Toast", 700, 30, 15, 25);
+        Food salmon = new Food("Broiled Salmon", 700, 30, 15, 25);
+        Food ranchChicken = new Food("Cheesy Bacon Ranch Chicken ", 700, 30, 15, 25);
+        Food porkChops = new Food("Garlic Rosemary Pork Chops", 1000, 2, 25, 25);
+
+
+
 
         public static int cumCals = 0;
         public static int cumCarbs = 0;
@@ -38,12 +44,17 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
 
             datePicker.SelectedDate = DateTime.Today;
-            foodList.Add(chickenStew);
+            foodList.Add(chocProShake);
             foodList.Add(steakVeggies);
+            foodList.Add(ketoCereal);
+            foodList.Add(brocSalad);
+            foodList.Add(macCheese);
+            foodList.Add(avoToast);
+            foodList.Add(salmon);
+            foodList.Add(ranchChicken);
             foodList.Add(porkChops);
-            foodList.Add(tofuPasta);
-            foodList.Add(ceaserSalad);
-            foodList.Add(fishRice);
+
+
 
             mealListBox.ItemsSource = foodList;
            
