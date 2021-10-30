@@ -10,23 +10,23 @@
         Left="600"
         Title="Info" Height="700" Width="400">
     <Grid Background="Teal">
-        <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
+        <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Background="White" BorderBrush="teal" BorderThickness="2" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="Tab_-_Meals.png"/>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="80,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Goals_Button_Click">
+        <Button HorizontalAlignment="Left" Margin="80,623,0,0" VerticalAlignment="Top" Background="White" BorderBrush="teal" BorderThickness="2" Height="61" Width="80" Grid.Column="1" Click="Goals_Button_Click">
             <Image x:Name="goalsBtn" Source="Target.png" />
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="160,623,0,0" VerticalAlignment="Top" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" Click="Home_Button_Click">
+        <Button HorizontalAlignment="Left" Margin="160,623,0,0" VerticalAlignment="Top" Background="White" BorderBrush="teal" BorderThickness="2" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" Click="Home_Button_Click">
             <Image x:Name="homeBtn" Source="/Tab_-_Home.png" />
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click" >
+        <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Background="White" BorderBrush="teal" BorderThickness="2" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click" >
             <Image x:Name="catBtn" Source="/Tab_-_Catalogue.png" Width="99"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" BorderBrush="Red" BorderThickness="4">
+        <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Background="White" BorderBrush="coral" BorderThickness="5">
             <Image x:Name="infoBtn" Source="Profile.png"></Image>
         </Button>
         <Label Content="Micheal Truman" HorizontalAlignment="Left" Margin="21,13,0,0" VerticalAlignment="Top" Height="61" Width="299" FontSize="30" FontWeight="Bold"/>

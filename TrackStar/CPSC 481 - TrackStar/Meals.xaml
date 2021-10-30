@@ -49,23 +49,23 @@
 
 
 
-        <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1"  BorderBrush="Red" BorderThickness="4">
+        <Button  HorizontalAlignment="Left" Margin="0,623,0,0" Background="White"  VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1"  BorderBrush="Coral" BorderThickness="5">
             <Image x:Name="mealBtn" Source="Tab_-_Meals.png"/>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="80,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Goals_Button_Click">
+        <Button HorizontalAlignment="Left" Margin="80,623,0,0" Background="White" BorderBrush="teal" BorderThickness="2" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Goals_Button_Click">
             <Image x:Name="goalsBtn" Source="Target.png" />
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="160,623,0,0" VerticalAlignment="Top" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" Click="Home_Button_Click">
+        <Button HorizontalAlignment="Left" Margin="160,623,0,0" Background="White" BorderBrush="teal" BorderThickness="2" VerticalAlignment="Top" Height="61" Width="80" RenderTransformOrigin="0.724,0.419" Grid.Column="1" Click="Home_Button_Click">
             <Image x:Name="homeBtn" Source="/Tab_-_Home.png" />
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="240,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click" >
+        <Button HorizontalAlignment="Left" Margin="240,623,0,0" Background="White" BorderBrush="teal" BorderThickness="2" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Cate_Button_Click" >
             <Image x:Name="catBtn" Source="/Tab_-_Catalogue.png" Width="99"></Image>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click" >
+        <Button HorizontalAlignment="Left" Margin="320,623,0,0" Background="White" BorderBrush="teal" BorderThickness="2" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Click="Info_Button_Click" >
             <Image x:Name="infoBtn" Source="Profile.png"></Image>
         </Button>
 
@@ -74,7 +74,7 @@
                 <DataTemplate>
                     <WrapPanel>
                         <Grid x:Name="fullBodyGrid" Height="180" Width ="333" Background="#FF7F50">
-                            <Label Content ="{Binding Name}" Height="35" Margin="10,7,144,143" FontWeight="Bold" FontSize="18" />
+                            <Label Content ="{Binding Name}" Height="35" Width="400" Margin="10,7,1,143" FontWeight="Bold" FontSize="18" />
                             <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
                                 <Button.Resources>
                                     <Style TargetType="Border">
