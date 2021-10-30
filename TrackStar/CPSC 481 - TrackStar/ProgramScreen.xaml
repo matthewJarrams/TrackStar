@@ -9,7 +9,7 @@
         Top="0"
         Left="600"
         Title="Program Screen" Height="700" Width="400">
-    <Grid>
+    <Grid Background="Teal">
         <Label Content="Program Overview" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,-0.461" FontWeight="Bold" FontSize="18"/>
         <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="back_Btn" FontWeight="Bold">
             <Button.Resources>
@@ -18,9 +18,9 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="604" Margin="10,60,0,0" VerticalAlignment="Top" Width="370" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer  HorizontalAlignment="Left" Background="Green" Height="604" Margin="10,60,0,0" VerticalAlignment="Top" Width="370" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="catalogueStack"  Background="White">
-                <Grid x:Name="cardioGrid" Height="640" Background="teal" RenderTransformOrigin="0.266,0.544">
+                <Grid x:Name="cardioGrid" Height="640" Background="Teal" RenderTransformOrigin="0.266,0.544">
                     <Label x:Name="programTitle" Content ="Cardio Burner Program" Margin="12,6,144,592"  FontSize="16" FontWeight="Bold"/>
                     <Label Content ="Length:" Height="30" Margin="12,40,164,570" FontSize="14" FontWeight="Bold"/>
                     <Label Content ="Description:" Height="30" Margin="10,125,165,485" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
@@ -41,13 +41,13 @@
                             </TransformGroup>
                         </TextBox.RenderTransform>
                     </TextBox>
-                    <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  Background="#FF7F50" Margin="10,418,166,47" BorderBrush="#FFF5F6F9">
+                    <ListBox Name="lbTodoList" BorderBrush ="Coral" BorderThickness="3" HorizontalContentAlignment="Stretch" SelectionMode="Extended" Margin="10,418,144,47">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="0,2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="50" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding Title}" />
                                     <TextBlock Text="{Binding Amounts}" Grid.Row="0" Grid.Column="5"/>
@@ -56,14 +56,14 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Label Content ="Workouts" Height="30" Margin="10,388,165,222" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
-                    <Button Content="Next Day" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="226,434,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click" Height="37" FontWeight="Bold">
+                    <Button Content="Next Day" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="226,434,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click" Height="47" FontWeight="Bold">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="7"/>
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button Content="Prevous Day" HorizontalAlignment="Left" Margin="226,496,0,0" BorderBrush ="Coral" BorderThickness="5" Background="white" VerticalAlignment="Top" Width="98" Click="Button_Click_1" Height="47" FontWeight="Bold">
+                    <Button Content="Prevous Day" HorizontalAlignment="Left" Margin="226,525,0,0" BorderBrush ="Coral" BorderThickness="5" Background="white" VerticalAlignment="Top" Width="98" Click="Button_Click_1" Height="47" FontWeight="Bold">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="7"/>

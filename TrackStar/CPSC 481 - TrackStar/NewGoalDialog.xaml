@@ -24,11 +24,11 @@
         <Image Source="977451.png" Width="32" Height="32" Grid.RowSpan="2" Margin="20,0" />
 
         <Label Name="lblQuestion" Grid.Column="1">Please enter your new goal:</Label>
-        <TextBox Name="txtAnswer" Grid.Column="1" BorderBrush="teal" BorderThickness="2" Background="white" Grid.Row="1" MinWidth="250">Goal:</TextBox>
+        <TextBox Name="txtAnswer" Grid.Column="1" BorderBrush="Teal" BorderThickness="2" Background="white" Grid.Row="1" MinWidth="250">Goal:</TextBox>
 
         <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button IsDefault="True" Name="btnDialogOk" BorderBrush="teal" BorderThickness="3" Background="white" Click="btnDialogOk_Click" MinWidth="60" Margin="0,0,10,0">_Ok</Button>
-            <Button IsCancel="True" BorderBrush="teal" BorderThickness="3" Background="white" MinWidth="60">_Cancel</Button>
+            <Button IsDefault="True" Name="btnDialogOk" BorderBrush="Teal" BorderThickness="3" Background="white" Click="btnDialogOk_Click" Width="100" Margin="0,0,10,0">_Ok</Button>
+            <Button IsCancel="True" BorderBrush="Teal" BorderThickness="3" Background="white" Height ="40" Width="100">_Cancel</Button>
         </WrapPanel>
     </Grid>
 </Window>

@@ -39,7 +39,7 @@
             </Button.Resources>
         
         </Button>
-        <ListView Name="lbTodoList" HorizontalContentAlignment="Stretch"  BorderBrush="White" BorderThickness="3" Background="Coral" Margin="21,115,120,426" >
+        <ListView Name="lbTodoList" HorizontalContentAlignment="Stretch"  BorderBrush="White" BorderThickness="5" Background="Coral" Margin="21,115,120,426" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -61,7 +61,7 @@
             </Button.Resources>
         </Button>
         <Rectangle HorizontalAlignment="Left" Height="267" Margin="15,317,0,0"  VerticalAlignment="Top" Width="353" RenderTransformOrigin="0.505,0.473"  Fill ="White"/>
-        <Rectangle HorizontalAlignment="Left" Height="253" Margin="21,324,0,0"  VerticalAlignment="Top" Width="339" RenderTransformOrigin="0.505,0.473"  Fill ="Coral"/>
+        <Rectangle HorizontalAlignment="Left" Height="253" Margin="21,324,0,0"  VerticalAlignment="Top" Width="342" RenderTransformOrigin="0.505,0.473"  Fill ="Coral"/>
         <Label Content="Your TrackStar Stats" HorizontalAlignment="Left" Margin="21,285,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <Label Content="Goal Completed" HorizontalAlignment="Left" Margin="20,340,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Programs Completed" HorizontalAlignment="Left" Margin="20,370,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

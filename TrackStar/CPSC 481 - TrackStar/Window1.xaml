@@ -74,7 +74,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock Text="Tap the x icon button for uncompleted workout &#10; Tap the checkmark icon for completed workout" HorizontalAlignment="Left" Margin="12,536,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.01,-0.081" Height="63" Width="380" FontSize="16" FontWeight="Black" Foreground="White"/>
+        <TextBlock Text="Tap the x icon button for uncompleted workout &#10;Tap the checkmark icon for completed workout" HorizontalAlignment="Left" Margin="12,536,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.01,-0.081" Height="63" Width="380" FontSize="16" FontWeight="Black" Foreground="White"/>
     </Grid>
 
 </Window>

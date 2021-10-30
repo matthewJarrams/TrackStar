@@ -44,7 +44,7 @@
             <ComboBoxItem x:Name="Weekly">
                 <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Foreground="Blue">Weekly</TextBlock>
+                    <TextBlock Foreground="Teal">Weekly</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
@@ -69,7 +69,7 @@
             <ComboBoxItem x:Name="evening">
                 <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Foreground="Blue">Evening</TextBlock>
+                    <TextBlock Foreground="Teal">Evening</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
@@ -94,7 +94,7 @@
             <ComboBoxItem x:Name="monthly">
                 <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Foreground="Blue"><Run Text="Monthly"/></TextBlock>
+                    <TextBlock Foreground="Teal"><Run Text="Monthly"/></TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
@@ -120,7 +120,7 @@
             <ComboBoxItem x:Name="monthly1">
                 <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Foreground="Blue"><Run Text="Monthly"/></TextBlock>
+                    <TextBlock Foreground="Teal"><Run Text="Monthly"/></TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>

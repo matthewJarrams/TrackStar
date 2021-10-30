@@ -14,9 +14,11 @@
     <None Remove="diet-icon-24.jpg" />
     <None Remove="Home_Icon.svg.png" />
     <None Remove="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
+    <None Remove="Lanceplaine_Keyboard_iPhone_6_Plus.png" />
     <None Remove="personal_info_icon.png" />
     <None Remove="Profile.png" />
     <None Remove="Screenshot 2021-10-08 185710.png" />
+    <None Remove="Screenshot 2021-10-29 213207.png" />
     <None Remove="settings-button-icon-15.jpg" />
     <None Remove="Tab_-_Catalogue.png" />
     <None Remove="Tab_-_Home.png" />
@@ -38,9 +40,11 @@
     <Resource Include="diet-icon-24.jpg" />
     <Resource Include="Home_Icon.svg.png" />
     <Resource Include="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
+    <Resource Include="Lanceplaine_Keyboard_iPhone_6_Plus.png" />
     <Resource Include="personal_info_icon.png" />
     <Resource Include="Profile.png" />
     <Resource Include="Screenshot 2021-10-08 185710.png" />
+    <Resource Include="Screenshot 2021-10-29 213207.png" />
     <Resource Include="settings-button-icon-15.jpg" />
     <Resource Include="Tab_-_Catalogue.png" />
     <Resource Include="Tab_-_Home.png" />

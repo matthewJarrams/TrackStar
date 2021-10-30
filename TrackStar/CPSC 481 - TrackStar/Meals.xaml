@@ -24,12 +24,12 @@
             <ComboBoxItem x:Name="gainWeight">
                 <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Foreground="Blue">Gain Weight</TextBlock>
+                    <TextBlock Foreground="Teal">Gain Weight</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Filter by health goals " HorizontalAlignment="Left" Margin="8,77,0,0" VerticalAlignment="Top" Height="44" FontSize="14" FontWeight="Bold" Width="192" Foreground="White"/>
-        <Label Content="Current Meal Plan" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Filter by health goals " HorizontalAlignment="Left" Margin="8,77,0,0" VerticalAlignment="Top" Height="44" FontSize="14" FontWeight="Bold" Width="192" Foreground="Black"/>
+        <Label Content="Current Meal Plan" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0" VerticalAlignment="Top" Width="170" FontWeight="Bold" FontSize="19" FontFamily="Calibri"/>
         <Label x:Name="currentProgram" Content="Ketogenic Diet" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="230" FontSize="14" FontWeight="Bold" Background="White"/>
         <Button x:Name="viewProgramBtn" Content="View" HorizontalAlignment="Left" Margin="256,45,0,0" VerticalAlignment="Top" BorderBrush ="LightGreen"  BorderThickness="5" Height="32" Width="125" >
             <Button.Resources>
@@ -69,7 +69,7 @@
             <Image x:Name="infoBtn" Source="Profile.png"></Image>
         </Button>
 
-        <ListView Margin="10,174,10,90" Name="lvDataBinding" Background="Black">
+        <ListView Margin="10,174,10,90" Name="lvDataBinding" Background="Teal">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>

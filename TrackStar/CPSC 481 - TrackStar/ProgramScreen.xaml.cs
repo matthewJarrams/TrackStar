@@ -20,12 +20,13 @@ namespace CPSC_481___TrackStar
     public partial class ProgramScreen : Window
     {
         public static String newProgram;
+        public static int currentDay = 0;
        
         public ProgramScreen(int source)
         {
             InitializeComponent();
             Window1.buildProgram();
-            Workout test = Window1.cardio.workouts[0];
+            Workout test = Window1.cardio.workouts[currentDay];
             lbTodoList.ItemsSource = test.ExerciseList;
         }
 
@@ -33,7 +34,7 @@ namespace CPSC_481___TrackStar
         {
             lbTodoList.ItemsSource = null;
            
-            lbTodoList.ItemsSource = Window1.cardio.workouts[1].ExerciseList;
+            lbTodoList.ItemsSource = Window1.cardio.workouts[++currentDay].ExerciseList;
             
         }
 
@@ -41,7 +42,7 @@ namespace CPSC_481___TrackStar
         {
             lbTodoList.ItemsSource = null;
 
-            lbTodoList.ItemsSource = Window1.cardio.workouts[0].ExerciseList;
+            lbTodoList.ItemsSource = Window1.cardio.workouts[--currentDay].ExerciseList;
         }
 
         private void back_Btn(object sender, RoutedEventArgs e)
