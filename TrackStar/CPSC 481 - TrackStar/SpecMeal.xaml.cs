@@ -29,10 +29,19 @@ namespace CPSC_481___TrackStar
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.mealsWindow.Show();
+            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            //mainWindow.mealsWindow.Show();
+            Meals meals = new Meals();
             this.Visibility = Visibility.Hidden;
+            meals.Show();
 
+        }
+
+        private void setMealPlan_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
+            User.currentMealPlan = spec;
         }
     }
 }

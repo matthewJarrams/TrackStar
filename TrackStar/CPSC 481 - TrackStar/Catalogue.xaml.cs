@@ -21,11 +21,21 @@ namespace CPSC_481___TrackStar
     
     public partial class Catalogue : Window
     {
-        public static String currentProgram = "No Program Currently Selected";
-        
+        public static String currentProgram = "Currently No Program Selected";
+
         public Catalogue()
         {
-            InitializeComponent();     
+
+
+            InitializeComponent();
+            if (User.currentProgram == null)
+            {
+                currentProgramLbl.Content = "No Program Selected"; 
+            }
+            else
+            {
+                currentProgramLbl.Content = User.currentProgram.name;
+            }
         }
 
       

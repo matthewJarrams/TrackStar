@@ -25,11 +25,14 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static User superUser = new User();
+
         public Catalogue catWindow = new Catalogue();
         public LogNutrition nutWindow = new LogNutrition();
         public InfoWindow infoWindow = new InfoWindow();
         public static Goals goalsWindow = new Goals();
         public Meals mealsWindow = new Meals();
+        public Window1 window1 = new Window1();
        //public ProgramScreen programScreen = new ProgramScreen();
 
 
@@ -38,7 +41,7 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
             programCompletionBlock.Text = "Program Completion (" + Window1.daysLeft + " Days Left)";
             completionBar.Maximum = 30;
-            completionBar.Value = Window1.completedWorkouts;
+            completionBar.Value = User.workCompleted; //completionBar.Value = Window1.completedWorkouts;
             programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
 
           

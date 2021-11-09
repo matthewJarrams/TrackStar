@@ -23,10 +23,11 @@ namespace CPSC_481___TrackStar
         public InfoWindow()
         {
             InitializeComponent();
-            PersonalInfo weight = new PersonalInfo("Weight (lbs)", "170");
-            PersonalInfo height = new PersonalInfo("Height (meters)", "1.84");
-            PersonalInfo age = new PersonalInfo("Age", "24");
-            PersonalInfo gender = new PersonalInfo("Gender", "Male");
+            PersonalInfo weight = new PersonalInfo("Weight (lbs)", User.weight);
+            PersonalInfo height = new PersonalInfo("Height (meters)", User.height);
+            PersonalInfo age = new PersonalInfo("Age", User.age);
+            PersonalInfo gender = new PersonalInfo("Gender", User.gender);
+
             if (userInfoList.Count == 0)
             {
                 userInfoList.Add(weight);
@@ -35,7 +36,17 @@ namespace CPSC_481___TrackStar
                 userInfoList.Add(gender);
             }
 
+            nameLbl.Content = User.name;
+
             lbTodoList.ItemsSource = userInfoList;
+
+            goalsComp.Content = User.goalsCompleted;
+            progComp.Content = User.progCompleted;
+            mealPlansComp.Content = User.mealCompleted;
+            workoutsComp.Content = User.workCompleted;
+            nutTargets.Content = User.targetCompleted;
+
+            
                 
 
         }

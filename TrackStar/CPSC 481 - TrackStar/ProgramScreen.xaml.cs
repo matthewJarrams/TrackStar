@@ -54,8 +54,7 @@ namespace CPSC_481___TrackStar
 
         private void setProgramBtn(object sender, RoutedEventArgs e)
         {
-            newProgram = programTitle.ContentStringFormat;
-             
+            //User.currentProgram = 
         }
 
        
