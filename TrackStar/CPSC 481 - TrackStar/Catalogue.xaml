@@ -61,7 +61,7 @@
                     </Button>
                     <Label Content ="Length: 6 weeks" Height="30" Margin="0,40,176,110" FontSize="14" FontWeight="Bold"/>
                     <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,98,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health." TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="34"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,98,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health." TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Height="34"/>
                     <Label Content ="Intensity: Medium" Height="30" Margin="0,150,176,0" FontSize="14" FontWeight="Bold"/>
                 </Grid>
                 <Grid Width="330" Height="10"/>
@@ -76,7 +76,7 @@
                     </Button>
                     <Label Content ="Length: 8 weeks" Height="30" Margin="0,37,176,113" FontSize="14" FontWeight="Bold"/>
                     <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Stretch" Margin="0,100,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. " TextWrapping="Wrap" VerticalAlignment="Top" Width="327" Height="33"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Stretch" Margin="0,100,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. " TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Height="33"/>
                     <Label Content ="Intensity: High" Height="30" Margin="0,150,168,0" FontSize="14" FontWeight="Bold"/>
                 </Grid>
                 <Grid Width="330" Height="10"/>
@@ -91,7 +91,7 @@
                     </Button>
                     <Label Content ="Length: 4 weeks (30 days)" Margin="0,42,120,110" FontSize="14" FontWeight="Bold"/>
                     <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,100,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,100,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Height="50"/>
                     <Label Content ="Intensity: Medium" Height="30" Margin="0,150,168,0" FontSize="14" FontWeight="Bold"/>
                 </Grid>
                 <Grid Width="330" Height="10"/>
