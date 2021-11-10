@@ -20,10 +20,13 @@ namespace CPSC_481___TrackStar
         public static int mealCompleted = 11;
         public static int workCompleted = 12;
         public static int targetCompleted = 16;
+        public static int programDaysLeft = 20;
+        public static int currentProgramWorkoutsCompleted = 10;
         
 
-        
 
-        
-    }
+
+
+
+}
 }

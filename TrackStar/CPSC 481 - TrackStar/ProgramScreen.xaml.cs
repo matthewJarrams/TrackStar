@@ -21,13 +21,14 @@ namespace CPSC_481___TrackStar
     {
         public static String newProgram;
         public static int currentDay = 0;
-       
-        public ProgramScreen(int source)
+        public Program progOnScreen;
+        public ProgramScreen(Program prog)
         {
             InitializeComponent();
-            Window1.buildProgram();
-            Workout test = Window1.cardio.workouts[currentDay];
+            //Window1.buildProgram();
+            Workout test = prog.workouts[currentDay];
             lbTodoList.ItemsSource = test.ExerciseList;
+            progOnScreen = prog;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,9 +55,15 @@ namespace CPSC_481___TrackStar
 
         private void setProgramBtn(object sender, RoutedEventArgs e)
         {
-            //User.currentProgram = 
+            User.programDaysLeft = 60;
+            User.currentProgramWorkoutsCompleted = 0;
+            Button button = sender as Button;
+            Program spec = button.DataContext as Program;
+            User.currentProgram = progOnScreen;
         }
 
-       
+      
+
+
     }
 }

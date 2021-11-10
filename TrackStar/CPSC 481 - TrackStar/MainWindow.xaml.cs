@@ -27,24 +27,33 @@ namespace CPSC_481___TrackStar
     {
         public static User superUser = new User();
 
-        public Catalogue catWindow = new Catalogue();
+       
         public LogNutrition nutWindow = new LogNutrition();
         public InfoWindow infoWindow = new InfoWindow();
         public static Goals goalsWindow = new Goals();
         public Meals mealsWindow = new Meals();
         public Window1 window1 = new Window1();
-       //public ProgramScreen programScreen = new ProgramScreen();
+        public Catalogue catWindow = new Catalogue();
+        //public ProgramScreen programScreen = new ProgramScreen();
 
 
         public MainWindow()
         {
             InitializeComponent();
-            programCompletionBlock.Text = "Program Completion (" + Window1.daysLeft + " Days Left)";
+            Window1.buildProgram();
+            programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
             completionBar.Maximum = 30;
-            completionBar.Value = User.workCompleted; //completionBar.Value = Window1.completedWorkouts;
+            completionBar.Value = User.currentProgramWorkoutsCompleted; //completionBar.Value = Window1.completedWorkouts;
             programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
 
-          
+            LiveCharts.ChartValues<int> weights = new LiveCharts.ChartValues<int>();
+            
+            weights.Add(150);
+            weights.Add(145);
+            weights.Add(155);
+            weights.Add(165);
+            weights.Add(170);
+
 
             SeriesCollection = new SeriesCollection
             {
@@ -54,13 +63,15 @@ namespace CPSC_481___TrackStar
                     Fill = Brushes.Transparent,
                     Stroke = Brushes.Coral,
                     Opacity = 0.2,
-                    Values = new ChartValues<double> { 160, 165, 170, 150 ,140 }
+                   // Values = new ChartValues<double> { 160, 165, 170, 150 ,140 },
+                    Values  = weights
                 }
 
             };
 
             Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
 
+          
 
             //modifying the series collection will animate and update the chart
 

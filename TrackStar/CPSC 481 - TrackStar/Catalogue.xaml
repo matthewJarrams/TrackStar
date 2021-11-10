@@ -47,7 +47,29 @@
             </Button.Resources>
         </Button>
 
+        <ListView Margin="10,174,10,90" Name="lvDataBinding" Background="Teal">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Grid x:Name="fullBodyGrid" Height="180" Width ="333" Background="#FF7F50">
+                            <Label Content ="{Binding name}" Height="35" Width="400" Margin="5,7,1,143" FontWeight="Bold" FontSize="18" />
+                            <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Prog_Cick">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="7"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
 
+   
+                            <Label Content ="Description: " Height="30" Margin="5,63,165,87" FontSize="14" FontWeight="Bold"/>
+                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="0,90,0,0" Text="{Binding description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                        </Grid>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--
         <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="470" Margin="10,150,0,0" VerticalAlignment="Top" Width="360" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="catalogueStack" Background="Teal">
                 <Grid x:Name="cardioGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="312">
@@ -99,7 +121,8 @@
 
             </StackPanel>
         </ScrollViewer>
-        <ComboBox x:Name="filter" Margin="10,107,240,539" SelectionChanged="ComboBox_SelectionChanged">
+        -->
+        <ComboBox x:Name="filter" Margin="10,107,240,539" SelectionChanged="ComboBox_SelectionChanged" >
             <ComboBoxItem x:Name="high">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="Red">High</TextBlock>
@@ -114,6 +137,12 @@
                 <StackPanel Orientation="Horizontal">
 
                     <TextBlock Foreground="Blue">Low</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="clear">
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Foreground="HotPink">No Filter</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>

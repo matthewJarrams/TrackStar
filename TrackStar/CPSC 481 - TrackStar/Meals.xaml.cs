@@ -79,6 +79,10 @@ namespace CPSC_481___TrackStar
                 }
                 lvDataBinding.ItemsSource = auxArray2;
             }
+            if (filter.SelectedItem == clear)
+            {
+                lvDataBinding.ItemsSource = mps;
+            }
         }
     
 

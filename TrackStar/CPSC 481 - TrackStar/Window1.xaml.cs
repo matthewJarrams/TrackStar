@@ -20,7 +20,9 @@ namespace CPSC_481___TrackStar
     public partial class Window1 : Window
     {
         public static Program cardio;
-        public int currentDay = 0;
+		public static Program strength;
+		public static Program arms;
+		public int currentDay = 0;
         public static int completedWorkouts = 4;
 		public static int uncompletedWorkouts = 14;
 		public static int daysLeft = 12;
@@ -74,14 +76,14 @@ namespace CPSC_481___TrackStar
 
 		private void btnComplete_Click(object sender, RoutedEventArgs e)
 		{
-			MessageBox.Show("Awesome Job. " + ++completedWorkouts + " Completed!");
-			daysLeft--;
+			MessageBox.Show("Awesome Job. " + ++User.currentProgramWorkoutsCompleted + " Completed!");
+			User.programDaysLeft--;
 		}
 
 		private void btnNotComplete_Click(object sender, RoutedEventArgs e)
 		{
 			uncompletedWorkouts++;
-			daysLeft--;
+			User.programDaysLeft--;
 			MessageBox.Show("That's ok. Next Time!");
 		}
 
@@ -135,17 +137,28 @@ namespace CPSC_481___TrackStar
 			day3.Add(new Exercise() { Title = "Chest Flys", Amounts = "4 x 15" });
 			day3.Add(new Exercise() { Title = "Tricep Extension", Amounts = "3 x 10" });
 
+			List<Exercise> day12 = new List<Exercise>();
+			day12.Add(new Exercise() { Title = "Bench Press", Amounts = "4 x 10" });
+		
+
 
 			Workout Day1 = new Workout(1, day1);
 			Workout Day2 = new Workout(2, day2);
 			Workout Day3 = new Workout(3, day3);
+
+			Workout Day12 = new Workout(1, day12);
 
 			List<Workout> workoutPlan = new List<Workout>();
 			workoutPlan.Add(Day1);
 			workoutPlan.Add(Day2);
 			workoutPlan.Add(Day3);
 
-			cardio = new Program("Cardio Training Program", workoutPlan);
+			List<Workout> workoutPlan2 = new List<Workout>();
+			workoutPlan2.Add(Day12);
+
+			cardio = new Program("Cardio Training Program", workoutPlan, "Description!!!!!", "Low");
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Medium");
+			arms = new Program("Arms Building Program", workoutPlan, "Strength", "High");
 
 		}
 
@@ -182,12 +195,18 @@ namespace CPSC_481___TrackStar
 	{
 		public string name { get; set; }
 		public List<Workout> workouts { get; set; }
+		public string description { get; set; }
+		public string intensity { get; set; }
 
-		public Program(String n, List<Workout> list)
+		public  Program(String n, List<Workout> list, String d, String inten)
 		{
 			this.name = n;
 			this.workouts = list;
+			this.description = d;
+			this.intensity = inten;
 		}
+
+		
 
 	}
 

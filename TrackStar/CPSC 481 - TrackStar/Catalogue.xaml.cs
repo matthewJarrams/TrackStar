@@ -17,12 +17,14 @@ namespace CPSC_481___TrackStar
     /// <summary>
     /// Interaction logic for Catalogue.xaml
     /// </summary>
-   
-    
+
+
     public partial class Catalogue : Window
     {
         public static String currentProgram = "Currently No Program Selected";
-
+        public static List<Program> progList = new List<Program>();
+        
+       
         public Catalogue()
         {
 
@@ -30,20 +32,36 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
             if (User.currentProgram == null)
             {
-                currentProgramLbl.Content = "No Program Selected"; 
+                currentProgramLbl.Content = "Currently No Program Selected";
             }
             else
             {
                 currentProgramLbl.Content = User.currentProgram.name;
             }
+
+            if (progList.Count == 0)
+            {
+                progList.Add(Window1.cardio);
+                progList.Add(Window1.strength);
+                progList.Add(Window1.arms);
+            }
+
+
+            lvDataBinding.ItemsSource = progList;
+
         }
 
-      
+
+        
+
+
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.Visibility = Visibility.Visible;
+            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            //mainWindow.Visibility = Visibility.Visible;
+            MainWindow home = new MainWindow();
             this.Visibility = Visibility.Hidden;
+            home.Show();
         }
 
         private void Info_Button_Click(object sender, RoutedEventArgs e)
@@ -71,38 +89,57 @@ namespace CPSC_481___TrackStar
         private void removeProgramBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult cancel = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
-            
-            if(cancel == MessageBoxResult.Yes)
+
+            if (cancel == MessageBoxResult.Yes)
             {
                 currentProgramLbl.Content = "No Program Currently Selected";
+                User.currentProgram = null;
             }
-            
-            
+
+
         }
+
+        private void Spec_Prog_Cick(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Program spec = button.DataContext as Program;
+            ProgramScreen specWindow = new ProgramScreen(spec);
+            this.Visibility = Visibility.Hidden;
+            specWindow.Show();
+        }
+
 
         private void viewProgramBtn_Click(object sender, RoutedEventArgs e)
         {
             /*MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
             mainWindow.programScreen.Show();
             this.Visibility = Visibility.Hidden;*/
-            ProgramScreen progScreen = new ProgramScreen(1);
-            this.Visibility = Visibility.Hidden;
-            progScreen.Show();
+            if (User.currentProgram == null)
+            {
+                MessageBox.Show("You have not chosen a program. If you would like a program, please choose from the list below");
+            }
+            else
+            {
+                ProgramScreen progScreen = new ProgramScreen(User.currentProgram);
+                this.Visibility = Visibility.Hidden;
+                progScreen.Show();
+            }
+         
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("The" + catalogueStack.Children.Count);
             catalogueStack.Children.Remove(cardioGrid);
-        }
+        }*/
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             /*MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
             mainWindow.programScreen.Show();
             this.Visibility = Visibility.Hidden;*/
-            ProgramScreen progScreen = new ProgramScreen(2);
+            ProgramScreen progScreen = new ProgramScreen(null);
             this.Visibility = Visibility.Hidden;
             progScreen.Show();
         }
@@ -111,28 +148,50 @@ namespace CPSC_481___TrackStar
         {
             if (filter.SelectedItem == high)
             {
-                if (catalogueStack.Children.Contains(strengthGrid) == false)
+                List<Program> highList = new List<Program>();
+                for (int i = 0; i < progList.Count; i++)
                 {
-                    catalogueStack.Children.Add(strengthGrid);
-                    
-                }
-                
+                    if (progList[i].intensity.Equals("High"))
+                    {
+                        highList.Add(progList[i]);
 
-                catalogueStack.Children.Remove(cardioGrid);
-                catalogueStack.Children.Remove(fullBodyGrid);
-            }
-            if(filter.SelectedItem == medium)
-            {
-                if (catalogueStack.Children.Contains(cardioGrid) == false)
-                {
-                    catalogueStack.Children.Insert(0, cardioGrid);
-                    catalogueStack.Children.Insert(1, fullBodyGrid);
+
+                    }
                 }
-                catalogueStack.Children.Remove(strengthGrid);
+                lvDataBinding.ItemsSource = highList;
+
+            }
+            if (filter.SelectedItem == medium)
+            {
+                List<Program> mediumList = new List<Program>();
+                for (int i = 0; i < progList.Count; i++)
+                {
+                    if (progList[i].intensity.Equals("Medium"))
+                    {
+                        mediumList.Add(progList[i]);
+
+
+                    }
+                }
+                lvDataBinding.ItemsSource = mediumList;
             }
             if(filter.SelectedItem == low)
             {
-                catalogueStack.Children.RemoveRange(0, 3);
+                List<Program> lowList = new List<Program>();
+                for (int i = 0; i < progList.Count; i++)
+                {
+                    if (progList[i].intensity.Equals("Low"))
+                    {
+                        lowList.Add(progList[i]);
+
+
+                    }
+                }
+                lvDataBinding.ItemsSource = lowList;
+            }
+            if(filter.SelectedItem == clear)
+            {
+                lvDataBinding.ItemsSource = progList;
             }
         }
     }
