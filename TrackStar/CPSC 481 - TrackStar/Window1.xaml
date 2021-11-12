@@ -26,7 +26,7 @@
             </Button.Resources>
         </Button>
 
-        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FF7F50" Margin="0,222,0,182">
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FF7F50" Margin="0,222,0,182" FontSize="18">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">

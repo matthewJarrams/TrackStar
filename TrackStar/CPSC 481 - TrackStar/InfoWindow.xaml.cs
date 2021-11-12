@@ -102,6 +102,10 @@ namespace CPSC_481___TrackStar
             setWindow.Show();
         }
 
-
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            User.weightHist.Add(200);
+            User.Labels.Add("July 1st");
+        }
     }
 }

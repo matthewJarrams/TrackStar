@@ -46,13 +46,6 @@ namespace CPSC_481___TrackStar
             completionBar.Value = User.currentProgramWorkoutsCompleted; //completionBar.Value = Window1.completedWorkouts;
             programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
 
-            LiveCharts.ChartValues<int> weights = new LiveCharts.ChartValues<int>();
-            
-            weights.Add(150);
-            weights.Add(145);
-            weights.Add(155);
-            weights.Add(165);
-            weights.Add(170);
 
 
             SeriesCollection = new SeriesCollection
@@ -63,13 +56,11 @@ namespace CPSC_481___TrackStar
                     Fill = Brushes.Transparent,
                     Stroke = Brushes.Coral,
                     Opacity = 0.2,
-                   // Values = new ChartValues<double> { 160, 165, 170, 150 ,140 },
-                    Values  = weights
+                    Values  = User.weightHist
                 }
 
             };
 
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
 
           
 
@@ -82,8 +73,8 @@ namespace CPSC_481___TrackStar
             DataContext = this;
         }
 
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
+        public static SeriesCollection SeriesCollection { get; set; }
+        public List<String> Labels { get; set; } = User.Labels;
 
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
