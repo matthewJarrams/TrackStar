@@ -34,6 +34,7 @@ namespace CPSC_481___TrackStar
             value = int.Parse(txtValue.Text);
             personalRecord newRecord = new personalRecord(recordType, value);
             Goals.recordList.Add(newRecord);
+            Goals.tableList.Add(newRecord);
             Goals goalScreen = new Goals();
             this.Visibility = Visibility.Hidden;
             goalScreen.Show();

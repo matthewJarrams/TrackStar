@@ -34,6 +34,7 @@ namespace CPSC_481___TrackStar
 			lbTodoList.ItemsSource = test.ExerciseList;
 			programDay.Content = "Day: " + test.Day;
 			programName.Content = cardio.name;
+			btnToday.IsEnabled = false;
 		}
 
 		private void lbTodoList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -89,11 +90,22 @@ namespace CPSC_481___TrackStar
 
 		private void btnNextDay_click(object sender, RoutedEventArgs e)
 		{
-			lbTodoList.ItemsSource = null;
-			//lbTodoList.ItemsSource = getTomorrowWorkout();
-			currentDay++;
-			lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
-			programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+			if (currentDay+ 1 < cardio.workouts.Count)
+			{
+				lbTodoList.ItemsSource = null;
+				currentDay++;
+				lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
+				programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+				btnToday.IsEnabled = true;
+				if(currentDay+1 == cardio.workouts.Count)
+                {
+					btnNextDay.IsEnabled = false;
+				}
+            }
+            else
+            {
+				btnNextDay.IsEnabled = false;
+            }
 
 
 		}
@@ -101,10 +113,22 @@ namespace CPSC_481___TrackStar
 
 		private void btnToday_click(object sender, RoutedEventArgs e)
 		{
-			lbTodoList.ItemsSource = null;
-			currentDay--;
-			lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
-			programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+			if (currentDay != 0)
+			{
+				lbTodoList.ItemsSource = null;
+				currentDay--;
+				lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
+				programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+				btnNextDay.IsEnabled = true;
+				if (currentDay  == 0)
+				{
+					btnToday.IsEnabled = false;
+				}
+			}
+            else
+            {
+				btnToday.IsEnabled = false;
+            }
 
 		}
 

@@ -67,6 +67,7 @@
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
+            
         </lvc:CartesianChart>
 
     </Grid>

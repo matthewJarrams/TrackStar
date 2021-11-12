@@ -53,7 +53,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="280,115,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.568,0.585">
+        <Button Content="Update" HorizontalAlignment="Left" Margin="280,115,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7"/>

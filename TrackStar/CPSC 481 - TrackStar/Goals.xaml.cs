@@ -26,12 +26,18 @@ namespace CPSC_481___TrackStar
 
     public partial class Goals : Window
     {
+        public static int currentRecIndex = 0;
         public static List<Target> targetList = new List<Target>();
         Target loseWeight = new Target("Lose 2lbs a week");
         Target run = new Target("Run 10km");
 
         public static List<personalRecord> recordList = new List<personalRecord>();
+        public static List<personalRecord> tableList = new List<personalRecord>();
+        personalRecord weight = new personalRecord("Weight (lbs)", 170);
+        
+
         personalRecord bench = new personalRecord("Bench Press (lbs)", 150);
+        
         personalRecord fiveK = new personalRecord("5km record (mins)", 22);
 
 
@@ -40,7 +46,7 @@ namespace CPSC_481___TrackStar
            
             InitializeComponent();
 
-           
+            
 
             if (targetList.Count == 0)
             {   
@@ -48,28 +54,37 @@ namespace CPSC_481___TrackStar
                 targetList.Add(run);
             }
             if (recordList.Count == 0)
-            {           
+            {
+                recordList.Add(weight);
                 recordList.Add(bench);
                 recordList.Add(fiveK);
+
+                
+                tableList.Add(bench);
+                tableList.Add(fiveK);
+
+                weight.recordHist.Add(160);
+                weight.recordHist.Add(165);
+                weight.recordHist.Add(155);
+                weight.recordHist.Add(165);
             }
 
+
+
             goalListBox.ItemsSource = targetList;
-            recordsListBox.ItemsSource = recordList;
-
-            SeriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Title = "Weight",
-                    Fill = Brushes.Transparent,
-                    Stroke = Brushes.Coral,
-                    Values = new ChartValues<double> { 160, 165, 170, 150 ,140 }
-                }
-
-            };
-
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
            
+            recordsListBox.ItemsSource = tableList;
+
+            
+
+
+            progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
+            Yaxis.Title = recordList[currentRecIndex].type;
+
+
+          
+
+
 
             //modifying the series collection will animate and update the chart
 
@@ -77,11 +92,15 @@ namespace CPSC_481___TrackStar
             //modifying any series values will also animate and update the chart
 
 
+
+
             DataContext = this;
+           
+
         }
 
-        public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
+
+        public List<String> Labels { get; set; } = User.Labels;
         
 
 
@@ -130,6 +149,18 @@ namespace CPSC_481___TrackStar
          
         }
 
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = (Button)sender;
+            personalRecord p = (personalRecord)b.Tag;
+            MessageBox.Show("Updated!!");
+            p.SetNewValue(25);
+
+            recordsListBox.ItemsSource = null;
+            recordsListBox.ItemsSource = tableList;
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NewGoalDialog addGoalScreen = new NewGoalDialog();
@@ -142,15 +173,19 @@ namespace CPSC_481___TrackStar
             addRecordScreen.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void next_Vis_Click(object sender, RoutedEventArgs e)
         {
+            
+            progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
+            Yaxis.Title = recordList[currentRecIndex].type;
             
 
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void prev_Vis_Click(object sender, RoutedEventArgs e)
         {
-            //progressVisuals.Source = new BitmapImage(new Uri(@"C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\977451.png"));
+            progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
+            Yaxis.Title = recordList[currentRecIndex].type;
 
         }
     }
@@ -178,28 +213,7 @@ namespace CPSC_481___TrackStar
 
     }
 
-    public class personalRecord
-    {
-        public string type { get; set; }
-        public int value { get; set; }
-
-
-        public personalRecord(string type, int value)
-        {
-            this.type = type;
-            this.value = value; 
-        }
-
-
-        public void SetNewValue(int newValue)
-        {
-            value = newValue;
-            
-        }
-
-
-
-    }
+ 
 
   
 
