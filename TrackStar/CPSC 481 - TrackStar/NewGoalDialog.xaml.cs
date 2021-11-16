@@ -20,6 +20,7 @@ namespace CPSC_481___TrackStar
     public partial class NewGoalDialog : Window
     {
         public static String response;
+        public Goals goalWindow = Application.Current.Windows.OfType<Goals>().First();
         public NewGoalDialog()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace CPSC_481___TrackStar
             Goals.targetList.Add(newGoal);
             Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
+            goalWindow.Visibility = Visibility.Hidden;
             goalScreenNew.Show();
         }
 

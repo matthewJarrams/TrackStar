@@ -1,0 +1,57 @@
+﻿<Window x:Class="CPSC_481___TrackStar.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481___TrackStar"
+        mc:Ignorable="d"
+        WindowStartupLocation="Manual" 
+        Top="0"
+        Left="600"
+        Title="Today's Workout" Height="700" Width="400">
+    <Grid>
+        <StackPanel Margin="205,92,0,88" Background="#008080" Height="504">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock FontWeight="Bold" Margin="0,0,0,10">Options</TextBlock>
+            <Button Name="btnNextDay" Click ="btnNextDay_click" Width="185">View Tomorrow's workout</Button>
+            <Button Name="btnToday" Click ="btnToday_click" Width="185">View Today's workout</Button>
+            <Button Name="btnBack" Click="btnBack_Click" Width="188">Back to Home Screen</Button>
+        </StackPanel>
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged" Background="#FF7F50" Height="504" Margin="0,90,200,90">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Title}" />
+                        <TextBlock Text="{Binding Amounts}" Grid.Row="0" Grid.Column="5"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label x:Name="programDay" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="43" FontSize="18" FontWeight="Bold"/>
+        <Button  HorizontalAlignment="Left" Margin="10,599,0,0" VerticalAlignment="Top" Height="77" Width="112" Click="btnNotComplete_Click">
+            <Image x:Name="notCompleteBtn" Source="xIcon.png" Width="126"></Image>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="280,599,0,0" VerticalAlignment="Top" Height="77" Width="112" Click="btnComplete_Click">
+            <Image x:Name="completeBtn" Source="checkMarkIcon.png" Width="126"></Image>
+        </Button>
+        <Label x:Name="programName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Height="43" FontSize="16" FontWeight="Bold" Margin="0,43,0,0" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.712"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+    </Grid>
+
+</Window>

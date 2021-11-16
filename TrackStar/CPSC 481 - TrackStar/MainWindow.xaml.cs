@@ -110,6 +110,8 @@ namespace CPSC_481___TrackStar
         {
 
             this.Visibility = Visibility.Hidden;
+            Goals goalsScreen = new Goals();
+            goalsWindow = goalsScreen;
             goalsWindow.Show();
         }
 

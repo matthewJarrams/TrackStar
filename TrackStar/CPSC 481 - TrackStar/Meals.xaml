@@ -106,7 +106,7 @@
 
 
                             <Label Content ="Description: " Height="30" Margin="5,63,165,87" FontSize="14" FontWeight="Bold"/>
-                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="0,90,0,0"  FontSize="12" FontWeight="Normal" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Height="50"/>
+                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="-13,90,0,0"  FontSize="12" FontWeight="Normal" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Height="50"/>
                         </Grid>
                     </Expander>
                 </DataTemplate>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CPSC 481 - TrackStar/1.0.0": {
+        "runtime": {
+          "CPSC 481 - TrackStar.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CPSC 481 - TrackStar/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

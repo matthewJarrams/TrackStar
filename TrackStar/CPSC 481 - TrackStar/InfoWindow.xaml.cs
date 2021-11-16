@@ -53,9 +53,9 @@ namespace CPSC_481___TrackStar
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.Visibility = Visibility.Visible;
+            MainWindow home = new MainWindow();
             this.Visibility = Visibility.Hidden;
+            home.Show();
         }
 
         private void Cate_Button_Click(object sender, RoutedEventArgs e)

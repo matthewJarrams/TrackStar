@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Today's Workout" Height="700" Width="400">
+        Title="Today's Workout" Height="724" Width="417">
     <Grid Background="#008080">
 
         <Button BorderBrush ="#FF7F50"  BorderThickness= "5" Background="white"  Name="btnNextDay" Click ="btnNextDay_click" Margin="0,150,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="137" Height="55">View Next Day
@@ -41,7 +41,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Label x:Name="programDay" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Height="43" FontSize="18" FontWeight="Bold" Margin="170,95,0,0"/>
-        <Button  HorizontalAlignment="Left" Margin="10,599,0,0" VerticalAlignment="Top" Height="77" Width="112" Click="btnNotComplete_Click">
+        <Button  HorizontalAlignment="Left" Margin="10,599,0,0" VerticalAlignment="Top" Height="85" Width="112" Click="btnNotComplete_Click">
             <Image x:Name="notCompleteBtn" Source="xIcon.png" Width="126"></Image>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -49,8 +49,8 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="280,599,0,0" VerticalAlignment="Top" Height="77" Width="112" Click="btnComplete_Click">
-            <Image x:Name="completeBtn" Source="checkMarkIcon.png" Width="126"></Image>
+        <Button HorizontalAlignment="Left" Margin="280,599,0,0" Name="completeBtn" VerticalAlignment="Top" Height="77" Width="112" Click="btnComplete_Click">
+            <Image x:Name="completeBtn1" Source="checkMarkIcon.png" Width="126"></Image>
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7"/>

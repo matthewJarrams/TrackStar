@@ -19,7 +19,8 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class Window1 : Window
     {
-        public static Program cardio;
+        public static Program program = User.currentProgram;
+		public static Program cardio;
 		public static Program strength;
 		public static Program arms;
 		public int currentDay = 0;
@@ -30,10 +31,19 @@ namespace CPSC_481___TrackStar
         {
 			InitializeComponent();
 			buildProgram();
-			Workout test = cardio.workouts[currentDay];
-			lbTodoList.ItemsSource = test.ExerciseList;
-			programDay.Content = "Day: " + test.Day;
-			programName.Content = cardio.name;
+			if(User.currentProgram == null)
+            {
+				programName.Content = "No Program Selected";	
+            }
+            else
+            {
+				Workout test = User.currentProgram.workouts[currentDay];
+				lbTodoList.ItemsSource = test.ExerciseList;
+				programDay.Content = "Day: " + test.Day;
+				programName.Content = User.currentProgram.name;
+			}
+			
+			
 			btnToday.IsEnabled = false;
 		}
 
@@ -90,14 +100,14 @@ namespace CPSC_481___TrackStar
 
 		private void btnNextDay_click(object sender, RoutedEventArgs e)
 		{
-			if (currentDay+ 1 < cardio.workouts.Count)
+			if (currentDay+ 1 < User.currentProgram.workouts.Count)
 			{
 				lbTodoList.ItemsSource = null;
 				currentDay++;
-				lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
-				programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+				lbTodoList.ItemsSource = User.currentProgram.workouts[currentDay].ExerciseList;
+				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day;
 				btnToday.IsEnabled = true;
-				if(currentDay+1 == cardio.workouts.Count)
+				if(currentDay+1 == User.currentProgram.workouts.Count)
                 {
 					btnNextDay.IsEnabled = false;
 				}
@@ -106,7 +116,11 @@ namespace CPSC_481___TrackStar
             {
 				btnNextDay.IsEnabled = false;
             }
+			
 
+			completeBtn.Visibility = Visibility.Hidden;
+			completeBtn.IsEnabled = false;
+			
 
 		}
 
@@ -117,8 +131,8 @@ namespace CPSC_481___TrackStar
 			{
 				lbTodoList.ItemsSource = null;
 				currentDay--;
-				lbTodoList.ItemsSource = cardio.workouts[currentDay].ExerciseList;
-				programDay.Content = "Day: " + cardio.workouts[currentDay].Day;
+				lbTodoList.ItemsSource = User.currentProgram.workouts[currentDay].ExerciseList;
+				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day;
 				btnNextDay.IsEnabled = true;
 				if (currentDay  == 0)
 				{
