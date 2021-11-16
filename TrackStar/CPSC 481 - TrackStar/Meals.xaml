@@ -78,7 +78,7 @@
         <ListView Margin="10,174,10,90" Name="lvDataBinding" Background="Teal">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <WrapPanel>
+                    <!--<WrapPanel>
                         <Grid x:Name="fullBodyGrid" Height="180" Width ="333" Background="#FF7F50">
                             <Label Content ="{Binding Name}" Height="35" Width="400" Margin="5,7,1,143" FontWeight="Bold" FontSize="18" />
                             <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
@@ -93,7 +93,22 @@
                             <Label Content ="Description: " Height="30" Margin="5,63,165,87" FontSize="14" FontWeight="Bold"/>
                             <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="0,90,0,0" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                         </Grid>
-                    </WrapPanel>
+                    </WrapPanel>-->
+                    <Expander Background="Coral"  HorizontalAlignment="Left" Header="{Binding Name}"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="365">
+                        <Grid x:Name="fullBodyGrid" Height="180" Width ="365" Background="#FF7F50">
+                            <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="7"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+
+                            <Label Content ="Description: " Height="30" Margin="5,63,165,87" FontSize="14" FontWeight="Bold"/>
+                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="0,90,0,0"  FontSize="12" FontWeight="Normal" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Height="50"/>
+                        </Grid>
+                    </Expander>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
