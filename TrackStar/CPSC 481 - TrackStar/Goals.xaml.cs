@@ -45,8 +45,8 @@ namespace CPSC_481___TrackStar
         {
            
             InitializeComponent();
+            PrevBtn.IsEnabled = false;
 
-            
 
             if (targetList.Count == 0)
             {   
@@ -80,7 +80,7 @@ namespace CPSC_481___TrackStar
 
             progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].type;
-
+            
 
           
 
@@ -178,14 +178,22 @@ namespace CPSC_481___TrackStar
             
             progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].type;
+            PrevBtn.IsEnabled = true;
+            if(currentRecIndex+1 == recordList.Count) NextBtn.IsEnabled = false;
+            
+               
+            
             
 
         }
 
         private void prev_Vis_Click(object sender, RoutedEventArgs e)
         {
+
             progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].type;
+            NextBtn.IsEnabled = true;
+            if (currentRecIndex == 0) PrevBtn.IsEnabled = false;
 
         }
     }

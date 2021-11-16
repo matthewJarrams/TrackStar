@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Meals" Height="700" Width="400">
+        Title="Meals" Height="724" Width="417">
     <Grid Background="#008080">
         <ComboBox x:Name="filter" Margin="10,105,240,535" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem x:Name="lowCarb">

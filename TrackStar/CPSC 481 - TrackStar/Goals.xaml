@@ -9,7 +9,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Goals" Height="700" Width="400">
+        Title="Goals" Height="724" Width="417">
 
 
     <Grid Background="Teal">
@@ -140,7 +140,7 @@
                         <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Coral"></lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                 </lvc:CartesianChart>
-                <Button Content="Next" Grid.Column="1" Margin="128,494,0,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="next_Vis_Click" Height="40">
+                <Button Name="NextBtn" Content="Next" Grid.Column="1" Margin="128,494,0,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="next_Vis_Click" Height="40">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>
@@ -148,7 +148,7 @@
                     </Button.Resources>
                 </Button>
 
-                <Button Content="Previous" HorizontalAlignment="Left" Margin="0,494,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="prev_Vis_Click" Height="40" Width="58">
+                <Button Name="PrevBtn" Content="Previous" HorizontalAlignment="Left"  Margin="0,494,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="prev_Vis_Click" Height="40" Width="58">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>

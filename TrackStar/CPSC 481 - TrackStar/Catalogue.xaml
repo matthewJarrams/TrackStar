@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Catalogue" Height="700" Width="400">
+        Title="Catalogue" Height="724" Width="417">
     <Grid Background="#008080">
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Background="White" BorderBrush="teal" BorderThickness="1" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="Tab_-_Meals.png"/>
