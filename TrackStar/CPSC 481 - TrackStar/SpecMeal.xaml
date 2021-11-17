@@ -9,7 +9,7 @@
         Top="0"
         Left="600"
         Title="SpecMeal" Height="724" Width="417">
-    <Grid Background="Teal" >
+    <!-- <Grid Background="Teal" >
         <Label Content="Meal Plan Overview" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,-0.461" FontWeight="Bold" FontSize="18"/>
         <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" BorderBrush ="Red" BorderThickness="5" Background="white" FontWeight="Bold" Click="Back_Button_Click">
             <Button.Resources>
@@ -75,5 +75,109 @@
         </ComboBox>
         <Label Content="Goal" HorizontalAlignment="Left" Margin="190,67,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="66" FontFamily="Calibri"/>
 
+    </Grid>-->
+    <Grid Background="Teal">
+        <ComboBox HorizontalAlignment="Left" Margin="255,72,0,0" VerticalAlignment="Top" Width="120" Height="25">
+            <ComboBoxItem x:Name="lowCarb">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Red">Lose Weight</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="lowCalorie">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Green">Maintain Weight</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="gainWeight">
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Foreground="Teal">Gain Weight</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox>
+        <Label Content="Goal" HorizontalAlignment="Left" Margin="190,67,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="66" FontFamily="Calibri"/>
+        <Label Content="Program Overview" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,-0.461" FontWeight="Bold" FontSize="18"/>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="Back_Button_Click" FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Border BorderBrush="CORAL" Margin="15,120,5,20" BorderThickness="3">
+            <ScrollViewer  HorizontalAlignment="Left" Background="Green" BorderBrush="Coral" Height="560" Margin="10,10,0,0" VerticalAlignment="Top" Width="370" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="catalogueStack" Height="560"   Background="White">
+                    <Grid x:Name="cardioGrid" Height="640" Background="Teal"  RenderTransformOrigin="0.266,0.544" Width="385">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85*"/>
+                            <ColumnDefinition Width="268*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="mealTitle"  Margin="12,6,144,592"  FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Label Name="Titl" Content ="" Height="30" Margin="60,49,115,561" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="descripBox" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="134" Margin="46,81,0,0" Grid.ColumnSpan="2">
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+                            </TextBox.Background>
+                        </TextBox>
+
+                        <ListBox Name="lbTodoList" BorderBrush ="Coral" BorderThickness="3" HorizontalContentAlignment="Stretch" SelectionMode="Extended" Margin="12,282,29,178" Grid.ColumnSpan="2">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,2">
+
+                                        <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <Label Content ="Suggested Meals" Height="30" Margin="12,247,163,363" FontSize="16" RenderTransformOrigin="0.49,0.707" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Button Content="Set Meal Plan" Margin="150,7,29,0" VerticalAlignment="Top" BorderBrush ="Coral" BorderThickness="5" Background="white" Click="setMealPlan_Click" Height="42" FontWeight="Bold" Grid.Column="1">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Content="" Margin="216,83,38,0" VerticalAlignment="Top" BorderBrush ="Coral" BorderThickness="5" Background="white" Click="setMealPlan_Click" Height="130" FontWeight="Bold" Grid.Column="1">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Content="" Margin="0,83,55,0" VerticalAlignment="Top" BorderBrush ="Coral" BorderThickness="5" Background="white" Click="setMealPlan_Click" Height="132" FontWeight="Bold">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <ComboBox Name="MealSel" HorizontalAlignment="Left" Margin="129,249,0,0" VerticalAlignment="Top" Width="120" Height="25" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged" Background="White" Foreground="White" BorderBrush="#FFF3F1F1" Grid.Column="1">
+                            <ComboBoxItem x:Name="All">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="Coral" FontWeight="Bold" FontSize="14">All</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="Breakfast">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="Coral" FontWeight="Bold" FontSize="14">Breakfast</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="Lunch">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="Coral" FontWeight="Bold" FontSize="14" >Lunch</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="Dinner">
+                                <StackPanel Orientation="Horizontal">
+
+                                    <TextBlock Foreground="Coral" FontWeight="Bold" FontSize="14">Dinner</TextBlock>
+                                </StackPanel>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>

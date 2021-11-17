@@ -78,6 +78,12 @@ namespace CPSC_481___TrackStar
                     Fill = Brushes.Transparent,
                     Stroke = Brushes.Coral,
                     Values = recordHist
+                },
+
+                new LineSeries
+                {
+                    Title = "Target",
+                    Values = new ChartValues<double> { 50 }
                 }
 
             };
