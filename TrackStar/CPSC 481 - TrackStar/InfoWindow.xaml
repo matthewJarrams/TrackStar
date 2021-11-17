@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Info" Height="724" Width="417">
+        Title="Info" Height="720" Width="415">
     <Grid Background="Teal">
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Background="White" BorderBrush="teal" BorderThickness="2" Height="61" Width="80" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="Tab_-_Meals.png"/>
@@ -53,7 +53,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="280,115,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click">
+        <Button Content="Update" HorizontalAlignment="Left" Margin="285,115,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Top" Height="48" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7"/>

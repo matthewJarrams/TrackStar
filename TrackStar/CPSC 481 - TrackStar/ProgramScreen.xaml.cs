@@ -35,7 +35,7 @@ namespace CPSC_481___TrackStar
         {
             lbTodoList.ItemsSource = null;
            
-            lbTodoList.ItemsSource = Window1.cardio.workouts[++currentDay].ExerciseList;
+            lbTodoList.ItemsSource = progOnScreen.workouts[++currentDay].ExerciseList;
             
         }
 
@@ -43,7 +43,7 @@ namespace CPSC_481___TrackStar
         {
             lbTodoList.ItemsSource = null;
 
-            lbTodoList.ItemsSource = Window1.cardio.workouts[--currentDay].ExerciseList;
+            lbTodoList.ItemsSource = progOnScreen.workouts[--currentDay].ExerciseList;
         }
 
         private void back_Btn(object sender, RoutedEventArgs e)

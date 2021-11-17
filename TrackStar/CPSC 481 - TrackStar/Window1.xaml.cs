@@ -41,9 +41,16 @@ namespace CPSC_481___TrackStar
 				lbTodoList.ItemsSource = test.ExerciseList;
 				programDay.Content = "Day: " + test.Day;
 				programName.Content = User.currentProgram.name;
+				if (User.currentProgram.workouts.Count == 1)
+				{
+					btnNextDay.IsEnabled = false;
+					btnToday.IsEnabled = false;
+				}
 			}
+
 			
-			
+
+
 			btnToday.IsEnabled = false;
 		}
 
@@ -100,7 +107,8 @@ namespace CPSC_481___TrackStar
 
 		private void btnNextDay_click(object sender, RoutedEventArgs e)
 		{
-			if (currentDay+ 1 < User.currentProgram.workouts.Count)
+			
+			if (currentDay + 1 < User.currentProgram.workouts.Count)
 			{
 				lbTodoList.ItemsSource = null;
 				currentDay++;
