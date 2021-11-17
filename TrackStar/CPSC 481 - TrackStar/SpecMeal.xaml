@@ -125,7 +125,7 @@
                                 <DataTemplate>
                                     <Grid Margin="0,2">
 
-                                        <TextBlock Text="{Binding}" FontSize="14" FontWeight="Bold" />
+                                        <TextBlock Text="{Binding meal}" FontSize="14" FontWeight="Bold" />
                                     </Grid>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>

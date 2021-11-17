@@ -112,12 +112,12 @@ namespace CPSC_481___TrackStar
             public string Description { get; set; }
             public string Name { get; set; }
             public string Goals { get; set; }
-            public List<List<String>> Meals { get; set; }
+            public List<List<Food>> Meals { get; set; }
             public String Targets { get; set; }
             public bool LowCalorie { get; set; }
-            public List<String> AllMeals { get; set; }
+            public List<Food> AllMeals { get; set; }
 
-            public static implicit operator MealPlans((string Name, string Goals, List<List<String>> Meals, string Description, String Targets, bool LowCalorie, List<String> AllMeals) info)
+            public static implicit operator MealPlans((string Name, string Goals, List<List<Food>> Meals, string Description, String Targets, bool LowCalorie, List<Food> AllMeals) info)
             {
                 return new MealPlans { Name = info.Name, Goals = info.Goals, Meals = info.Meals, Description = info.Description, Targets = info.Targets, LowCalorie = info.LowCalorie, AllMeals = info.AllMeals };
             }
@@ -192,22 +192,43 @@ namespace CPSC_481___TrackStar
             }
         }
 
-        public static List<List<String>> buildMealPlan()
+        public static List<List<Food>> buildMealPlan()
         {
-            List<String> Breakfast = new List<String> { "Chocolate Keto Protein Shake", "Avacado Toast" , "Keto Cereal" };
-            
-            List<String> Lunch = new List<String> { "Keto Broccoli Salad", "Keto Mac & Cheese", "Cobb Egg Salad" };
-            List<String> Dinner = new List<String> { "Broiled Salmon", "Cheesy Bacon Ranch Chicken", "Garlic Rosemary Pork Chops" };
+           
 
-            List<List<String>> MealPlan = new List<List<String>> { Breakfast, Lunch, Dinner };
+            Food chocProShake = new Food("Chocolate Keto Protein Shake", 1000, 30, 30, 20);
+            Food steakVeggies = new Food("Steak with Cauliflower and Brocolli", 1200, 3, 35, 40);
+            Food ketoCereal = new Food("Keto Cereal", 1300, 40, 35, 20);
+            Food brocSalad = new Food("Keto Broccoli Salad ", 500, 20, 30, 10);
+            Food macCheese = new Food("Keto Mac & Cheese", 200, 5, 10, 0);
+            Food avoToast = new Food("Avacado Toast", 700, 30, 15, 25);
+            Food salmon = new Food("Broiled Salmon", 700, 30, 15, 25);
+            Food ranchChicken = new Food("Cheesy Bacon Ranch Chicken ", 700, 30, 15, 25);
+            Food porkChops = new Food("Garlic Rosemary Pork Chops", 1000, 2, 25, 25);
+
+            List<Food> Breakfast = new List<Food> { chocProShake, avoToast, ketoCereal };
+            List<Food> Lunch = new List<Food> { brocSalad, macCheese, steakVeggies };
+            List<Food> Dinner = new List<Food> { salmon, ranchChicken, porkChops };
+
+            List<List<Food>> MealPlan = new List<List<Food>> { Breakfast, Lunch, Dinner };
 
             return MealPlan; 
 
         }
 
-        public static List<String> buildAllMeal()
+        public static List<Food> buildAllMeal()
         {
-            List<String> Meal = new List<String> { "Chocolate Keto Protein Shake", "Avacado Toast", "Keto Cereal", "Keto Broccoli Salad", "Keto Mac & Cheese", "Cobb Egg Salad", "Broiled Salmon", "Cheesy Bacon Ranch Chicken", "Garlic Rosemary Pork Chops" };
+            Food chocProShake = new Food("Chocolate Keto Protein Shake", 1000, 30, 30, 20);
+            Food steakVeggies = new Food("Steak with Cauliflower and Brocolli", 1200, 3, 35, 40);
+            Food ketoCereal = new Food("Keto Cereal", 1300, 40, 35, 20);
+            Food brocSalad = new Food("Keto Broccoli Salad ", 500, 20, 30, 10);
+            Food macCheese = new Food("Keto Mac & Cheese", 200, 5, 10, 0);
+            Food avoToast = new Food("Avacado Toast", 700, 30, 15, 25);
+            Food salmon = new Food("Broiled Salmon", 700, 30, 15, 25);
+            Food ranchChicken = new Food("Cheesy Bacon Ranch Chicken ", 700, 30, 15, 25);
+            Food porkChops = new Food("Garlic Rosemary Pork Chops", 1000, 2, 25, 25);
+
+            List<Food> Meal = new List<Food> { chocProShake, avoToast, ketoCereal , brocSalad, macCheese, steakVeggies, salmon, ranchChicken, porkChops };
 
 
             return Meal;

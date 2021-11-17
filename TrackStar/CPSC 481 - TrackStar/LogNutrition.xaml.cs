@@ -55,8 +55,10 @@ namespace CPSC_481___TrackStar
             foodList.Add(porkChops);
 
 
-
-            mealListBox.ItemsSource = foodList;
+            if (User.currentMealPlan != null)
+            {
+                mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
+            }
            
         }
 
