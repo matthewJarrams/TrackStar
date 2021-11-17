@@ -22,6 +22,12 @@ namespace CPSC_481___TrackStar
         public SettingsWindow()
         {
             InitializeComponent();
+            off.IsChecked = true;
+            workoutReminders.IsEnabled = false;
+            mealReminders.IsEnabled = false;
+            newPrograms.IsEnabled = false;
+            motivationalMessages.IsEnabled = false;
+
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

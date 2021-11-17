@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\App.xaml
-13-268324390
+14-217696199
 
-18784384866
+19102007932
 195-1158069063
-Catalogue.xaml;Goals.xaml;GraphStuff.xaml;InfoWindow.xaml;LogNutrition.xaml;MainWindow.xaml;Meals.xaml;NewGoalDialog.xaml;NewRecordTypeScreen.xaml;ProgramScreen.xaml;SettingsWindow.xaml;SpecMeal.xaml;Window1.xaml;
+Catalogue.xaml;Goals.xaml;GraphStuff.xaml;InfoWindow.xaml;LogNutrition.xaml;MainWindow.xaml;Meals.xaml;NewGoalDialog.xaml;NewRecordTypeScreen.xaml;notificationScreen.xaml;ProgramScreen.xaml;SettingsWindow.xaml;SpecMeal.xaml;Window1.xaml;
 
-True
+False
 

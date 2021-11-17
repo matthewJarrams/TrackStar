@@ -24,9 +24,7 @@ namespace CPSC_481___TrackStar
 		public static Program strength;
 		public static Program arms;
 		public int currentDay = 0;
-        public static int completedWorkouts = 4;
-		public static int uncompletedWorkouts = 14;
-		public static int daysLeft = 12;
+       
         public Window1()
         {
 			InitializeComponent();
@@ -39,7 +37,7 @@ namespace CPSC_481___TrackStar
             {
 				Workout test = User.currentProgram.workouts[currentDay];
 				lbTodoList.ItemsSource = test.ExerciseList;
-				programDay.Content = "Day: " + test.Day;
+				programDay.Content = "Day: " + test.Day + " (Today)";
 				programName.Content = User.currentProgram.name;
 				if (User.currentProgram.workouts.Count == 1)
 				{
@@ -95,13 +93,13 @@ namespace CPSC_481___TrackStar
 		private void btnComplete_Click(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("Awesome Job. " + ++User.currentProgramWorkoutsCompleted + " Completed!");
-			User.programDaysLeft--;
+			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
 		}
 
 		private void btnNotComplete_Click(object sender, RoutedEventArgs e)
 		{
-			uncompletedWorkouts++;
-			User.programDaysLeft--;
+			User.currentProgramMissedWorkouts++;
+			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
 			MessageBox.Show("That's ok. Next Time!");
 		}
 
@@ -113,13 +111,16 @@ namespace CPSC_481___TrackStar
 				lbTodoList.ItemsSource = null;
 				currentDay++;
 				lbTodoList.ItemsSource = User.currentProgram.workouts[currentDay].ExerciseList;
-				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day;
+				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day + " (" + currentDay + " days away)";
 				btnToday.IsEnabled = true;
 				if(currentDay+1 == User.currentProgram.workouts.Count)
                 {
 					btnNextDay.IsEnabled = false;
 				}
-            }
+				infoLabel.Text = "You are viewing workouts " + currentDay + " days ahead";
+				infoLabel.Margin = new Thickness(35, 545, 0, 0);
+				infoLabel.Width = 400;
+			}
             else
             {
 				btnNextDay.IsEnabled = false;
@@ -140,11 +141,17 @@ namespace CPSC_481___TrackStar
 				lbTodoList.ItemsSource = null;
 				currentDay--;
 				lbTodoList.ItemsSource = User.currentProgram.workouts[currentDay].ExerciseList;
-				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day;
+				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day + " (" + currentDay + " days away)";
 				btnNextDay.IsEnabled = true;
 				if (currentDay  == 0)
 				{
+					programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day + " (Today)";
 					btnToday.IsEnabled = false;
+					completeBtn.Visibility = Visibility.Visible;
+					completeBtn.IsEnabled = true;
+					infoLabel.Text = "       Tap the checkmark icon for \n       completing today's workout";
+					infoLabel.Margin = new Thickness(66,545,0,0);
+					infoLabel.Width = 304;
 				}
 			}
             else
@@ -202,9 +209,9 @@ namespace CPSC_481___TrackStar
 			List<Workout> workoutPlan2 = new List<Workout>();
 			workoutPlan2.Add(Day12);
 
-			cardio = new Program("Cardio Training Program", workoutPlan, "Description!!!!!", "Low");
-			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Medium");
-			arms = new Program("Arms Building Program", workoutPlan, "Strength", "High");
+			cardio = new Program("Cardio Training Program", workoutPlan, "Description!!!!!", "Low", 40);
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Medium", 50);
+			arms = new Program("Arms Building Program", workoutPlan, "Strength", "High", 60);
 
 		}
 
@@ -244,12 +251,15 @@ namespace CPSC_481___TrackStar
 		public string description { get; set; }
 		public string intensity { get; set; }
 
-		public  Program(String n, List<Workout> list, String d, String inten)
+		public int length { get; set; }
+
+		public  Program(String n, List<Workout> list, String d, String inten, int length)
 		{
 			this.name = n;
 			this.workouts = list;
 			this.description = d;
 			this.intensity = inten;
+			this.length = length;
 		}
 
 		

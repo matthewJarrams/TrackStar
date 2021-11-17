@@ -55,7 +55,7 @@ namespace CPSC_481___TrackStar
 
         private void setProgramBtn(object sender, RoutedEventArgs e)
         {
-            User.programDaysLeft = 60;
+            User.programDaysLeft = progOnScreen.length;
             User.currentProgramWorkoutsCompleted = 0;
             Button button = sender as Button;
             Program spec = button.DataContext as Program;

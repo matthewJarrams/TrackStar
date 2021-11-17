@@ -35,8 +35,9 @@ namespace CPSC_481___TrackStar
         public static int mealCompleted = 11;
         public static int workCompleted = 12;
         public static int targetCompleted = 16;
-        public static int programDaysLeft = 20;
-        public static int currentProgramWorkoutsCompleted = 10;
+        public static int programDaysLeft = 0;
+        public static int currentProgramWorkoutsCompleted = 0;
+        public static int currentProgramMissedWorkouts = 0;
 
         public static LiveCharts.ChartValues<int> weightHist = new LiveCharts.ChartValues<int>() {
         150, 155, 160, 165, 170, 155};

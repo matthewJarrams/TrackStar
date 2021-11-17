@@ -94,6 +94,8 @@ namespace CPSC_481___TrackStar
             {
                 currentProgramLbl.Content = "No Program Currently Selected";
                 User.currentProgram = null;
+                User.programDaysLeft = 0;
+                
             }
 
 

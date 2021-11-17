@@ -13,6 +13,7 @@
     <None Remove="checkMarkIcon.png" />
     <None Remove="diet-icon-24.jpg" />
     <None Remove="Home_Icon.svg.png" />
+    <None Remove="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
     <None Remove="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
     <None Remove="Lanceplaine_Keyboard_iPhone_6_Plus.png" />
     <None Remove="personal_info_icon.png" />
@@ -39,6 +40,7 @@
     <Resource Include="checkMarkIcon.png" />
     <Resource Include="diet-icon-24.jpg" />
     <Resource Include="Home_Icon.svg.png" />
+    <Resource Include="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
     <Resource Include="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
     <Resource Include="Lanceplaine_Keyboard_iPhone_6_Plus.png" />
     <Resource Include="personal_info_icon.png" />

@@ -23,107 +23,83 @@
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </RadioButton.LayoutTransform>
         </RadioButton>
-        <Label Content="Workout Reminders" HorizontalAlignment="Left" Margin="63,161,0,0" VerticalAlignment="Top" Height="43" Width="137" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Daily Workout  &#10;Reminders" HorizontalAlignment="Left" Margin="63,161,0,0" VerticalAlignment="Top" Height="52" Width="145" FontWeight="Bold" FontSize="14"/>
+        
         <ComboBox x:Name="workoutReminders" HorizontalAlignment="Left" Margin="216,167,0,0" VerticalAlignment="Top" Width="115" Height="21">
-            <ComboBoxItem x:Name="off1">
-                <StackPanel Orientation="Horizontal">
+            <ComboBoxItem x:Name ="off1" Content="Off"/>
+            <ComboBoxItem Content="00:00"/>
+            <ComboBoxItem Content="01:00"/>
+            <ComboBoxItem Content="02:00"/>
+            <ComboBoxItem Content="03:00"/>
+            <ComboBoxItem Content="04:00"/>
+            <ComboBoxItem Content="05:00"/>
+            <ComboBoxItem Content="06:00"/>
+            <ComboBoxItem Content="07:00"/>
+            <ComboBoxItem Content="08:00"/>
+            <ComboBoxItem Content="09:00"/>
+            <ComboBoxItem Content="10:00"/>
+            <ComboBoxItem Content="11:00"/>
+            <ComboBoxItem Content="12:00"/>
+            <ComboBoxItem Content="13:00"/>
+            <ComboBoxItem Content="14:00"/>
+            <ComboBoxItem Content="15:00"/>
+            <ComboBoxItem Content="16:00"/>
+            <ComboBoxItem Content="17:00"/>
+            <ComboBoxItem Content="18:00"/>
+            <ComboBoxItem Content="19:00"/>
+            <ComboBoxItem Content="20:00"/>
+            <ComboBoxItem Content="21:00"/>
+            <ComboBoxItem Content="22:00"/>
+            <ComboBoxItem Content="23:00"/>
 
-                    <TextBlock Foreground="Red"><Run Text="Off"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="moraft">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Purple">Morning and Afternoon</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="Daily">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green">Daily</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="Weekly">
-                <StackPanel Orientation="Horizontal">
 
-                    <TextBlock Foreground="Teal">Weekly</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
         </ComboBox>
-        <Label Content="Meal Reminders" HorizontalAlignment="Left" Margin="63,228,0,0" VerticalAlignment="Top" Height="44" Width="137" FontSize="14" FontWeight="Bold"/>
-        <ComboBox x:Name="mealReminders" HorizontalAlignment="Left" Margin="216,234,0,0" VerticalAlignment="Top" Width="115" Height="21">
-            <ComboBoxItem x:Name="off2">
-                <StackPanel Orientation="Horizontal">
+        <Label Content="Daily Diet  &#10;Reminders" HorizontalAlignment="Left" Margin="63,222,0,0" VerticalAlignment="Top" Height="55" Width="137" FontSize="14" FontWeight="Bold"/>
+        
+        <ComboBox x:Name="mealReminders" HorizontalAlignment="Left" Margin="216,228,0,0" VerticalAlignment="Top" Width="115" Height="21">
+            <ComboBoxItem Name="off2" Content="Off"/>
+            <ComboBoxItem Content="00:00"/>
+            <ComboBoxItem Content="01:00"/>
+            <ComboBoxItem Content="02:00"/>
+            <ComboBoxItem Content="03:00"/>
+            <ComboBoxItem Content="04:00"/>
+            <ComboBoxItem Content="05:00"/>
+            <ComboBoxItem Content="06:00"/>
+            <ComboBoxItem Content="07:00"/>
+            <ComboBoxItem Content="08:00"/>
+            <ComboBoxItem Content="09:00"/>
+            <ComboBoxItem Content="10:00"/>
+            <ComboBoxItem Content="11:00"/>
+            <ComboBoxItem Content="12:00"/>
+            <ComboBoxItem Content="13:00"/>
+            <ComboBoxItem Content="14:00"/>
+            <ComboBoxItem Content="15:00"/>
+            <ComboBoxItem Content="16:00"/>
+            <ComboBoxItem Content="17:00"/>
+            <ComboBoxItem Content="18:00"/>
+            <ComboBoxItem Content="19:00"/>
+            <ComboBoxItem Content="20:00"/>
+            <ComboBoxItem Content="21:00"/>
+            <ComboBoxItem Content="22:00"/>
+            <ComboBoxItem Content="23:00"/>
 
-                    <TextBlock Foreground="Red"><Run Text="Off"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="morning">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Purple">Morning</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="afternoon">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green">Afternoon</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="evening">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="Teal">Evening</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
         </ComboBox>
         <Label Content="Notify of New &#10;Programs and Plans" HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Height="44" Width="137" FontSize="14" FontWeight="Bold"/>
         <ComboBox x:Name="newPrograms" HorizontalAlignment="Left" Margin="216,298,0,0" VerticalAlignment="Top" Width="115" Height="20">
-            <ComboBoxItem x:Name="off3">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="Red"><Run Text="Off"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="daily">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Purple"><Run Text="Daily"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="weekly">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green"><Run Text="Weekly"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="monthly">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="Teal"><Run Text="Monthly"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
+            <ComboBoxItem x:Name="off3" Content="Off"/>
+            <ComboBoxItem x:Name="daily" Content="Daily"/>
+            <ComboBoxItem x:Name="weekly" Content="Weekly"/>
+            <ComboBoxItem x:Name="monthly" Content="Monthly"/>
         </ComboBox>
         <Label Content="Goal/Personal &#10;Best Movtivation &#10;Notifications " HorizontalAlignment="Left" Margin="63,342,0,0" VerticalAlignment="Top" Height="72" Width="137" FontWeight="Bold" FontSize="14"/>
         <Image Margin="119,446,119,170" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png"/>
         <ComboBox x:Name="motivationalMessages" HorizontalAlignment="Left" Margin="216,354,0,0" VerticalAlignment="Top" Width="115" Height="20">
-            <ComboBoxItem x:Name="off4">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="Red"><Run Text="Off"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="daily1">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Purple"><Run Text="Daily"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="weekly1">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green"><Run Text="Weekly"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="monthly1">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="Teal"><Run Text="Monthly"/></TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
+            <ComboBoxItem x:Name="off4" Content="Off"/>
+            <ComboBoxItem x:Name="daily1" Content="Daily"/>
+            <ComboBoxItem x:Name="weekly2" Content="Weekly"/>
+            <ComboBoxItem x:Name="monthly3" Content="Monthly"/>
         </ComboBox>
+       
         <Button BorderBrush ="Red"  BorderThickness= "5" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="Border">

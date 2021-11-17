@@ -42,7 +42,14 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
             Window1.buildProgram();
             programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
-            completionBar.Maximum = 30;
+            if (User.currentProgram != null)
+            {
+                completionBar.Maximum = User.currentProgram.length;
+            }
+            else
+            {
+                completionBar.Maximum = 0;
+            }
             completionBar.Value = User.currentProgramWorkoutsCompleted; //completionBar.Value = Window1.completedWorkouts;
             programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
 
@@ -79,9 +86,23 @@ namespace CPSC_481___TrackStar
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window1 objWindow1 = new Window1();
-            this.Visibility = Visibility.Hidden;
-            objWindow1.Show();
+            if (User.currentProgram == null)
+            {
+                MessageBoxResult catalogue = System.Windows.MessageBox.Show("You have not selected a workout program, would you like to view available programs?", "Catalogue", System.Windows.MessageBoxButton.YesNo);
+
+                if (catalogue == MessageBoxResult.Yes)
+                {
+                    Catalogue catScreen = new Catalogue();
+                    this.Visibility = Visibility.Hidden;
+                    catScreen.Show();
+                }
+            }
+            else
+            {
+                Window1 objWindow1 = new Window1();
+                this.Visibility = Visibility.Hidden;
+                objWindow1.Show();
+            }
         }
 
 
