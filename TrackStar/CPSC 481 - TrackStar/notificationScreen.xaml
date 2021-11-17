@@ -14,7 +14,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image Margin="-40,0,-23,0"  Source="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg"/>
-        <Rectangle HorizontalAlignment="Left" Height="168" Margin="38,230,0,0" Stroke="Black" VerticalAlignment="Top" Width="300" Fill="#FF464646">
+        <Rectangle HorizontalAlignment="Left" Height="168" Margin="42,230,0,0" Stroke="Black" VerticalAlignment="Top" Width="300" Fill="#FF464646">
             <Rectangle.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

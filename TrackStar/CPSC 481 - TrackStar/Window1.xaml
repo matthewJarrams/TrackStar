@@ -8,7 +8,7 @@
         WindowStartupLocation="Manual" 
         Top="0"
         Left="600"
-        Title="Today's Workout" Height="724" Width="417">
+        Title="Today's Workout" Height="735" Width="417">
     <Grid Background="#008080">
 
         <Button BorderBrush ="#FF7F50"  BorderThickness= "5" Background="white"  Name="btnNextDay" Click ="btnNextDay_click" Margin="0,150,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="137" Height="55">View Next Day
@@ -41,7 +41,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Label x:Name="programDay" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="262" Height="43" FontSize="18" FontWeight="Bold" Margin="70,95,0,0"/>
-        <Button HorizontalAlignment="Left" Margin="145,599,0,0" Name="completeBtn" VerticalAlignment="Top" Height="77" Width="112" Click="btnComplete_Click">
+        <Button HorizontalAlignment="Left" Margin="10,620,0,0" Name="completeBtn" VerticalAlignment="Top" Height="77" Width="112" Click="btnComplete_Click">
             <Image x:Name="completeBtn1" Source="checkMarkIcon.png" Width="126"></Image>
             <Button.Resources>
                 <Style TargetType="Border">
@@ -49,7 +49,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="programName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="35" FontSize="20" FontWeight="Bold" Margin="80,60,0,0">
+        <Label x:Name="programName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="38" FontSize="20" FontWeight="Bold" Margin="80,60,0,0">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -66,7 +66,9 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock x:Name="infoLabel" Text="       Tap the checkmark icon for&#10;       completing today's workout" HorizontalAlignment="Left" Margin="66,545,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.01,-0.081" Height="49" Width="304" FontSize="16" FontWeight="Black" Foreground="White"/>
+        <TextBlock x:Name="infoLabel" Text="Tap the checkmark icon for completing &#10;today's workout and undo if accidentally &#10;pressed completed workout" HorizontalAlignment="Left" Margin="43,545,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.01,-0.081" Height="70" Width="349" FontSize="16" FontWeight="Black" Foreground="White"/>
+        <Label x:Name="completionLabel" Content="Completion Saved!" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="undoBtn" BorderBrush ="Red"  BorderThickness= "5" Background="white" Content="Undo" HorizontalAlignment="Left" Margin="280,620,0,0" VerticalAlignment="Top" Width="112" Height="77" FontSize="18" FontWeight="Bold" Click="undoBtn_Click"/>
     </Grid>
 
 </Window>

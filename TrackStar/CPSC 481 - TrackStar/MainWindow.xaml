@@ -75,6 +75,7 @@
                 <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
+        <TextBox x:Name="directions" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="100,178,0,0" Text="Tap the catlogue icon on the menu bar to choose a workout program" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
 
     </Grid>
 </Window>

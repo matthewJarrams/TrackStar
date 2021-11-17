@@ -24,11 +24,14 @@ namespace CPSC_481___TrackStar
 		public static Program strength;
 		public static Program arms;
 		public int currentDay = 0;
+		public bool todayCompleted = false;
        
         public Window1()
         {
 			InitializeComponent();
 			buildProgram();
+			undoBtn.IsEnabled = false;
+			completionLabel.Visibility = Visibility.Hidden;
 			if(User.currentProgram == null)
             {
 				programName.Content = "No Program Selected";	
@@ -92,8 +95,15 @@ namespace CPSC_481___TrackStar
 
 		private void btnComplete_Click(object sender, RoutedEventArgs e)
 		{
-			MessageBox.Show("Awesome Job. " + ++User.currentProgramWorkoutsCompleted + " Completed!");
+			User.currentProgramWorkoutsCompleted++;
 			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
+			todayCompleted = true;
+			completeBtn.IsEnabled = false;
+			undoBtn.IsEnabled = true;
+			completionLabel.Visibility = Visibility.Visible;
+			completionLabel.Content = "Completion Saved!";
+
+
 		}
 
 		private void btnNotComplete_Click(object sender, RoutedEventArgs e)
@@ -105,7 +115,7 @@ namespace CPSC_481___TrackStar
 
 		private void btnNextDay_click(object sender, RoutedEventArgs e)
 		{
-			
+			completionLabel.Visibility = Visibility.Hidden;
 			if (currentDay + 1 < User.currentProgram.workouts.Count)
 			{
 				lbTodoList.ItemsSource = null;
@@ -128,7 +138,7 @@ namespace CPSC_481___TrackStar
 			
 
 			completeBtn.Visibility = Visibility.Hidden;
-			completeBtn.IsEnabled = false;
+			undoBtn.Visibility = Visibility.Hidden;
 			
 
 		}
@@ -136,6 +146,7 @@ namespace CPSC_481___TrackStar
 
 		private void btnToday_click(object sender, RoutedEventArgs e)
 		{
+			
 			if (currentDay != 0)
 			{
 				lbTodoList.ItemsSource = null;
@@ -143,20 +154,37 @@ namespace CPSC_481___TrackStar
 				lbTodoList.ItemsSource = User.currentProgram.workouts[currentDay].ExerciseList;
 				programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day + " (" + currentDay + " days away)";
 				btnNextDay.IsEnabled = true;
-				if (currentDay  == 0)
+				if (currentDay == 0)
 				{
+
+					if (todayCompleted == true)
+					{
+						undoBtn.IsEnabled = true;
+						completeBtn.IsEnabled = false;
+						completeBtn.Visibility = Visibility.Visible;
+						completionLabel.Visibility = Visibility.Visible;
+						undoBtn.Visibility = Visibility.Visible;
+					}
+					else
+					{
+						completeBtn.Visibility = Visibility.Visible;
+						undoBtn.Visibility = Visibility.Visible;
+						undoBtn.IsEnabled = false;
+						completeBtn.IsEnabled = true;
+						completionLabel.Visibility = Visibility.Hidden;
+					}
 					programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day + " (Today)";
 					btnToday.IsEnabled = false;
-					completeBtn.Visibility = Visibility.Visible;
-					completeBtn.IsEnabled = true;
-					infoLabel.Text = "       Tap the checkmark icon for \n       completing today's workout";
-					infoLabel.Margin = new Thickness(66,545,0,0);
-					infoLabel.Width = 304;
+					
+					infoLabel.Text = "Tap the checkmark icon for completing \n today's workout and undo if accidentally \n pressed completed workout";
+					infoLabel.Margin = new Thickness(43, 545, 0, 0);
+					infoLabel.Width = 349;
 				}
 			}
             else
             {
 				btnToday.IsEnabled = false;
+
             }
 
 		}
@@ -220,6 +248,15 @@ namespace CPSC_481___TrackStar
 			MainWindow objMainWindow = new MainWindow();
 			this.Visibility = Visibility.Hidden;
 			objMainWindow.Show();
+		}
+
+        private void undoBtn_Click(object sender, RoutedEventArgs e)
+        {
+			todayCompleted = false;
+			completeBtn.IsEnabled = true;
+			completionLabel.Content = "Completion undone";
+			User.currentProgramWorkoutsCompleted--;
+			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
 		}
     }
 

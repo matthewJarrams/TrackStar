@@ -41,17 +41,26 @@ namespace CPSC_481___TrackStar
         {
             InitializeComponent();
             Window1.buildProgram();
-            programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
+            
             if (User.currentProgram != null)
             {
                 completionBar.Maximum = User.currentProgram.length;
+                programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
+                completionBar.Value = User.currentProgramWorkoutsCompleted; //completionBar.Value = Window1.completedWorkouts;
+                programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
+                directions.Visibility = Visibility.Hidden;
+                programCompletionBlock.Margin = new Thickness(60, 106, 0, 0);
             }
             else
             {
-                completionBar.Maximum = 0;
+                //completionBar.Maximum = 0;
+                completionBar.Visibility = Visibility.Hidden;
+                programCompletionLbl.Visibility = Visibility.Hidden;
+                programCompletionBlock.Text = "No Program Selected";
+                programCompletionBlock.Margin = new Thickness(115, 130, 0, 0);
+
             }
-            completionBar.Value = User.currentProgramWorkoutsCompleted; //completionBar.Value = Window1.completedWorkouts;
-            programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
+            
 
 
 
