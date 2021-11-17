@@ -16,8 +16,10 @@
     <None Remove="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
     <None Remove="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
     <None Remove="Lanceplaine_Keyboard_iPhone_6_Plus.png" />
+    <None Remove="leftChev.png" />
     <None Remove="personal_info_icon.png" />
     <None Remove="Profile.png" />
+    <None Remove="rightChev.png" />
     <None Remove="Screenshot 2021-10-08 185710.png" />
     <None Remove="Screenshot 2021-10-29 213207.png" />
     <None Remove="settings-button-icon-15.jpg" />
@@ -43,8 +45,10 @@
     <Resource Include="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
     <Resource Include="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
     <Resource Include="Lanceplaine_Keyboard_iPhone_6_Plus.png" />
+    <Resource Include="leftChev.png" />
     <Resource Include="personal_info_icon.png" />
     <Resource Include="Profile.png" />
+    <Resource Include="rightChev.png" />
     <Resource Include="Screenshot 2021-10-08 185710.png" />
     <Resource Include="Screenshot 2021-10-29 213207.png" />
     <Resource Include="settings-button-icon-15.jpg" />
