@@ -99,7 +99,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Border BorderBrush="CORAL" Margin="15,120,5,20" BorderThickness="3">
+        <Border BorderBrush="CORAL" Margin="5,120,5,20" BorderThickness="3">
             <ScrollViewer  HorizontalAlignment="Left" Background="Green" BorderBrush="Coral" Height="560" Margin="10,10,0,0" VerticalAlignment="Top" Width="370" VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="catalogueStack" Height="560"   Background="White">
                     <Grid x:Name="cardioGrid" Height="640" Background="Teal"  RenderTransformOrigin="0.266,0.544" Width="385">

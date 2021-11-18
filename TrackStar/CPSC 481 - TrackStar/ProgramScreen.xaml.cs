@@ -25,10 +25,17 @@ namespace CPSC_481___TrackStar
         public ProgramScreen(Program prog)
         {
             InitializeComponent();
-            //Window1.buildProgram();
+            setLabel.Visibility = Visibility.Hidden;
             Workout test = prog.workouts[currentDay];
             lbTodoList.ItemsSource = test.ExerciseList;
             progOnScreen = prog;
+            programTitle.Content = progOnScreen.name;
+
+            if(User.currentProgram == progOnScreen)
+            {
+                setProgButton.IsEnabled = false;
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -55,11 +62,33 @@ namespace CPSC_481___TrackStar
 
         private void setProgramBtn(object sender, RoutedEventArgs e)
         {
-            User.programDaysLeft = progOnScreen.length;
-            User.currentProgramWorkoutsCompleted = 0;
-            Button button = sender as Button;
-            Program spec = button.DataContext as Program;
-            User.currentProgram = progOnScreen;
+            if(User.currentProgram != null)
+            {
+                MessageBoxResult switchPrograms = System.Windows.MessageBox.Show("Are you sure you want to replace your current program with this one?", "Switch Program Confirmation", System.Windows.MessageBoxButton.YesNo);
+
+                if (switchPrograms == MessageBoxResult.Yes)
+                {
+                    User.programDaysLeft = progOnScreen.length;
+                    User.currentProgramWorkoutsCompleted = 0;
+                    Button button = sender as Button;
+                    Program spec = button.DataContext as Program;
+                    User.currentProgram = progOnScreen;
+                    setLabel.Visibility = Visibility.Visible;
+                    setProgButton.IsEnabled = false;
+
+                }
+            }
+            else
+            {
+                User.programDaysLeft = progOnScreen.length;
+                User.currentProgramWorkoutsCompleted = 0;
+                Button button = sender as Button;
+                Program spec = button.DataContext as Program;
+                User.currentProgram = progOnScreen;
+                setLabel.Visibility = Visibility.Visible;
+                setProgButton.IsEnabled = false;
+            }
+          
         }
 
       

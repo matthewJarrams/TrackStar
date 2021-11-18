@@ -24,14 +24,24 @@ namespace CPSC_481___TrackStar
 		public static Program strength;
 		public static Program arms;
 		public int currentDay = 0;
-		public bool todayCompleted = false;
+		public static bool todayCompleted = false;
        
         public Window1()
         {
 			InitializeComponent();
 			buildProgram();
-			undoBtn.IsEnabled = false;
-			completionLabel.Visibility = Visibility.Hidden;
+			if (todayCompleted == true)
+			{
+				undoBtn.IsEnabled = true;
+				completionLabel.Visibility = Visibility.Visible;
+				completeBtn.IsEnabled = false;
+			}
+			else
+			{
+				undoBtn.IsEnabled = false;
+				completionLabel.Visibility = Visibility.Hidden;
+			}
+			
 			if(User.currentProgram == null)
             {
 				programName.Content = "No Program Selected";	
@@ -97,11 +107,24 @@ namespace CPSC_481___TrackStar
 		{
 			User.currentProgramWorkoutsCompleted++;
 			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
-			todayCompleted = true;
-			completeBtn.IsEnabled = false;
-			undoBtn.IsEnabled = true;
-			completionLabel.Visibility = Visibility.Visible;
-			completionLabel.Content = "Completion Saved!";
+			if (User.programDaysLeft == 0)
+			{
+				MessageBox.Show("Congratulations! You have completed your program!");
+				todayCompleted = false;
+				MainWindow home = new MainWindow();
+				this.Visibility = Visibility.Hidden;
+				home.Show();
+
+			}
+			else
+			{
+				todayCompleted = true;
+				completeBtn.IsEnabled = false;
+				undoBtn.IsEnabled = true;
+				completionLabel.Visibility = Visibility.Visible;
+				completionLabel.Content = "Completion Saved!";
+				btnNextDay_click(sender, e);
+			}
 
 
 		}
@@ -176,9 +199,9 @@ namespace CPSC_481___TrackStar
 					programDay.Content = "Day: " + User.currentProgram.workouts[currentDay].Day + " (Today)";
 					btnToday.IsEnabled = false;
 					
-					infoLabel.Text = "Tap the checkmark icon for completing \n today's workout and undo if accidentally \n pressed completed workout";
-					infoLabel.Margin = new Thickness(43, 545, 0, 0);
-					infoLabel.Width = 349;
+					infoLabel.Text = "Tap the checkmark icon to record completing \ntoday's workout and tap undo for accidental\nrecorded workouts";
+					infoLabel.Margin = new Thickness(20, 545, 0, 0);
+					infoLabel.Width = 365;
 				}
 			}
             else
@@ -238,7 +261,7 @@ namespace CPSC_481___TrackStar
 			workoutPlan2.Add(Day12);
 
 			cardio = new Program("Cardio Training Program", workoutPlan, "Description!!!!!", "Low", 40);
-			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Medium", 50);
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Medium", 1);
 			arms = new Program("Arms Building Program", workoutPlan, "Strength", "High", 60);
 
 		}
@@ -254,7 +277,7 @@ namespace CPSC_481___TrackStar
         {
 			todayCompleted = false;
 			completeBtn.IsEnabled = true;
-			completionLabel.Content = "Completion undone";
+			completionLabel.Content = "Completion Undone";
 			User.currentProgramWorkoutsCompleted--;
 			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
 		}

@@ -54,9 +54,13 @@ namespace CPSC_481___TrackStar
             foodList.Add(ranchChicken);
             foodList.Add(porkChops);
 
-
+            /*
+             * finish this later
+             */
             if (User.currentMealPlan != null)
             {
+                calConTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[0].Amounts;
+                carbTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[2].Amounts;
                 mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
             }
            
@@ -130,6 +134,17 @@ namespace CPSC_481___TrackStar
             cumCarbs = 0;
             cumFat = 0;
             cumProtien = 0;
+
+            mealListBox.ItemsSource = null;
+            mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
+
+            calTarget.Content = 0;
+            calorieChecker.Fill = new SolidColorBrush(Colors.White);
+            macroTargets.Fill = new SolidColorBrush(Colors.White);
+            targetsMetLbl.Content =  0 + " / 5";
+
+
+
         }
 
        

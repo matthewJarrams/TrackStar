@@ -66,7 +66,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBlock x:Name="infoLabel" Text="Tap the checkmark icon for completing &#10;today's workout and undo if accidentally &#10;pressed completed workout" HorizontalAlignment="Left" Margin="43,545,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.01,-0.081" Height="70" Width="349" FontSize="16" FontWeight="Black" Foreground="White"/>
+        <TextBlock x:Name="infoLabel" Text="Tap the checkmark icon to record completing &#10;today's workout and tap undo for accidental&#10;recorded workouts" HorizontalAlignment="Left" Margin="20,545,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.01,-0.081" Height="70" Width="365" FontSize="16" FontWeight="Black" Foreground="White"/>
         <Label x:Name="completionLabel" Content="Completion Saved!" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" FontWeight="Bold"/>
         <Button x:Name="undoBtn" BorderBrush ="Red"  BorderThickness= "5" Background="white" Content="Undo" HorizontalAlignment="Left" Margin="280,620,0,0" VerticalAlignment="Top" Width="112" Height="77" FontSize="18" FontWeight="Bold" Click="undoBtn_Click"/>
     </Grid>

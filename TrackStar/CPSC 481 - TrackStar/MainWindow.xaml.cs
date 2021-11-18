@@ -45,15 +45,29 @@ namespace CPSC_481___TrackStar
             if (User.currentProgram != null)
             {
                 completionBar.Maximum = User.currentProgram.length;
-                programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
-                completionBar.Value = User.currentProgramWorkoutsCompleted; //completionBar.Value = Window1.completedWorkouts;
-                programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
-                directions.Visibility = Visibility.Hidden;
-                programCompletionBlock.Margin = new Thickness(60, 106, 0, 0);
+                if (User.currentProgramWorkoutsCompleted == User.currentProgram.length)
+                {
+                    completionBar.Visibility = Visibility.Hidden;
+                    programCompletionLbl.Visibility = Visibility.Hidden;
+                    programCompletionBlock.Text = "\t     Amazing job! \nYou completed your workout program!";
+                    programCompletionBlock.Margin = new Thickness(55, 115, 0, 0);
+                    programCompletionBlock.Width = 320;
+                    programCompletionBlock.Height = 50;
+                    directions.Text = "Tap the catlogue icon on the menu bar to pick a new one!";
+                    User.currentProgram = null;
+                }
+                else
+                {
+                    programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
+                    completionBar.Value = User.currentProgramWorkoutsCompleted;
+                    programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
+                    directions.Visibility = Visibility.Hidden;
+                    programCompletionBlock.Margin = new Thickness(60, 106, 0, 0);
+                }
             }
             else
             {
-                //completionBar.Maximum = 0;
+              
                 completionBar.Visibility = Visibility.Hidden;
                 programCompletionLbl.Visibility = Visibility.Hidden;
                 programCompletionBlock.Text = "No Program Selected";
