@@ -131,7 +131,7 @@
                 <Label Content="Value" HorizontalAlignment="Left" Margin="143,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
                 <Label Content="Progress Analysis" HorizontalAlignment="Left" Margin="9,449,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold" FontFamily="Arial"/>
                 <Rectangle Width="350" Margin="14,480,9,0" Grid.ColumnSpan="2"/>
-                <!--<Image x:Name="progressVisuals" Source="weightGraph.png" Grid.ColumnSpan="2" Margin="68,490,57,3" />-->
+                
                 <lvc:CartesianChart x:Name="progVisuals" Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="68,480,38,0" Grid.ColumnSpan="2" >
                     <lvc:CartesianChart.AxisY>
                         <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Coral"></lvc:Axis>
