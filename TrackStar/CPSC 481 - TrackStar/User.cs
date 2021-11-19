@@ -58,16 +58,22 @@ namespace CPSC_481___TrackStar
     {
         public string type { get; set; }
         public int value { get; set; }
+        public string acttype { get; set; }
+        public int goal { get; set; }
 
         public LiveCharts.ChartValues<int> recordHist = new LiveCharts.ChartValues<int>();
+        public LiveCharts.ChartValues<int> goalHist = new LiveCharts.ChartValues<int>();
         public SeriesCollection SeriesCollection { get; set; }
 
 
 
-        public personalRecord(string type, int value)
+        public personalRecord(string type, int goal, string acttype, int value)
         {
             this.type = type;
             this.value = value;
+            this.acttype = acttype;
+            this.goal = goal;
+            goalHist.Add(goal);
             recordHist.Add(value);
 
 
@@ -84,7 +90,8 @@ namespace CPSC_481___TrackStar
                 new LineSeries
                 {
                     Title = "Target",
-                    Values = new ChartValues<double> { 50 }
+                    Fill = Brushes.Transparent,
+                    Values = goalHist
                 }
 
             };
@@ -94,6 +101,11 @@ namespace CPSC_481___TrackStar
         {
             value = newValue;
             recordHist.Add(newValue);
+        }
+        public void SetNewGoal(int newValue)
+        {
+            goal = newValue;
+            goalHist.Add(newValue);
         }
     }
 }

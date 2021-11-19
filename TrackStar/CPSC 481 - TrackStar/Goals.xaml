@@ -39,61 +39,23 @@
                     <ColumnDefinition Width="185*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="goalListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="10,104,10,0" VerticalAlignment ="Top" Grid.ColumnSpan="2" Height="122">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Margin="0,2">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100" />
-                                    <ColumnDefinition Width="100" />
-                                    <ColumnDefinition Width="100" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30" />
 
-
-                                </Grid.RowDefinitions>
-                                <TextBlock Text="{Binding target}" />
-                                <TextBlock Text="{Binding message}" Grid.Row="0" Grid.Column="1"/>
-                                <Button Content="Complete" Click="CompBtn_Click" Tag="{Binding Path=.}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2">
-                                    <Button.Resources>
-                                        <Style TargetType="Border">
-                                            <Setter Property="CornerRadius" Value="7"/>
-                                        </Style>
-                                    </Button.Resources>
-                                </Button>
-
-
-
-                            </Grid>
-
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-                <Label Content="My Goals" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
-                <Label Content="Goals and Targets" HorizontalAlignment="Left" Margin="83,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2" FontFamily="Verdana"/>
-                <Button Content="Add new Goal" HorizontalAlignment="Left" Margin="89,64,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click" Grid.Column="1" Height="35">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="7"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-
-                <ListBox x:Name="recordsListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="9,324,5,0" Height="110" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                <ListBox x:Name="recordsListBox" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="#FF7F50" Margin="7,0,7,360" Height="177" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
 
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="0,2">
+                            <Grid Margin="0,3">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="140" />
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="130" />
+                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="60" />
+
 
 
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="30" />
+                                    <RowDefinition Height="35" />
 
 
                                 </Grid.RowDefinitions>
@@ -101,7 +63,8 @@
 
                                 <TextBlock Text="{Binding type}" />
                                 <TextBlock Text="{Binding value}" Grid.Row="0" Grid.Column="1"/>
-                                <Button Content="Update" Tag="{Binding .}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="2" Click="Update_Click">
+                                <TextBlock Text="{Binding goal}" Grid.Row="0" Grid.Column="2"/>
+                                <Button Content="Update" Tag="{Binding .}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="3" Click="Update_Click" Height="23"  Margin="0,-17,0,0">
                                     <Button.Resources>
                                         <Style TargetType="Border">
                                             <Setter Property="CornerRadius" Value="7"/>
@@ -116,8 +79,8 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Label Content="Personal Bests/Records" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.429,0.13" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2" FontFamily="Arial"/>
-                <Button Content="Add new type" HorizontalAlignment="Left" Margin="94,281,0,0" VerticalAlignment="Top"  Grid.Column="1" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_1" Height="38">
+                <Label Content="Goals and Targets" HorizontalAlignment="Center" Margin="-20,10,0,0" VerticalAlignment="Top"  FontSize="18" FontWeight="DemiBold" FontFamily="Arial"/>
+                <Button Content="Add New" HorizontalAlignment="Right" Margin="0,5,6,0" Width="85" VerticalAlignment="Top"  Grid.Column="1" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="Button_Click_1" Height="35">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>
@@ -125,22 +88,21 @@
                     </Button.Resources>
                 </Button>
 
-                <Label Content="Goal" HorizontalAlignment="Left" Margin="31,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.608,0.695" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
-                <Label Content="Status" HorizontalAlignment="Left" Margin="141,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
-                <Label Content="Record Type" HorizontalAlignment="Left" Margin="14,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.581" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
-                <Label Content="Value" HorizontalAlignment="Left" Margin="143,293,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
-                <Label Content="Progress Analysis" HorizontalAlignment="Left" Margin="9,449,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.387,0.453" FontWeight="Bold" FontFamily="Arial"/>
-                <Rectangle Width="350" Margin="14,480,9,0" Grid.ColumnSpan="2"/>
-                
-                <lvc:CartesianChart x:Name="progVisuals" Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="68,480,38,0" Grid.ColumnSpan="2" >
+
+                <Label Content="Goal Type" HorizontalAlignment="Left" Margin="15,50,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
+                <Label Content="Value" Margin="135,50,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
+                <Label Content="Goal"  Margin="15,0,0,541" VerticalAlignment="Bottom"  FontWeight="Bold" FontFamily="Calibri" FontSize="14" Grid.Column="1" HorizontalAlignment="Left" Width="99" />
+                <Label Content="Progress Analysis"  Margin="112,309,111,280"  FontSize="14" FontWeight="Bold" FontFamily="Arial" Width="150" Grid.ColumnSpan="2"/>
+
+                <lvc:CartesianChart x:Name="progVisuals" Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="0,370,6,10" Grid.ColumnSpan="2" >
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Coral"></lvc:Axis>
+                        <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Coral" FontSize="16"></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Coral"></lvc:Axis>
+                        <lvc:Axis Title="Day" Labels="{Binding Labels}" Foreground="Coral" FontSize="16"></lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                 </lvc:CartesianChart>
-                <Button Name="NextBtn" Content="Next" Grid.Column="1" Margin="128,494,0,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="next_Vis_Click" Height="40">
+                <Button Name="NextBtn" Content="Next" Grid.Column="1" Margin="87,302,5,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="next_Vis_Click" Height="40">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>
@@ -148,13 +110,14 @@
                     </Button.Resources>
                 </Button>
 
-                <Button Name="PrevBtn" Content="Previous" HorizontalAlignment="Left"  Margin="0,494,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="prev_Vis_Click" Height="40" Width="58">
+                <Button Name="PrevBtn" Content="Previous" HorizontalAlignment="Left"  Margin="7,302,0,0" VerticalAlignment="Top" BorderBrush="#FF7F50" BorderThickness="3" Background="White" Click="prev_Vis_Click" Height="40" Width="83">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>
                         </Style>
                     </Button.Resources>
                 </Button>
+
 
 
             </Grid>

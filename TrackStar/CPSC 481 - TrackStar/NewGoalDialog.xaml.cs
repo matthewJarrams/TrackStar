@@ -21,33 +21,80 @@ namespace CPSC_481___TrackStar
     {
         public static String response;
         public Goals goalWindow = Application.Current.Windows.OfType<Goals>().First();
-        public NewGoalDialog()
+        public static personalRecord prOnScreen;
+        public NewGoalDialog(personalRecord pr)
         {
             InitializeComponent();
+            prOnScreen = pr;
+            newVal.Text = pr.value.ToString();
+            titleGoal.Text = pr.goal.ToString();
+            goldlbl.Content = pr.type;
             
         }
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
-            response = txtAnswer.Text;
-            Target newGoal = new Target(response);
+            
+            
+            
+            if (int.Parse(titleGoal.Text) != prOnScreen.goal)
+            {
+                
+                prOnScreen.SetNewGoal(int.Parse(titleGoal.Text));
+                prOnScreen.SetNewValue(int.Parse(newVal.Text));
+
+            }
+            else if (int.Parse(newVal.Text) != prOnScreen.value)
+            {
+                prOnScreen.SetNewValue(int.Parse(newVal.Text));
+                prOnScreen.SetNewGoal(int.Parse(titleGoal.Text));
+            }
+
             MainWindow.goalsWindow.Visibility = Visibility.Hidden;
-            Goals.targetList.Add(newGoal);
+            //goalWindow.Visibility = Visibility.Hidden;
             Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
+            goalScreenNew.Show();
+
+        }
+
+
+        private void btnDialogDelete_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Poper.IsOpen = true;
+
+           // MainWindow.goalsWindow.Visibility = Visibility.Hidden;
+            //goalWindow.Visibility = Visibility.Hidden;
+            //Goals goalScreenNew = new Goals();
+            //this.Visibility = Visibility.Hidden;
+            //goalScreenNew.Show();
+
+        }
+
+        private void yesDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Goals.recordList.Remove(prOnScreen);
+            Goals.tableList.Remove(prOnScreen);
+            Poper.IsOpen = false;
+            MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             goalWindow.Visibility = Visibility.Hidden;
+            Goals goalScreenNew = new Goals();
+            this.Visibility = Visibility.Hidden;
             goalScreenNew.Show();
         }
 
-        private void Window_ContentRendered(object sender, EventArgs e)
+        private void noDelete_Click(object sender, RoutedEventArgs e)
         {
-            txtAnswer.SelectAll();
-            txtAnswer.Focus();
+            
+            Poper.IsOpen = false;
+           
         }
 
-        public string Answer
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            get { return txtAnswer.Text; }
+            this.Visibility = Visibility.Hidden;
+
         }
     }
 }

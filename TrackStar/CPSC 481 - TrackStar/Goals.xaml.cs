@@ -26,19 +26,19 @@ namespace CPSC_481___TrackStar
 
     public partial class Goals : Window
     {
-        public static int currentRecIndex = 0;
+        public  int currentRecIndex = 0;
         public static List<Target> targetList = new List<Target>();
         Target loseWeight = new Target("Lose 2lbs a week");
         Target run = new Target("Run 10km");
 
         public static List<personalRecord> recordList = new List<personalRecord>();
         public static List<personalRecord> tableList = new List<personalRecord>();
-        personalRecord weight = new personalRecord("Weight (lbs)", 170);
+        personalRecord weight = new personalRecord("Weight (lbs)", 210, "(Lbs)", 170);
         
 
-        personalRecord bench = new personalRecord("Bench Press (lbs)", 150);
+        personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150);
         
-        personalRecord fiveK = new personalRecord("5km record (mins)", 22);
+        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Mins", 22);
 
 
         public Goals()
@@ -69,9 +69,14 @@ namespace CPSC_481___TrackStar
                 weight.recordHist.Add(165);
             }
 
+            if(tableList.Count == 0)
+            {
+                NextBtn.IsEnabled = false;
+            }
 
 
-            goalListBox.ItemsSource = targetList;
+
+            //goalListBox.ItemsSource = targetList;
            
             recordsListBox.ItemsSource = tableList;
 
@@ -79,7 +84,7 @@ namespace CPSC_481___TrackStar
 
 
             progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
-            Yaxis.Title = recordList[currentRecIndex].type;
+            Yaxis.Title = recordList[currentRecIndex].acttype;
             
 
           
@@ -147,8 +152,8 @@ namespace CPSC_481___TrackStar
             MessageBox.Show("You rock!!");
             p.SetComplete(true);
            
-            goalListBox.ItemsSource = null;
-            goalListBox.ItemsSource = targetList;
+           // goalListBox.ItemsSource = null;
+            //goalListBox.ItemsSource = targetList;
          
         }
 
@@ -156,8 +161,11 @@ namespace CPSC_481___TrackStar
         {
             Button b = (Button)sender;
             personalRecord p = (personalRecord)b.Tag;
-            MessageBox.Show("Updated!!");
-            p.SetNewValue(25);
+           
+            NewGoalDialog specWindow = new NewGoalDialog(p);
+            specWindow.Show();
+            //MessageBox.Show("Updated!!");
+            //p.SetNewValue(25);
 
             recordsListBox.ItemsSource = null;
             recordsListBox.ItemsSource = tableList;
@@ -166,21 +174,23 @@ namespace CPSC_481___TrackStar
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NewGoalDialog addGoalScreen = new NewGoalDialog();
-            addGoalScreen.Show();
+            //NewGoalDialog addGoalScreen = new NewGoalDialog();
+            //addGoalScreen.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NewRecordTypeScreen addRecordScreen = new NewRecordTypeScreen();
             addRecordScreen.Show();
+
         }
 
         private void next_Vis_Click(object sender, RoutedEventArgs e)
         {
             
             progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
-            Yaxis.Title = recordList[currentRecIndex].type;
+            Yaxis.Title = recordList[currentRecIndex].acttype;
+            
             PrevBtn.IsEnabled = true;
             if(currentRecIndex+1 == recordList.Count) NextBtn.IsEnabled = false;
             
@@ -194,7 +204,7 @@ namespace CPSC_481___TrackStar
         {
 
             progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
-            Yaxis.Title = recordList[currentRecIndex].type;
+            Yaxis.Title = recordList[currentRecIndex].acttype;
             NextBtn.IsEnabled = true;
             if (currentRecIndex == 0) PrevBtn.IsEnabled = false;
 
