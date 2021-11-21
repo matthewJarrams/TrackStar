@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace CPSC_481___TrackStar
 {
@@ -54,6 +56,10 @@ namespace CPSC_481___TrackStar
             foodList.Add(ranchChicken);
             foodList.Add(porkChops);
 
+            
+
+           
+
             /*
              * finish this later
              */
@@ -63,62 +69,85 @@ namespace CPSC_481___TrackStar
                 carbTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[2].Amounts;
                 mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
             }
-           
+
+            DataContext = this;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            int calorieIntake = int.Parse(calsConsumed.Text);
-            int caloriesBurned = int.Parse(calsBurned.Text);
-            int calDifference = calorieIntake - caloriesBurned;
-            calTarget.Content = calDifference;
-         
-            
 
-            if (calDifference > 2000)
-            {
-                calorieChecker.Fill = new SolidColorBrush(Colors.Red);
-                
-            }
-            else
-            {
-                calorieChecker.Fill = new SolidColorBrush(Colors.Green);
-            }
+            bool f = int.TryParse(fatBox.Text, out _);
+            bool c = int.TryParse(carbBox.Text, out _);
+            bool p = int.TryParse(proBox.Text, out _);
+            bool cc = int.TryParse(calsConsumed.Text, out _);
+            bool cb = int.TryParse(calsBurned.Text, out _);
 
-            int targetsMet = 0;
+            if (f && c && p && cc && cb)
+            {
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
 
-            if (int.Parse(carbBox.Text) == 125)
-            {
-                targetsMet++;
-            }
-            if (int.Parse(fatBox.Text) == 50)
-            {
-                targetsMet++;
-            }
-            if (int.Parse(proBox.Text) == 75)
-            {
-                targetsMet++;
-            }
-            if(caloriesBurned == 500)
-            {
-                targetsMet++;
-            }
-            if(calorieIntake == 2500)
-            {
-                targetsMet++;
-            }
 
-            if(targetsMet == 5)
-            {
-                macroTargets.Fill = new SolidColorBrush(Colors.Green);
-            }
-            else
-            {
-                macroTargets.Fill = new SolidColorBrush(Colors.Red);
-            }
 
-            targetsMetLbl.Content = targetsMet + " / 5";
+                if (calDifference > 2000)
+                {
+                    calorieChecker.Fill = new SolidColorBrush(Colors.Red);
+
+                }
+                else
+                {
+                    calorieChecker.Fill = new SolidColorBrush(Colors.Green);
+                }
+
+                int targetsMet = 0;
+
+
+                var fatvals = new ChartValues<int> { int.Parse(fatBox.Text) };
+                fatter.Values = fatvals;
+                var carbvals = new ChartValues<int> { int.Parse(carbBox.Text) };
+                carber.Values = carbvals;
+                var provals = new ChartValues<int> { int.Parse(proBox.Text) };
+                proter.Values = provals;
+
+
+
+                if (int.Parse(carbBox.Text) == 125)
+                {
+                    targetsMet++;
+                }
+                if (int.Parse(fatBox.Text) == 50)
+                {
+
+                    targetsMet++;
+                }
+                if (int.Parse(proBox.Text) == 75)
+                {
+                    targetsMet++;
+                }
+                if (caloriesBurned == 500)
+                {
+                    targetsMet++;
+                }
+                if (calorieIntake == 2500)
+                {
+                    targetsMet++;
+                }
+
+                if (targetsMet == 5)
+                {
+                    macroTargets.Fill = new SolidColorBrush(Colors.Green);
+                }
+                else
+                {
+                    macroTargets.Fill = new SolidColorBrush(Colors.Red);
+                }
+
+                targetsMetLbl.Content = targetsMet + " / 5";
+
+            }
         }
 
         private void DatePicker_CalendarClosed(object sender, RoutedEventArgs e)
@@ -147,7 +176,9 @@ namespace CPSC_481___TrackStar
 
         }
 
-       
+        
+
+
 
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {

@@ -29,6 +29,26 @@
                 <Ellipse Opacity="0.4" Fill="coral" Height="75" Width="75"/>
             </Border>
         </Canvas>
+        <Popup Name="Poper" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="150" IsOpen="False">
+            <Grid Background="Coral">
+                <Rectangle Width="290" Height="140" Fill="Teal" />
+                <TextBox Text="You have not selected a workout program,  &#x0a; would you like to view available programs?" Width="250" Height="45" Margin="0,-80,0,0" BorderBrush="Coral" BorderThickness="3"></TextBox>
+                <Button  Name ="yesDelete" Content="Yes" HorizontalAlignment="Left" Margin="30,100,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="yesDelete_Click" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Name ="noDelete" Content="No" HorizontalAlignment="Left" Margin="190,100,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="noDelete_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Popup>
 
 
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,338,0,0" TextWrapping="Wrap" Opacity="1" FontWeight="Bold" Foreground="black" VerticalAlignment="Top" RenderTransformOrigin="0.563,0.687" Height="31" Width="130" FontSize="20"><Run Language="en-ca" Text="  "/><Run Text="Main Target"/></TextBlock>

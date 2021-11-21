@@ -33,6 +33,7 @@ namespace CPSC_481___TrackStar
             if (User.currentProgram == null)
             {
                 currentProgramLbl.Content = "Currently No Program Selected";
+                removeProgramBtn.IsEnabled = false;
             }
             else
             {
@@ -88,16 +89,32 @@ namespace CPSC_481___TrackStar
 
         private void removeProgramBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult cancel = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+           // MessageBoxResult cancel = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            Poper.IsOpen = true;
 
-            if (cancel == MessageBoxResult.Yes)
+          /*  if (cancel == MessageBoxResult.Yes)
             {
                 currentProgramLbl.Content = "No Program Currently Selected";
                 User.currentProgram = null;
                 User.programDaysLeft = 0;
                 
             }
+          */
 
+        }
+
+        private void yesDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Poper.IsOpen = false;
+            currentProgramLbl.Content = "No Program Currently Selected";
+            User.currentProgram = null;
+            User.programDaysLeft = 0;
+        }
+
+        private void noDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper.IsOpen = false;
 
         }
 
@@ -110,6 +127,11 @@ namespace CPSC_481___TrackStar
             specWindow.Show();
         }
 
+        private void ok_Click(object sender, RoutedEventArgs e)
+        {
+            Poper1.IsOpen = false;
+        }
+
 
         private void viewProgramBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -118,7 +140,8 @@ namespace CPSC_481___TrackStar
             this.Visibility = Visibility.Hidden;*/
             if (User.currentProgram == null)
             {
-                MessageBox.Show("You have not chosen a program. If you would like a program, please choose from the list below");
+                // MessageBox.Show("You have not chosen a program. If you would like a program, please choose from the list below");
+                Poper1.IsOpen = true;
             }
             else
             {

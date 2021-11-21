@@ -94,7 +94,7 @@
                             <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="0,90,0,0" Text="{Binding Description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
                         </Grid>
                     </WrapPanel>-->
-                    <Expander Background="Coral"  HorizontalAlignment="Left" Header="{Binding Name}"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="365">
+                    <Expander Background="Coral" BorderBrush="White" HorizontalAlignment="Left" Header="{Binding Name}"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="365">
                         <Grid x:Name="fullBodyGrid" Height="180" Width ="365" Background="#FF7F50">
                             <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
                                 <Button.Resources>
@@ -112,5 +112,38 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Popup Name="Poper" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="150" IsOpen="False">
+            <Grid Background="Teal">
+                <Rectangle Width="290" Height="140" Fill="White" />
+                <TextBox Text="                      Are you sure you want  &#x0a;                   to remove your meal plan? " Width="270" Height="45" Margin="0,-80,0,0" BorderBrush="Teal" BorderThickness="3"></TextBox>
+                <Button  Name ="yesDelete" Content="Yes" HorizontalAlignment="Left" Margin="30,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="yesDelete_Click" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Name ="noDelete" Content="No" HorizontalAlignment="Left" Margin="190,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="noDelete_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Popup>
+        <Popup Name="Poper1" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="150" IsOpen="False">
+            <Grid Background="Teal">
+                <Rectangle Width="290" Height="140" Fill="White" />
+                <TextBox Text="You have not chosen a meal plan.  &#x0a; If you would like a meal plan, &#x0a; please choose from the list below " Width="270" Height="60" Margin="0,-60,0,0" BorderBrush="Teal" BorderThickness="3"></TextBox>
+                <Button  Name ="ok" Content="Okay" HorizontalAlignment="Left" Margin="30,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="ok_Click" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Popup>
     </Grid>
 </Window>

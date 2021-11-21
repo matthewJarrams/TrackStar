@@ -111,14 +111,15 @@ namespace CPSC_481___TrackStar
         {
             if (User.currentProgram == null)
             {
-                MessageBoxResult catalogue = System.Windows.MessageBox.Show("You have not selected a workout program, would you like to view available programs?", "Catalogue", System.Windows.MessageBoxButton.YesNo);
+                //MessageBoxResult catalogue = System.Windows.MessageBox.Show("You have not selected a workout program, would you like to view available programs?", "Catalogue", System.Windows.MessageBoxButton.YesNo);
+                Poper.IsOpen = true;
 
-                if (catalogue == MessageBoxResult.Yes)
+               /* if (catalogue == MessageBoxResult.Yes)
                 {
                     Catalogue catScreen = new Catalogue();
                     this.Visibility = Visibility.Hidden;
                     catScreen.Show();
-                }
+                }*/
             }
             else
             {
@@ -126,6 +127,21 @@ namespace CPSC_481___TrackStar
                 this.Visibility = Visibility.Hidden;
                 objWindow1.Show();
             }
+        }
+
+        private void yesDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Poper.IsOpen = false;
+            Catalogue catScreen = new Catalogue();
+            this.Visibility = Visibility.Hidden;
+            catScreen.Show();
+        }
+
+        private void noDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper.IsOpen = false;
+
         }
 
 

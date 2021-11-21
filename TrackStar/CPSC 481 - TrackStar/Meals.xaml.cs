@@ -27,6 +27,7 @@ namespace CPSC_481___TrackStar
             if (User.currentMealPlan == null)
             {
                 currentMealPlan.Content = "Currently No Meal Plan";
+                removeProgramBtn.IsEnabled = false;
             }
             else
             {
@@ -168,7 +169,8 @@ namespace CPSC_481___TrackStar
         {
             if (User.currentMealPlan == null)
             {
-                MessageBox.Show("You have not chosen a meal plan. If you would like a meal plan, please choose from the list below");
+               // MessageBox.Show("You have not chosen a meal plan. If you would like a meal plan, please choose from the list below");
+                Poper1.IsOpen = true;
             }
             else
             {
@@ -178,6 +180,12 @@ namespace CPSC_481___TrackStar
             }
         }
 
+        private void ok_Click(object sender, RoutedEventArgs e)
+        {
+            Poper1.IsOpen = false;
+        }
+
+
         private void Remove_Meal_Click(object sender, RoutedEventArgs e)
         {
             if (User.currentMealPlan == null)
@@ -186,12 +194,29 @@ namespace CPSC_481___TrackStar
             }
             else
             {
-                User.currentMealPlan = null;
-                Meals meals = new Meals();
-                this.Visibility = Visibility.Hidden;
-                meals.Show();
+                Poper.IsOpen = true;
             }
         }
+
+        private void yesDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Poper.IsOpen = false;
+            User.currentMealPlan = null;
+            Meals meals = new Meals();
+            this.Visibility = Visibility.Hidden;
+            meals.Show();
+        }
+
+        private void noDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper.IsOpen = false;
+
+        }
+
+
+
+
 
         public static List<List<Food>> buildMealPlan()
         {

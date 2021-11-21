@@ -30,8 +30,12 @@ namespace CPSC_481___TrackStar
             lbTodoList.ItemsSource = test.ExerciseList;
             progOnScreen = prog;
             programTitle.Content = progOnScreen.name;
+            descripBox.Text = progOnScreen.description;
+            Titl.Content = "Description";
+            WorkLbl.Content = "Day " + progOnScreen.workouts[currentDay].Day;
+            Prev.Visibility = Visibility.Hidden;
 
-            if(User.currentProgram == progOnScreen)
+            if (User.currentProgram == progOnScreen)
             {
                 setProgButton.IsEnabled = false;
             }
@@ -43,7 +47,13 @@ namespace CPSC_481___TrackStar
             lbTodoList.ItemsSource = null;
            
             lbTodoList.ItemsSource = progOnScreen.workouts[++currentDay].ExerciseList;
-            
+            WorkLbl.Content = "Day " + progOnScreen.workouts[currentDay].Day;
+            Prev.Visibility = Visibility.Visible;
+            if (currentDay + 1 == progOnScreen.workouts.Count)
+            {
+                Next.Visibility = Visibility.Hidden;
+            }
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -51,6 +61,12 @@ namespace CPSC_481___TrackStar
             lbTodoList.ItemsSource = null;
 
             lbTodoList.ItemsSource = progOnScreen.workouts[--currentDay].ExerciseList;
+            WorkLbl.Content = "Day " + progOnScreen.workouts[currentDay].Day;
+            Next.Visibility = Visibility.Visible;
+            if(currentDay == 0)
+            {
+                Prev.Visibility = Visibility.Hidden;
+            }
         }
 
         private void back_Btn(object sender, RoutedEventArgs e)
@@ -58,6 +74,63 @@ namespace CPSC_481___TrackStar
             Catalogue catWindow = new Catalogue();
             this.Visibility = Visibility.Hidden;
             catWindow.Show();
+        }
+
+        private void Next_Click(object sender, RoutedEventArgs e)
+        {
+            // Button button = sender as Button;
+            // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
+            if (Titl.Content.Equals("Length"))
+            {
+                Titl.Content = "Goals";
+
+                descripBox.Text = progOnScreen.goals;
+
+
+            }
+            else if (Titl.Content.Equals("Goals"))
+            {
+                Titl.Content = "Description";
+                descripBox.Text = progOnScreen.description;
+
+            }
+            else if (Titl.Content.Equals("Description"))
+            {
+                Titl.Content = "Length";
+
+                descripBox.Text = progOnScreen.lengthDes;
+
+
+            }
+        }
+
+        private void Prev_Click(object sender, RoutedEventArgs e)
+        {
+            // Button button = sender as Button;
+            // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
+            if (Titl.Content.Equals("Length"))
+            {
+                Titl.Content = "Description";
+               
+                descripBox.Text = progOnScreen.description;
+               
+
+            }
+            else if (Titl.Content.Equals("Goals"))
+            {
+                Titl.Content = "Length";
+                descripBox.Text = progOnScreen.lengthDes;
+
+            }
+            else if (Titl.Content.Equals("Description"))
+            {
+                Titl.Content = "Goals";
+                
+                descripBox.Text = progOnScreen.goals;
+                
+
+            }
+
         }
 
         private void setProgramBtn(object sender, RoutedEventArgs e)

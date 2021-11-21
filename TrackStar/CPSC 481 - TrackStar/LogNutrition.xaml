@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
         WindowStartupLocation="Manual" 
@@ -86,7 +87,17 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Margin="275,41,0,509" Stretch="Fill" Source="Screenshot 2021-10-29 213207.png"/>
+        <!--<Image Margin="275,41,0,509" Stretch="Fill" Source="Screenshot 2021-10-29 213207.png"/>-->
+            <lvc:PieChart LegendLocation="Top"  Hoverable="False"  Margin="253,11,0,544">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Name="fatter" Title="Fats" Values="0" DataLabels="True" 
+                              />
+                <lvc:PieSeries Name="carber" Title="Carbs" Values="0" DataLabels="True" 
+                               />
+                <lvc:PieSeries Name="proter" Title="Protein" Values="0" DataLabels="True" 
+                               />
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
 
     </Grid>
 </Window>

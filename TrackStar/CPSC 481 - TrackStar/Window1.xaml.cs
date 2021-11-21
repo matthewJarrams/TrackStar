@@ -250,6 +250,7 @@ namespace CPSC_481___TrackStar
 			Workout Day2 = new Workout(2, day2);
 			Workout Day3 = new Workout(3, day3);
 
+
 			Workout Day12 = new Workout(1, day12);
 
 			List<Workout> workoutPlan = new List<Workout>();
@@ -260,9 +261,13 @@ namespace CPSC_481___TrackStar
 			List<Workout> workoutPlan2 = new List<Workout>();
 			workoutPlan2.Add(Day12);
 
-			cardio = new Program("Cardio Training Program", workoutPlan, "Description!!!!!", "Low", 40);
-			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Medium", 1);
-			arms = new Program("Arms Building Program", workoutPlan, "Strength", "High", 60);
+			string desc = "Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. " +
+				"For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. " +
+				"Whilst also helping you get fitter \n \n Program for intermediate gym goers.";
+
+			cardio = new Program("Cardio Training Program", workoutPlan, desc, "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "-Increase fitness levels \n -Become a better runner \n ;-Burn calories!",  "Low", 40);
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Testlength", "TestGoals", "Medium", 1);
+			arms = new Program("Arms Building Program", workoutPlan, "Strength", "Testlength", "TestGoals", "High", 60);
 
 		}
 
@@ -309,15 +314,19 @@ namespace CPSC_481___TrackStar
 		public string name { get; set; }
 		public List<Workout> workouts { get; set; }
 		public string description { get; set; }
+		public string lengthDes { get; set; }
+		public string goals { get; set; }
 		public string intensity { get; set; }
 
 		public int length { get; set; }
 
-		public  Program(String n, List<Workout> list, String d, String inten, int length)
+		public  Program(String n, List<Workout> list, String d, String ld, String go,  String inten, int length)
 		{
 			this.name = n;
 			this.workouts = list;
 			this.description = d;
+			this.lengthDes = ld;
+			this.goals = go;
 			this.intensity = inten;
 			this.length = length;
 		}
