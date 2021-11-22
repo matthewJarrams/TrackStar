@@ -136,16 +136,7 @@ namespace CPSC_481___TrackStar
                     targetsMet++;
                 }
 
-                if (targetsMet == 5)
-                {
-                    macroTargets.Fill = new SolidColorBrush(Colors.Green);
-                }
-                else
-                {
-                    macroTargets.Fill = new SolidColorBrush(Colors.Red);
-                }
-
-                targetsMetLbl.Content = targetsMet + " / 5";
+                
 
             }
         }
@@ -169,9 +160,7 @@ namespace CPSC_481___TrackStar
 
             calTarget.Content = 0;
             calorieChecker.Fill = new SolidColorBrush(Colors.White);
-            macroTargets.Fill = new SolidColorBrush(Colors.White);
-            targetsMetLbl.Content =  0 + " / 5";
-
+           
 
 
         }
@@ -186,6 +175,7 @@ namespace CPSC_481___TrackStar
             mainWindow.Visibility = Visibility.Visible;
             this.Visibility = Visibility.Hidden;
         }
+
 
         
         private void CheckBox_Click(object sender, RoutedEventArgs e)
@@ -217,8 +207,177 @@ namespace CPSC_481___TrackStar
                 proBox.Text = cumProtien.ToString();
             }
 
+            bool f = int.TryParse(fatBox.Text, out _);
+            bool c = int.TryParse(carbBox.Text, out _);
+            bool pro = int.TryParse(proBox.Text, out _);
+            bool cc = int.TryParse(calsConsumed.Text, out _);
+            bool cb = int.TryParse(calsBurned.Text, out _);
+
+            if (f && c && pro && cc && cb)
+            {
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
 
 
+
+                if (calDifference > 2000)
+                {
+                    calorieChecker.Fill = new SolidColorBrush(Colors.Red);
+
+                }
+                else
+                {
+                    calorieChecker.Fill = new SolidColorBrush(Colors.Green);
+                }
+
+                int targetsMet = 0;
+
+                double total = double.Parse(fatBox.Text) + double.Parse(carbBox.Text) + double.Parse(proBox.Text);
+                double fatPer = double.Parse(fatBox.Text) / total * 100;
+                double carbPer = double.Parse(carbBox.Text) / total * 100;
+                double proPer = double.Parse(proBox.Text) / total * 100;
+
+                fatPer = Math.Round(fatPer, 1);
+                carbPer = Math.Round(carbPer, 1);
+                proPer = Math.Round(proPer, 1);
+
+                var fatvals = new ChartValues<double> { fatPer };
+                fatter.Values = fatvals;
+                var carbvals = new ChartValues<double> { carbPer };
+                carber.Values = carbvals;
+                var provals = new ChartValues<double> { proPer };
+                proter.Values = provals;
+
+
+
+                if (int.Parse(carbBox.Text) == 125)
+                {
+                    targetsMet++;
+                }
+                if (int.Parse(fatBox.Text) == 50)
+                {
+
+                    targetsMet++;
+                }
+                if (int.Parse(proBox.Text) == 75)
+                {
+                    targetsMet++;
+                }
+                if (caloriesBurned == 500)
+                {
+                    targetsMet++;
+                }
+                if (calorieIntake == 2500)
+                {
+                    targetsMet++;
+                }
+
+            }
+
+
+
+        }
+        public static int MouseDoubleClick = 0;
+
+        private void proBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MouseDoubleClick++;
+            if(MouseDoubleClick == 1)
+            {
+            }
+            if(MouseDoubleClick == 2)
+            {
+                int editedPro = int.Parse(proBox.Text);
+                editedPro = editedPro - cumProtien;
+
+                cumProtien += editedPro;
+
+
+                double total = double.Parse(fatBox.Text) + double.Parse(carbBox.Text) + double.Parse(proBox.Text);
+                double fatPer = double.Parse(fatBox.Text) / total * 100;
+                double carbPer = double.Parse(carbBox.Text) / total * 100;
+                double proPer = double.Parse(proBox.Text) / total * 100;
+
+                fatPer = Math.Round(fatPer, 1);
+                carbPer = Math.Round(carbPer, 1);
+                proPer = Math.Round(proPer, 1);
+
+                var fatvals = new ChartValues<double> { fatPer };
+                fatter.Values = fatvals;
+                var carbvals = new ChartValues<double> { carbPer };
+                carber.Values = carbvals;
+                var provals = new ChartValues<double> { proPer };
+                proter.Values = provals;
+                MouseDoubleClick = 0;
+            }
+        }
+        public static int editedFat = 0;
+        private void fatBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MouseDoubleClick++;
+            if (MouseDoubleClick == 1)
+            {
+            }
+            if (MouseDoubleClick == 2)
+            {
+                editedFat = int.Parse(fatBox.Text);
+                editedFat = editedFat - cumFat;
+
+                cumFat += editedFat;
+
+                double total = double.Parse(fatBox.Text) + double.Parse(carbBox.Text) + double.Parse(proBox.Text);
+                double fatPer = double.Parse(fatBox.Text) / total * 100;
+                double carbPer = double.Parse(carbBox.Text) / total * 100;
+                double proPer = double.Parse(proBox.Text) / total * 100;
+
+                fatPer = Math.Round(fatPer, 1);
+                carbPer = Math.Round(carbPer, 1);
+                proPer = Math.Round(proPer, 1);
+
+                var fatvals = new ChartValues<double> { fatPer };
+                fatter.Values = fatvals;
+                var carbvals = new ChartValues<double> { carbPer };
+                carber.Values = carbvals;
+                var provals = new ChartValues<double> { proPer };
+                proter.Values = provals;
+                MouseDoubleClick = 0;
+            }
+        }
+
+        private void carbBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MouseDoubleClick++;
+            if (MouseDoubleClick == 1)
+            {
+            }
+            if (MouseDoubleClick == 2)
+            {
+
+                int editedCarbs = int.Parse(carbBox.Text);
+                editedCarbs = editedCarbs - cumCarbs;
+
+                cumCarbs += editedCarbs;
+
+
+                double total = double.Parse(fatBox.Text) + double.Parse(carbBox.Text) + double.Parse(proBox.Text);
+                double fatPer = double.Parse(fatBox.Text) / total * 100;
+                double carbPer = double.Parse(carbBox.Text) / total * 100;
+                double proPer = double.Parse(proBox.Text) / total * 100;
+
+                fatPer = Math.Round(fatPer, 1);
+                carbPer = Math.Round(carbPer, 1);
+                proPer = Math.Round(proPer, 1);
+
+                var fatvals = new ChartValues<double> { fatPer };
+                fatter.Values = fatvals;
+                var carbvals = new ChartValues<double> { carbPer };
+                carber.Values = carbvals;
+                var provals = new ChartValues<double> { proPer };
+                proter.Values = provals;
+                MouseDoubleClick = 0;
+            }
         }
     }
     public class Food

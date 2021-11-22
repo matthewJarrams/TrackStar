@@ -159,7 +159,7 @@ namespace CPSC_481___TrackStar
         private void Spec_Meal_Cick(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            MealPlans spec = button.DataContext as MealPlans;
+            Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
             SpecMeal specWindow = new SpecMeal(spec);
             this.Visibility = Visibility.Hidden;
             specWindow.Show();

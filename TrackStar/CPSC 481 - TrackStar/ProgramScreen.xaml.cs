@@ -133,10 +133,32 @@ namespace CPSC_481___TrackStar
 
         }
 
+        private void yesDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Poper.IsOpen = false;
+            User.programDaysLeft = progOnScreen.length;
+            User.currentProgramWorkoutsCompleted = 0;
+            Button button = sender as Button;
+            Program spec = button.DataContext as Program;
+            User.currentProgram = progOnScreen;
+            setLabel.Visibility = Visibility.Visible;
+            setProgButton.IsEnabled = false;
+        }
+
+        private void noDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper.IsOpen = false;
+
+        }
+
+
         private void setProgramBtn(object sender, RoutedEventArgs e)
         {
             if(User.currentProgram != null)
             {
+                Poper.IsOpen = true;
+                /*
                 MessageBoxResult switchPrograms = System.Windows.MessageBox.Show("Are you sure you want to replace your current program with this one?", "Switch Program Confirmation", System.Windows.MessageBoxButton.YesNo);
 
                 if (switchPrograms == MessageBoxResult.Yes)
@@ -149,7 +171,9 @@ namespace CPSC_481___TrackStar
                     setLabel.Visibility = Visibility.Visible;
                     setProgButton.IsEnabled = false;
 
-                }
+                }*/
+
+
             }
             else
             {

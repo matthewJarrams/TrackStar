@@ -109,6 +109,7 @@ namespace CPSC_481___TrackStar
             currentProgramLbl.Content = "No Program Currently Selected";
             User.currentProgram = null;
             User.programDaysLeft = 0;
+            removeProgramBtn.IsEnabled = false;
         }
 
         private void noDelete_Click(object sender, RoutedEventArgs e)

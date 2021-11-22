@@ -61,8 +61,8 @@ namespace CPSC_481___TrackStar
             }
             
             personalRecord newRecord = new personalRecord(recordType, goal, type, value);
-            Goals.recordList.Add(newRecord);
-            Goals.tableList.Add(newRecord);
+            Goals.recordList.Insert(0, newRecord);
+            Goals.tableList.Insert(0,newRecord);
             Goals goalScreen = new Goals();
             this.Visibility = Visibility.Hidden;
             goalScreen.Show();

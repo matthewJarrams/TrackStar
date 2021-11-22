@@ -31,6 +31,13 @@ namespace CPSC_481___TrackStar
             TargetList.Visibility = Visibility.Hidden;
             TargetList.ItemsSource = spec.Targets[1].TargetList;
             Titl.Content = "Description";
+            setLabel.Visibility = Visibility.Hidden;
+
+            if(User.currentMealPlan != null && User.currentMealPlan.Name == spec.Name)
+            {
+                mealPlanBtn.IsEnabled = false;
+            }
+
 
 
 
@@ -47,11 +54,38 @@ namespace CPSC_481___TrackStar
 
         }
 
+        private void yesDelete_Click(object sender, RoutedEventArgs e)
+        {
+            User.currentMealPlan = mealOnScreen;
+            Poper.IsOpen = false;
+            setLabel.Visibility = Visibility.Visible;
+            mealPlanBtn.IsEnabled = false;
+
+        }
+
+        private void noDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper.IsOpen = false;
+
+        }
+
+
         private void setMealPlan_Click(object sender, RoutedEventArgs e)
         {
-            // Button button = sender as Button;
-            // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
-            User.currentMealPlan = mealOnScreen;
+            
+            if (User.currentMealPlan != null)
+            {
+                Poper.IsOpen = true;
+                
+            }
+            else
+            {
+                User.currentMealPlan = mealOnScreen;
+                setLabel.Visibility = Visibility.Visible;
+                mealPlanBtn.IsEnabled = false;
+
+            }
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)

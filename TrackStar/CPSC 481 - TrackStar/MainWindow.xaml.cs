@@ -184,9 +184,9 @@ namespace CPSC_481___TrackStar
 
         private void Nutrition_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            LogNutrition nutScreen = new LogNutrition();
             this.Visibility = Visibility.Hidden;
-            nutWindow.Show();
+            nutScreen.Show();
         }
 
 
