@@ -11,6 +11,7 @@
     <None Remove="977451.png" />
     <None Remove="Catalogue_icon.png" />
     <None Remove="checkMarkIcon.png" />
+    <None Remove="CPSC 481 - Button.png" />
     <None Remove="diet-icon-24.jpg" />
     <None Remove="Home_Icon.svg.png" />
     <None Remove="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
@@ -40,6 +41,7 @@
     <Resource Include="977451.png" />
     <Resource Include="Catalogue_icon.png" />
     <Resource Include="checkMarkIcon.png" />
+    <Resource Include="CPSC 481 - Button.png" />
     <Resource Include="diet-icon-24.jpg" />
     <Resource Include="Home_Icon.svg.png" />
     <Resource Include="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />

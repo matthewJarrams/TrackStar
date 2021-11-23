@@ -53,7 +53,7 @@ namespace CPSC_481___TrackStar
                     programCompletionBlock.Margin = new Thickness(55, 115, 0, 0);
                     programCompletionBlock.Width = 320;
                     programCompletionBlock.Height = 50;
-                    directions.Text = "Tap the catlogue icon on the menu bar to pick a new one!";
+                    //directions.Text = "Tap the catalogue icon on the menu bar to pick a new one!";
                     User.currentProgram = null;
                 }
                 else
@@ -61,7 +61,7 @@ namespace CPSC_481___TrackStar
                     programCompletionBlock.Text = "Program Completion (" + User.programDaysLeft + " Days Left)";
                     completionBar.Value = User.currentProgramWorkoutsCompleted;
                     programCompletionLbl.Content = "Workout Progress: " + completionBar.Value + " / " + completionBar.Maximum;
-                    directions.Visibility = Visibility.Hidden;
+                    directionsClick.Visibility = Visibility.Hidden;
                     programCompletionBlock.Margin = new Thickness(60, 106, 0, 0);
                 }
             }
@@ -128,6 +128,15 @@ namespace CPSC_481___TrackStar
                 objWindow1.Show();
             }
         }
+
+
+        private void Button_Guide(object sender, RoutedEventArgs e)
+        {
+
+
+
+        }
+
 
         private void yesDelete_Click(object sender, RoutedEventArgs e)
         {

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Release\net5.0-windows\
+C:\Users\richa\Source\Repos\TrackStarv2\TrackStar\CPSC 481 - TrackStar\obj\Release\net5.0-windows\
 CPSC_481___TrackStar
 none
 false
 TRACE;RELEASE;NET;NET5_0;NETCOREAPP
-C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\App.xaml
-8638186663
+C:\Users\richa\Source\Repos\TrackStarv2\TrackStar\CPSC 481 - TrackStar\App.xaml
+14-217696199
 
-10-1314009424
-193-1891726104
-Catalogue.xaml;Goals.xaml;InfoWindow.xaml;LogNutrition.xaml;MainWindow.xaml;Meals.xaml;ProgramScreen.xaml;Window1.xaml;
+17-1090413299
+195-23957183
+Catalogue.xaml;Goals.xaml;GraphStuff.xaml;InfoWindow.xaml;LogNutrition.xaml;MainWindow.xaml;Meals.xaml;NewGoalDialog.xaml;NewRecordTypeScreen.xaml;notificationScreen.xaml;ProgramScreen.xaml;SettingsWindow.xaml;SpecMeal.xaml;Window1.xaml;
 
-False
+True
 
