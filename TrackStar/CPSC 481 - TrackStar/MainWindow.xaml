@@ -96,6 +96,13 @@
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
         <TextBox x:Name="directions" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="90,178,0,0" Text="Tap the catlogue icon on the menu bar to view available workout programs" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="290,20,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Center" Height="35" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

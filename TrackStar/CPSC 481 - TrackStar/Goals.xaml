@@ -92,11 +92,11 @@
                 <Label Content="Goal Type" HorizontalAlignment="Left" Margin="15,50,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
                 <Label Content="Value" Margin="135,50,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Calibri" FontSize="14"/>
                 <Label Content="Goal"  Margin="15,0,0,541" VerticalAlignment="Bottom"  FontWeight="Bold" FontFamily="Calibri" FontSize="14" Grid.Column="1" HorizontalAlignment="Left" Width="99" />
-                <Label Content="Progress Analysis"  Margin="112,309,111,280"  FontSize="14" FontWeight="Bold" FontFamily="Arial" Width="150" Grid.ColumnSpan="2"/>
+                <Label x:Name="goalTitle" Content="Progress Analysis"  Margin="112,309,111,280"  FontSize="14" FontWeight="Bold" FontFamily="Arial" Width="150" Grid.ColumnSpan="2"/>
 
-                <lvc:CartesianChart x:Name="progVisuals" Series="{Binding SeriesCollection}" LegendLocation="Right" Foreground="Black" Margin="0,370,6,10" Grid.ColumnSpan="2" >
+                <lvc:CartesianChart x:Name="progVisuals" Series="{Binding SeriesCollection}"   LegendLocation="Right" Foreground="Black" Margin="0,370,6,10" Grid.ColumnSpan="2" >
                     <lvc:CartesianChart.AxisY>
-                        <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Coral" FontSize="16"></lvc:Axis>
+                        <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Coral" FontSize="16" ></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                     <lvc:CartesianChart.AxisX>
                         <lvc:Axis Title="Day" Labels="{Binding Labels}" Foreground="Coral" FontSize="16"></lvc:Axis>

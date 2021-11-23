@@ -20,6 +20,7 @@ namespace CPSC_481___TrackStar
     public partial class InfoWindow : Window
     {
         public static  List<PersonalInfo> userInfoList = new List<PersonalInfo>();
+        public static PersonalInfo mainTarget;
         public InfoWindow()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace CPSC_481___TrackStar
             PersonalInfo height = new PersonalInfo("Height (meters)", User.height);
             PersonalInfo age = new PersonalInfo("Age", User.age);
             PersonalInfo gender = new PersonalInfo("Gender", User.gender);
+            mainTarget = new PersonalInfo("Main Target", MainWindow.pinnedRecord.type);
 
             if (userInfoList.Count == 0)
             {
@@ -34,6 +36,8 @@ namespace CPSC_481___TrackStar
                 userInfoList.Add(height);
                 userInfoList.Add(age);
                 userInfoList.Add(gender);
+                userInfoList.Add(mainTarget);
+                
             }
 
             nameLbl.Content = User.name;
@@ -86,6 +90,7 @@ namespace CPSC_481___TrackStar
         {
             public string attribute { get; set; }
             public string value { get; set; }
+            
 
             public PersonalInfo(String attribute, String value)
             {
@@ -106,6 +111,11 @@ namespace CPSC_481___TrackStar
         {
             User.weightHist.Add(200);
             User.Labels.Add("July 1st");
+            MainWindow.pinnedRecord = Goals.recordList[1];
+            lbTodoList.ItemsSource = null;
+            mainTarget.value = Goals.recordList[1].type;
+            lbTodoList.ItemsSource = userInfoList;
+
         }
     }
 }

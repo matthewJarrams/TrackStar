@@ -26,7 +26,7 @@ namespace CPSC_481___TrackStar
     public partial class MainWindow : Window
     {
         public static User superUser = new User();
-
+        public static personalRecord pinnedRecord = Goals.weight;
        
         public LogNutrition nutWindow = new LogNutrition();
         public InfoWindow infoWindow = new InfoWindow();
@@ -74,7 +74,7 @@ namespace CPSC_481___TrackStar
                 programCompletionBlock.Margin = new Thickness(115, 130, 0, 0);
 
             }
-            
+
 
 
 
@@ -86,7 +86,7 @@ namespace CPSC_481___TrackStar
                     Fill = Brushes.Transparent,
                     Stroke = Brushes.Coral,
                     Opacity = 0.2,
-                    Values  = User.weightHist
+                    Values  = pinnedRecord.recordHist
                 }
 
             };
@@ -161,9 +161,9 @@ namespace CPSC_481___TrackStar
 
         private void Info_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            InfoWindow info = new InfoWindow();
             this.Visibility = Visibility.Hidden;
-            infoWindow.Show();
+            info.Show();
         }
 
         private void Goals_Button_Click(object sender, RoutedEventArgs e)
@@ -189,6 +189,10 @@ namespace CPSC_481___TrackStar
             nutScreen.Show();
         }
 
-
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            NewGoalDialog ngd = new NewGoalDialog(pinnedRecord);
+            ngd.Show();
+        }
     }
 }

@@ -33,12 +33,12 @@ namespace CPSC_481___TrackStar
 
         public static List<personalRecord> recordList = new List<personalRecord>();
         public static List<personalRecord> tableList = new List<personalRecord>();
-        personalRecord weight = new personalRecord("Weight (lbs)", 210, "(Lbs)", 170);
+        public static personalRecord weight = new personalRecord("Weight Loss", 210, "(Lbs)", 170);
         
 
         personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150);
         
-        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Mins", 22);
+        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Hr:Min:Seconds", 22);
 
 
         public Goals()
@@ -80,11 +80,12 @@ namespace CPSC_481___TrackStar
            
             recordsListBox.ItemsSource = tableList;
 
-            
 
+           
 
             progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].acttype;
+            goalTitle.Content = recordList[currentRecIndex].type;
             
 
           
@@ -193,10 +194,12 @@ namespace CPSC_481___TrackStar
             
             PrevBtn.IsEnabled = true;
             if(currentRecIndex+1 == recordList.Count) NextBtn.IsEnabled = false;
-            
-               
-            
-            
+            goalTitle.Content = recordList[currentRecIndex].type;
+
+
+
+
+
 
         }
 
@@ -207,6 +210,8 @@ namespace CPSC_481___TrackStar
             Yaxis.Title = recordList[currentRecIndex].acttype;
             NextBtn.IsEnabled = true;
             if (currentRecIndex == 0) PrevBtn.IsEnabled = false;
+            goalTitle.Content = recordList[currentRecIndex].type;
+
 
         }
     }

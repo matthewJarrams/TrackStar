@@ -39,10 +39,10 @@ namespace CPSC_481___TrackStar
         public static int currentProgramWorkoutsCompleted = 0;
         public static int currentProgramMissedWorkouts = 0;
 
-        public static LiveCharts.ChartValues<int> weightHist = new LiveCharts.ChartValues<int>() {
+        public static LiveCharts.ChartValues<double> weightHist = new LiveCharts.ChartValues<double>() {
         150, 155, 160, 165, 170, 155};
 
-        public static LiveCharts.ChartValues<int> benchHist = new LiveCharts.ChartValues<int>() {
+        public static LiveCharts.ChartValues<double> benchHist = new LiveCharts.ChartValues<double>() {
         200, 255, 260, 265, 270, 255};
 
         public static List<String> Labels = new List<String>() { "Jan 23", "Feb 12", "Mar 13", "Apr 20", "May 12", "Jun 24" };
@@ -57,17 +57,17 @@ namespace CPSC_481___TrackStar
     public class personalRecord
     {
         public string type { get; set; }
-        public int value { get; set; }
+        public double value { get; set; }
         public string acttype { get; set; }
-        public int goal { get; set; }
+        public double goal { get; set; }
 
-        public LiveCharts.ChartValues<int> recordHist = new LiveCharts.ChartValues<int>();
-        public LiveCharts.ChartValues<int> goalHist = new LiveCharts.ChartValues<int>();
+        public LiveCharts.ChartValues<double> recordHist = new LiveCharts.ChartValues<double>();
+        public LiveCharts.ChartValues<double> goalHist = new LiveCharts.ChartValues<double>();
         public SeriesCollection SeriesCollection { get; set; }
 
 
 
-        public personalRecord(string type, int goal, string acttype, int value)
+        public personalRecord(string type, double goal, string acttype, double value)
         {
             this.type = type;
             this.value = value;
@@ -97,12 +97,12 @@ namespace CPSC_481___TrackStar
             };
         }
 
-        public void SetNewValue(int newValue)
+        public void SetNewValue(double newValue)
         {
             value = newValue;
             recordHist.Add(newValue);
         }
-        public void SetNewGoal(int newValue)
+        public void SetNewGoal(double newValue)
         {
             goal = newValue;
             goalHist.Add(newValue);

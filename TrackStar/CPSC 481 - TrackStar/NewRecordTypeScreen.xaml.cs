@@ -20,8 +20,8 @@ namespace CPSC_481___TrackStar
     public partial class NewRecordTypeScreen : Window
     {
         public static string recordType;
-        public static int value;
-        public static int goal;
+        public static double value;
+        public static double goal;
         public string type = "null";
 
         public NewRecordTypeScreen()
@@ -50,16 +50,39 @@ namespace CPSC_481___TrackStar
         {
             MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             recordType = titleGoal.Text;
-            if(type.Equals("Hr: Min:Seconds"))
+            if(type.Equals("Hr:Min:Seconds"))
             {
-               
+                double  hoursCur = double.Parse(curVal.Text);
+                double minsCur = double.Parse(curMin.Text);
+                double secsCur = double.Parse(curSeconds.Text);
+
+                double hoursGoal = double.Parse(goalVal.Text);
+                double minsGoal = double.Parse(goalMin.Text);
+                double secsGoal = double.Parse(goalSec.Text);
+                if (hoursCur == 0)
+                {
+                    value = minsCur + (secsCur / 60);
+                    recordType = recordType + " (Mins)";
+
+                    goal = minsGoal + (secsGoal / 60);
+                }
+                else
+                {
+                    value = hoursCur + (minsCur / 60 + secsCur / 3600);
+                    recordType = recordType + " (Hrs)";
+                    goal = minsGoal + (secsGoal / 60 + secsGoal / 3600);
+                }
+                
             }
             else
             {
-                value = int.Parse(curVal.Text);
-                goal = int.Parse(goalVal.Text);
+                value = double.Parse(curVal.Text);
+                goal = double.Parse(goalVal.Text);
             }
-            
+
+            value = Math.Round(value,2);
+            goal = Math.Round(goal, 2);
+
             personalRecord newRecord = new personalRecord(recordType, goal, type, value);
             Goals.recordList.Insert(0, newRecord);
             Goals.tableList.Insert(0,newRecord);
