@@ -22,7 +22,8 @@ namespace CPSC_481___TrackStar
         public static String response;
         public Goals goalWindow = Application.Current.Windows.OfType<Goals>().First();
         public static personalRecord prOnScreen;
-        public NewGoalDialog(personalRecord pr)
+        public Goals gw;
+        public NewGoalDialog(personalRecord pr, Goals gs)
         {
             InitializeComponent();
             prOnScreen = pr;
@@ -40,6 +41,7 @@ namespace CPSC_481___TrackStar
             format.Visibility = Visibility.Hidden;
             newValMin.Visibility = Visibility.Hidden;
             newValSec.Visibility = Visibility.Hidden;
+            this.gw = gs;
 
             if (pr.acttype.Equals("Hr:Min:Seconds"))
             {
@@ -186,6 +188,7 @@ namespace CPSC_481___TrackStar
 
             //MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             //goalWindow.Visibility = Visibility.Hidden;
+            gw.Visibility = Visibility.Hidden;
             Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
             goalScreenNew.Show();

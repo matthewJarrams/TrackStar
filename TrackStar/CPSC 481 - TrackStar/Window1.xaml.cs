@@ -109,11 +109,9 @@ namespace CPSC_481___TrackStar
 			User.programDaysLeft = User.currentProgram.length - (User.currentProgramWorkoutsCompleted + User.currentProgramMissedWorkouts);
 			if (User.programDaysLeft == 0)
 			{
-				MessageBox.Show("Congratulations! You have completed your program!");
-				todayCompleted = false;
-				MainWindow home = new MainWindow();
-				this.Visibility = Visibility.Hidden;
-				home.Show();
+				//MessageBox.Show("Congratulations! You have completed your program!");
+				Poper.IsOpen = true;
+				
 
 			}
 			else
@@ -127,6 +125,15 @@ namespace CPSC_481___TrackStar
 			}
 
 
+		}
+
+		private void yesDelete_Click(object sender, RoutedEventArgs e)
+		{
+			Poper.IsOpen = false;
+			todayCompleted = false;
+			MainWindow home = new MainWindow();
+			this.Visibility = Visibility.Hidden;
+			home.Show();
 		}
 
 		private void btnNotComplete_Click(object sender, RoutedEventArgs e)

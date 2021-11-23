@@ -16,7 +16,7 @@
         <TextBox x:Name="newVal"  BorderBrush="Teal" BorderThickness="3" Background="white" Margin="0,0,185,105" HorizontalAlignment="Right" Width="49" Height="25" VerticalAlignment="Bottom"/>
         <Label Content="Goal:" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
         <Label Name="goldlbl" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-        <Label Content="New Value:" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="New Record:" FontSize="16" FontWeight="DemiBold" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top"/>
         <Button Content="Update" HorizontalAlignment="Left" Width="70" Height="35" Margin="30,187,0,0" Background="White" FontWeight="DemiBold" BorderBrush="teal" BorderThickness="2" VerticalAlignment="Top" Click="btnDialogOk_Click">
             <Button.Resources>
                 <Style TargetType="Border">

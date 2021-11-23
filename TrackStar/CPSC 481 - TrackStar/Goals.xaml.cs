@@ -58,15 +58,35 @@ namespace CPSC_481___TrackStar
                 recordList.Add(weight);
                 recordList.Add(bench);
                 recordList.Add(fiveK);
+                
 
                 
                 tableList.Add(bench);
                 tableList.Add(fiveK);
 
+                bench.recordHist.Add(155);
+                bench.recordHist.Add(165);
+                bench.recordHist.Add(175);
+                bench.recordHist.Add(185);
+                bench.goalHist.Add(300);
+                bench.goalHist.Add(300);
+                bench.goalHist.Add(300);
+                bench.goalHist.Add(300);
+
+                
+
+
+
+
+
                 weight.recordHist.Add(160);
                 weight.recordHist.Add(165);
                 weight.recordHist.Add(155);
                 weight.recordHist.Add(165);
+                weight.goalHist.Add(210);
+                weight.goalHist.Add(210);
+                weight.goalHist.Add(210);
+                weight.goalHist.Add(210);
             }
 
             if(tableList.Count == 0)
@@ -163,7 +183,7 @@ namespace CPSC_481___TrackStar
             Button b = (Button)sender;
             personalRecord p = (personalRecord)b.Tag;
            
-            NewGoalDialog specWindow = new NewGoalDialog(p);
+            NewGoalDialog specWindow = new NewGoalDialog(p, this);
             specWindow.Show();
             //MessageBox.Show("Updated!!");
             //p.SetNewValue(25);

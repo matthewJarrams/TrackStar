@@ -200,7 +200,7 @@ namespace CPSC_481___TrackStar
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            NewGoalDialog ngd = new NewGoalDialog(pinnedRecord);
+            NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             ngd.Show();
         }
     }

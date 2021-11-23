@@ -155,8 +155,11 @@ namespace CPSC_481___TrackStar
             cumFat = 0;
             cumProtien = 0;
 
-            mealListBox.ItemsSource = null;
-            mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
+            if  (User.currentMealPlan != null)
+            {
+                mealListBox.ItemsSource = null;
+                mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
+            }
 
             calTarget.Content = 0;
             calorieChecker.Fill = new SolidColorBrush(Colors.White);
