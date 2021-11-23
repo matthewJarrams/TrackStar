@@ -189,12 +189,17 @@ namespace CPSC_481___TrackStar
         private void next_Vis_Click(object sender, RoutedEventArgs e)
         {
             
-            progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
-            Yaxis.Title = recordList[currentRecIndex].acttype;
+            if (currentRecIndex+1 < recordList.Count) // Check if it's safe to +1
+            {
+                progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
+                Yaxis.Title = recordList[currentRecIndex].acttype;
+                goalTitle.Content = recordList[currentRecIndex].type;
+            }
+            
             
             PrevBtn.IsEnabled = true;
             if(currentRecIndex+1 == recordList.Count) NextBtn.IsEnabled = false;
-            goalTitle.Content = recordList[currentRecIndex].type;
+            //goalTitle.Content = recordList[currentRecIndex].type;
 
 
 
@@ -206,11 +211,17 @@ namespace CPSC_481___TrackStar
         private void prev_Vis_Click(object sender, RoutedEventArgs e)
         {
 
-            progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
-            Yaxis.Title = recordList[currentRecIndex].acttype;
+            if (currentRecIndex-1 >= 0) // Check if safe to -1
+            {
+                progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
+                Yaxis.Title = recordList[currentRecIndex].acttype;
+                goalTitle.Content = recordList[currentRecIndex].type;
+            }
+            
+            
             NextBtn.IsEnabled = true;
             if (currentRecIndex == 0) PrevBtn.IsEnabled = false;
-            goalTitle.Content = recordList[currentRecIndex].type;
+            //goalTitle.Content = recordList[currentRecIndex].type;
 
 
         }
