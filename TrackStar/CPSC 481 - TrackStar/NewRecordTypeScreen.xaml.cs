@@ -50,9 +50,10 @@ namespace CPSC_481___TrackStar
         {
             MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             recordType = titleGoal.Text;
-            if(type.Equals("Hr:Min:Seconds"))
+            double hoursCur = 0;
+            if (type.Equals("Hr:Min:Seconds"))
             {
-                double  hoursCur = double.Parse(curVal.Text);
+                hoursCur = double.Parse(curVal.Text);
                 double minsCur = double.Parse(curMin.Text);
                 double secsCur = double.Parse(curSeconds.Text);
 
@@ -65,12 +66,13 @@ namespace CPSC_481___TrackStar
                     recordType = recordType + " (Mins)";
 
                     goal = minsGoal + (secsGoal / 60);
+                    
                 }
                 else
                 {
                     value = hoursCur + (minsCur / 60 + secsCur / 3600);
                     recordType = recordType + " (Hrs)";
-                    goal = minsGoal + (secsGoal / 60 + secsGoal / 3600);
+                    goal = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
                 }
                 
             }
@@ -84,6 +86,14 @@ namespace CPSC_481___TrackStar
             goal = Math.Round(goal, 2);
 
             personalRecord newRecord = new personalRecord(recordType, goal, type, value);
+            if(hoursCur == 0)
+            {
+                newRecord.setHours(false);
+            }
+            else
+            {
+                newRecord.setHours(true);
+            }
             Goals.recordList.Insert(0, newRecord);
             Goals.tableList.Insert(0,newRecord);
             Goals goalScreen = new Goals();

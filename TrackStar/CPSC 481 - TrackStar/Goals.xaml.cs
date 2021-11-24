@@ -105,6 +105,17 @@ namespace CPSC_481___TrackStar
 
             progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].acttype;
+            if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
+            {
+                if (recordList[currentRecIndex].hours == false)
+                {
+                    Yaxis.Title = "Mins";
+                }
+                else
+                {
+                    Yaxis.Title = "Hours";
+                }
+            }
             goalTitle.Content = recordList[currentRecIndex].type;
             
 
@@ -213,6 +224,17 @@ namespace CPSC_481___TrackStar
             {
                 progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
                 Yaxis.Title = recordList[currentRecIndex].acttype;
+                if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
+                {
+                    if (recordList[currentRecIndex].hours == false)
+                    {
+                        Yaxis.Title = "Mins";
+                    }
+                    else
+                    {
+                        Yaxis.Title = "Hours";
+                    }
+                }
                 goalTitle.Content = recordList[currentRecIndex].type;
             }
             
@@ -235,6 +257,17 @@ namespace CPSC_481___TrackStar
             {
                 progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
                 Yaxis.Title = recordList[currentRecIndex].acttype;
+                if(recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
+                {
+                    if (recordList[currentRecIndex].hours == false)
+                    {
+                        Yaxis.Title = "Mins";
+                    }
+                    else
+                    {
+                        Yaxis.Title = "Hours";
+                    }
+                }
                 goalTitle.Content = recordList[currentRecIndex].type;
             }
             

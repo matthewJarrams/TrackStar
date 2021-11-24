@@ -28,7 +28,10 @@ namespace CPSC_481___TrackStar
             PersonalInfo height = new PersonalInfo("Height (meters)", User.height);
             PersonalInfo age = new PersonalInfo("Age", User.age);
             PersonalInfo gender = new PersonalInfo("Gender", User.gender);
-            mainTarget = new PersonalInfo("Main Target", MainWindow.pinnedRecord.type);
+
+            combo.ItemsSource = Goals.recordList;
+
+            
 
             if (userInfoList.Count == 0)
             {
@@ -36,7 +39,7 @@ namespace CPSC_481___TrackStar
                 userInfoList.Add(height);
                 userInfoList.Add(age);
                 userInfoList.Add(gender);
-                userInfoList.Add(mainTarget);
+                
                 
             }
 
@@ -46,7 +49,6 @@ namespace CPSC_481___TrackStar
 
             goalsComp.Content = User.goalsCompleted;
             progComp.Content = User.progCompleted;
-            mealPlansComp.Content = User.mealCompleted;
             workoutsComp.Content = User.workCompleted;
             nutTargets.Content = User.targetCompleted;
 
@@ -109,12 +111,9 @@ namespace CPSC_481___TrackStar
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            User.weightHist.Add(200);
-            User.Labels.Add("July 1st");
+            
             MainWindow.pinnedRecord = Goals.recordList[1];
-            lbTodoList.ItemsSource = null;
             mainTarget.value = Goals.recordList[1].type;
-            lbTodoList.ItemsSource = userInfoList;
 
         }
     }

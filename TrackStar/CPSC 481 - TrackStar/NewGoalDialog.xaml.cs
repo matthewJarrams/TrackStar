@@ -55,26 +55,58 @@ namespace CPSC_481___TrackStar
                 newValMin.Visibility = Visibility.Visible;
                 newValSec.Visibility = Visibility.Visible;
 
-                double seconds = pr.value * 60;
-                double goalSecs = pr.goal * 60;
+                if (pr.hours == false)
+                {
+                    double seconds = pr.value * 60;
+                    double goalSecs = pr.goal * 60;
 
-                newVal.Text = "0";
-                goalVal.Text = "0";
+                    newVal.Text = "0";
+                    goalVal.Text = "0";
 
-                int  minutes = (int)seconds / 60;
-                int goalMinutes = (int)goalSecs / 60;
+                    int minutes = (int)seconds / 60;
+                    int goalMinutes = (int)goalSecs / 60;
 
-                goalSecs = goalSecs % 60;
-                seconds = seconds % 60;
+                    goalSecs = goalSecs % 60;
+                    seconds = seconds % 60;
 
-                goalMin.Text = goalMinutes.ToString();
-                newValMin.Text = minutes.ToString();
+                    goalMin.Text = goalMinutes.ToString();
+                    newValMin.Text = minutes.ToString();
 
-                seconds = Math.Round(seconds);
-                goalSecs = Math.Round(goalSecs);
+                    seconds = Math.Round(seconds);
+                    goalSecs = Math.Round(goalSecs);
 
-                newValSec.Text = seconds.ToString();
-                goalSec.Text = goalSecs.ToString();
+                    newValSec.Text = seconds.ToString();
+                    goalSec.Text = goalSecs.ToString();
+                }
+                else
+                {
+                    double seconds = pr.value * 3600;
+                    double goalSecs = pr.goal * 3600;
+
+                    int hours = (int)seconds / 3600;
+                    int hoursgoal = (int)goalSecs / 3600;
+
+                    seconds = seconds % 3600;
+                    goalSecs = goalSecs % 3600;
+
+                    int minutes = (int)seconds / 60;
+                    int goalMinutes = (int)goalSecs / 60;
+
+                    goalSecs = goalSecs % 60;
+                    seconds = seconds % 60;
+
+                    goalMin.Text = goalMinutes.ToString();
+                    newValMin.Text = minutes.ToString();
+
+                    seconds = Math.Round(seconds);
+                    goalSecs = Math.Round(goalSecs);
+
+                    newValSec.Text = seconds.ToString();
+                    goalSec.Text = goalSecs.ToString();
+
+                    newVal.Text = hours.ToString();
+                    goalVal.Text = hoursgoal.ToString();
+                }
             }
             else
             {
@@ -116,7 +148,8 @@ namespace CPSC_481___TrackStar
                          value2 = minsCur + (secsCur / 60);
                          value2 = Math.Round(value2, 2);
                          prOnScreen.SetNewValue(value2);
-                     }
+                         prOnScreen.setHours(false);
+                    }
                      else
                      {
 
@@ -127,7 +160,8 @@ namespace CPSC_481___TrackStar
                          value2 = hoursCur + (minsCur / 60 + secsCur / 3600);
                          value2 = Math.Round(value2, 2);
                          prOnScreen.SetNewValue(value2);
-                     }
+                        prOnScreen.setHours(true);
+                    }
                  }
                  else
                  {
@@ -157,13 +191,14 @@ namespace CPSC_481___TrackStar
                      {
 
 
-                         value3 = minsCur + (secsCur / 60);
-                         value3 = Math.Round(value3, 2);
-                         prOnScreen.SetNewValue(value3);
+                        value3 = minsCur + (secsCur / 60);
+                        value3 = Math.Round(value3, 2);
+                        prOnScreen.SetNewValue(value3);
 
-                         goal3 = minsGoal + (secsGoal / 60);
-                         goal3 = Math.Round(goal3, 2);
-                         prOnScreen.SetNewGoal(goal3);
+                        goal3 = minsGoal + (secsGoal / 60);
+                        goal3 = Math.Round(goal3, 2);
+                        prOnScreen.SetNewGoal(goal3);
+                        prOnScreen.setHours(false);
 
                      }
                      else
@@ -176,8 +211,10 @@ namespace CPSC_481___TrackStar
                          goal3 = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
                          goal3 = Math.Round(goal3, 2);
                          prOnScreen.SetNewGoal(goal3);
-                     }
-                 }
+                         prOnScreen.setHours(true);
+
+                    }
+                }
                  else
                  {
                      prOnScreen.SetNewValue(double.Parse(newVal.Text));

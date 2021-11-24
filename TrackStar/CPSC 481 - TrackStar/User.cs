@@ -60,6 +60,7 @@ namespace CPSC_481___TrackStar
         public double value { get; set; }
         public string acttype { get; set; }
         public double goal { get; set; }
+        public Boolean hours {get;set;}
 
         public LiveCharts.ChartValues<double> recordHist = new LiveCharts.ChartValues<double>();
         public LiveCharts.ChartValues<double> goalHist = new LiveCharts.ChartValues<double>();
@@ -75,6 +76,7 @@ namespace CPSC_481___TrackStar
             this.goal = goal;
             goalHist.Add(goal);
             recordHist.Add(value);
+            hours = false;
 
 
             SeriesCollection = new SeriesCollection
@@ -106,6 +108,10 @@ namespace CPSC_481___TrackStar
         {
             goal = newValue;
             goalHist.Add(newValue);
+        }
+        public void setHours(bool set)
+        {
+            this.hours = set;
         }
     }
 }
