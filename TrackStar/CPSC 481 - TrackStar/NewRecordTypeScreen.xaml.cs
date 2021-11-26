@@ -99,6 +99,8 @@ namespace CPSC_481___TrackStar
             Goals goalScreen = new Goals();
             this.Visibility = Visibility.Hidden;
             goalScreen.Show();
+
+            InfoWindow.selectedIndex++;
         }
 
         private void Goaler_SelectionChanged(object sender, SelectionChangedEventArgs e)

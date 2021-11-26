@@ -84,7 +84,7 @@
             <ComboBoxItem Content="23:00"/>
 
         </ComboBox>
-        <Label Content="Notify of New &#10;Programs and Plans" HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Height="44" Width="137" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Notify of New &#10;Programs and Plans" HorizontalAlignment="Left" Margin="63,286,0,0" VerticalAlignment="Top" Height="44" Width="140" FontSize="14" FontWeight="Bold"/>
         <ComboBox x:Name="newPrograms" HorizontalAlignment="Left" Margin="216,298,0,0" VerticalAlignment="Top" Width="115" Height="20">
             <ComboBoxItem x:Name="off3" Content="Off"/>
             <ComboBoxItem x:Name="daily" Content="Daily"/>

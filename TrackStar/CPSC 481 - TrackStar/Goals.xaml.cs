@@ -64,29 +64,29 @@ namespace CPSC_481___TrackStar
                 tableList.Add(bench);
                 tableList.Add(fiveK);
 
-                bench.recordHist.Add(155);
-                bench.recordHist.Add(165);
-                bench.recordHist.Add(175);
-                bench.recordHist.Add(185);
-                bench.goalHist.Add(300);
-                bench.goalHist.Add(300);
-                bench.goalHist.Add(300);
-                bench.goalHist.Add(300);
-
-                
+                bench.SetNewValue(155);
+                bench.SetNewValue(165);
+                bench.SetNewValue(175);
+                bench.SetNewValue(185);
+                bench.SetNewGoal(300);
+                bench.SetNewGoal(300);
+                bench.SetNewGoal(300);
+                bench.SetNewGoal(300);
 
 
 
 
 
-                weight.recordHist.Add(160);
-                weight.recordHist.Add(165);
-                weight.recordHist.Add(155);
-                weight.recordHist.Add(165);
-                weight.goalHist.Add(210);
-                weight.goalHist.Add(210);
-                weight.goalHist.Add(210);
-                weight.goalHist.Add(210);
+
+
+                weight.SetNewValue(160);
+                weight.SetNewValue(165);
+                weight.SetNewValue(155);
+                weight.SetNewValue(165);
+                weight.SetNewGoal(210);
+                weight.SetNewGoal(210);
+                weight.SetNewGoal(210);
+                weight.SetNewGoal(210);
             }
 
             if(tableList.Count == 0)
@@ -161,9 +161,11 @@ namespace CPSC_481___TrackStar
 
         private void Info_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.infoWindow.Show();
+            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            //mainWindow.infoWindow.Show();
+            InfoWindow info = new InfoWindow();
             this.Visibility = Visibility.Hidden;
+            info.Show();
 
         }
 

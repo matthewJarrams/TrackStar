@@ -64,7 +64,7 @@
         <TextBox x:Name="curVal" Text="0" BorderBrush="Teal" BorderThickness="3" Width="77" Background="white" Margin="16,180,0,240" HorizontalAlignment="Left" Height="25" VerticalAlignment="Bottom"/>
         <Label Content="Title" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="6,40,50,50"/>
         <Label Content="Current Record" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,165,0,0" VerticalAlignment="Top"/>
-        <Label Content="Goal" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,242,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.036,1.529"/>
+        <Label Content="Goal" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,242,0,0" VerticalAlignment="Top"/>
 
         <TextBox x:Name="curSeconds" Text="0" BorderBrush="Teal" BorderThickness="3" Background="white" Margin="228,197,0,0" HorizontalAlignment="Left" Width="80" Height="25" VerticalAlignment="Top" />
         <TextBox x:Name="curMin" Text="0" BorderBrush="Teal" BorderThickness="3" Width="80" Background="white" Margin="123,197,0,0"  HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" />

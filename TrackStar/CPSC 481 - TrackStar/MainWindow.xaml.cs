@@ -34,6 +34,8 @@ namespace CPSC_481___TrackStar
         public Meals mealsWindow = new Meals();
         public Window1 window1 = new Window1();
         public Catalogue catWindow = new Catalogue();
+        public double value;
+        public double goal;
         //public ProgramScreen programScreen = new ProgramScreen();
 
 
@@ -55,6 +57,7 @@ namespace CPSC_481___TrackStar
                     programCompletionBlock.Height = 50;
                     //directions.Text = "Tap the catalogue icon on the menu bar to pick a new one!";
                     User.currentProgram = null;
+                    
                 }
                 else
                 {
@@ -78,21 +81,36 @@ namespace CPSC_481___TrackStar
 
 
 
-            SeriesCollection = new SeriesCollection
+            /*SeriesCollection = new SeriesCollection
             {
                 new LineSeries
                 {
-                    Title = "Weight",
+                    Title = pinnedRecord.type,
                     Fill = Brushes.Transparent,
                     Stroke = Brushes.Coral,
                     Opacity = 0.2,
                     Values  = pinnedRecord.recordHist
                 }
 
-            };
+            };*/
+            mainTarget.Series = pinnedRecord.SeriesCollection;
+            Yaxis.Title = pinnedRecord.acttype;
+            
+            if (pinnedRecord.acttype.Equals("Hr:Min:Seconds"))
+            {
+                if (pinnedRecord.hours == false)
+                {
+                    Yaxis.Title = "Mins";
+                }
+                else
+                {
+                    Yaxis.Title = "Hours";
+                }
+            }
+            targetLbl.Text = pinnedRecord.type;
+            
 
 
-          
 
             //modifying the series collection will animate and update the chart
 
@@ -200,8 +218,35 @@ namespace CPSC_481___TrackStar
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
-            ngd.Show();
+             // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
+            //ngd.Show();
+            Poper3.IsOpen = true;
+            current.Text = pinnedRecord.value.ToString();
+            goal11.Text = pinnedRecord.goal.ToString();
+            goalTitle.Content = pinnedRecord.type;
+        }
+
+        private void updater_Click(object sender, RoutedEventArgs e)
+        {
+            // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
+            //ngd.Show();
+            Poper3.IsOpen = false;
+            if (double.Parse(current.Text) != Goals.recordList[InfoWindow.selectedIndex].value || double.Parse(goal11.Text) != Goals.recordList[InfoWindow.selectedIndex].goal)
+            {
+                value = double.Parse(current.Text);
+                goal = double.Parse(goal11.Text);
+                    //pinnedRecord.SetNewValue(value);
+                Goals.recordList[InfoWindow.selectedIndex].SetNewValue(value);
+                Goals.recordList[InfoWindow.selectedIndex].SetNewGoal(goal);
+            }
+        }
+
+        private void cancel_Click(object sender, RoutedEventArgs e)
+        {
+            // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
+            //ngd.Show();
+            Poper3.IsOpen = false;
+            
         }
     }
 }

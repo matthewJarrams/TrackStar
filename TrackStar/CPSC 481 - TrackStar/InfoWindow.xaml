@@ -73,13 +73,52 @@
         <Label x:Name="nutTargets" Content="25" HorizontalAlignment="Left" Margin="315,512,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Choose Which Graph to Pin&#10;to Home Scren" HorizontalAlignment="Left" Margin="21,287,0,0" VerticalAlignment="Top" Height="48" Width="197" FontWeight="DemiBold" FontSize="14"/>
 
-        <ComboBox x:Name="combo"  HorizontalAlignment="Left" Margin="260,300,0,0" VerticalAlignment="Top" Width="130" ItemsSource="{Binding Goals.recordList}">
+        <ComboBox x:Name="combo"  HorizontalAlignment="Left" Margin="250,300,0,0" VerticalAlignment="Top" Width="130" ItemsSource="{Binding Goals.recordList}" SelectionChanged="combo_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding type}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+
+        <Popup Name="Poper3" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="300" IsOpen="False">
+            <Grid Background="Coral">
+                <Rectangle Width="290" Height="290" Fill="Teal" />
+                <Label  Name="goalTitle" Content="Personal Info Updating" Width="200" FontWeight="Bold" FontSize="16" Height="40" Margin="-82,-250,0,0" ></Label>
+                <Label  Content="Weight" Width="70" FontWeight="DemiBold" Height="35" FontSize="16" Margin="-210,-170,0,0" ></Label>
+                <Label  Content="Height" Width="70" FontWeight="DemiBold" Height="35" FontSize="16" Margin="-210,-65,0,0" ></Label>
+                <Label Content="(ft ' in)" FontSize="16" FontWeight ="DemiBold" Margin="230,100,0,0"></Label>
+                <TextBox Name="heighter" Width="125" Height="30" Margin="0,-70,0,0" BorderBrush="Coral" BorderThickness="3"></TextBox>
+                <TextBox Name="weighter" Width="125" Height="30" Margin="0,-170,0,0" BorderBrush="Coral" BorderThickness="3"></TextBox>
+                <Label Content="D.O.B" Margin="10, 150,0,0" FontSize="16" FontWeight="DemiBold"></Label>
+                <Label Content="Gender" Margin="10,200,0,0" FontSize="16" FontWeight="DemiBold"></Label>
+                <DatePicker Name="dob" Margin="10,35,0,0" Height="25" Width="140"></DatePicker>
+                <RadioButton x:Name="male" Content="Male" HorizontalAlignment="Left" Margin="80,211,0,0" VerticalAlignment="Top" >
+                       
+                </RadioButton>
+                <RadioButton x:Name="female" Content="Female" HorizontalAlignment="Left" Margin="140,211,0,0" VerticalAlignment="Top">
+                       
+                </RadioButton>
+                 <RadioButton x:Name="other" Content="Other" HorizontalAlignment="Left" Margin="210,212,0,0" VerticalAlignment="Top">
+                      
+                </RadioButton>
+                
+                <Button  Name="updater" Content="Update" HorizontalAlignment="Left" Margin="215,250,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="updater_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Name="cancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,250,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="cancel_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Popup>
 
 
     </Grid>

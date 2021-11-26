@@ -28,7 +28,7 @@ namespace CPSC_481___TrackStar
         public static Meals.MealPlans currentMealPlan;
         public static String weight = "700";
         public static String height = "5'11";
-        public static String age = "22";
+        public static DateTime age = new DateTime(1999,06,24);
         public static String gender = "Male";
         public static int goalsCompleted = 5;
         public static int progCompleted = 10;
@@ -38,6 +38,7 @@ namespace CPSC_481___TrackStar
         public static int programDaysLeft = 0;
         public static int currentProgramWorkoutsCompleted = 0;
         public static int currentProgramMissedWorkouts = 0;
+
 
         public static LiveCharts.ChartValues<double> weightHist = new LiveCharts.ChartValues<double>() {
         150, 155, 160, 165, 170, 155};
