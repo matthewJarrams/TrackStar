@@ -290,7 +290,14 @@ namespace CPSC_481___TrackStar
         private void CancelBtnClick(object sender, RoutedEventArgs e)
         {
             PoperFilter.IsOpen = false;
-            lvDataBinding.ItemsSource = currentFilterList;
+            if (currentFilterList.Count == 0)
+            {
+                lvDataBinding.ItemsSource = mps.ToList();
+            }
+            else
+            {
+                lvDataBinding.ItemsSource = currentFilterList;
+            }
          
         }
 
@@ -311,7 +318,7 @@ namespace CPSC_481___TrackStar
             //lvDataBinding.ItemsSource = mps;
 
         }
-        public static List<MealPlans> currentFilterList;
+        public static List<MealPlans> currentFilterList = new List<MealPlans>();
 
         private void ApplyFilterClick(object sender, RoutedEventArgs e)
         {
