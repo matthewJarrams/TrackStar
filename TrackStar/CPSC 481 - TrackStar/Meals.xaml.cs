@@ -228,18 +228,18 @@ namespace CPSC_481___TrackStar
 
         public static List<Targets> buildTargets()
         {
-            Target GainWeightCalorie = new Target("Calories", 3000);
-            Target GainWeightFat = new Target("Fat", 30);
-            Target GainWeightCarbs = new Target("Carbs", 300);
-            Target GainWeightProtein = new Target("Protein", 20);
+            Target GainWeightCalorie = new Target("Calories", 2000);
+            Target GainWeightFat = new Target("Fat", 100);
+            Target GainWeightCarbs = new Target("Carbs", 75);
+            Target GainWeightProtein = new Target("Protein", 100);
             Target LoseWeightCalorie = new Target("Calories", 2000);
-            Target LoseWeightFat = new Target("Fat", 30);
-            Target LoseWeightCarbs = new Target("Carbs", 300);
-            Target LoseWeightProtein = new Target("Protein", 20);
-            Target MaintainWeightCalorie = new Target("Calories", 2500);
-            Target MaintainWeightFat = new Target("Fat", 30);
-            Target MaintainWeightCarbs = new Target("Carbs", 300);
-            Target MaintainWeightProtein = new Target("Protein", 20);
+            Target LoseWeightFat = new Target("Fat", 100);
+            Target LoseWeightCarbs = new Target("Carbs", 75);
+            Target LoseWeightProtein = new Target("Protein", 100);
+            Target MaintainWeightCalorie = new Target("Calories", 2000);
+            Target MaintainWeightFat = new Target("Fat", 100);
+            Target MaintainWeightCarbs = new Target("Carbs", 75);
+            Target MaintainWeightProtein = new Target("Protein", 100);
 
 
 

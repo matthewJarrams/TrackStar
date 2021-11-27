@@ -117,7 +117,7 @@
 
                     <Expander Background="Coral"  BorderBrush="White" HorizontalAlignment="Left" Header="{Binding Name}"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="365">
                         <Grid x:Name="fullBodyGrid" Height="140" Width ="365" Background="#FF7F50">
-                            <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
+                            <Button Content="View" Margin="250,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
                                 <Button.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius" Value="7"/>
