@@ -46,17 +46,17 @@ namespace CPSC_481___TrackStar
         ("Ketogenic Diet",
             "-Reduce Carb Intake \n -Burn Fat \n -Eat Healthier",
           buildMealPlan(),
-        "The ketogenic diet is a very low carb, high fat diet. It involves drastically reducing carbohydrate intake and replacing it with fat. This reduction in carbs puts your body into a metabolic state called ketosis. When this happens, your body becomes incredibly efficient at burning fat for energy.", "Lose weight with this unique diet that aims to get you eating lower amounts of carbs and higher amounts of fats/proteins", true, false, true,false,false,true,false,true,false,buildAllMeal(), buildTargets()),
-        ("Healthy Weight-Gain", "", buildMealPlan(),
-        "This meal plan will add excess calories, but will do so with largely healthy foods. The types of foods eaten aren’t that dissimilar to foods eaten when dieting, the main difference is the sheer amount.","Diet to help gain weight! Ideal for athletes or younger individuals looking to gain weight to aid in their workouts", true, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
+        "The ketogenic diet is a very low carb, high fat diet. It involves drastically reducing carbohydrate intake and replacing it with fat. This reduction in carbs puts your body into a metabolic state called ketosis. When this happens, your body becomes incredibly efficient at burning fat for energy.", "Lose weight with this unique diet that aims to get you eating lower amounts of carbs and higher amounts of fats/proteins.", true, false, true,false,false,true,false,true,false,buildAllMeal(), buildTargets()),
+        ("Healthy Weight Gain", "", buildMealPlan(),
+        "This meal plan will add excess calories, but will do so with largely healthy foods. The types of foods eaten aren’t that dissimilar to foods eaten when dieting, the main difference is the sheer amount.","Diet to help gain weight! Ideal for athletes or younger individuals looking to gain weight to aid in their workouts.", true, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
         ("Vegetarian Diet", "", buildMealPlan(),
-        "Good for you, you are saving the animals but killing trees. " , "Vegatarian diet, lot's of fruits/vegetables and lower amounts of protien." ,false, true, false,true,true,false,true,true,false, buildAllMeal(), buildTargets()),
+        "Good for you, you are saving the animals but killing trees. " , "Vegatarian diet, plenty of fruits/vegetables and lower amounts of protein." ,false, true, false,true,true,false,true,true,false, buildAllMeal(), buildTargets()),
         ("Fast FOOD", "", buildMealPlan(),
-        "Mcdonalds is the best fastfood but wendy's has the best burgers. Dairy queen burgers are also very underrated and better than their ice cream", "Not a diet that is recommended for losing/gaining weight in a healthy manner", false, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
-        ("Meat only", "", buildMealPlan(),
-        "Sorry to the animals it's not personal" ,"High protien and high fat, lower amounts of carbs. Great for extreame muscle builers", false, false, true,false,true,true,false,false,true,buildAllMeal(), buildTargets()),
-        ("NUts only", "", buildMealPlan(),
-        "Great for protein and fats underrated food group." ,"Interesting new trendy diet that bases large amounts of it's meals on nuts. This is to help gain the healthy nutrients they provide", true,false, true,true,true,true,true,false,true, buildAllMeal(), buildTargets())
+        "McDonald's is the best fastfood but Wendy's has the best burgers. Dairy Queen burgers are also very underrated and better than their ice cream.", "Not a diet that is recommended for losing/gaining weight in a healthy manner.", false, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
+        ("Meat Only", "", buildMealPlan(),
+        "Sorry to the animals, it's not personal." ,"High protien and high fat, lower amounts of carbs. Great for extreme muscle builders.", false, false, true,false,true,true,false,false,true,buildAllMeal(), buildTargets()),
+        ("Nuts Only", "", buildMealPlan(),
+        "Great for protein and fats underrated food group." ,"Interesting new trendy diet that bases large amounts of its meals on nuts. This is to help gain the healthy nutrients they provide", true,false, true,true,true,true,true,false,true, buildAllMeal(), buildTargets())
             };
 
         public class MealPlans

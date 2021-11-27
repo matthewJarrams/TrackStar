@@ -252,7 +252,7 @@ namespace CPSC_481___TrackStar
 			day12.Add(new Exercise() { Title = "Bench Press", Amounts = "4 x 10" });
 		
 
-
+			// Initial 3 workouts
 			Workout Day1 = new Workout(1, day1);
 			Workout Day2 = new Workout(2, day2);
 			Workout Day3 = new Workout(3, day3);
@@ -265,16 +265,65 @@ namespace CPSC_481___TrackStar
 			workoutPlan.Add(Day2);
 			workoutPlan.Add(Day3);
 
+
+			List<Exercise> repeatCycle = new List<Exercise>(); // Init new list to be added
+			Workout cycle;	// Used to create Workouts such that they can be added to the workoutPlan
+			
+			// Iterate through and loop through the 3 workout days
+			for (int x = 0; x < 27; x++) {
+				if (repeatCycle == day1) {
+					repeatCycle = day2;
+                } else if (repeatCycle == day2) {
+					repeatCycle = day3;
+                } else if (repeatCycle == day3) {
+					repeatCycle = day1;
+                } else {					// Initial setup
+					repeatCycle = day1;
+                }
+				cycle = new Workout(x + 4, repeatCycle); // Create a Workout object
+				workoutPlan.Add(cycle); // Add it to the workout plan
+            }
+
 			List<Workout> workoutPlan2 = new List<Workout>();
 			workoutPlan2.Add(Day12);
 
-			string desc = "Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health. " +
+			string desc = "Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health." +
 				"For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. " +
 				"Whilst also helping you get fitter \n \n Program for intermediate gym goers.";
 
-			cardio = new Program("Cardio Training Program", workoutPlan, desc, "Cardio Program to get you heart racing!", "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "-Increase fitness levels \n -Become a better runner \n ;-Burn calories!",  "Low", 40,false,true,true);
-			strength = new Program("Strength Building Program", workoutPlan2, "Strength" ,"Build Muscle in a balnced manner through new techniques", "Testlength", "TestGoals", "Medium", 1,true,false,true);
-			arms = new Program("Arms Building Program", workoutPlan, "Arm Program", "Isolate just building arm muscles to increase strenght and build long lasting muscle" , "Testlength", "TestGoals", "High", 60,true,false,false);
+
+			cardio = new Program("Cardio Training Program", workoutPlan, desc, "Cardio program to get your heart racing!", "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "- Increase fitness levels \n - Become a better runner \n - Burn calories",  "Low", 30,false,true,true);
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength" ,"Build muscle in a balanced manner through new techniques.", "7 week program with 6 workouts to complete per week, allowing you to take 1 rest day.", "- Increase core, leg, and arm strength \n - Become a Greek God", "Medium", 42,true,false,true);
+			arms = new Program("Arms Building Program", workoutPlan, "Arm Program", "Isolate just building arm muscles to increase strength and build long lasting muscle." , "10 week program with 6 workouts to complete per week, allowing you to take 1 rest days.", "- Increase bicep and tricep strength \n - Bigger arms guaranteed", "High", 60,true,false,false);
+
+
+
+			// Create a large amount of randomized programs
+
+			int weeks;
+			int days;
+			string difficulty;
+			Program newProg;
+
+			for (int x = 0; x < 20; x++)
+            {
+				weeks = 3;
+				days = 2;
+
+				if (weeks * days >= 50)
+                {
+					difficulty = "High";
+                } else if (weeks * days >= 35)
+                {
+					difficulty = "Medium";
+                } else
+                {
+					difficulty = "Low";
+                }
+
+				newProg = new Program("Test", workoutPlan,"Lol1", "Lol", "This is a " + weeks + " week program with " + days + " workouts to complete each week. Allows you to take " + (7 - days) + " days off.", "- RANDOMIZE THIS", difficulty, (weeks * days), false, true, true);
+				//progList.Add(newProg); // WILL NEED TO STORE THIS IN A LIST, THEN IN CATALOGUE.XAML.CS ITERATE THROUGH THIS LIST AND ADD THEM TO THE SCREEN
+			}
 
 		}
 

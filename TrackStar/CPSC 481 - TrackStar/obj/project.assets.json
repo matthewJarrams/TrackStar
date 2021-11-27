@@ -74,24 +74,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\richa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\TrackStar\\CPSC 481 - TrackStar\\CPSC 481 - TrackStar.csproj",
+      "projectUniqueName": "C:\\Users\\richa\\Source\\Repos\\TrackStar27\\TrackStar\\CPSC 481 - TrackStar\\CPSC 481 - TrackStar.csproj",
       "projectName": "CPSC 481 - TrackStar",
-      "projectPath": "C:\\Users\\User\\source\\repos\\TrackStar\\CPSC 481 - TrackStar\\CPSC 481 - TrackStar.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\TrackStar\\CPSC 481 - TrackStar\\obj\\",
+      "projectPath": "C:\\Users\\richa\\Source\\Repos\\TrackStar27\\TrackStar\\CPSC 481 - TrackStar\\CPSC 481 - TrackStar.csproj",
+      "packagesPath": "C:\\Users\\richa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\richa\\Source\\Repos\\TrackStar27\\TrackStar\\CPSC 481 - TrackStar\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\richa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -144,7 +139,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   },
