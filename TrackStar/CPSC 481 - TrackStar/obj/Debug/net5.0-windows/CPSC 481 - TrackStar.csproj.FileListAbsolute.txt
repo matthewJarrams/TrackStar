@@ -231,3 +231,5 @@ C:\Users\richa\Source\Repos\TrackStar27\TrackStar\CPSC 481 - TrackStar\obj\Debug
 C:\Users\richa\Source\Repos\TrackStar27\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.pdb
 C:\Users\richa\Source\Repos\TrackStar27\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.genruntimeconfig.cache
 C:\Users\richa\Source\Repos\TrackStar27\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.g.cs
+C:\Users\User\source\repos\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.baml

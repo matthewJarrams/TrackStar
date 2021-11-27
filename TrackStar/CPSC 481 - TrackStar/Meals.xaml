@@ -76,10 +76,45 @@
             <Image x:Name="infoBtn" Source="Profile.png"></Image>
         </Button>
 
-        <ListView Margin="10,174,10,90" Name="lvDataBinding" Background="Teal">
+
+        <ListBox x:Name="filters" HorizontalContentAlignment="Stretch" SelectionMode="Extended" BorderBrush="White" BorderThickness="3" Background="Coral" Margin="-153,-300,0,0" Width="220" Height="74">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+
+
+                        </Grid.RowDefinitions>
+
+
+                        <TextBlock Text="{Binding}" />
+
+                        <Button Content="Remove" Tag="{Binding .}" BorderBrush="Teal" BorderThickness="3" Background="White" Grid.Row="0" Grid.Column="1"  Height="23"  Margin="0,-17,0,0">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="7"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+
+
+                    </Grid>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListView Margin="10,250,10,90" Name="lvDataBinding" Background="Teal">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                   
+
                     <Expander Background="Coral"  BorderBrush="White" HorizontalAlignment="Left" Header="{Binding Name}"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="365">
                         <Grid x:Name="fullBodyGrid" Height="140" Width ="365" Background="#FF7F50">
                             <Button Content="View" Margin="254,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
@@ -131,7 +166,7 @@
                 </Button>
             </Grid>
         </Popup>
-        <Button x:Name="FilterBtn" Content="Filter" HorizontalAlignment="Left" Margin="15,118,0,0" VerticalAlignment="Top" Height="32" Width="124" BorderBrush ="Coral"  BorderThickness="5" Click="filter_BtnClick"/>
+        <Button x:Name="FilterBtn" Content="Filters" HorizontalAlignment="Left" Margin="15,118,0,0" VerticalAlignment="Top" Height="32" Width="124" BorderBrush ="Coral"  BorderThickness="5" Click="filter_BtnClick"/>
         <Popup Name="PoperFilter" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="350" IsOpen="False">
             <Grid Background="Coral">
                 <Rectangle Width="290" Height="340" Fill="White" />
@@ -155,14 +190,14 @@
 
                 <Label Content="Type" Margin="5,120,0,0" FontWeight="DemiBold" FontSize="14"></Label>
                 <CheckBox  Name="LowCarb" Content="Low-Carb" TextBlock.FontSize="10" Margin="10,150,0,0">
-                <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
-                </CheckBox.LayoutTransform>
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
                 </CheckBox>
                 <CheckBox Name="LowFat" Content="Low-Fat" TextBlock.FontSize="10" Margin="100,150,0,0">
                     <CheckBox.LayoutTransform>
-                    <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
-                </CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
                 </CheckBox>
                 <CheckBox Name="highPro" Content="High Protein" TextBlock.FontSize="10" Margin="180,150,0,0">
                     <CheckBox.LayoutTransform>

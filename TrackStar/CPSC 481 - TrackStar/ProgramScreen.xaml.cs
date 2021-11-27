@@ -24,6 +24,7 @@ namespace CPSC_481___TrackStar
         public Program progOnScreen;
         public ProgramScreen(Program prog)
         {
+            currentDay = 0;
             InitializeComponent();
             setLabel.Visibility = Visibility.Hidden;
             Workout test = prog.workouts[currentDay];

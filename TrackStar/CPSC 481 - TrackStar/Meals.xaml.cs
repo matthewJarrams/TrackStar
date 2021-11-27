@@ -19,11 +19,15 @@ namespace CPSC_481___TrackStar
     /// </summary>
     public partial class Meals : Window
     {
+        public List<String> listofFilters = new List<String>();
 
         public Meals()
         {
             InitializeComponent();
             lvDataBinding.ItemsSource = mps;
+
+            filters.ItemsSource = listofFilters;
+
             if (User.currentMealPlan == null)
             {
                 currentMealPlan.Content = "Currently No Meal Plan";
@@ -35,7 +39,7 @@ namespace CPSC_481___TrackStar
             }
         }
 
-      
+
 
 
 
@@ -46,17 +50,17 @@ namespace CPSC_481___TrackStar
         ("Ketogenic Diet",
             "-Reduce Carb Intake \n -Burn Fat \n -Eat Healthier",
           buildMealPlan(),
-        "The ketogenic diet is a very low carb, high fat diet. It involves drastically reducing carbohydrate intake and replacing it with fat. This reduction in carbs puts your body into a metabolic state called ketosis. When this happens, your body becomes incredibly efficient at burning fat for energy.", "Lose weight with this unique diet that aims to get you eating lower amounts of carbs and higher amounts of fats/proteins.", true, false, true,false,false,true,false,true,false,buildAllMeal(), buildTargets()),
-        ("Healthy Weight Gain", "", buildMealPlan(),
-        "This meal plan will add excess calories, but will do so with largely healthy foods. The types of foods eaten aren’t that dissimilar to foods eaten when dieting, the main difference is the sheer amount.","Diet to help gain weight! Ideal for athletes or younger individuals looking to gain weight to aid in their workouts.", true, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
+        "The ketogenic diet is a very low carb, high fat diet. It involves drastically reducing carbohydrate intake and replacing it with fat. This reduction in carbs puts your body into a metabolic state called ketosis. When this happens, your body becomes incredibly efficient at burning fat for energy.", "Lose weight with this unique diet that aims to get you eating lower amounts of carbs and higher amounts of fats/proteins", true, false, true,false,false,true,false,true,false,buildAllMeal(), buildTargets()),
+        ("Healthy Weight-Gain", "", buildMealPlan(),
+        "This meal plan will add excess calories, but will do so with largely healthy foods. The types of foods eaten aren’t that dissimilar to foods eaten when dieting, the main difference is the sheer amount.","Diet to help gain weight! Ideal for athletes or younger individuals looking to gain weight to aid in their workouts", true, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
         ("Vegetarian Diet", "", buildMealPlan(),
-        "Good for you, you are saving the animals but killing trees. " , "Vegatarian diet, plenty of fruits/vegetables and lower amounts of protein." ,false, true, false,true,true,false,true,true,false, buildAllMeal(), buildTargets()),
+        "Good for you, you are saving the animals but killing trees. " , "Vegatarian diet, lot's of fruits/vegetables and lower amounts of protien." ,false, true, false,true,true,false,true,true,false, buildAllMeal(), buildTargets()),
         ("Fast FOOD", "", buildMealPlan(),
-        "McDonald's is the best fastfood but Wendy's has the best burgers. Dairy Queen burgers are also very underrated and better than their ice cream.", "Not a diet that is recommended for losing/gaining weight in a healthy manner.", false, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
-        ("Meat Only", "", buildMealPlan(),
-        "Sorry to the animals, it's not personal." ,"High protien and high fat, lower amounts of carbs. Great for extreme muscle builders.", false, false, true,false,true,true,false,false,true,buildAllMeal(), buildTargets()),
-        ("Nuts Only", "", buildMealPlan(),
-        "Great for protein and fats underrated food group." ,"Interesting new trendy diet that bases large amounts of its meals on nuts. This is to help gain the healthy nutrients they provide", true,false, true,true,true,true,true,false,true, buildAllMeal(), buildTargets())
+        "Mcdonalds is the best fastfood but wendy's has the best burgers. Dairy queen burgers are also very underrated and better than their ice cream", "Not a diet that is recommended for losing/gaining weight in a healthy manner", false, false, true,false,false,false,false,false,true,buildAllMeal(), buildTargets()),
+        ("Meat only", "", buildMealPlan(),
+        "Sorry to the animals it's not personal" ,"High protien and high fat, lower amounts of carbs. Great for extreame muscle builers", false, false, true,false,true,true,false,false,true,buildAllMeal(), buildTargets()),
+        ("NUts only", "", buildMealPlan(),
+        "Great for protein and fats underrated food group." ,"Interesting new trendy diet that bases large amounts of it's meals on nuts. This is to help gain the healthy nutrients they provide", true,false, true,true,true,true,true,false,true, buildAllMeal(), buildTargets())
             };
 
         public class MealPlans
@@ -80,9 +84,9 @@ namespace CPSC_481___TrackStar
             public List<Food> AllMeals { get; set; }
             public List<Targets> Targets { get; set; }
 
-            public static implicit operator MealPlans((string Name, string Goals, List<List<Food>> Meals, string Description, String shortDescrip, bool LowCarb, bool LowFat, bool HighPro, bool Veg, bool Lac, bool Gluten, bool Maintain, bool Lose, bool Gain,List<Food> AllMeals, List<Targets> Targets) info)
+            public static implicit operator MealPlans((string Name, string Goals, List<List<Food>> Meals, string Description, String shortDescrip, bool LowCarb, bool LowFat, bool HighPro, bool Veg, bool Lac, bool Gluten, bool Maintain, bool Lose, bool Gain, List<Food> AllMeals, List<Targets> Targets) info)
             {
-                return new MealPlans { Name = info.Name, Goals = info.Goals, Meals = info.Meals, Description = info.Description, shortDescript = info.shortDescrip,LowCarb = info.LowCarb, LowFat = info.LowFat, HighPro = info.HighPro, Veg = info.Veg, Lac = info.Lac, Gluten = info.Gluten, Maintain = info.Maintain, Lose = info.Lose, Gain = info.Gain, AllMeals = info.AllMeals, Targets = info.Targets };
+                return new MealPlans { Name = info.Name, Goals = info.Goals, Meals = info.Meals, Description = info.Description, shortDescript = info.shortDescrip, LowCarb = info.LowCarb, LowFat = info.LowFat, HighPro = info.HighPro, Veg = info.Veg, Lac = info.Lac, Gluten = info.Gluten, Maintain = info.Maintain, Lose = info.Lose, Gain = info.Gain, AllMeals = info.AllMeals, Targets = info.Targets };
             }
         }
 
@@ -130,7 +134,7 @@ namespace CPSC_481___TrackStar
         {
             if (User.currentMealPlan == null)
             {
-               // MessageBox.Show("You have not chosen a meal plan. If you would like a meal plan, please choose from the list below");
+                // MessageBox.Show("You have not chosen a meal plan. If you would like a meal plan, please choose from the list below");
                 Poper1.IsOpen = true;
             }
             else
@@ -298,7 +302,7 @@ namespace CPSC_481___TrackStar
             {
                 lvDataBinding.ItemsSource = currentFilterList;
             }
-         
+
         }
 
         private void clearAllClick(object sender, RoutedEventArgs e)
@@ -315,6 +319,10 @@ namespace CPSC_481___TrackStar
             LoseWeight.IsChecked = false;
             GainWeight.IsChecked = false;
 
+            listofFilters.Clear();
+            filters.ItemsSource = null;
+            filters.ItemsSource = listofFilters;
+
             //lvDataBinding.ItemsSource = mps;
 
         }
@@ -323,6 +331,7 @@ namespace CPSC_481___TrackStar
         private void ApplyFilterClick(object sender, RoutedEventArgs e)
         {
             List<MealPlans> filteredList = new List<MealPlans>();
+            listofFilters.Clear();
             for (int i = 0; i < mps.Length; i++)
             {
                 if (mps[i].LowCarb && LowCarb.IsChecked == true)
@@ -331,15 +340,17 @@ namespace CPSC_481___TrackStar
                     continue;
 
                 }
-                if(mps[i].LowFat && LowFat.IsChecked == true)
+                if (mps[i].LowFat && LowFat.IsChecked == true)
                 {
                     filteredList.Add(mps[i]);
                     continue;
+
                 }
                 if (mps[i].HighPro && highPro.IsChecked == true)
                 {
                     filteredList.Add(mps[i]);
                     continue;
+
 
                 }
                 if (mps[i].Veg && Vegetarian.IsChecked == true)
@@ -347,11 +358,13 @@ namespace CPSC_481___TrackStar
                     filteredList.Add(mps[i]);
                     continue;
 
+
                 }
                 if (mps[i].Lac && Dairy.IsChecked == true)
                 {
                     filteredList.Add(mps[i]);
                     continue;
+
 
                 }
                 if (mps[i].Gluten && Gluten.IsChecked == true)
@@ -365,6 +378,7 @@ namespace CPSC_481___TrackStar
                     filteredList.Add(mps[i]);
                     continue;
 
+
                 }
                 if (mps[i].Lose && LoseWeight.IsChecked == true)
                 {
@@ -377,21 +391,108 @@ namespace CPSC_481___TrackStar
                     filteredList.Add(mps[i]);
                     continue;
 
+
+                }
+
+                if (LowCarb.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("Low Carb") == false)
+                    {
+                        listofFilters.Add("Low Carb");
+                    }
+
+                }
+                if (LowFat.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("Low Fat") == false)
+                    {
+                        listofFilters.Add("Low Fat");
+                    }
+                }
+                if (highPro.IsChecked == true)
+                {
+                    if (listofFilters.Contains("High Protein") == false)
+                    {
+                        listofFilters.Add("High Protein");
+
+                    }
+
+
+                }
+                if (Vegetarian.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("Vegetarian") == false)
+                    {
+                        listofFilters.Add("Vegetarian");
+                    }
+
+
+                }
+                if (Dairy.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("Dairy-Free") == false)
+                    {
+                        listofFilters.Add("Dairy-Free");
+                    }
+                }
+                if (Gluten.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Gluten-Free") == false)
+                    {
+                        listofFilters.Add("Gluten-Free");
+                    }
+
+
+                }
+                if (GainWeight.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Gain Weight") == false)
+                    {
+                        listofFilters.Add("Gain Weight");
+                    }
+
+                }
+                if (LoseWeight.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Lose Weight") == false)
+                    {
+                        listofFilters.Add("Lose Weight");
+                    }
+
+                }
+                if (ManWeight.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Maintain Weight") == false)
+                    {
+                        listofFilters.Add("Maintain Weight");
+                    }
+
+
                 }
             }
 
             if (LowCarb.IsChecked == false && LowFat.IsChecked == false && highPro.IsChecked == false && Vegetarian.IsChecked == false && Dairy.IsChecked == false && Gluten.IsChecked == false && GainWeight.IsChecked == false && ManWeight.IsChecked == false && LoseWeight.IsChecked == false)
             {
                 lvDataBinding.ItemsSource = mps;
+                listofFilters.Clear();
+                filters.ItemsSource = null;
+                filters.ItemsSource = listofFilters;
                 currentFilterList = mps.ToList();
 
             }
             else
             {
+                lvDataBinding.ItemsSource = null;
                 lvDataBinding.ItemsSource = filteredList;
                 currentFilterList = filteredList;
+                filters.ItemsSource = null;
+                filters.ItemsSource = listofFilters;
             }
-            
+
             PoperFilter.IsOpen = false;
 
         }

@@ -23,13 +23,17 @@ namespace CPSC_481___TrackStar
     {
         public static String currentProgram = "Currently No Program Selected";
         public static List<Program> progList = new List<Program>();
-        
-       
+
+        public List<String> listofFilters = new List<String>();
+
         public Catalogue()
         {
 
 
             InitializeComponent();
+
+            filters.ItemsSource = listofFilters;
+
             if (User.currentProgram == null)
             {
                 currentProgramLbl.Content = "Currently No Program Selected";
@@ -45,6 +49,9 @@ namespace CPSC_481___TrackStar
                 progList.Add(Window1.cardio);
                 progList.Add(Window1.strength);
                 progList.Add(Window1.arms);
+                progList.Add(Window1.yoga);
+                progList.Add(Window1.hiit);
+                progList.Add(Window1.balancedHealthy);
             }
 
 
@@ -257,6 +264,10 @@ namespace CPSC_481___TrackStar
             LoseWeight.IsChecked = false;
             GainWeight.IsChecked = false;
 
+            listofFilters.Clear();
+            filters.ItemsSource = null;
+            filters.ItemsSource = listofFilters;
+
             //lvDataBinding.ItemsSource = mps;
 
         }
@@ -265,6 +276,8 @@ namespace CPSC_481___TrackStar
         private void ApplyFilterClick(object sender, RoutedEventArgs e)
         {
             List<Program> filteredList = new List<Program>();
+            listofFilters.Clear();
+
 
             for (int i = 0; i < progList.Count; i++)
             {
@@ -321,6 +334,87 @@ namespace CPSC_481___TrackStar
                     continue;
 
                 }
+
+
+                if (LowCarb.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("High Intensity") == false)
+                    {
+                        listofFilters.Add("High Intensity");
+                    }
+
+                }
+                if (LowFat.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("Medium Intensity") == false)
+                    {
+                        listofFilters.Add("Medium Intensity");
+                    }
+                }
+                if (highPro.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Low Intensity") == false)
+                    {
+                        listofFilters.Add("Low Intensity");
+
+                    }
+
+
+                }
+                if (Vegetarian.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("<= 14 days") == false)
+                    {
+                        listofFilters.Add("<= 14 days");
+                    }
+
+
+                }
+                if (Dairy.IsChecked == true)
+                {
+
+                    if (listofFilters.Contains("<= 30 Days") == false)
+                    {
+                        listofFilters.Add("<= 30 Days");
+                    }
+                }
+                if (Gluten.IsChecked == true)
+                {
+                    if (listofFilters.Contains("> 30 Days") == false)
+                    {
+                        listofFilters.Add("> 30 Days");
+                    }
+
+
+                }
+                if (GainWeight.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Gain Muscle") == false)
+                    {
+                        listofFilters.Add("Gain Muscle");
+                    }
+
+                }
+                if (LoseWeight.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Lose Weight") == false)
+                    {
+                        listofFilters.Add("Lose Weight");
+                    }
+
+                }
+                if (ManWeight.IsChecked == true)
+                {
+                    if (listofFilters.Contains("Cardio/Strength Mix") == false)
+                    {
+                        listofFilters.Add("Cardio/Strength Mix");
+                    }
+
+
+                }
             }
 
             if (LowCarb.IsChecked == false && LowFat.IsChecked == false && highPro.IsChecked == false && Vegetarian.IsChecked == false && Dairy.IsChecked == false && Gluten.IsChecked == false && GainWeight.IsChecked == false && ManWeight.IsChecked == false && LoseWeight.IsChecked == false)
@@ -328,11 +422,19 @@ namespace CPSC_481___TrackStar
                 lvDataBinding.ItemsSource = progList;
                 currentFilterList = progList;
 
+                listofFilters.Clear();
+                filters.ItemsSource = null;
+                filters.ItemsSource = listofFilters;
+
             }
             else
             {
+                lvDataBinding.ItemsSource = null;
                 lvDataBinding.ItemsSource = filteredList;
                 currentFilterList = filteredList;
+
+                filters.ItemsSource = null;
+                filters.ItemsSource = listofFilters;
             }
 
             PoperFilter.IsOpen = false;

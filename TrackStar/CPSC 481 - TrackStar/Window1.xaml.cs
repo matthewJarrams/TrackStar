@@ -23,6 +23,10 @@ namespace CPSC_481___TrackStar
 		public static Program cardio;
 		public static Program strength;
 		public static Program arms;
+		public static Program yoga;
+		public static Program balancedHealthy;
+		public static Program hiit;
+
 		public int currentDay = 0;
 		public static bool todayCompleted = false;
        
@@ -233,7 +237,7 @@ namespace CPSC_481___TrackStar
 
 			List<Exercise> day2 = new List<Exercise>();
 			day2.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });
-			day2.Add(new Exercise() { Title = "Bike", Amounts = "30 mins" });
+			
 			day2.Add(new Exercise() { Title = "Run", Amounts = "20 mins" });
 			day2.Add(new Exercise() { Title = "Rowing Machine", Amounts = "30 mins" });
 			day2.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
@@ -248,14 +252,78 @@ namespace CPSC_481___TrackStar
 			day3.Add(new Exercise() { Title = "Chest Flys", Amounts = "4 x 15" });
 			day3.Add(new Exercise() { Title = "Tricep Extension", Amounts = "3 x 10" });
 
+			List<Exercise> day4 = new List<Exercise>();
+			day4.Add(new Exercise() { Title = "Run", Amounts = "20 mins" });
+			day4.Add(new Exercise() { Title = "Rowing Machine", Amounts = "30 mins" });
+			day4.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
+
+			List<Exercise> day5 = new List<Exercise>();
+		
+			day5.Add(new Exercise() { Title = "Inclined Walk", Amounts = "30 mins" });
+			day5.Add(new Exercise() { Title = "Rowing Machine", Amounts = "30 mins" });
+
+
+
+			List<Exercise> day1BH = new List<Exercise>();
+			day1BH.Add(new Exercise() { Title = "Bench Press", Amounts = "4 x 10" });
+			day1BH.Add(new Exercise() { Title = "Squats", Amounts = "2 X 20" });
+			day1BH.Add(new Exercise() { Title = "Shoulder Press", Amounts = "4 x 5" });
+			day1BH.Add(new Exercise() { Title = "Inclined Walk", Amounts = "30 mins" });
+			day1BH.Add(new Exercise() { Title = "Squats", Amounts = "4 x 20" });
+			day1BH.Add(new Exercise() { Title = "Tricep Extension", Amounts = "3 x 10" });
+			day1BH.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
+
+			List<Exercise> day2BH = new List<Exercise>();
+			day2BH.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });
+			day2BH.Add(new Exercise() { Title = "Run", Amounts = "20 mins" });
+			day2BH.Add(new Exercise() { Title = "Bike", Amounts = "30 mins" });
+			day2BH.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
+
+
+
+			List<Exercise> day3BH = new List<Exercise>();
+			day3BH.Add(new Exercise() { Title = "Stretch", Amounts = "5 mins" });
+			day3BH.Add(new Exercise() { Title = "Bike", Amounts = "30 mins" });
+			day3BH.Add(new Exercise() { Title = "Bench Press", Amounts = "5 x 15" });
+			day3BH.Add(new Exercise() { Title = "Pullups", Amounts = "30" });
+			day3BH.Add(new Exercise() { Title = "Chest Press", Amounts = "4 x 15" });
+			day3BH.Add(new Exercise() { Title = "Bicep Curls", Amounts = "3 x 10" });
+
+			List<Exercise> day4BH = new List<Exercise>();
+			day4BH.Add(new Exercise() { Title = "Run", Amounts = "20 mins" });
+			day4BH.Add(new Exercise() { Title = "Rowing Machine", Amounts = "30 mins" });
+			day4BH.Add(new Exercise() { Title = "Sit-ups", Amounts = "200" });
+
+			List<Exercise> day5BH = new List<Exercise>();
+
+			day5BH.Add(new Exercise() { Title = "Touch toes Stretch", Amounts = "20" });
+			day5BH.Add(new Exercise() { Title = "Rowing Machine", Amounts = "30 mins" });
+			day5BH.Add(new Exercise() { Title = "Butterfly Stretches", Amounts = "20" });
+
+
+
 			List<Exercise> day12 = new List<Exercise>();
 			day12.Add(new Exercise() { Title = "Bench Press", Amounts = "4 x 10" });
-		
+			day12.Add(new Exercise() { Title = "Inclined Bench", Amounts = "4 x 10" });
+			day12.Add(new Exercise() { Title = "Lat Pulldown", Amounts = "4 x 10" });
+			day12.Add(new Exercise() { Title = "Chest Flys", Amounts = "4 x 10" });
+			day12.Add(new Exercise() { Title = "Seated Row", Amounts = "4 x 10" });
+			day12.Add(new Exercise() { Title = "Shoulder Shrugs", Amounts = "4 x 10" });
+
 
 			// Initial 3 workouts
 			Workout Day1 = new Workout(1, day1);
 			Workout Day2 = new Workout(2, day2);
 			Workout Day3 = new Workout(3, day3);
+			Workout Day4 = new Workout(4, day4);
+			Workout Day5 = new Workout(5, day5);
+
+			Workout Day1BH = new Workout(1, day1BH);
+			Workout Day2BH = new Workout(2, day2BH);
+			Workout Day3BH = new Workout(3, day3BH);
+			Workout Day4BH = new Workout(4, day4BH);
+			Workout Day5BH = new Workout(5, day5BH);
+
 
 
 			Workout Day12 = new Workout(1, day12);
@@ -264,7 +332,18 @@ namespace CPSC_481___TrackStar
 			workoutPlan.Add(Day1);
 			workoutPlan.Add(Day2);
 			workoutPlan.Add(Day3);
+			workoutPlan.Add(Day4);
+			workoutPlan.Add(Day5);
 
+			List<Workout> workoutPlanBH = new List<Workout>();
+			workoutPlanBH.Add(Day1BH);
+			workoutPlanBH.Add(Day2BH);
+			workoutPlanBH.Add(Day3BH);
+			workoutPlanBH.Add(Day4BH);
+			workoutPlanBH.Add(Day5BH);
+
+
+			/*
 
 			List<Exercise> repeatCycle = new List<Exercise>(); // Init new list to be added
 			Workout cycle;	// Used to create Workouts such that they can be added to the workoutPlan
@@ -282,7 +361,7 @@ namespace CPSC_481___TrackStar
                 }
 				cycle = new Workout(x + 4, repeatCycle); // Create a Workout object
 				workoutPlan.Add(cycle); // Add it to the workout plan
-            }
+            }*/
 
 			List<Workout> workoutPlan2 = new List<Workout>();
 			workoutPlan2.Add(Day12);
@@ -293,11 +372,14 @@ namespace CPSC_481___TrackStar
 
 
 			cardio = new Program("Cardio Training Program", workoutPlan, desc, "Cardio program to get your heart racing!", "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "- Increase fitness levels \n - Become a better runner \n - Burn calories",  "Low", 30,false,true,true);
-			strength = new Program("Strength Building Program", workoutPlan2, "Strength" ,"Build muscle in a balanced manner through new techniques.", "7 week program with 6 workouts to complete per week, allowing you to take 1 rest day.", "- Increase core, leg, and arm strength \n - Become a Greek God", "Medium", 42,true,false,true);
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength" ,"Build muscle in a balanced manner through new techniques.", "7 week program with 6 workouts to complete per week, allowing you to take 1 rest day.", "- Increase core, leg, and arm strength \n - Gain Larger muscles", "Medium", 1,true,false,true);
 			arms = new Program("Arms Building Program", workoutPlan, "Arm Program", "Isolate just building arm muscles to increase strength and build long lasting muscle." , "10 week program with 6 workouts to complete per week, allowing you to take 1 rest days.", "- Increase bicep and tricep strength \n - Bigger arms guaranteed", "High", 60,true,false,false);
+			yoga = new Program("Yoga Stretching Program", workoutPlan, "3 week program to help stretch muscles out and help with recovery", "Program to help you prevent injuries and force you to actually stretch!!", "3 Week Programs","- Prevent injuries \n - Increase Flexibility", "Low", 21, false, true, false);
+			hiit = new Program("HIIT Program", workoutPlan,  "4 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "Get your heart racing whilst also building muscle groups with this new style of workout!", "1 Month Program with 5 workouts  a week","- Gain Cardio and Muscle at the same time! \n - Become fitter", "High", 30, true, false, true);
+			balancedHealthy = new Program("Casual Gym-goer Program", workoutPlanBH, "2 month program designed for a casual gym-goer to be able to go to the gym and be guided through a program to keep them in shape, without making massive progress in any isolated area.", "For the 9-5 worker looking to keep in shape!","60 day program to help you keep in shape without having to worry about finding plans" ,"- Burn enough calories to have treats \n - Feel Healthy and more energized", "High", 60, false, false, true);
 
-
-
+			/*
+			
 			// Create a large amount of randomized programs
 
 			int weeks;
@@ -323,11 +405,14 @@ namespace CPSC_481___TrackStar
 
 				newProg = new Program("Test", workoutPlan,"Lol1", "Lol", "This is a " + weeks + " week program with " + days + " workouts to complete each week. Allows you to take " + (7 - days) + " days off.", "- RANDOMIZE THIS", difficulty, (weeks * days), false, true, true);
 				//progList.Add(newProg); // WILL NEED TO STORE THIS IN A LIST, THEN IN CATALOGUE.XAML.CS ITERATE THROUGH THIS LIST AND ADD THEM TO THE SCREEN
-			}
+			
+
+			
+			}*/
 
 		}
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+		private void btnBack_Click(object sender, RoutedEventArgs e)
         {
 			MainWindow objMainWindow = new MainWindow();
 			this.Visibility = Visibility.Hidden;
