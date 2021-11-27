@@ -221,6 +221,21 @@ namespace CPSC_481___TrackStar
                      prOnScreen.SetNewGoal(double.Parse(goalVal.Text));
                  }
              }
+            if(prOnScreen.increasing == true)
+            {
+                if(prOnScreen.value > prOnScreen.goal)
+                {
+                    Poper1.IsOpen = true;
+                }
+              
+            }
+            if(prOnScreen.increasing == false)
+            {
+                if(prOnScreen.value < prOnScreen.goal)
+                {
+                    Poper1.IsOpen = true;
+                }
+            }
 
 
             //MainWindow.goalsWindow.Visibility = Visibility.Hidden;
@@ -269,6 +284,24 @@ namespace CPSC_481___TrackStar
         {
             this.Visibility = Visibility.Hidden;
 
+        }
+
+        private void yesDelete_Click1(object sender, RoutedEventArgs e)
+        {
+            Goals.recordList.Remove(prOnScreen);
+            Goals.tableList.Remove(prOnScreen);
+            Poper1.IsOpen = false;
+            MainWindow.goalsWindow.Visibility = Visibility.Hidden;
+            goalWindow.Visibility = Visibility.Hidden;
+            Goals goalScreenNew = new Goals();
+            this.Visibility = Visibility.Hidden;
+            goalScreenNew.Show();
+        }
+
+        private void noDelete_Click1(object sender, RoutedEventArgs e)
+        {
+
+            Poper1.IsOpen = false;
         }
     }
 }

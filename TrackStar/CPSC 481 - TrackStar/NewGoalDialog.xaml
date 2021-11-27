@@ -70,5 +70,26 @@
         <Label x:Name ="format" Content="(Hr:Min:Sec)"  FontSize="12" FontWeight="DemiBold" Margin="185,47,70,0"  VerticalAlignment="Top"/>
 
 
+        <Popup Name="Poper1"    Placement="Center"   Width="300" Height="200" IsOpen="False">
+            <Grid Background="White">
+                <Rectangle Width="290" Height="190" Fill="Teal" />
+                <TextBox Text="Congradulations you have completed &#10;your goal! &#10; &#10;Would you like to delete this goal?&#10;or keep it to continue to update your  &#10;goal value?" Width="250" Height="110" Margin="0,-50,0,0" BorderThickness="5" BorderBrush="Coral"></TextBox>
+                <Button  Name ="yesDelete1" Content="Delete" HorizontalAlignment="Left" Margin="20,150,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="yesDelete_Click1" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Name ="noDelete1" Content="Keep" HorizontalAlignment="Left" Margin="210,150,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="noDelete_Click1">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Popup>
+
     </Grid>
 </Window>

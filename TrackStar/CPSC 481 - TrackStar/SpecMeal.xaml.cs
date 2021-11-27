@@ -29,7 +29,7 @@ namespace CPSC_481___TrackStar
             mealOnScreen = spec;
             lbTodoList.ItemsSource = spec.AllMeals;
             TargetList.Visibility = Visibility.Hidden;
-            TargetList.ItemsSource = spec.Targets[1].TargetList;
+            TargetList.ItemsSource = spec.Targets[0].TargetList;
             Titl.Content = "Description";
             setLabel.Visibility = Visibility.Hidden;
 
@@ -166,7 +166,7 @@ namespace CPSC_481___TrackStar
 
         }
 
-        private void ComboBox_SelectionChangedGoal(object sender, SelectionChangedEventArgs e)
+        /*private void ComboBox_SelectionChangedGoal(object sender, SelectionChangedEventArgs e)
         {
             if (mealOnScreen != null)
             {
@@ -177,6 +177,6 @@ namespace CPSC_481___TrackStar
 
 
 
-        }
+        }*/
     }
 }

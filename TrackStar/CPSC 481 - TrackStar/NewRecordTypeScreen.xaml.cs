@@ -84,8 +84,17 @@ namespace CPSC_481___TrackStar
 
             value = Math.Round(value,2);
             goal = Math.Round(goal, 2);
+            bool increasing;
+            if(goal - value > 0)
+            {
+                increasing = true;
+            }
+            else
+            {
+                increasing = false;
+            }
 
-            personalRecord newRecord = new personalRecord(recordType, goal, type, value);
+            personalRecord newRecord = new personalRecord(recordType, goal, type, value,increasing);
             if(hoursCur == 0)
             {
                 newRecord.setHours(false);

@@ -33,12 +33,12 @@ namespace CPSC_481___TrackStar
 
         public static List<personalRecord> recordList = new List<personalRecord>();
         public static List<personalRecord> tableList = new List<personalRecord>();
-        public static personalRecord weight = new personalRecord("Weight Loss", 210, "(Lbs)", 170);
+        public static personalRecord weight = new personalRecord("Weight Loss", 210, "(Lbs)", 170,true);
         
 
-        personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150);
+        personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150,true);
         
-        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Hr:Min:Seconds", 22);
+        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Hr:Min:Seconds", 22,false);
 
 
         public Goals()

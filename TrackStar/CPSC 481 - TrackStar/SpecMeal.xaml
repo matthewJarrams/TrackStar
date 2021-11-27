@@ -72,7 +72,7 @@
         <Label Content="Goal" HorizontalAlignment="Left" Margin="190,67,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="66" FontFamily="Calibri"/>
     </Grid>-->
     <Grid Background="Teal">
-        <ComboBox Name="Goaler" HorizontalAlignment="Left" Margin="255,72,0,0" VerticalAlignment="Top" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChangedGoal" Width="120" Height="25">
+        <!--<ComboBox Name="Goaler" HorizontalAlignment="Left" Margin="255,72,0,0" VerticalAlignment="Top" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChangedGoal" Width="120" Height="25">
             <ComboBoxItem x:Name="lowCarb">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="Coral" FontWeight="Bold" FontSize="14">Lose Weight</TextBlock>
@@ -90,7 +90,7 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label Content="Goal" HorizontalAlignment="Left" Margin="190,67,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="66" FontFamily="Calibri"/>
+        <Label Content="Goal" HorizontalAlignment="Left" Margin="190,67,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="66" FontFamily="Calibri"/>-->
         <Label Content="Program Overview" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.028,-0.461" FontWeight="Bold" FontSize="18"/>
         <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="5" Background="white" Margin="10,14,0,0" VerticalAlignment="Top" Height="32" Width="55" Click="Back_Button_Click" FontWeight="Bold">
             <Button.Resources>

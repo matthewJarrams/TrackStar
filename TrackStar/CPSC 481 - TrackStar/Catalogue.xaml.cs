@@ -170,7 +170,7 @@ namespace CPSC_481___TrackStar
             progScreen.Show();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        /*private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (filter.SelectedItem == high)
             {
@@ -219,6 +219,117 @@ namespace CPSC_481___TrackStar
             {
                 lvDataBinding.ItemsSource = progList;
             }
+        }*/
+
+        private void filter_BtnClick(object sender, RoutedEventArgs e)
+        {
+            PoperFilter.IsOpen = true;
+            Vegetarian.Content = "<= 14 days";
+            Dairy.Content = " <= 30 days";
+            Gluten.Content = "> 30 days";
+        }
+
+        private void CancelBtnClick(object sender, RoutedEventArgs e)
+        {
+            PoperFilter.IsOpen = false;
+            lvDataBinding.ItemsSource = currentFilterList;
+
+        }
+
+        private void clearAllClick(object sender, RoutedEventArgs e)
+        {
+            Dairy.IsChecked = false;
+            Vegetarian.IsChecked = false;
+            Gluten.IsChecked = false;
+
+            highPro.IsChecked = false;
+            LowCarb.IsChecked = false;
+            LowFat.IsChecked = false;
+
+            ManWeight.IsChecked = false;
+            LoseWeight.IsChecked = false;
+            GainWeight.IsChecked = false;
+
+            //lvDataBinding.ItemsSource = mps;
+
+        }
+        public static List<Program> currentFilterList;
+
+        private void ApplyFilterClick(object sender, RoutedEventArgs e)
+        {
+            List<Program> filteredList = new List<Program>();
+
+            for (int i = 0; i < progList.Count; i++)
+            {
+                if (progList[i].intensity.Equals("High") && LowCarb.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].intensity.Equals("Medium") && LowFat.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+                }
+                if (progList[i].intensity.Equals("Low") && highPro.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].length <= 14 && Vegetarian.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].length <= 30 && Dairy.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].length > 30 && Gluten.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].gainMuscle && GainWeight.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].loesWeight && LoseWeight.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+                if (progList[i].balanced && ManWeight.IsChecked == true)
+                {
+                    filteredList.Add(progList[i]);
+                    continue;
+
+                }
+            }
+
+            if (LowCarb.IsChecked == false && LowFat.IsChecked == false && highPro.IsChecked == false && Vegetarian.IsChecked == false && Dairy.IsChecked == false && Gluten.IsChecked == false && GainWeight.IsChecked == false && ManWeight.IsChecked == false && LoseWeight.IsChecked == false)
+            {
+                lvDataBinding.ItemsSource = progList;
+                currentFilterList = progList;
+
+            }
+            else
+            {
+                lvDataBinding.ItemsSource = filteredList;
+                currentFilterList = filteredList;
+            }
+
+            PoperFilter.IsOpen = false;
+
         }
     }
 }

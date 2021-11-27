@@ -63,7 +63,9 @@
 
    
                             <Label Content ="Description: " Height="30" Margin="5,63,165,87" FontSize="14" FontWeight="Bold"/>
-                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="-18,90,0,0" Text="{Binding description}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                            <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="-18,90,0,0" Text="{Binding descriptionShort}" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="50"/>
+                            <Label Content="Intensity : " Margin="5,145,0,0" FontSize="16" FontWeight="DemiBold"></Label>
+                            <Label Content= "{Binding intensity}" Margin="80,146,0,0" FontSize="16" ></Label>
                         </Grid>
                     </WrapPanel>
                 </DataTemplate>
@@ -102,84 +104,66 @@
                 </Button>
             </Grid>
         </Popup>
-        <!--
-        <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="470" Margin="10,150,0,0" VerticalAlignment="Top" Width="360" VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="catalogueStack" Background="Teal">
-                <Grid x:Name="cardioGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="312">
-                    <Label Content ="Cardio Burner Program" Height="30" Margin="0,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="185" FontWeight="Bold" FontFamily="Cambria"/>
-                    <Button Content="View" Margin="250,5,5,0" Height="37" BorderBrush ="Teal" BorderThickness="5" Background="white" VerticalAlignment="Top" Click="Button_Click_1">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="7"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Label Content ="Length: 6 weeks" Height="30" Margin="0,40,176,110" FontSize="14" FontWeight="Bold"/>
-                    <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,98,0,0" Text="Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health." TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Height="34"/>
-                    <Label Content ="Intensity: Medium" Height="30" Margin="0,150,176,0" FontSize="14" FontWeight="Bold"/>
-                </Grid>
-                <Grid Width="330" Height="10"/>
-                <Grid x:Name="strengthGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="317">
-                    <Label Content ="Build! Build! Build!" Margin="0,1,0,143" FontFamily="Cambria" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Width="194"/>
-                    <Button Content="View" Margin="250,5,5,0" Height="37" BorderBrush ="Teal" BorderThickness="5" Background="white" VerticalAlignment="Top">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="7"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Label Content ="Length: 8 weeks" Height="30" Margin="0,37,176,113" FontSize="14" FontWeight="Bold"/>
-                    <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Stretch" Margin="0,100,0,0" Text="Extreme Muscle building program that targets your upper and lower body to help you bulk up. " TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Height="33"/>
-                    <Label Content ="Intensity: High" Height="30" Margin="0,150,168,0" FontSize="14" FontWeight="Bold"/>
-                </Grid>
-                <Grid Width="330" Height="10"/>
-                <Grid x:Name="fullBodyGrid" Height="180" Background="#FF7F50" HorizontalAlignment="Center" Width="313">
-                    <Label Content ="Balanced Full Body Workout" Height="30" Margin="0,7,0,143" FontSize="16" FontFamily="Cambria" FontWeight="Bold" HorizontalAlignment="Left" Width="249"/>
-                    <Button Content="View" Margin="250,5,5,0" Height="37" BorderBrush ="Teal" BorderThickness="5" Background="white" VerticalAlignment="Top">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="7"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                    <Label Content ="Length: 4 weeks (30 days)" Margin="0,42,120,110" FontSize="14" FontWeight="Bold"/>
-                    <Label Content ="Description" Height="30" Margin="0,70,0,80" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"/>
-                    <TextBox IsReadOnly="True"  HorizontalAlignment="Center" Margin="0,100,0,0" Text="7 day a week program (1 day stretching) designed to help give users a wide range of workouts to increase overall fitness." TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Height="50"/>
-                    <Label Content ="Intensity: Medium" Height="30" Margin="0,150,168,0" FontSize="14" FontWeight="Bold"/>
-                </Grid>
-                <Grid Width="330" Height="10"/>
+       
+        <Button x:Name="FilterBtn" Content="Filter" HorizontalAlignment="Left" Margin="15,118,0,0" VerticalAlignment="Top" Height="32" Width="124" BorderBrush ="Coral"  BorderThickness="5" Click="filter_BtnClick"/>
+        <Popup Name="PoperFilter" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="350" IsOpen="False">
+            <Grid Background="Coral">
+                <Rectangle Width="290" Height="340" Fill="White" />
+                <Label Content="Filters" Margin="115,0,0,0" FontSize="16" FontWeight="DemiBold"></Label>
+                <Label Content="Goal" Margin="5,50,0,0" FontWeight="DemiBold" FontSize="14"></Label>
+                <CheckBox Name="GainWeight" Content="Gain&#10;Muscle" TextBlock.FontSize="10" Margin="10,80,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox Name="LoseWeight" Content="Lose &#10;Weight" TextBlock.FontSize="10" Margin="100,80,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox Name="ManWeight" Content="Cardio/&#10;Strength Mix" TextBlock.FontSize="10" Margin="180,80,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
 
+                <Label Content="Program Intensity" Margin="5,130,0,0" FontWeight="DemiBold" FontSize="14"></Label>
+                <CheckBox  Name="LowCarb" Content="High" TextBlock.FontSize="10" Margin="10,160,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox Name="LowFat" Content="Medium" TextBlock.FontSize="10" Margin="100,160,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox Name="highPro" Content="Low" TextBlock.FontSize="10" Margin="190,160,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.4" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
 
-            </StackPanel>
-        </ScrollViewer>
-        -->
-        <ComboBox x:Name="filter" Margin="10,107,240,539" SelectionChanged="ComboBox_SelectionChanged" >
-            <ComboBoxItem x:Name="high">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Red">High</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="medium">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green">Medium</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="low">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="Blue">Low</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem x:Name="clear">
-                <StackPanel Orientation="Horizontal">
-
-                    <TextBlock Foreground="HotPink">No Filter</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-        </ComboBox>
-        <Label Content="Choose Intensity Level: " HorizontalAlignment="Left" Margin="8,79,0,0" VerticalAlignment="Top" Height="44" FontSize="14" Foreground="Black"/>
-
+                <Label Content="Length" Margin="5,200,0,0" FontWeight="DemiBold" FontSize="14"></Label>
+                <CheckBox Name="Vegetarian"   TextBlock.FontSize="11" Margin="10,230,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox Name="Dairy" TextBlock.FontSize="11" Margin="105,230,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox Name="Gluten"  TextBlock.FontSize="11" Margin="200,230,0,0">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.4" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <Button x:Name="ApplyBtn" Content="Apply" Margin="175,300,0,0" Width="100" Height="30" BorderBrush ="Green" Click="ApplyFilterClick" BorderThickness="5"></Button>
+                <Button x:Name="CancelBtn" Content="Close" Margin="-175,300,0,0" Width="100" BorderBrush ="Red"  BorderThickness="5" Height="30" Click="CancelBtnClick"></Button>
+                <Button x:Name="ClearAllBtn" Content="Clear All" Margin="180,-300,0,0" BorderBrush ="Red"  BorderThickness="5" Height="30" Width="100" Click="clearAllClick"></Button>
+            </Grid>
+        </Popup>
     </Grid>
 </Window>

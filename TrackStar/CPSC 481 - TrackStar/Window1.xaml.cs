@@ -272,9 +272,9 @@ namespace CPSC_481___TrackStar
 				"For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. " +
 				"Whilst also helping you get fitter \n \n Program for intermediate gym goers.";
 
-			cardio = new Program("Cardio Training Program", workoutPlan, desc, "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "-Increase fitness levels \n -Become a better runner \n ;-Burn calories!",  "Low", 40);
-			strength = new Program("Strength Building Program", workoutPlan2, "Strength", "Testlength", "TestGoals", "Medium", 1);
-			arms = new Program("Arms Building Program", workoutPlan, "Strength", "Testlength", "TestGoals", "High", 60);
+			cardio = new Program("Cardio Training Program", workoutPlan, desc, "Cardio Program to get you heart racing!", "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "-Increase fitness levels \n -Become a better runner \n ;-Burn calories!",  "Low", 40,false,true,true);
+			strength = new Program("Strength Building Program", workoutPlan2, "Strength" ,"Build Muscle in a balnced manner through new techniques", "Testlength", "TestGoals", "Medium", 1,true,false,true);
+			arms = new Program("Arms Building Program", workoutPlan, "Arm Program", "Isolate just building arm muscles to increase strenght and build long lasting muscle" , "Testlength", "TestGoals", "High", 60,true,false,false);
 
 		}
 
@@ -324,18 +324,28 @@ namespace CPSC_481___TrackStar
 		public string lengthDes { get; set; }
 		public string goals { get; set; }
 		public string intensity { get; set; }
+		public string descriptionShort { get; set; }
+
 
 		public int length { get; set; }
+		public bool gainMuscle { get; set; }
+		public bool loesWeight { get; set; }
+		public bool balanced { get; set; }
 
-		public  Program(String n, List<Workout> list, String d, String ld, String go,  String inten, int length)
+		public  Program(String n, List<Workout> list, String d, String ds,String ld, String go,  String inten, int length, bool gainMuscle, bool loesWeight, bool balanced)
 		{
 			this.name = n;
 			this.workouts = list;
 			this.description = d;
+			this.descriptionShort = ds;
 			this.lengthDes = ld;
 			this.goals = go;
 			this.intensity = inten;
 			this.length = length;
+
+			this.gainMuscle = gainMuscle;
+			this.loesWeight = loesWeight;
+			this.balanced = balanced;
 		}
 
 		

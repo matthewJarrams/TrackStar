@@ -66,7 +66,10 @@ namespace CPSC_481___TrackStar
             if (User.currentMealPlan != null)
             {
                 calConTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[0].Amounts;
+                calBTarg.Content = "Target: 500";
                 carbTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[2].Amounts;
+                fatTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[1].Amounts;
+                proTarg.Content = "Target: " + User.currentMealPlan.Targets[0].TargetList[3].Amounts;
                 mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
             }
 
