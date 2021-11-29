@@ -95,10 +95,10 @@
                             </Button>
 
 
-                            <Label Content ="Description: " Height="30" Margin="5,-45,0,0" FontSize="14" FontWeight="Bold"/>
+                            <Label Content ="Description: " Height="30" Margin="-3,-45,0,0" FontSize="14" FontWeight="Bold"/>
                             <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="-13,60,0,0"  FontSize="12" FontWeight="Normal" Text="{Binding descriptionShort}" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Height="50"/>
-                            <Label Content="Intensity : " Margin="5,145,0,0" FontSize="16" FontWeight="DemiBold"></Label>
-                            <Label Content= "{Binding intensity}" Margin="80,146,0,0" FontSize="16" ></Label>
+                            <Label Content="Intensity : " Margin="-5,107,0,0" FontSize="16" FontWeight="DemiBold"></Label>
+                            <Label Content= "{Binding intensity}" Margin="80,108,0,0" FontSize="16" ></Label>
                         </Grid>
                     </Expander>
                 </DataTemplate>
@@ -127,8 +127,8 @@
         <Popup Name="Poper1" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="150" IsOpen="False">
             <Grid Background="Teal">
                 <Rectangle Width="290" Height="140" Fill="White" />
-                <TextBox Text="You have not chosen a program.  &#x0a; If you would like a program, &#x0a; please choose from the list below " Width="270" Height="60" Margin="0,-60,0,0" BorderBrush="Teal" BorderThickness="3"></TextBox>
-                <Button  Name ="ok" Content="Okay" HorizontalAlignment="Left" Margin="30,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="ok_Click" >
+                <TextBox Text="You have not chosen a program.  &#x0a;If you would like a program, &#x0a;please choose from the list below " Width="270" Height="60" Margin="0,-60,0,0" BorderBrush="Teal" BorderThickness="3"></TextBox>
+                <Button  Name ="ok" Content="Okay" HorizontalAlignment="Left" Margin="115,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="ok_Click" >
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7"/>
