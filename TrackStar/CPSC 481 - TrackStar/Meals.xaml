@@ -46,13 +46,13 @@
             </Button.Resources>
         </Button>
 
-        <Button x:Name="removeProgramBtn" Content="Remove" Click="Remove_Meal_Click" HorizontalAlignment="Left" Margin="256,117,0,0" BorderBrush ="Red"  BorderThickness="5" VerticalAlignment="Top" Height="32" Width="125" >
+        <!--<Button x:Name="removeProgramBtn" Content="Remove" Click="Remove_Meal_Click" HorizontalAlignment="Left" Margin="256,117,0,0" BorderBrush ="Red"  BorderThickness="5" VerticalAlignment="Top" Height="32" Width="125" >
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7"/>
                 </Style>
             </Button.Resources>
-        </Button>
+        </Button>-->
 
 
 
@@ -111,13 +111,19 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListView Margin="10,250,10,90" Name="lvDataBinding" Background="Teal">
+        <ListView Margin="5,250,10,90" Width="420" Name="lvDataBinding" Background="Teal">
             <ListView.ItemTemplate>
                 <DataTemplate>
 
-                    <Expander Background="Coral"  BorderBrush="White" HorizontalAlignment="Left" Header="{Binding Name}"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="365">
-                        <Grid x:Name="fullBodyGrid" Height="140" Width ="365" Background="#FF7F50">
-                            <Button Content="View" Margin="250,5,5,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
+                    <Expander Background="Coral"  BorderBrush="White" HorizontalAlignment="Left"  ExpandDirection="Down"   IsExpanded="False" FontSize="20" FontWeight="Bold" Width="375">
+                        <Expander.Header >
+                            <DockPanel VerticalAlignment="Stretch" Height="30">
+                                <Image Source="/WpfTutorialSamples;component/Images/bullet_green.png" Height="16" DockPanel.Dock="Left" />
+                                <TextBlock FontWeight="DemiBold" Text="{Binding Name}" Foreground="Black"></TextBlock>
+                            </DockPanel>
+                        </Expander.Header>
+                        <Grid x:Name="fullBodyGrid" Height="140" Width ="350" Background="#FF7F50">
+                            <Button Content="View" Margin="250,5,20,0" Height="37" VerticalAlignment="Top" BorderBrush ="Teal" BorderThickness="5" Background="white" Click="Spec_Meal_Cick">
                                 <Button.Resources>
                                     <Style TargetType="Border">
                                         <Setter Property="CornerRadius" Value="7"/>
@@ -166,7 +172,13 @@
                 </Button>
             </Grid>
         </Popup>
-        <Button x:Name="FilterBtn" Content="Filters" HorizontalAlignment="Left" Margin="15,118,0,0" VerticalAlignment="Top" Height="32" Width="124" BorderBrush ="Coral"  BorderThickness="5" Click="filter_BtnClick"/>
+        <Button x:Name="FilterBtn" Content="Filters" HorizontalAlignment="Left" Margin="15,118,0,0" VerticalAlignment="Top" Height="32" Width="124" Background="white" BorderBrush ="Coral"  BorderThickness="5" Click="filter_BtnClick">
+        <Button.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="7"/>
+            </Style>
+        </Button.Resources>
+        </Button>
         <Popup Name="PoperFilter" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="350" IsOpen="False">
             <Grid Background="Coral">
                 <Rectangle Width="290" Height="340" Fill="White" />
@@ -226,5 +238,7 @@
                 <Button x:Name="ClearAllBtn" Content="Clear All" Margin="180,-300,0,0" BorderBrush ="Red"  BorderThickness="5" Height="30" Width="100" Click="clearAllClick"></Button>
             </Grid>
         </Popup>
+        <Image Name="cover" Margin="0,0,0,0" Stretch="Fill" Source="cover.png" Visibility="Hidden" Grid.Column="1"/>
+        <Image Name="key" Margin="0,400,0,0" Stretch="Fill" Source="Lanceplaine_Keyboard_iPhone_6_Plus.jpg" Visibility="Hidden" Grid.Column="1"/>
     </Grid>
 </Window>

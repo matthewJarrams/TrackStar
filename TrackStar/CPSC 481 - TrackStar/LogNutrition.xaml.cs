@@ -294,9 +294,11 @@ namespace CPSC_481___TrackStar
             MouseDoubleClick++;
             if(MouseDoubleClick == 1)
             {
+                key.Visibility = Visibility.Visible;
             }
             if(MouseDoubleClick == 2)
             {
+                key.Visibility = Visibility.Hidden;
                 int editedPro = int.Parse(proBox.Text);
                 editedPro = editedPro - cumProtien;
 
@@ -327,9 +329,11 @@ namespace CPSC_481___TrackStar
             MouseDoubleClick++;
             if (MouseDoubleClick == 1)
             {
+                key.Visibility = Visibility.Visible;
             }
             if (MouseDoubleClick == 2)
             {
+                key.Visibility = Visibility.Hidden;
                 editedFat = int.Parse(fatBox.Text);
                 editedFat = editedFat - cumFat;
 
@@ -359,10 +363,11 @@ namespace CPSC_481___TrackStar
             MouseDoubleClick++;
             if (MouseDoubleClick == 1)
             {
+                key.Visibility = Visibility.Visible;
             }
             if (MouseDoubleClick == 2)
             {
-
+                key.Visibility = Visibility.Hidden;
                 int editedCarbs = int.Parse(carbBox.Text);
                 editedCarbs = editedCarbs - cumCarbs;
 

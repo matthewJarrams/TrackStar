@@ -99,7 +99,7 @@
                         <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Coral" FontSize="16" ></lvc:Axis>
                     </lvc:CartesianChart.AxisY>
                     <lvc:CartesianChart.AxisX>
-                        <lvc:Axis Title="Day" Labels="{Binding Labels}" Foreground="Coral" FontSize="16"></lvc:Axis>
+                        <lvc:Axis Name="Xaxis" Title="Day" Foreground="Coral" FontSize="16"></lvc:Axis>
                     </lvc:CartesianChart.AxisX>
                 </lvc:CartesianChart>
                 <Button Name="NextBtn" Content="Next" Grid.Column="1" Margin="87,302,5,0" BorderBrush="#FF7F50" BorderThickness="3" Background="White" VerticalAlignment="Top" Click="next_Vis_Click" Height="40">
@@ -122,5 +122,7 @@
 
             </Grid>
         </ScrollViewer>
+        <Image Name="cover" Margin="0,0,0,0" Stretch="Fill" Source="cover.png" Visibility="Hidden" Grid.Column="1"/>
+        <Image Name="key" Margin="0,400,0,0" Stretch="Fill" Source="Lanceplaine_Keyboard_iPhone_6_Plus.jpg" Visibility="Hidden" Grid.Column="1"/>
     </Grid>
 </Window>

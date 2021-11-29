@@ -94,7 +94,9 @@ namespace CPSC_481___TrackStar
                 increasing = false;
             }
 
-            personalRecord newRecord = new personalRecord(recordType, goal, type, value,increasing);
+            List<String> Labels = new List<String>() { "Nov28" };
+            personalRecord newRecord = new personalRecord(recordType, goal, type, value, increasing, Labels);
+
             if(hoursCur == 0)
             {
                 newRecord.setHours(false);

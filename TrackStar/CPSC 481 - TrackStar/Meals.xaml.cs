@@ -31,7 +31,7 @@ namespace CPSC_481___TrackStar
             if (User.currentMealPlan == null)
             {
                 currentMealPlan.Content = "Currently No Meal Plan";
-                removeProgramBtn.IsEnabled = false;
+               // removeProgramBtn.IsEnabled = false;
             }
             else
             {
@@ -136,6 +136,7 @@ namespace CPSC_481___TrackStar
             {
                 // MessageBox.Show("You have not chosen a meal plan. If you would like a meal plan, please choose from the list below");
                 Poper1.IsOpen = true;
+                cover.Visibility = Visibility.Visible;
             }
             else
             {
@@ -148,6 +149,7 @@ namespace CPSC_481___TrackStar
         private void ok_Click(object sender, RoutedEventArgs e)
         {
             Poper1.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
         }
 
 
@@ -289,11 +291,13 @@ namespace CPSC_481___TrackStar
         private void filter_BtnClick(object sender, RoutedEventArgs e)
         {
             PoperFilter.IsOpen = true;
+            cover.Visibility = Visibility.Visible;
         }
 
         private void CancelBtnClick(object sender, RoutedEventArgs e)
         {
             PoperFilter.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
             if (currentFilterList.Count == 0)
             {
                 lvDataBinding.ItemsSource = mps.ToList();
@@ -494,6 +498,7 @@ namespace CPSC_481___TrackStar
             }
 
             PoperFilter.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
 
         }
     }

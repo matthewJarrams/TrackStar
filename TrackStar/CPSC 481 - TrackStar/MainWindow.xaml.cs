@@ -95,6 +95,7 @@ namespace CPSC_481___TrackStar
             };*/
             mainTarget.Series = pinnedRecord.SeriesCollection;
             Yaxis.Title = pinnedRecord.acttype;
+            Xaxis.Labels = pinnedRecord.Labels;
             
             if (pinnedRecord.acttype.Equals("Hr:Min:Seconds"))
             {
@@ -122,7 +123,7 @@ namespace CPSC_481___TrackStar
         }
 
         public static SeriesCollection SeriesCollection { get; set; }
-        public List<String> Labels { get; set; } = User.Labels;
+        //public List<String> Labels { get; set; } = User.Labels;
 
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -131,13 +132,14 @@ namespace CPSC_481___TrackStar
             {
                 //MessageBoxResult catalogue = System.Windows.MessageBox.Show("You have not selected a workout program, would you like to view available programs?", "Catalogue", System.Windows.MessageBoxButton.YesNo);
                 Poper.IsOpen = true;
+                cover.Visibility = Visibility.Visible;
 
-               /* if (catalogue == MessageBoxResult.Yes)
-                {
-                    Catalogue catScreen = new Catalogue();
-                    this.Visibility = Visibility.Hidden;
-                    catScreen.Show();
-                }*/
+                /* if (catalogue == MessageBoxResult.Yes)
+                 {
+                     Catalogue catScreen = new Catalogue();
+                     this.Visibility = Visibility.Hidden;
+                     catScreen.Show();
+                 }*/
             }
             else
             {
@@ -159,6 +161,7 @@ namespace CPSC_481___TrackStar
         private void yesDelete_Click(object sender, RoutedEventArgs e)
         {
             Poper.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
             Catalogue catScreen = new Catalogue();
             this.Visibility = Visibility.Hidden;
             catScreen.Show();
@@ -168,6 +171,7 @@ namespace CPSC_481___TrackStar
         {
 
             Poper.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
 
         }
 
@@ -221,6 +225,8 @@ namespace CPSC_481___TrackStar
              // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             //ngd.Show();
             Poper3.IsOpen = true;
+            key.Visibility = Visibility.Visible;
+            cover.Visibility = Visibility.Visible;
             current.Text = pinnedRecord.value.ToString();
             goal11.Text = pinnedRecord.goal.ToString();
             goalTitle.Content = pinnedRecord.type;
@@ -231,6 +237,8 @@ namespace CPSC_481___TrackStar
             // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             //ngd.Show();
             Poper3.IsOpen = false;
+            key.Visibility = Visibility.Hidden;
+            cover.Visibility = Visibility.Hidden;
             if (double.Parse(current.Text) != Goals.recordList[InfoWindow.selectedIndex].value || double.Parse(goal11.Text) != Goals.recordList[InfoWindow.selectedIndex].goal)
             {
                 value = double.Parse(current.Text);
@@ -246,7 +254,9 @@ namespace CPSC_481___TrackStar
             // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             //ngd.Show();
             Poper3.IsOpen = false;
-            
+            key.Visibility = Visibility.Hidden;
+            cover.Visibility = Visibility.Hidden;
+
         }
     }
 }

@@ -22,6 +22,7 @@ namespace CPSC_481___TrackStar
         public static String newProgram;
         public static int currentDay = 0;
         public Program progOnScreen;
+        public int counter = 0;
         public ProgramScreen(Program prog)
         {
             currentDay = 0;
@@ -38,7 +39,8 @@ namespace CPSC_481___TrackStar
 
             if (User.currentProgram == progOnScreen)
             {
-                setProgButton.IsEnabled = false;
+                setProgButton.Visibility = Visibility.Hidden;
+                RemoveButton.Visibility = Visibility.Visible;
             }
             
         }
@@ -81,25 +83,30 @@ namespace CPSC_481___TrackStar
         {
             // Button button = sender as Button;
             // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
-            if (Titl.Content.Equals("Length"))
+            if (counter == 0)
             {
-                Titl.Content = "Goals";
-
-                descripBox.Text = progOnScreen.goals;
-
-
-            }
-            else if (Titl.Content.Equals("Goals"))
-            {
-                Titl.Content = "Description";
-                descripBox.Text = progOnScreen.description;
-
-            }
-            else if (Titl.Content.Equals("Description"))
-            {
-                Titl.Content = "Length";
-
+                // Titl.Content = "Goals";
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                lenghter.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
                 descripBox.Text = progOnScreen.lengthDes;
+                counter++;
+
+
+            }
+            else if (counter == 1)
+            {
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                lenghter.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                descripBox.Text = progOnScreen.goals;
+                counter++;
+
+            }
+            else if (counter == 2)
+            {
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                descripBox.Text = progOnScreen.description;
+                counter = 0;
 
 
             }
@@ -109,26 +116,30 @@ namespace CPSC_481___TrackStar
         {
             // Button button = sender as Button;
             // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
-            if (Titl.Content.Equals("Length"))
+            if (counter == 0)
             {
-                Titl.Content = "Description";
-               
-                descripBox.Text = progOnScreen.description;
-               
-
-            }
-            else if (Titl.Content.Equals("Goals"))
-            {
-                Titl.Content = "Length";
-                descripBox.Text = progOnScreen.lengthDes;
-
-            }
-            else if (Titl.Content.Equals("Description"))
-            {
-                Titl.Content = "Goals";
-                
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
                 descripBox.Text = progOnScreen.goals;
-                
+                counter = 2;
+
+
+            }
+            else if (counter == 1)
+            {
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                lenghter.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                descripBox.Text = progOnScreen.description;
+                counter--;
+
+            }
+            else if (counter == 2)
+            {
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                lenghter.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                descripBox.Text = progOnScreen.lengthDes;
+                counter--;
+
 
             }
 
@@ -144,12 +155,14 @@ namespace CPSC_481___TrackStar
             User.currentProgram = progOnScreen;
             setLabel.Visibility = Visibility.Visible;
             setProgButton.IsEnabled = false;
+            cover.Visibility = Visibility.Hidden;
         }
 
         private void noDelete_Click(object sender, RoutedEventArgs e)
         {
 
             Poper.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
 
         }
 
@@ -159,6 +172,7 @@ namespace CPSC_481___TrackStar
             if(User.currentProgram != null)
             {
                 Poper.IsOpen = true;
+                cover.Visibility = Visibility.Visible;
                 /*
                 MessageBoxResult switchPrograms = System.Windows.MessageBox.Show("Are you sure you want to replace your current program with this one?", "Switch Program Confirmation", System.Windows.MessageBoxButton.YesNo);
 
@@ -189,7 +203,35 @@ namespace CPSC_481___TrackStar
           
         }
 
-      
+        private void Remove_Prog_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            Poper1.IsOpen = true;
+            cover.Visibility = Visibility.Visible;
+
+        }
+
+        private void yesRemove_Click(object sender, RoutedEventArgs e)
+        {
+            Poper1.IsOpen = false;
+            User.currentProgram = null;
+            User.programDaysLeft = 0;
+            ProgramScreen meals = new ProgramScreen(progOnScreen);
+            this.Visibility = Visibility.Hidden;
+            cover.Visibility = Visibility.Hidden;
+            meals.Show();
+        }
+
+        private void noRemove_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper1.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
+
+        }
+
+
 
 
     }

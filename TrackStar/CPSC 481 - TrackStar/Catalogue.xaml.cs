@@ -37,7 +37,7 @@ namespace CPSC_481___TrackStar
             if (User.currentProgram == null)
             {
                 currentProgramLbl.Content = "Currently No Program Selected";
-                removeProgramBtn.IsEnabled = false;
+                //removeProgramBtn.IsEnabled = false;
             }
             else
             {
@@ -116,7 +116,7 @@ namespace CPSC_481___TrackStar
             currentProgramLbl.Content = "No Program Currently Selected";
             User.currentProgram = null;
             User.programDaysLeft = 0;
-            removeProgramBtn.IsEnabled = false;
+            //removeProgramBtn.IsEnabled = false;
         }
 
         private void noDelete_Click(object sender, RoutedEventArgs e)
@@ -138,6 +138,8 @@ namespace CPSC_481___TrackStar
         private void ok_Click(object sender, RoutedEventArgs e)
         {
             Poper1.IsOpen = false;
+            key.Visibility = Visibility.Hidden;
+            cover.Visibility = Visibility.Hidden;
         }
 
 
@@ -150,6 +152,7 @@ namespace CPSC_481___TrackStar
             {
                 // MessageBox.Show("You have not chosen a program. If you would like a program, please choose from the list below");
                 Poper1.IsOpen = true;
+                cover.Visibility = Visibility.Visible;
             }
             else
             {
@@ -231,6 +234,7 @@ namespace CPSC_481___TrackStar
         private void filter_BtnClick(object sender, RoutedEventArgs e)
         {
             PoperFilter.IsOpen = true;
+            cover.Visibility = Visibility.Visible;
             Vegetarian.Content = "<= 14 days";
             Dairy.Content = " <= 30 days";
             Gluten.Content = "> 30 days";
@@ -239,6 +243,8 @@ namespace CPSC_481___TrackStar
         private void CancelBtnClick(object sender, RoutedEventArgs e)
         {
             PoperFilter.IsOpen = false;
+            key.Visibility = Visibility.Hidden;
+            cover.Visibility = Visibility.Hidden;
             if (currentFilterList.Count == 0)
             {
                 lvDataBinding.ItemsSource = progList;
@@ -438,6 +444,8 @@ namespace CPSC_481___TrackStar
             }
 
             PoperFilter.IsOpen = false;
+          
+            cover.Visibility = Visibility.Hidden;
 
         }
     }

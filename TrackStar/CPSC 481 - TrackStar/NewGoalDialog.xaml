@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:CPSC_481___TrackStar"
         mc:Ignorable="d"
         WindowStartupLocation="Manual" 
-        Top="300"
-        Left="610"
+        Top="150"
+        Left="600"
         Title="Input" 
-        Width="370"
+        Width="417"
         Height="300">
     <Grid Margin="0,0,0,2">
         <TextBox x:Name="goalVal"  BorderBrush="Teal" BorderThickness="3" Background="white" HorizontalAlignment="Right" Width="49" Height="25" VerticalAlignment="Bottom" Margin="0,0,185,158"/>

@@ -26,19 +26,20 @@ namespace CPSC_481___TrackStar
 
     public partial class Goals : Window
     {
-        public  int currentRecIndex = 0;
+        public static int currentRecIndex = 0;
         public static List<Target> targetList = new List<Target>();
+        public static List<String> defLabel = new List<String>() { "Jan 23", "Feb 12", "Mar 13", "Apr 20", "May 12", "Jun 24" };
         Target loseWeight = new Target("Lose 2lbs a week");
         Target run = new Target("Run 10km");
 
         public static List<personalRecord> recordList = new List<personalRecord>();
         public static List<personalRecord> tableList = new List<personalRecord>();
-        public static personalRecord weight = new personalRecord("Weight Loss", 210, "(Lbs)", 170,true);
+        public static personalRecord weight = new personalRecord("Weight Loss", 210, "(Lbs)", 170,true, defLabel);
         
 
-        personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150,true);
+        personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150,true, defLabel);
         
-        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Hr:Min:Seconds", 22,false);
+        personalRecord fiveK = new personalRecord("5km record (mins)", 10, "Hr:Min:Seconds", 22,false, defLabel);
 
 
         public Goals()
@@ -47,6 +48,10 @@ namespace CPSC_481___TrackStar
             InitializeComponent();
             PrevBtn.IsEnabled = false;
 
+            if (NewGoalDialog.goalcompleted)
+            {
+                cover.Visibility = Visibility.Visible;
+            }
 
             if (targetList.Count == 0)
             {   
@@ -105,6 +110,7 @@ namespace CPSC_481___TrackStar
 
             progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].acttype;
+            Xaxis.Labels = recordList[currentRecIndex].Labels;
             if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
             {
                 if (recordList[currentRecIndex].hours == false)
@@ -137,7 +143,7 @@ namespace CPSC_481___TrackStar
         }
 
 
-        public List<String> Labels { get; set; } = User.Labels;
+        //public List<String> Labels { get; set; } = recordList[currentRecIndex].Labels;
         
 
 
@@ -198,11 +204,14 @@ namespace CPSC_481___TrackStar
            
             NewGoalDialog specWindow = new NewGoalDialog(p, this);
             specWindow.Show();
+            key.Visibility = Visibility.Visible;
+            cover.Visibility = Visibility.Visible;
             //MessageBox.Show("Updated!!");
             //p.SetNewValue(25);
 
             recordsListBox.ItemsSource = null;
             recordsListBox.ItemsSource = tableList;
+
 
         }
 
@@ -213,7 +222,10 @@ namespace CPSC_481___TrackStar
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
+
         {
+            key.Visibility = Visibility.Visible;
+            cover.Visibility = Visibility.Visible;
             NewRecordTypeScreen addRecordScreen = new NewRecordTypeScreen();
             addRecordScreen.Show();
 
@@ -226,6 +238,7 @@ namespace CPSC_481___TrackStar
             {
                 progVisuals.Series = recordList[++currentRecIndex].SeriesCollection;
                 Yaxis.Title = recordList[currentRecIndex].acttype;
+                Xaxis.Labels = recordList[currentRecIndex].Labels;
                 if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
                 {
                     if (recordList[currentRecIndex].hours == false)
@@ -259,7 +272,8 @@ namespace CPSC_481___TrackStar
             {
                 progVisuals.Series = recordList[--currentRecIndex].SeriesCollection;
                 Yaxis.Title = recordList[currentRecIndex].acttype;
-                if(recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
+                Xaxis.Labels = recordList[currentRecIndex].Labels;
+                if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
                 {
                     if (recordList[currentRecIndex].hours == false)
                     {

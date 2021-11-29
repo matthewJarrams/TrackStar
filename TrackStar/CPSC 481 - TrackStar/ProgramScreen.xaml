@@ -29,7 +29,9 @@
                     </Button>
                     <Label x:Name="programTitle" Content ="Cardio Burner Program" Margin="12,6,123,592"  FontSize="16" FontWeight="Bold"/>
 
-                    <Label Name="Titl"  Height="30" Margin="45,53,130,557" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
+                    <Label Name="Titl" Content="Description" Height="30" Margin="45,53,198,557" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
+                    <Label Name="lenghter" Content ="Length" FontWeight="Light" Margin="146,53,141,551" FontSize="16" RenderTransformOrigin="1.441,0.601"/>
+                    <Label Name="goalser" Content ="Goals" Height="30" Margin="228,53,73,557" FontSize="16"  FontWeight="Light"/>
                     <TextBox x:Name="descripBox" HorizontalAlignment="Left" BorderBrush ="Coral" BorderThickness="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="126" Margin="45,88,0,0">
                         <TextBox.Background>
                             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
@@ -67,6 +69,13 @@
                             </Style>
                         </Button.Resources>
                     </Button>
+                    <Button x:Name="RemoveButton" Content="Remove" Margin="235,7,29,0" VerticalAlignment="Top" BorderBrush ="Red" BorderThickness="5" Visibility="Hidden" Background="white" Click="Remove_Prog_Click" Height="42" FontWeight="Bold">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="7"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                     <Label Name="WorkLbl" Content ="Day 1" Height="30" Margin="134,312,163,298" FontSize="14" RenderTransformOrigin="0.49,0.707" FontWeight="Bold"/>
                 </Grid>
                 <Popup Name="Poper" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="150" IsOpen="False">
@@ -91,7 +100,29 @@
                 </Popup>
             </StackPanel>
         </ScrollViewer>
+        <Popup Name="Poper1" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="150" IsOpen="False">
+            <Grid Background="Teal">
+                <Rectangle Width="290" Height="140" Fill="White" />
+                <TextBox Text="Are you sure  you want to remove your program?  &#x0a;                  All progress will be lost." Width="270" Height="45" Margin="0,-80,0,0" BorderBrush="Teal" BorderThickness="3"></TextBox>
+                <Button  Name ="yesRemove" Content="Yes" HorizontalAlignment="Left" Margin="30,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="yesRemove_Click" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Name ="noRemove" Content="No" HorizontalAlignment="Left" Margin="190,100,0,0" Background="White" BorderBrush="Teal" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="noRemove_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="7"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Popup>
         <Label x:Name="setLabel" Content="Program Set Successfully!" HorizontalAlignment="Left" Margin="90,50,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
 
+        <Image Name="cover" Margin="0,0,0,0" Stretch="Fill" Source="cover.png" Visibility="Hidden" Grid.Column="1"/>
+        <Image Name="key" Margin="0,400,0,0" Stretch="Fill" Source="Lanceplaine_Keyboard_iPhone_6_Plus.jpg" Visibility="Hidden" Grid.Column="1"/>
     </Grid>
 </Window>

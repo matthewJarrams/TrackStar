@@ -21,6 +21,7 @@ namespace CPSC_481___TrackStar
     public partial class SpecMeal : Window
     {
         public Meals.MealPlans mealOnScreen;
+        public int counter = 0;
         public SpecMeal(Meals.MealPlans spec)
         {
             InitializeComponent();
@@ -32,10 +33,16 @@ namespace CPSC_481___TrackStar
             TargetList.ItemsSource = spec.Targets[0].TargetList;
             Titl.Content = "Description";
             setLabel.Visibility = Visibility.Hidden;
+            
 
             if(User.currentMealPlan != null && User.currentMealPlan.Name == spec.Name)
             {
-                mealPlanBtn.IsEnabled = false;
+                mealPlanBtn.Visibility = Visibility.Hidden;
+                RemoveBtn.Visibility = Visibility.Visible;
+               // mealPlanBtn.Click -= Remove_Meal_Click;
+               // mealPlanBtn.BorderBrush = Brushes.Red;
+               // mealPlanBtn.Content = "Remove";
+               // mealPlanBtn.IsEnabled = true;
             }
 
 
@@ -50,6 +57,7 @@ namespace CPSC_481___TrackStar
             //mainWindow.mealsWindow.Show();
             Meals meals = new Meals();
             this.Visibility = Visibility.Hidden;
+
             meals.Show();
 
         }
@@ -58,6 +66,7 @@ namespace CPSC_481___TrackStar
         {
             User.currentMealPlan = mealOnScreen;
             Poper.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
             setLabel.Visibility = Visibility.Visible;
             mealPlanBtn.IsEnabled = false;
 
@@ -67,6 +76,7 @@ namespace CPSC_481___TrackStar
         {
 
             Poper.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
 
         }
 
@@ -77,7 +87,8 @@ namespace CPSC_481___TrackStar
             if (User.currentMealPlan != null)
             {
                 Poper.IsOpen = true;
-                
+                cover.Visibility = Visibility.Visible;
+
             }
             else
             {
@@ -92,29 +103,37 @@ namespace CPSC_481___TrackStar
         {
             // Button button = sender as Button;
             // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
-            if (Titl.Content.Equals("Description"))
+            if (counter == 0)
             {
-                Titl.Content = "Targets";
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                targer.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
                 descripBox.Visibility = Visibility.Hidden;
                 TargetList.Visibility = Visibility.Visible;
+                counter++;
 
             }
-            else if (Titl.Content.Equals("Targets"))
+            else if (counter == 1)
             {
-                Titl.Content = "Goals";
+                //Titl.Content = "Goals";
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                targer.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
                 descripBox.Visibility = Visibility.Visible;
                 TargetList.Visibility = Visibility.Hidden;
                 descripBox.Text = mealOnScreen.Goals;
                 descripBox.FontSize = 14;
                 descripBox.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                counter++;
 
             }
-            else if (Titl.Content.Equals("Goals"))
+            else if (counter == 2)
             {
-                Titl.Content = "Description";
+                //Titl.Content = "Description";
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
                 descripBox.Text = mealOnScreen.Description;
                 descripBox.FontSize = 12;
                 descripBox.SetValue(TextBlock.FontWeightProperty, FontWeights.Normal);
+                counter = 0;
 
             }
         }
@@ -123,31 +142,40 @@ namespace CPSC_481___TrackStar
         {
             // Button button = sender as Button;
             // Meals.MealPlans spec = button.DataContext as Meals.MealPlans;
-            if (Titl.Content.Equals("Targets"))
+            if (counter == 1)
             {
-                Titl.Content = "Description";
+                //Titl.Content = "Description";
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                targer.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
                 descripBox.Visibility = Visibility.Visible;
                 TargetList.Visibility = Visibility.Hidden;
                 descripBox.Text = mealOnScreen.Description;
                 descripBox.FontSize = 12;
                 descripBox.SetValue(TextBlock.FontWeightProperty, FontWeights.Normal);
+                counter--;
 
             }
-            else if (Titl.Content.Equals("Goals"))
+            else if (counter == 2)
             {
-                Titl.Content = "Targets";
+                //Titl.Content = "Targets";
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
+                targer.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
                 descripBox.Visibility = Visibility.Hidden;
                 TargetList.Visibility = Visibility.Visible;
+                counter--;
 
             }
-            else if (Titl.Content.Equals("Description"))
+            else if (counter == 0)
             {
-                Titl.Content = "Goals";
+                //Titl.Content = "Goals";
+                goalser.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                Titl.SetValue(TextBlock.FontWeightProperty, FontWeights.Light);
                 descripBox.Visibility = Visibility.Visible;
                 TargetList.Visibility = Visibility.Hidden;
                 descripBox.Text = mealOnScreen.Goals;
                 descripBox.FontSize = 14;
                 descripBox.SetValue(TextBlock.FontWeightProperty, FontWeights.Bold);
+                counter = 2;
 
             }
 
@@ -178,5 +206,33 @@ namespace CPSC_481___TrackStar
 
 
         }*/
+
+        private void Remove_Meal_Click(object sender, RoutedEventArgs e)
+        {
+           
+            
+                Poper1.IsOpen = true;
+                cover.Visibility = Visibility.Visible;
+            
+        }
+
+        private void yesRemove_Click(object sender, RoutedEventArgs e)
+        {
+            Poper1.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
+            User.currentMealPlan = null;
+            SpecMeal meals = new SpecMeal(mealOnScreen);
+            this.Visibility = Visibility.Hidden;
+            meals.Show();
+        }
+
+        private void noRemove_Click(object sender, RoutedEventArgs e)
+        {
+
+            Poper1.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
+
+        }
+
     }
 }

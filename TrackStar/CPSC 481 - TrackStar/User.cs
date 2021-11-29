@@ -63,6 +63,7 @@ namespace CPSC_481___TrackStar
         public double goal { get; set; }
         public Boolean hours {get;set;}
         public bool increasing { get; set; }
+        public  List<String> Labels { get; set; }
 
         public LiveCharts.ChartValues<double> recordHist = new LiveCharts.ChartValues<double>();
         public LiveCharts.ChartValues<double> goalHist = new LiveCharts.ChartValues<double>();
@@ -70,12 +71,13 @@ namespace CPSC_481___TrackStar
 
 
 
-        public personalRecord(string type, double goal, string acttype, double value,bool increasing)
+        public personalRecord(string type, double goal, string acttype, double value,bool increasing, List<String> Labels)
         {
             this.type = type;
             this.value = value;
             this.acttype = acttype;
             this.goal = goal;
+            this.Labels = Labels;
             goalHist.Add(goal);
             recordHist.Add(value);
             hours = false;
@@ -105,6 +107,7 @@ namespace CPSC_481___TrackStar
         {
             value = newValue;
             recordHist.Add(newValue);
+            Labels.Add("Nov 29th");
         }
         public void SetNewGoal(double newValue)
         {

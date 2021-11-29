@@ -23,6 +23,7 @@ namespace CPSC_481___TrackStar
         public Goals goalWindow = Application.Current.Windows.OfType<Goals>().First();
         public static personalRecord prOnScreen;
         public Goals gw;
+        public static bool goalcompleted = false;
         public NewGoalDialog(personalRecord pr, Goals gs)
         {
             InitializeComponent();
@@ -223,17 +224,19 @@ namespace CPSC_481___TrackStar
              }
             if(prOnScreen.increasing == true)
             {
-                if(prOnScreen.value > prOnScreen.goal)
+                if(prOnScreen.value >= prOnScreen.goal)
                 {
                     Poper1.IsOpen = true;
+                    goalcompleted = true;
                 }
               
             }
             if(prOnScreen.increasing == false)
             {
-                if(prOnScreen.value < prOnScreen.goal)
+                if(prOnScreen.value <= prOnScreen.goal)
                 {
                     Poper1.IsOpen = true;
+                    goalcompleted = true;
                 }
             }
 
@@ -282,7 +285,10 @@ namespace CPSC_481___TrackStar
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            goalWindow.Visibility = Visibility.Hidden;
+            Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
+            goalScreenNew.Show();
 
         }
 
@@ -291,6 +297,7 @@ namespace CPSC_481___TrackStar
             Goals.recordList.Remove(prOnScreen);
             Goals.tableList.Remove(prOnScreen);
             Poper1.IsOpen = false;
+            goalcompleted = false;
             MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             goalWindow.Visibility = Visibility.Hidden;
             Goals goalScreenNew = new Goals();
@@ -300,8 +307,14 @@ namespace CPSC_481___TrackStar
 
         private void noDelete_Click1(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.goalsWindow.Visibility = Visibility.Hidden;
+            
             Poper1.IsOpen = false;
+            goalcompleted = false;
+            goalWindow.Visibility = Visibility.Hidden;
+            Goals goalScreenNew = new Goals();
+            this.Visibility = Visibility.Hidden;
+            goalScreenNew.Show();
         }
     }
 }

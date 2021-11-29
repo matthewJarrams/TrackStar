@@ -60,14 +60,14 @@
             </Grid>
         </Popup>
 
-         <Popup Name="Poper3" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Center"  VerticalAlignment="Top" Width="300" Height="200" IsOpen="False">
+        <Popup Name="Poper3" Margin="10,10,0,13" HorizontalAlignment="Left"  Placement="Bottom" PlacementTarget="{Binding ElementName=popertarget}" VerticalAlignment="Top" Width="300" Height="200" IsOpen="False">
             <Grid Background="Coral">
                 <Rectangle Width="290" Height="190" Fill="Teal" />
                 <Label  Name="goalTitle" Content="New Goal" Width="170" FontWeight="Bold" FontSize="16" Height="35" Margin="-110,-150,0,0" ></Label>
                 <Label  Content="Goal" Width="70" FontWeight="DemiBold" Height="30" FontSize="16" Margin="-210,-55,0,0" ></Label>
                 <Label  Content="Record" Width="70" FontWeight="DemiBold" Height="30" FontSize="16" Margin="-210,55,0,0" ></Label>
                 <TextBox Name="current" Width="125" Height="30" Margin="0,55,0,0" BorderBrush="Coral" BorderThickness="3"></TextBox>
-                 <TextBox Name="goal11" Width="125" Height="30" Margin="0,-55,0,0" BorderBrush="Coral" BorderThickness="3"></TextBox>
+                <TextBox Name="goal11" Width="125" Height="30" Margin="0,-55,0,0" BorderBrush="Coral" BorderThickness="3"></TextBox>
                 <Button  Name="updater" Content="Update" HorizontalAlignment="Left" Margin="215,155,0,0" Background="White" BorderBrush="Coral" FontWeight="DemiBold" Width="70" Height="35" BorderThickness="2" VerticalAlignment="Top" Click="updater_Click">
                     <Button.Resources>
                         <Style TargetType="Border">
@@ -91,6 +91,7 @@
         <TextBlock x:Name="programCompletionBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="60,106,0,0" Text="Program Completion (12 Days Left)" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Times New Roman" FontSize="18" Height="27" Width="280" RenderTransformOrigin="0.503,0.581"/>
         <ProgressBar x:Name="completionBar" HorizontalAlignment="Left" Height="36" Margin="95,142,0,0" VerticalAlignment="Top" Width="198" Grid.Column="1" />
         <Image Margin="112,10,100,600" Stretch="Fill" Source="Screenshot 2021-10-08 185710.png" Grid.Column="1"/>
+
 
         <Button  HorizontalAlignment="Left" Margin="0,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Background="White" BorderBrush="teal" BorderThickness="2" Grid.Column="1" Click="Meals_Button_Click">
             <Image x:Name="mealBtn" Source="Tab_-_Meals.png"/>
@@ -127,18 +128,19 @@
                 <lvc:Axis Name="Yaxis" Title="Weight (LBS)" Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
-                <lvc:Axis Title="Month" Labels="{Binding Labels}" Foreground="Teal"></lvc:Axis>
+                <lvc:Axis Name="Xaxis" Title="Day"  Foreground="Teal"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
 
         <!--TextBox x:Name="directions" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="90,178,0,0" Text="Tap the catalogue icon on the menu bar to view available workout programs" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/-->
-        <Button Content="Click here to view available programs." x:Name="directionsClick" Click="Cat_Button_Click" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="90, 170, 0, 0" VerticalAlignment="Top" Height ="30" Width="227" Background="Teal" BorderBrush="Teal" Foreground="White">
+        <Button  Content="Click here to view available programs." x:Name="directionsClick" Click="Cat_Button_Click" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="90, 170, 0, 0" VerticalAlignment="Top" Height ="30" Width="227" Background="Teal" BorderBrush="Teal" Foreground="White">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
+        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="0,48,0,0" Stroke="Coral" VerticalAlignment="Top" Width="90" Fill="Coral" RenderTransformOrigin="0.426,-0.771"/>
 
         <Button Content="Update" HorizontalAlignment="Left" Margin="290,20,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Center" Height="35" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click" Grid.ColumnSpan="2">
             <Button.Resources>
@@ -149,7 +151,7 @@
         </Button>
 
 
-        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="0,48,0,0" Stroke="Coral" VerticalAlignment="Top" Width="90" Fill="Coral" RenderTransformOrigin="0.426,-0.771"/>
+        <Rectangle Name="popertarget" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="51,178,0,0" Stroke="Coral" VerticalAlignment="Top" Width="34" Fill="Coral" RenderTransformOrigin="0.426,-0.771"/>
         <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="325,19,0,0" Stroke="Coral" VerticalAlignment="Top" Width="90" Fill="Coral" RenderTransformOrigin="0.426,-0.771"/>
         <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="325,48,0,0" Stroke="Coral" VerticalAlignment="Top" Width="90" Fill="Coral" RenderTransformOrigin="0.426,-0.771"/>
 
@@ -178,8 +180,8 @@
 
 
 
-
-
+        <Image Name="cover" Margin="0,0,0,0" Stretch="Fill" Source="cover.png" Visibility="Hidden" Grid.Column="1"/>
+        <Image Name="key" Margin="0,400,0,0" Stretch="Fill" Source="Lanceplaine_Keyboard_iPhone_6_Plus.jpg" Visibility="Hidden" Grid.Column="1"/>
 
     </Grid>
 </Window>

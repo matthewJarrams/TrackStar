@@ -117,6 +117,8 @@ namespace CPSC_481___TrackStar
         {
 
             Poper3.IsOpen = true;
+            cover.Visibility = Visibility.Visible;
+            key.Visibility = Visibility.Visible;
             heighter.Text = User.height;
             weighter.Text = Goals.weight.value.ToString();
             dob.SelectedDate = new DateTime(1999,06,24);
@@ -171,6 +173,8 @@ namespace CPSC_481___TrackStar
             userInfoList[3].value = User.gender;
 
             Poper3.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
+            key.Visibility = Visibility.Hidden;
             lbTodoList.ItemsSource = null;
             lbTodoList.ItemsSource = userInfoList;
             InfoWindow info = new InfoWindow();
@@ -184,6 +188,8 @@ namespace CPSC_481___TrackStar
             // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             //ngd.Show();
             Poper3.IsOpen = false;
+            cover.Visibility = Visibility.Hidden;
+            key.Visibility = Visibility.Hidden;
 
         }
 
