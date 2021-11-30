@@ -1,11 +1,5 @@
 # TRACKSTAR
 
-## System Requirements
->TBD
-
-## Installation and Usage
-1. 
-
 ## Version History
 *v1.0* <br/>
 The initial horizontal prototype, very limited functionality and usage.
