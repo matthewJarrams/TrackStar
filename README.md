@@ -8,7 +8,7 @@
 1. Clone or download the code found within the GitHub repository </br>
 1b. This can be done from within VS 2019, by cloning https://github.com/matthewJarrams/TrackStar </br>
 1c. If the repository was downloaded as a ZIP file, extract all files
-2. From the Solution Explorer, open the provided solution, TrackStar.sln
+2. From the Solution Explorer within VS, open the provided solution, TrackStar.sln
 3. Run this solution, the main menu should now appear
 
 If there are build errors, clean the solution by right-clicking on it and
