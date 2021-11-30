@@ -107,7 +107,7 @@ namespace CPSC_481___TrackStar
 
 
            
-
+            
             progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
             Yaxis.Title = recordList[currentRecIndex].acttype;
             Xaxis.Labels = recordList[currentRecIndex].Labels;

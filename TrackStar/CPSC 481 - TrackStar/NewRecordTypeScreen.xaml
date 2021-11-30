@@ -66,8 +66,8 @@
         <Label Content="Current Record" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,169,0,0" VerticalAlignment="Top"/>
         <Label Content="Goal" HorizontalAlignment="Left" FontSize="16" FontWeight="Bold" Margin="10,242,0,0" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="curSeconds" Text="0" BorderBrush="Teal" BorderThickness="3" Background="white" Margin="228,197,0,0" HorizontalAlignment="Left" Width="80" Height="25" VerticalAlignment="Top" />
-        <TextBox x:Name="curMin" Text="0" BorderBrush="Teal" BorderThickness="3" Width="80" Background="white" Margin="123,197,0,0"  HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" />
+        <TextBox x:Name="curSeconds" Text="0" BorderBrush="Teal" BorderThickness="3" Background="white" Margin="228,199,0,0" HorizontalAlignment="Left" Width="80" Height="25" VerticalAlignment="Top" />
+        <TextBox x:Name="curMin" Text="0" BorderBrush="Teal" BorderThickness="3" Width="80" Background="white" Margin="123,199,0,0"  HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" />
 
         <TextBox x:Name="goalSec"  Text="0" BorderBrush="Teal" BorderThickness="3" Background="white" Margin="228,270,0,0" HorizontalAlignment="Left" Width ="80" Height="25" VerticalAlignment="Top"/>
         <TextBox x:Name="goalMin" Text="0" BorderBrush="Teal" BorderThickness="3" Background="white" Margin="123,270,0,0" HorizontalAlignment="Left" Width="80" Height="25" VerticalAlignment="Top"/>

@@ -29,7 +29,7 @@
         <Button HorizontalAlignment="Left" Margin="320,623,0,0" VerticalAlignment="Top" Height="61" Width="80" Grid.Column="1" Background="White" BorderBrush="coral" BorderThickness="5">
             <Image x:Name="infoBtn" Source="Profile.png"></Image>
         </Button>
-        <Label x:Name="nameLbl"  HorizontalAlignment="Left" Margin="21,13,0,0" VerticalAlignment="Top" Height="61" Width="299" FontSize="30" FontWeight="Bold"/>
+        <Label x:Name="nameLbl"  HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="61" Width="299" FontSize="30" FontWeight="Bold"/>
         <Button HorizontalAlignment="Left" Margin="300,15,0,0" VerticalAlignment="Top" BorderBrush="Coral" BorderThickness="3" Background="White"  Height="61" Width="80" Click="Button_Click">
             <Image x:Name="setImg" Source="settings-button-icon-15.jpg"></Image>
             <Button.Resources>

@@ -132,7 +132,7 @@
                             </Button>
 
 
-                            <Label Content ="Description: " Height="30" Margin="5,-45,0,0" FontSize="14" FontWeight="Bold"/>
+                            <Label Content ="Description: " Height="30" Margin="-4,-45,0,0" FontSize="14" FontWeight="Bold"/>
                             <TextBox HorizontalAlignment="Center" IsReadOnly ="True"  Margin="-13,60,0,0"  FontSize="12" FontWeight="Normal" Text="{Binding shortDescript}" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" Height="50"/>
                         </Grid>
                     </Expander>
