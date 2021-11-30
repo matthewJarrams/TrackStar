@@ -1,13 +1,21 @@
 # TRACKSTAR
 
 ## System Requirements
->TBD
+> VisualStudio 2019
+> LiveCharts WPF and LiveCharts must be added as extensions in VS
 
-## Installation and Usage
+## Installation
 1. Clone or download the code found within the GitHub repository
 1b. This can be done from within VS 2019, by cloning https://github.com/matthewJarrams/TrackStar
-2. From the Solution Explorer, open the solution TrackStar.sln
-3. Run this solution, 
+1c. If the repository was downloaded as a ZIP file, extract all files
+2. From the Solution Explorer, open the provided solution, TrackStar.sln
+3. Run this solution, the main menu should now be running
+
+If there are build errors, clean the solution by right-clicking on it and
+selecting the "Clean" option, then "Build".
+
+## Usage
+1. 
 
 ## Version History
 *v1.0* <br/>
