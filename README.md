@@ -1,7 +1,7 @@
 # TRACKSTAR
 
 ## System Requirements
-> VisualStudio 2019
+> VisualStudio 2019 </br>
 > LiveCharts WPF and LiveCharts must be added as extensions in VS
 
 ## Installation
