@@ -34,7 +34,7 @@ namespace CPSC_481___TrackStar
 
         public static List<personalRecord> recordList = new List<personalRecord>();
         public static List<personalRecord> tableList = new List<personalRecord>();
-        public static personalRecord weight = new personalRecord("Weight Loss", 210, "(Lbs)", 170,true, defLabel);
+        public static personalRecord weight = new personalRecord("Weight Gain", 210, "(Lbs)", 170,true, defLabel);
         
 
         personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150,true, defLabel);
@@ -58,14 +58,15 @@ namespace CPSC_481___TrackStar
                 targetList.Add(loseWeight);
                 targetList.Add(run);
             }
-            if (recordList.Count == 0)
+            if (recordList.Count == 0 && User.first)
             {
+                User.first = false;
                 recordList.Add(weight);
                 recordList.Add(bench);
                 recordList.Add(fiveK);
-                
 
-                
+
+                tableList.Add(weight);
                 tableList.Add(bench);
                 tableList.Add(fiveK);
 
@@ -106,24 +107,25 @@ namespace CPSC_481___TrackStar
             recordsListBox.ItemsSource = tableList;
 
 
-           
-            
-            progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
-            Yaxis.Title = recordList[currentRecIndex].acttype;
-            Xaxis.Labels = recordList[currentRecIndex].Labels;
-            if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
+
+            if (recordList.Count() > 0)
             {
-                if (recordList[currentRecIndex].hours == false)
+                progVisuals.Series = recordList[currentRecIndex].SeriesCollection;
+                Yaxis.Title = recordList[currentRecIndex].acttype;
+                Xaxis.Labels = recordList[currentRecIndex].Labels;
+                if (recordList[currentRecIndex].acttype.Equals("Hr:Min:Seconds"))
                 {
-                    Yaxis.Title = "Mins";
+                    if (recordList[currentRecIndex].hours == false)
+                    {
+                        Yaxis.Title = "Mins";
+                    }
+                    else
+                    {
+                        Yaxis.Title = "Hours";
+                    }
                 }
-                else
-                {
-                    Yaxis.Title = "Hours";
-                }
+                goalTitle.Content = recordList[currentRecIndex].type;
             }
-            goalTitle.Content = recordList[currentRecIndex].type;
-            
 
           
 
@@ -159,8 +161,10 @@ namespace CPSC_481___TrackStar
 
         private void Cate_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.catWindow.Show();
+            // MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            // mainWindow.catWindow.Show();
+            Catalogue cate = new Catalogue();
+            cate.Show();
             this.Visibility = Visibility.Hidden;
 
         }
@@ -177,8 +181,10 @@ namespace CPSC_481___TrackStar
 
         private void Meals_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.mealsWindow.Show();
+            // MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            //mainWindow.mealsWindow.Show();
+            Meals meals = new Meals();
+            meals.Show();
             this.Visibility = Visibility.Hidden;
 
         }
@@ -226,7 +232,7 @@ namespace CPSC_481___TrackStar
         {
             key.Visibility = Visibility.Visible;
             cover.Visibility = Visibility.Visible;
-            NewRecordTypeScreen addRecordScreen = new NewRecordTypeScreen();
+            NewRecordTypeScreen addRecordScreen = new NewRecordTypeScreen(this);
             addRecordScreen.Show();
 
         }

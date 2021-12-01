@@ -23,8 +23,10 @@ namespace CPSC_481___TrackStar
         public static double value;
         public static double goal;
         public string type = "null";
+        public static double num;
+        public Goals gw;
 
-        public NewRecordTypeScreen()
+        public NewRecordTypeScreen(Goals gs)
         {
             InitializeComponent();
             
@@ -43,75 +45,110 @@ namespace CPSC_481___TrackStar
             goalVal.IsEnabled = false;
             curVal.IsEnabled = false;
             btnDialogOk.IsEnabled = false;
+            this.gw = gs;
 
         }
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.goalsWindow.Visibility = Visibility.Hidden;
-            recordType = titleGoal.Text;
-            double hoursCur = 0;
-            if (type.Equals("Hr:Min:Seconds"))
+            bool goalvalb = double.TryParse(goalVal.Text, out num);
+            bool goalMinb = double.TryParse(goalMin.Text, out num);
+            bool goalSecb = double.TryParse(goalSec.Text, out num);
+            bool curvalb = double.TryParse(curVal.Text, out num);
+            bool curMinb = double.TryParse(curMin.Text, out num);
+            bool curSecb = double.TryParse(curSeconds.Text, out num);
+            if (goalvalb && goalMinb && goalSecb && curvalb && curMinb && curSecb)
             {
-                hoursCur = double.Parse(curVal.Text);
-                double minsCur = double.Parse(curMin.Text);
-                double secsCur = double.Parse(curSeconds.Text);
-
-                double hoursGoal = double.Parse(goalVal.Text);
-                double minsGoal = double.Parse(goalMin.Text);
-                double secsGoal = double.Parse(goalSec.Text);
-                if (hoursCur == 0)
+                MainWindow.goalsWindow.Visibility = Visibility.Hidden;
+                recordType = titleGoal.Text;
+                double hoursCur = 0;
+                if (type.Equals("Hr:Min:Seconds"))
                 {
-                    value = minsCur + (secsCur / 60);
-                    recordType = recordType + " (Mins)";
+                    hoursCur = double.Parse(curVal.Text);
+                    double minsCur = double.Parse(curMin.Text);
+                    double secsCur = double.Parse(curSeconds.Text);
 
-                    goal = minsGoal + (secsGoal / 60);
-                    
+                    double hoursGoal = double.Parse(goalVal.Text);
+                    double minsGoal = double.Parse(goalMin.Text);
+                    double secsGoal = double.Parse(goalSec.Text);
+                    if (hoursCur == 0)
+                    {
+                        value = minsCur + (secsCur / 60);
+                        recordType = recordType + " (Mins)";
+
+                        goal = minsGoal + (secsGoal / 60);
+
+                    }
+                    else
+                    {
+                        value = hoursCur + (minsCur / 60 + secsCur / 3600);
+                        recordType = recordType + " (Hrs)";
+                        goal = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
+                    }
+
                 }
                 else
                 {
-                    value = hoursCur + (minsCur / 60 + secsCur / 3600);
-                    recordType = recordType + " (Hrs)";
-                    goal = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
+                    value = double.Parse(curVal.Text);
+                    goal = double.Parse(goalVal.Text);
                 }
-                
+
+                value = Math.Round(value, 2);
+                goal = Math.Round(goal, 2);
+                bool increasing;
+                if (goal - value > 0)
+                {
+                    increasing = true;
+                }
+                else
+                {
+                    increasing = false;
+                }
+
+                List<String> Labels = new List<String>() { "Nov28" };
+                personalRecord newRecord = new personalRecord(recordType, goal, type, value, increasing, Labels);
+
+                if (hoursCur == 0)
+                {
+                    newRecord.setHours(false);
+                }
+                else
+                {
+                    newRecord.setHours(true);
+                }
+                Goals.recordList.Insert(0, newRecord);
+                Goals.tableList.Insert(0, newRecord);
+                Goals goalScreen = new Goals();
+                this.Visibility = Visibility.Hidden;
+                gw.Visibility = Visibility.Hidden;
+                goalScreen.Show();
+
+                InfoWindow.selectedIndex++;
+
             }
             else
             {
-                value = double.Parse(curVal.Text);
-                goal = double.Parse(goalVal.Text);
-            }
+               
+                    if (goalvalb == false) goalVal.BorderBrush = Brushes.Red;
+                    else goalVal.BorderBrush = Brushes.Teal;
 
-            value = Math.Round(value,2);
-            goal = Math.Round(goal, 2);
-            bool increasing;
-            if(goal - value > 0)
-            {
-                increasing = true;
-            }
-            else
-            {
-                increasing = false;
-            }
+                    if (goalMinb == false) goalMin.BorderBrush = Brushes.Red;
+                    else goalMin.BorderBrush = Brushes.Teal;
 
-            List<String> Labels = new List<String>() { "Nov28" };
-            personalRecord newRecord = new personalRecord(recordType, goal, type, value, increasing, Labels);
+                    if (goalSecb == false) goalSec.BorderBrush = Brushes.Red;
+                    else goalSec.BorderBrush = Brushes.Teal;
 
-            if(hoursCur == 0)
-            {
-                newRecord.setHours(false);
-            }
-            else
-            {
-                newRecord.setHours(true);
-            }
-            Goals.recordList.Insert(0, newRecord);
-            Goals.tableList.Insert(0,newRecord);
-            Goals goalScreen = new Goals();
-            this.Visibility = Visibility.Hidden;
-            goalScreen.Show();
+                    if (curvalb == false) curVal.BorderBrush = Brushes.Red;
+                    else curVal.BorderBrush = Brushes.Teal;
 
-            InfoWindow.selectedIndex++;
+                    if (curMinb == false) curMin.BorderBrush = Brushes.Red;
+                    else curMin.BorderBrush = Brushes.Teal;
+
+                    if (curSecb == false) curSeconds.BorderBrush = Brushes.Red;
+                    else curSeconds.BorderBrush = Brushes.Teal;
+
+               
+            }
         }
 
         private void Goaler_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -216,6 +253,7 @@ namespace CPSC_481___TrackStar
             MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             Goals goalScreen = new Goals();
             this.Visibility = Visibility.Hidden;
+            gw.Visibility = Visibility.Hidden;
             goalScreen.Show();
         }
         

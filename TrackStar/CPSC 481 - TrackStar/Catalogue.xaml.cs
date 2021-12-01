@@ -74,22 +74,24 @@ namespace CPSC_481___TrackStar
 
         private void Info_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.infoWindow.Show();
+            InfoWindow info = new InfoWindow();
             this.Visibility = Visibility.Hidden;
+            info.Show();
 
         }
         private void Goals_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            MainWindow.goalsWindow.Show();
+            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            //MainWindow.goalsWindow.Show();
+            Goals goals = new Goals();
+            goals.Show();
             this.Visibility = Visibility.Hidden;
 
         }
         private void Meals_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.mealsWindow.Show();
+            Meals meals = new Meals();
+            meals.Show();
             this.Visibility = Visibility.Hidden;
 
         }

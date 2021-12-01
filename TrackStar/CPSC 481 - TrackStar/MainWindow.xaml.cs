@@ -36,6 +36,7 @@ namespace CPSC_481___TrackStar
         public Catalogue catWindow = new Catalogue();
         public double value;
         public double goal;
+        public double num;
         //public ProgramScreen programScreen = new ProgramScreen();
 
 
@@ -81,6 +82,8 @@ namespace CPSC_481___TrackStar
 
 
 
+
+
             /*SeriesCollection = new SeriesCollection
             {
                 new LineSeries
@@ -93,23 +96,35 @@ namespace CPSC_481___TrackStar
                 }
 
             };*/
-            mainTarget.Series = pinnedRecord.SeriesCollection;
-            Yaxis.Title = pinnedRecord.acttype;
-            Xaxis.Labels = pinnedRecord.Labels;
-            
-            if (pinnedRecord.acttype.Equals("Hr:Min:Seconds"))
+
+            if (Goals.recordList.Count > 0)
             {
-                if (pinnedRecord.hours == false)
+
+
+                mainTarget.Series = pinnedRecord.SeriesCollection;
+                Yaxis.Title = pinnedRecord.acttype;
+                Xaxis.Labels = pinnedRecord.Labels;
+
+                if (pinnedRecord.acttype.Equals("Hr:Min:Seconds"))
                 {
-                    Yaxis.Title = "Mins";
+                    if (pinnedRecord.hours == false)
+                    {
+                        Yaxis.Title = "Mins";
+                    }
+                    else
+                    {
+                        Yaxis.Title = "Hours";
+                    }
                 }
-                else
-                {
-                    Yaxis.Title = "Hours";
-                }
+                targetLbl.Text = pinnedRecord.type;
+                updaterer.IsEnabled = true;
+
             }
-            targetLbl.Text = pinnedRecord.type;
-            
+            else
+            {
+                updaterer.IsEnabled = false;
+                targetLbl.Text = "No Goals";
+            }
 
 
 
@@ -185,9 +200,9 @@ namespace CPSC_481___TrackStar
 
         private void Cat_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Catalogue cate = new Catalogue();
             this.Visibility = Visibility.Hidden;
-            catWindow.Show();
+            cate.Show();
         }
 
         private void Info_Button_Click(object sender, RoutedEventArgs e)
@@ -202,15 +217,14 @@ namespace CPSC_481___TrackStar
 
             this.Visibility = Visibility.Hidden;
             Goals goalsScreen = new Goals();
-            goalsWindow = goalsScreen;
-            goalsWindow.Show();
+            goalsScreen.Show();
         }
 
         private void Meals_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Meals meal = new Meals();
             this.Visibility = Visibility.Hidden;
-            mealsWindow.Show();
+            meal.Show();
         }
 
         private void Nutrition_Button_Click(object sender, RoutedEventArgs e)
@@ -236,16 +250,32 @@ namespace CPSC_481___TrackStar
         {
             // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             //ngd.Show();
-            Poper3.IsOpen = false;
-            key.Visibility = Visibility.Hidden;
-            cover.Visibility = Visibility.Hidden;
-            if (double.Parse(current.Text) != Goals.recordList[InfoWindow.selectedIndex].value || double.Parse(goal11.Text) != Goals.recordList[InfoWindow.selectedIndex].goal)
+            bool goalvalb = double.TryParse(goal11.Text, out num);
+            bool curvalb = double.TryParse(current.Text, out num);
+
+            if (goalvalb && curvalb)
             {
-                value = double.Parse(current.Text);
-                goal = double.Parse(goal11.Text);
+                Poper3.IsOpen = false;
+                key.Visibility = Visibility.Hidden;
+                cover.Visibility = Visibility.Hidden;
+                
+
+                if (double.Parse(current.Text) != Goals.recordList[InfoWindow.selectedIndex].value || double.Parse(goal11.Text) != Goals.recordList[InfoWindow.selectedIndex].goal)
+                {
+                    value = double.Parse(current.Text);
+                    goal = double.Parse(goal11.Text);
                     //pinnedRecord.SetNewValue(value);
-                Goals.recordList[InfoWindow.selectedIndex].SetNewValue(value);
-                Goals.recordList[InfoWindow.selectedIndex].SetNewGoal(goal);
+                    Goals.recordList[InfoWindow.selectedIndex].SetNewValue(value);
+                    Goals.recordList[InfoWindow.selectedIndex].SetNewGoal(goal);
+                }
+            }
+            else
+            {
+                if (goalvalb == false) goal11.BorderBrush = Brushes.Red;
+                else goal11.BorderBrush = Brushes.Coral;
+
+                if (curvalb == false) current.BorderBrush = Brushes.Red;
+                else current.BorderBrush = Brushes.Coral;
             }
         }
 

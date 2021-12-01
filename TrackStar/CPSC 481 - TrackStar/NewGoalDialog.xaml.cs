@@ -24,6 +24,7 @@ namespace CPSC_481___TrackStar
         public static personalRecord prOnScreen;
         public Goals gw;
         public static bool goalcompleted = false;
+        public static double num;
         public NewGoalDialog(personalRecord pr, Goals gs)
         {
             InitializeComponent();
@@ -113,6 +114,11 @@ namespace CPSC_481___TrackStar
             {
                 newVal.Text = pr.value.ToString();
                 goalVal.Text = pr.goal.ToString();
+                goalMin.Text = "0";
+                goalSec.Text = "0";
+                newValMin.Text = "0";
+                newValSec.Text = "0";
+
             }
 
 
@@ -120,133 +126,170 @@ namespace CPSC_481___TrackStar
         
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
+            goalVal.BorderBrush = Brushes.Teal;
+            goalMin.BorderBrush = Brushes.Teal;
+            goalSec.BorderBrush = Brushes.Teal;
+            newVal.BorderBrush = Brushes.Teal;
+            newValMin.BorderBrush = Brushes.Teal;
+            newValSec.BorderBrush = Brushes.Teal;
+            bool goalvalb = double.TryParse(goalVal.Text, out num);
+            bool goalMinb = double.TryParse(goalMin.Text, out num);
+            bool goalSecb = double.TryParse(goalSec.Text, out num);
+            bool curvalb = double.TryParse(newVal.Text, out num);
+            bool curMinb = double.TryParse(newValMin.Text, out num);
+            bool curSecb = double.TryParse(newValSec.Text, out num);
 
 
-            
-             if (double.Parse(goalVal.Text) != prOnScreen.goal)
-             {
-                 if (prOnScreen.acttype.Equals("Hr:Min:Seconds"))
-                 {
-                     double goal2;
-                     double value2;
 
-                     double hoursGoal = double.Parse(goalVal.Text);
-                     double minsGoal= double.Parse(goalMin.Text);
-                     double secsGoal = double.Parse(goalSec.Text);
-
-                     double hoursCur = double.Parse(newVal.Text);
-                     double minsCur = double.Parse(newValMin.Text);
-                     double secsCur = double.Parse(newValSec.Text);
-
-
-                     if (hoursGoal == 0)
-                     {
-
-                         goal2 = minsGoal + (secsGoal / 60);
-                         goal2 = Math.Round(goal2, 2);
-                         prOnScreen.SetNewGoal(goal2);
-
-                         value2 = minsCur + (secsCur / 60);
-                         value2 = Math.Round(value2, 2);
-                         prOnScreen.SetNewValue(value2);
-                         prOnScreen.setHours(false);
-                    }
-                     else
-                     {
-
-                         goal2 = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
-                         goal2 = Math.Round(goal2, 2);
-                         prOnScreen.SetNewGoal(goal2);
-
-                         value2 = hoursCur + (minsCur / 60 + secsCur / 3600);
-                         value2 = Math.Round(value2, 2);
-                         prOnScreen.SetNewValue(value2);
-                        prOnScreen.setHours(true);
-                    }
-                 }
-                 else
-                 {
-                     prOnScreen.SetNewGoal(double.Parse(goalVal.Text));
-                     prOnScreen.SetNewValue(double.Parse(newVal.Text));
-                 }
-
-             }
-             else if (double.Parse(newVal.Text) != prOnScreen.value)
-             {
-
-                 if(prOnScreen.acttype.Equals("Hr:Min:Seconds"))
-                 {
-                     double goal3;
-                     double value3;
-
-                     double hoursCur = double.Parse(newVal.Text);
-                     double minsCur = double.Parse(newValMin.Text);
-                     double secsCur = double.Parse(newValSec.Text);
-
-                     double hoursGoal = double.Parse(goalVal.Text);
-                     double minsGoal = double.Parse(goalMin.Text);
-                     double secsGoal = double.Parse(goalSec.Text);
-
-
-                     if (hoursCur == 0)
-                     {
-
-
-                        value3 = minsCur + (secsCur / 60);
-                        value3 = Math.Round(value3, 2);
-                        prOnScreen.SetNewValue(value3);
-
-                        goal3 = minsGoal + (secsGoal / 60);
-                        goal3 = Math.Round(goal3, 2);
-                        prOnScreen.SetNewGoal(goal3);
-                        prOnScreen.setHours(false);
-
-                     }
-                     else
-                     {
-
-                         value3 = hoursCur + (minsCur / 60 + secsCur / 3600);
-                         value3 = Math.Round(value3, 2);
-                         prOnScreen.SetNewValue(value3);
-
-                         goal3 = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
-                         goal3 = Math.Round(goal3, 2);
-                         prOnScreen.SetNewGoal(goal3);
-                         prOnScreen.setHours(true);
-
-                    }
-                }
-                 else
-                 {
-                     prOnScreen.SetNewValue(double.Parse(newVal.Text));
-                     prOnScreen.SetNewGoal(double.Parse(goalVal.Text));
-                 }
-             }
-            if(prOnScreen.increasing == true)
+            if (goalvalb && goalMinb && goalSecb && curvalb && curMinb && curSecb)
             {
-                if(prOnScreen.value >= prOnScreen.goal)
+                if (double.Parse(goalVal.Text) != prOnScreen.goal)
                 {
-                    Poper1.IsOpen = true;
-                    goalcompleted = true;
+                    if (prOnScreen.acttype.Equals("Hr:Min:Seconds"))
+                    {
+                        double goal2;
+                        double value2;
+
+                        double hoursGoal = double.Parse(goalVal.Text);
+                        double minsGoal = double.Parse(goalMin.Text);
+                        double secsGoal = double.Parse(goalSec.Text);
+
+                        double hoursCur = double.Parse(newVal.Text);
+                        double minsCur = double.Parse(newValMin.Text);
+                        double secsCur = double.Parse(newValSec.Text);
+
+
+                        if (hoursGoal == 0)
+                        {
+
+                            goal2 = minsGoal + (secsGoal / 60);
+                            goal2 = Math.Round(goal2, 2);
+                            prOnScreen.SetNewGoal(goal2);
+
+                            value2 = minsCur + (secsCur / 60);
+                            value2 = Math.Round(value2, 2);
+                            prOnScreen.SetNewValue(value2);
+                            prOnScreen.setHours(false);
+                        }
+                        else
+                        {
+
+                            goal2 = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
+                            goal2 = Math.Round(goal2, 2);
+                            prOnScreen.SetNewGoal(goal2);
+
+                            value2 = hoursCur + (minsCur / 60 + secsCur / 3600);
+                            value2 = Math.Round(value2, 2);
+                            prOnScreen.SetNewValue(value2);
+                            prOnScreen.setHours(true);
+                        }
+                    }
+                    else
+                    {
+                        prOnScreen.SetNewGoal(double.Parse(goalVal.Text));
+                        prOnScreen.SetNewValue(double.Parse(newVal.Text));
+                    }
+
                 }
-              
+                else if (double.Parse(newVal.Text) != prOnScreen.value)
+                {
+
+                    if (prOnScreen.acttype.Equals("Hr:Min:Seconds"))
+                    {
+                        double goal3;
+                        double value3;
+
+                        double hoursCur = double.Parse(newVal.Text);
+                        double minsCur = double.Parse(newValMin.Text);
+                        double secsCur = double.Parse(newValSec.Text);
+
+                        double hoursGoal = double.Parse(goalVal.Text);
+                        double minsGoal = double.Parse(goalMin.Text);
+                        double secsGoal = double.Parse(goalSec.Text);
+
+
+                        if (hoursCur == 0)
+                        {
+
+
+                            value3 = minsCur + (secsCur / 60);
+                            value3 = Math.Round(value3, 2);
+                            prOnScreen.SetNewValue(value3);
+
+                            goal3 = minsGoal + (secsGoal / 60);
+                            goal3 = Math.Round(goal3, 2);
+                            prOnScreen.SetNewGoal(goal3);
+                            prOnScreen.setHours(false);
+
+                        }
+                        else
+                        {
+
+                            value3 = hoursCur + (minsCur / 60 + secsCur / 3600);
+                            value3 = Math.Round(value3, 2);
+                            prOnScreen.SetNewValue(value3);
+
+                            goal3 = hoursGoal + (minsGoal / 60 + secsGoal / 3600);
+                            goal3 = Math.Round(goal3, 2);
+                            prOnScreen.SetNewGoal(goal3);
+                            prOnScreen.setHours(true);
+
+                        }
+                    }
+                    else
+                    {
+                        prOnScreen.SetNewValue(double.Parse(newVal.Text));
+                        prOnScreen.SetNewGoal(double.Parse(goalVal.Text));
+                    }
+                }
+                if (prOnScreen.increasing == true)
+                {
+                    if (prOnScreen.value >= prOnScreen.goal)
+                    {
+                        Poper1.IsOpen = true;
+                        goalcompleted = true;
+                    }
+
+                }
+                if (prOnScreen.increasing == false)
+                {
+                    if (prOnScreen.value <= prOnScreen.goal)
+                    {
+                        Poper1.IsOpen = true;
+                        goalcompleted = true;
+                    }
+                }
+
+
+                //MainWindow.goalsWindow.Visibility = Visibility.Hidden;
+                //goalWindow.Visibility = Visibility.Hidden;
+                gw.Visibility = Visibility.Hidden;
+                Goals goalScreenNew = new Goals();
+                this.Visibility = Visibility.Hidden;
+                goalScreenNew.Show();
+
             }
-            if(prOnScreen.increasing == false)
+            else
             {
-                if(prOnScreen.value <= prOnScreen.goal)
-                {
-                    Poper1.IsOpen = true;
-                    goalcompleted = true;
-                }
+                if(goalvalb == false) goalVal.BorderBrush = Brushes.Red;
+                else goalVal.BorderBrush = Brushes.Teal;
+               
+                if (goalMinb == false) goalMin.BorderBrush = Brushes.Red;
+                else goalMin.BorderBrush = Brushes.Teal;
+               
+                if (goalSecb == false) goalSec.BorderBrush = Brushes.Red;
+                else goalSec.BorderBrush = Brushes.Teal;
+               
+                if (curvalb == false) newVal.BorderBrush = Brushes.Red;
+                else newVal.BorderBrush = Brushes.Teal;
+                
+                if (curMinb == false) newValMin.BorderBrush = Brushes.Red;
+                else newValMin.BorderBrush = Brushes.Teal;
+               
+                if (curSecb == false) newValSec.BorderBrush = Brushes.Red;
+                else newValSec.BorderBrush = Brushes.Teal;
+                
             }
-
-
-            //MainWindow.goalsWindow.Visibility = Visibility.Hidden;
-            //goalWindow.Visibility = Visibility.Hidden;
-            gw.Visibility = Visibility.Hidden;
-            Goals goalScreenNew = new Goals();
-            this.Visibility = Visibility.Hidden;
-            goalScreenNew.Show();
 
         }
 
@@ -266,11 +309,16 @@ namespace CPSC_481___TrackStar
 
         private void yesDelete_Click(object sender, RoutedEventArgs e)
         {
+            if(Goals.recordList.IndexOf(prOnScreen) <= Goals.recordList.IndexOf(MainWindow.pinnedRecord))
+            {
+                InfoWindow.selectedIndex--;
+            }
             Goals.recordList.Remove(prOnScreen);
             Goals.tableList.Remove(prOnScreen);
             Poper.IsOpen = false;
             MainWindow.goalsWindow.Visibility = Visibility.Hidden;
             goalWindow.Visibility = Visibility.Hidden;
+            gw.Visibility = Visibility.Hidden;
             Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
             goalScreenNew.Show();
@@ -286,6 +334,7 @@ namespace CPSC_481___TrackStar
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             goalWindow.Visibility = Visibility.Hidden;
+            gw.Visibility = Visibility.Hidden;
             Goals goalScreenNew = new Goals();
             this.Visibility = Visibility.Hidden;
             goalScreenNew.Show();

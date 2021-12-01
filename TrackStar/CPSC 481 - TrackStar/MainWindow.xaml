@@ -142,7 +142,7 @@
         </Button>
         <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="0,48,0,0" Stroke="Coral" VerticalAlignment="Top" Width="90" Fill="Coral" RenderTransformOrigin="0.426,-0.771"/>
 
-        <Button Content="Update" HorizontalAlignment="Left" Margin="290,20,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Center" Height="35" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click" Grid.ColumnSpan="2">
+        <Button Name="updaterer" Content="Update" HorizontalAlignment="Left" Margin="290,20,0,0"  BorderBrush="Coral" BorderThickness="3" Background="White" VerticalAlignment="Center" Height="35" Width="70" RenderTransformOrigin="0.5,0.5" Click="Update_Click" Grid.ColumnSpan="2">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="7"/>

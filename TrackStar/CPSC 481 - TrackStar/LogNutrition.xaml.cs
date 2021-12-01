@@ -392,7 +392,74 @@ namespace CPSC_481___TrackStar
                 MouseDoubleClick = 0;
             }
         }
+
+        private void calBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MouseDoubleClick++;
+            if (MouseDoubleClick == 1)
+            {
+                key.Visibility = Visibility.Visible;
+            }
+            if (MouseDoubleClick == 2)
+            {
+                key.Visibility = Visibility.Hidden;
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
+
+                if (calDifference >= 2000)
+                {
+                    calorieChecker.Fill = Brushes.Red;
+                }
+                else
+                {
+                    calorieChecker.Fill = Brushes.Green;
+                }
+
+
+
+                MouseDoubleClick = 0;
+            }
+        }
+
+
+        private void calburnBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MouseDoubleClick++;
+            if (MouseDoubleClick == 1)
+            {
+                key.Visibility = Visibility.Visible;
+            }
+            if (MouseDoubleClick == 2)
+            {
+                key.Visibility = Visibility.Hidden;
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
+
+                if(calDifference >= 2000)
+                {
+                    calorieChecker.Fill = Brushes.Red;
+                }
+                else
+                {
+                    calorieChecker.Fill = Brushes.Green;
+                }
+
+
+
+
+
+                MouseDoubleClick = 0;
+            }
+        }
     }
+
+
+
+
     public class Food
     {
         public string meal { get; set; }

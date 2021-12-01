@@ -18,9 +18,9 @@
                 <ColumnDefinition Width="69*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Calories Consumed Today: " HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="Black" FontWeight="Bold" FontFamily="Calibri" FontSize="13"/>
-            <TextBox x:Name="calsConsumed" HorizontalAlignment="Left" Margin="200,50,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="calsConsumed" HorizontalAlignment="Left" Margin="200,50,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2" MouseDoubleClick="calBox_MouseDoubleClick"/>
             <Label Content="Calories Burned Today: " HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontFamily="Calibri" FontSize="13" />
-            <TextBox x:Name="calsBurned" HorizontalAlignment="Left" Margin="200,85,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="calsBurned" HorizontalAlignment="Left" Margin="200,85,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2" MouseDoubleClick="calburnBox_MouseDoubleClick"/>
             <Label Content="Carbs (grams) : " HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Calibri" FontSize="13"/>
             <TextBox x:Name="carbBox" HorizontalAlignment="Left" Margin="200,123,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="22" Grid.ColumnSpan="2" MouseDoubleClick="carbBox_MouseDoubleClick"/>
             <Label Content="Fat (grams): " HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Calibri" FontSize="13"/>
@@ -70,7 +70,7 @@
             </ListBox>
             <TextBox HorizontalAlignment="Left" Background ="Teal"  Margin="68,242,0,0" Text="Check off any meals/foods you have eaten today.&#10;Tap any input box to edit the amounts &#10;for extra foods not listed and tap return when done. " TextWrapping="Wrap" VerticalAlignment="Top" Width="318" Height="64" Foreground="White" FontSize="12" FontFamily="Calibri" BorderBrush="{x:Null}" Grid.ColumnSpan="2" />
         </Grid>
-        <Ellipse x:Name="calorieChecker" HorizontalAlignment="Left" Height="100" Margin="70,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Ellipse x:Name="calorieChecker" HorizontalAlignment="Left" Height="100" Margin="70,30,0,0" Stroke="Black"  VerticalAlignment="Top" Width="100"/>
         <Label x:Name="calTarget" HorizontalAlignment="Left" Margin="95,65,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label Content="Calorie Balance" HorizontalAlignment="Left" Margin="54,126,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="19" Height="34"  FontFamily="Calibri"/>
         <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="200,191,0,0" VerticalAlignment="Top" Background="White" CalendarClosed="DatePicker_CalendarClosed" RenderTransformOrigin="0.536,0.628" />

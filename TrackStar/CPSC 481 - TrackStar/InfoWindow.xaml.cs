@@ -24,6 +24,7 @@ namespace CPSC_481___TrackStar
         public static  List<PersonalInfo> userInfoList = new List<PersonalInfo>();
         public static PersonalInfo mainTarget;
         public static int selectedIndex = 0;
+        public double num;
         
         public PersonalInfo weight = new PersonalInfo("Weight (lbs)", Goals.weight.value.ToString());
         public  PersonalInfo height = new PersonalInfo("Height (ft'in)", User.height);
@@ -70,24 +71,28 @@ namespace CPSC_481___TrackStar
 
         private void Cate_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.catWindow.Show();
+            Catalogue cate = new Catalogue();
+            cate.Show();
             this.Visibility = Visibility.Hidden;
 
         }
 
         private void Goals_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            MainWindow.goalsWindow.Show();
+            // MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            // MainWindow.goalsWindow.Show();
+            Goals goal = new Goals();
+            goal.Show();
             this.Visibility = Visibility.Hidden;
 
         }
 
         private void Meals_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
-            mainWindow.mealsWindow.Show();
+            //MainWindow mainWindow = Application.Current.Windows.OfType<MainWindow>().First();
+            //mainWindow.mealsWindow.Show();
+            Meals meal = new Meals();
+            meal.Show();
             this.Visibility = Visibility.Hidden;
 
         }
@@ -147,39 +152,50 @@ namespace CPSC_481___TrackStar
         {
             // NewGoalDialog ngd = new NewGoalDialog(pinnedRecord, null);
             //ngd.Show();
-
+            bool goalvalb = double.TryParse(weighter.Text, out num);
+           
             //DateTime newDate = new DateTime(dob.SelectedDate);
-            userInfoList[2].value = dob.SelectedDate.Value.ToShortDateString();
-
-            Goals.weight.SetNewValue(double.Parse(weighter.Text));
-            Goals.weight.SetNewGoal(Goals.weight.goal);
-
-            userInfoList[0].value = weighter.Text;
-
-            userInfoList[1].value = heighter.Text;
-
-            if(male.IsChecked == true)
+            if (goalvalb)
             {
-                User.gender = "Male";
-            }
-            if (female.IsChecked == true)
-            {
-                User.gender = "Female";
-            }
-            if (other.IsChecked == true)
-            {
-                User.gender = "Other";
-            }
-            userInfoList[3].value = User.gender;
+                userInfoList[2].value = dob.SelectedDate.Value.ToShortDateString();
 
-            Poper3.IsOpen = false;
-            cover.Visibility = Visibility.Hidden;
-            key.Visibility = Visibility.Hidden;
-            lbTodoList.ItemsSource = null;
-            lbTodoList.ItemsSource = userInfoList;
-            InfoWindow info = new InfoWindow();
-            this.Visibility = Visibility.Hidden;
-            info.Show();
+                Goals.weight.SetNewValue(double.Parse(weighter.Text));
+                Goals.weight.SetNewGoal(Goals.weight.goal);
+
+                userInfoList[0].value = weighter.Text;
+
+                userInfoList[1].value = heighter.Text;
+
+                if (male.IsChecked == true)
+                {
+                    User.gender = "Male";
+                }
+                if (female.IsChecked == true)
+                {
+                    User.gender = "Female";
+                }
+                if (other.IsChecked == true)
+                {
+                    User.gender = "Other";
+                }
+                userInfoList[3].value = User.gender;
+
+                Poper3.IsOpen = false;
+                cover.Visibility = Visibility.Hidden;
+                key.Visibility = Visibility.Hidden;
+                lbTodoList.ItemsSource = null;
+                lbTodoList.ItemsSource = userInfoList;
+                InfoWindow info = new InfoWindow();
+                this.Visibility = Visibility.Hidden;
+                info.Show();
+            }
+            else
+            {
+                if (goalvalb == false) weighter.BorderBrush = Brushes.Red;
+                else weighter.BorderBrush = Brushes.Coral;
+
+               
+            }
             
         }
 

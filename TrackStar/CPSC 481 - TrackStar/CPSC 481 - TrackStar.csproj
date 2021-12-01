@@ -15,6 +15,7 @@
     <None Remove="cover.png" />
     <None Remove="CPSC 481 - Button.png" />
     <None Remove="diet-icon-24.jpg" />
+    <None Remove="error.png" />
     <None Remove="Home_Icon.svg.png" />
     <None Remove="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
     <None Remove="issa-bodytypes-macrobreakdown-ectomorph.jpg" />
@@ -48,6 +49,7 @@
     <Resource Include="cover.png" />
     <Resource Include="CPSC 481 - Button.png" />
     <Resource Include="diet-icon-24.jpg" />
+    <Resource Include="error.png" />
     <Resource Include="Home_Icon.svg.png" />
     <Resource Include="ios14-iphone11-pro-settings-wallpaper-choose-preview.jpg" />
     <Resource Include="issa-bodytypes-macrobreakdown-ectomorph.jpg" />

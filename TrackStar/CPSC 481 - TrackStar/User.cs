@@ -38,6 +38,7 @@ namespace CPSC_481___TrackStar
         public static int programDaysLeft = 0;
         public static int currentProgramWorkoutsCompleted = 0;
         public static int currentProgramMissedWorkouts = 0;
+        public static bool first = true;
 
 
         public static LiveCharts.ChartValues<double> weightHist = new LiveCharts.ChartValues<double>() {
