@@ -366,9 +366,7 @@ namespace CPSC_481___TrackStar
 			List<Workout> workoutPlan2 = new List<Workout>();
 			workoutPlan2.Add(Day12);
 
-			string desc = "Program designed for indiviudals looking to burn large amounts of calories and to increase overall cardio health." +
-				"For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day. " +
-				"Whilst also helping you get fitter \n \n Program for intermediate gym goers.";
+			string desc = "For individuals looking to lose weight, this program will help in burning those extra couple of hundred calories a day, whilst also helping you to get fitter. \n\n This is for the intermediate gym-goer.";
 
 
 			cardio = new Program("Cardio Training Program", workoutPlan, desc, "Cardio program to get your heart racing!", "6 week program with 5 workouts to complete per week, allowing you to take 2 rest days.", "- Increase fitness levels \n- Become a better runner \n- Burn calories",  "Low", 30,false,true,true);
