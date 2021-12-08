@@ -9,9 +9,13 @@
 1b. This can be done from within VS 2019, by cloning https://github.com/matthewJarrams/TrackStar </br>
 1c. If the repository was downloaded as a ZIP file, extract all files
 2. From the Solution Explorer within VS, open the provided solution, TrackStar.sln
-3. Run this solution, the main menu should now appear
+3. Enable the graphing plugins, LiveCharts and LiveCharts.WP </br>
+3b. Right-click on the project in VS, select "Manage NuGet Packages..." </br>
+3c. Search for LiveCharts, install both LiveCharts and LiveChartsWPF </br>
+3d. If any problems arise, please consult https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore-troubleshooting </br>
+4. Run this solution, the main menu should now appear
 
-If there are build errors, clean the solution by right-clicking on it and
+If there are build errors when trying to run the solution, clean the solution by right-clicking on it and
 selecting the "Clean" option, then "Build".
 
 ## Usage
