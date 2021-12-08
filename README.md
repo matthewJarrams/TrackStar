@@ -19,7 +19,7 @@ If there are build errors when trying to run the solution, clean the solution by
 selecting the "Clean" option, then "Build".
 
 ## Usage
-1. 
+1. Once on the main menu
 
 ## Version History
 *v1.0* <br/>
