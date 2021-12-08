@@ -28,13 +28,13 @@ namespace CPSC_481___TrackStar
     {
         public static int currentRecIndex = 0;
         public static List<Target> targetList = new List<Target>();
-        public static List<String> defLabel = new List<String>() { "Jan 23", "Feb 12", "Mar 13", "Apr 20", "May 12", "Jun 24" };
+        public static List<String> defLabel = new List<String>() { "Jan 23", "Feb 12", "Mar 13", "Apr 20", "May 12" };
         Target loseWeight = new Target("Lose 2lbs a week");
         Target run = new Target("Run 10km");
 
         public static List<personalRecord> recordList = new List<personalRecord>();
         public static List<personalRecord> tableList = new List<personalRecord>();
-        public static personalRecord weight = new personalRecord("Weight Gain", 210, "(Lbs)", 170,true, defLabel);
+        public static personalRecord weight = new personalRecord("Weight Gain", 210, "(Lbs)", 165,true, defLabel);
         
 
         personalRecord bench = new personalRecord("Bench Press (lbs)",300, "(Lbs)", 150,true, defLabel);

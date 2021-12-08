@@ -47,7 +47,7 @@ namespace CPSC_481___TrackStar
         public static LiveCharts.ChartValues<double> benchHist = new LiveCharts.ChartValues<double>() {
         200, 255, 260, 265, 270, 255};
 
-        public static List<String> Labels = new List<String>() { "Jan 23", "Feb 12", "Mar 13", "Apr 20", "May 12", "Jun 24" };
+        public static List<String> Labels = new List<String>() { "Jan 23", "Feb 12", "Mar 13", "Apr 20", "May 12" };
 
         public static SeriesCollection weightCollection { get; set; }
 
@@ -108,7 +108,7 @@ namespace CPSC_481___TrackStar
         {
             value = newValue;
             recordHist.Add(newValue);
-            Labels.Add("Nov 29th");
+            Labels.Add("Dec 14");
         }
         public void SetNewGoal(double newValue)
         {

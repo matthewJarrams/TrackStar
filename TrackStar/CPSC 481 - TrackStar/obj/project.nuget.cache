@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o3vUMsg8OwSIVsT2ruLuJct4xuaBe93gcGUUIXgrir+ULra5Hymw5W4S/6Zb0CHIFSE9CPgvSFbuTsXWyMnRzw==",
+  "dgSpecHash": "bsIkw+JoOYIlogwqEF8p6P8RmdsbuaktZy5qXx+0d+dBXCu/Xo8x/Kib0OssEFg4fYF+BmLqbgFqVCKoIbonRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\richa\\Source\\Repos\\TrackStar7\\TrackStar\\CPSC 481 - TrackStar\\CPSC 481 - TrackStar.csproj",
+  "projectFilePath": "C:\\Users\\Owen\\Desktop\\TrackStar\\TrackStar\\CPSC 481 - TrackStar\\CPSC 481 - TrackStar.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\richa\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
-    "C:\\Users\\richa\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
+    "C:\\Users\\Owen\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\Owen\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
   ],
   "logs": [
     {

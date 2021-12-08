@@ -105,7 +105,7 @@ namespace CPSC_481___TrackStar
                     increasing = false;
                 }
 
-                List<String> Labels = new List<String>() { "Nov28" };
+                List<String> Labels = new List<String>() { "Dec 14" };
                 personalRecord newRecord = new personalRecord(recordType, goal, type, value, increasing, Labels);
 
                 if (hoursCur == 0)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace CPSC_481___TrackStar
     public partial class LogNutrition : Window
     {
         public static List<Food> foodList = new List<Food>();
-        Food chocProShake = new Food("Chocolate Keto Protein Shake", 1000, 30, 30,20);
+        Food chocProShake = new Food("Chocolate Keto Protein Shake", 1000, 30, 30, 20);
         Food steakVeggies = new Food("Steak with Cauliflower and Brocolli", 1200, 3, 35, 40);
         Food ketoCereal = new Food("Keto Cereal", 1300, 40, 35, 20);
         Food brocSalad = new Food("Keto Broccoli Salad ", 500, 20, 30, 10);
@@ -56,9 +57,9 @@ namespace CPSC_481___TrackStar
             foodList.Add(ranchChicken);
             foodList.Add(porkChops);
 
-            
 
-           
+
+
 
             /*
              * finish this later
@@ -139,7 +140,7 @@ namespace CPSC_481___TrackStar
                     targetsMet++;
                 }
 
-                
+
 
             }
         }
@@ -158,7 +159,7 @@ namespace CPSC_481___TrackStar
             cumFat = 0;
             cumProtien = 0;
 
-            if  (User.currentMealPlan != null)
+            if (User.currentMealPlan != null)
             {
                 mealListBox.ItemsSource = null;
                 mealListBox.ItemsSource = User.currentMealPlan.AllMeals;
@@ -166,12 +167,12 @@ namespace CPSC_481___TrackStar
 
             calTarget.Content = 0;
             calorieChecker.Fill = new SolidColorBrush(Colors.White);
-           
+
 
 
         }
 
-        
+
 
 
 
@@ -185,7 +186,7 @@ namespace CPSC_481___TrackStar
         }
 
 
-        
+
         private void CheckBox_Click(object sender, RoutedEventArgs e)
         {
             CheckBox b = (CheckBox)sender;
@@ -202,7 +203,7 @@ namespace CPSC_481___TrackStar
                 fatBox.Text = cumFat.ToString();
                 proBox.Text = cumProtien.ToString();
             }
-            if(b.IsChecked == false)
+            if (b.IsChecked == false)
             {
                 cumCals -= p.calories;
                 cumCarbs -= p.carbs;
@@ -292,11 +293,11 @@ namespace CPSC_481___TrackStar
         private void proBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             MouseDoubleClick++;
-            if(MouseDoubleClick == 1)
+            if (MouseDoubleClick == 1)
             {
                 key.Visibility = Visibility.Visible;
             }
-            if(MouseDoubleClick == 2)
+            else if (MouseDoubleClick == 2 && check())
             {
                 key.Visibility = Visibility.Hidden;
                 int editedPro = int.Parse(proBox.Text);
@@ -320,7 +321,18 @@ namespace CPSC_481___TrackStar
                 carber.Values = carbvals;
                 var provals = new ChartValues<double> { proPer };
                 proter.Values = provals;
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
                 MouseDoubleClick = 0;
+            }
+            else
+            {
+
+                key.Visibility = Visibility.Hidden;
+                MouseDoubleClick = 0;
+
             }
         }
         public static int editedFat = 0;
@@ -331,7 +343,7 @@ namespace CPSC_481___TrackStar
             {
                 key.Visibility = Visibility.Visible;
             }
-            if (MouseDoubleClick == 2)
+            else if (MouseDoubleClick == 2 && check())
             {
                 key.Visibility = Visibility.Hidden;
                 editedFat = int.Parse(fatBox.Text);
@@ -354,6 +366,15 @@ namespace CPSC_481___TrackStar
                 carber.Values = carbvals;
                 var provals = new ChartValues<double> { proPer };
                 proter.Values = provals;
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
+                MouseDoubleClick = 0;
+            }
+            else
+            {
+                key.Visibility = Visibility.Hidden;
                 MouseDoubleClick = 0;
             }
         }
@@ -365,7 +386,7 @@ namespace CPSC_481___TrackStar
             {
                 key.Visibility = Visibility.Visible;
             }
-            if (MouseDoubleClick == 2)
+            else if (MouseDoubleClick == 2 && check())
             {
                 key.Visibility = Visibility.Hidden;
                 int editedCarbs = int.Parse(carbBox.Text);
@@ -389,7 +410,18 @@ namespace CPSC_481___TrackStar
                 carber.Values = carbvals;
                 var provals = new ChartValues<double> { proPer };
                 proter.Values = provals;
+                int calorieIntake = int.Parse(calsConsumed.Text);
+                int caloriesBurned = int.Parse(calsBurned.Text);
+                int calDifference = calorieIntake - caloriesBurned;
+                calTarget.Content = calDifference;
                 MouseDoubleClick = 0;
+            }
+            else
+            {
+
+                key.Visibility = Visibility.Hidden;
+                MouseDoubleClick = 0;
+
             }
         }
 
@@ -400,8 +432,9 @@ namespace CPSC_481___TrackStar
             {
                 key.Visibility = Visibility.Visible;
             }
-            if (MouseDoubleClick == 2)
+            else if (MouseDoubleClick == 2 && check())
             {
+
                 key.Visibility = Visibility.Hidden;
                 int calorieIntake = int.Parse(calsConsumed.Text);
                 int caloriesBurned = int.Parse(calsBurned.Text);
@@ -421,6 +454,11 @@ namespace CPSC_481___TrackStar
 
                 MouseDoubleClick = 0;
             }
+            else
+            {
+                key.Visibility = Visibility.Hidden;
+                MouseDoubleClick = 0;
+            }
         }
 
 
@@ -431,7 +469,7 @@ namespace CPSC_481___TrackStar
             {
                 key.Visibility = Visibility.Visible;
             }
-            if (MouseDoubleClick == 2)
+            else if (MouseDoubleClick == 2 && check())
             {
                 key.Visibility = Visibility.Hidden;
                 int calorieIntake = int.Parse(calsConsumed.Text);
@@ -439,7 +477,7 @@ namespace CPSC_481___TrackStar
                 int calDifference = calorieIntake - caloriesBurned;
                 calTarget.Content = calDifference;
 
-                if(calDifference >= 2000)
+                if (calDifference >= 2000)
                 {
                     calorieChecker.Fill = Brushes.Red;
                 }
@@ -449,11 +487,41 @@ namespace CPSC_481___TrackStar
                 }
 
 
-
-
-
+            }
+            else
+            {
+                key.Visibility = Visibility.Hidden;
                 MouseDoubleClick = 0;
             }
+
+        }
+
+        private bool check()
+        {
+
+            bool f = int.TryParse(fatBox.Text, out _);
+            bool c = int.TryParse(carbBox.Text, out _);
+            bool pro = int.TryParse(proBox.Text, out _);
+            bool cc = int.TryParse(calsConsumed.Text, out _);
+            bool cb = int.TryParse(calsBurned.Text, out _);
+            bool final = f && c && pro && cc && cb;
+
+            if (f == false) fatBox.BorderBrush = Brushes.Red;
+            else fatBox.BorderBrush = Brushes.Teal;
+
+            if (c == false) carbBox.BorderBrush = Brushes.Red;
+            else carbBox.BorderBrush = Brushes.Teal;
+
+            if (pro == false) proBox.BorderBrush = Brushes.Red;
+            else proBox.BorderBrush = Brushes.Teal;
+
+            if (cc == false) calsConsumed.BorderBrush = Brushes.Red;
+            else calsConsumed.BorderBrush = Brushes.Teal;
+
+            if (cb == false) calsBurned.BorderBrush = Brushes.Red;
+            else calsBurned.BorderBrush = Brushes.Teal;
+
+            return final;
         }
     }
 
@@ -468,7 +536,7 @@ namespace CPSC_481___TrackStar
         public int carbs = 0;
         public int fat = 0;
         public int protien = 0;
-      
+
 
 
         public Food(string meal, int calories, int carbs, int fat, int protein)
@@ -481,7 +549,7 @@ namespace CPSC_481___TrackStar
         }
 
 
-        
+
 
 
 

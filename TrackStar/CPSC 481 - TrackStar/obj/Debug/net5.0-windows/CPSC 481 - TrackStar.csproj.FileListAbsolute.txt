@@ -285,3 +285,53 @@ C:\Users\richa\Source\Repos\TrackStar7\TrackStar\CPSC 481 - TrackStar\obj\Debug\
 C:\Users\richa\Source\Repos\TrackStar7\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.pdb
 C:\Users\richa\Source\Repos\TrackStar7\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.genruntimeconfig.cache
 C:\Users\richa\Source\Repos\TrackStar7\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.csproj.AssemblyReference.cache
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\CPSC 481 - TrackStar.exe
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\CPSC 481 - TrackStar.deps.json
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\CPSC 481 - TrackStar.runtimeconfig.json
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\CPSC 481 - TrackStar.runtimeconfig.dev.json
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\CPSC 481 - TrackStar.dll
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\ref\CPSC 481 - TrackStar.dll
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\CPSC 481 - TrackStar.pdb
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.dll
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\bin\Debug\net5.0-windows\LiveCharts.Wpf.dll
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.csproj.AssemblyReference.cache
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Catalogue.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Goals.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\InfoWindow.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\LogNutrition.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Meals.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewGoalDialog.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewRecordTypeScreen.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\notificationScreen.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\ProgramScreen.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SpecMeal.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Window1.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar_MarkupCompile.cache
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar_MarkupCompile.lref
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Catalogue.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Goals.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\GraphStuff.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\InfoWindow.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\LogNutrition.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Meals.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewGoalDialog.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\NewRecordTypeScreen.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\notificationScreen.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\ProgramScreen.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SettingsWindow.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\SpecMeal.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\Window1.baml
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.g.resources
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.AssemblyInfoInputs.cache
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.AssemblyInfo.cs
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.csproj.CoreCompileInputs.cache
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.dll
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\ref\CPSC 481 - TrackStar.dll
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.pdb
+C:\Users\Owen\Desktop\TrackStar\TrackStar\CPSC 481 - TrackStar\obj\Debug\net5.0-windows\CPSC 481 - TrackStar.genruntimeconfig.cache
