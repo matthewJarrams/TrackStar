@@ -1,8 +1,8 @@
 # TRACKSTAR
 
 ## System Requirements
-> VisualStudio 2019 </br>
-> LiveCharts WPF and LiveCharts must be added as extensions in VS
+> VisualStudio 2019 (referred to as "VS" from here on) </br>
+> LiveCharts WPF and LiveCharts must be added as extensions in VS, instructions below
 
 ## Installation
 1. Clone or download the code found within the GitHub repository </br>
@@ -19,7 +19,12 @@ If there are build errors when trying to run the solution, clean the solution by
 selecting the "Clean" option, then "Build".
 
 ## Usage
-1. Once on the main menu
+1. Once on the main menu, select the "Click here to view available programs" button
+2. Click the "Filter" button, selecting "Lose Weight", "Low", and "<= 30 days" as filters
+3. From the newly filtered list, expand the "Cardio Training Program" and select "View"
+4. Take a look at the information displayed on this page, cycling through days as well as other information
+5. Use the "Set Program" button to set this as the active program. Use the "back" button and return to the home page
+6. 
 
 ## Version History
 *v1.0* <br/>
