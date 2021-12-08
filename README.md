@@ -20,7 +20,7 @@ selecting the "Clean" option, then "Build".
 
 ## Usage
 1. Once on the main menu, select the "Click here to view available programs" button
-2. Click the "Filter" button, selecting "Lose Weight", "Low", and "<= 30 days" as filters
+2. Click the "Filter" button, selecting "Lose Weight", "Low", and "<= 30 days" as filters. Note that these filters are not fully implemented and will cause issues if used incorrectly
 3. From the newly filtered list, expand the "Cardio Training Program" and select "View"
 4. Take a look at the information displayed on this page, cycling through days as well as other information
 5. Use the "Set Program" button to set this as the active program. Use the "back" button and return to the home page
